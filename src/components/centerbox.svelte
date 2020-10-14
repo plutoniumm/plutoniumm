@@ -10,18 +10,24 @@
             border-bottom: 4px solid #7eb6ff;
             background: #fff;
             padding: 1em;
-            img {
-                  width: 200px;
-                  height: 200px;
-                  border-radius: 120px;
-                  object-fit: cover;
+            pointer-events: none;
+            .left {
+                  padding-right: 20px;
+                  img {
+                        width: 200px;
+                        height: 200px;
+                        border-radius: 120px;
+                        object-fit: cover;
+                  }
             }
             .title {
-                  font-size: 1.5em;
+                  font-size: 32px;
                   font-weight: 600;
-                  line-height: 1em;
+                  line-height: 8px;
+                  padding: 0;
             }
             a {
+                  pointer-events: all;
                   color: #7eb6ff;
                   text-decoration: none;
             }
@@ -36,18 +42,24 @@
                   .left,
                   .right {
                         width: 100%;
+                        padding: 0;
                   }
             }
       }
 </style>
 
 <section>
-      <div class="left" style="padding-right:20px;">
-            <img src="./assets/pic.jpeg" alt="" />
-      </div>
+      <div class="left"><img src="./assets/pic.jpeg" alt="" /></div>
       <div class="right">
             <p class="title">Manav Seksaria</p>
             <p>Cyber Security Researcher, Full Stack Javascript</p>
-            <a href="https://github.com/plutoniumblast">@plutoniumblast</a>
+            <div style="line-height:1.5em">
+                  <a href="https://frontier.nukes.in">@frontier</a>
+                  <br />
+                  <a href="https://github.com/plutoniumm">@plutoniumm</a>
+                  <br />
+                  <a
+                        href="mailto:plutoniumm@icloud.com">plutoniumm@icloud.com</a>
+            </div>
       </div>
 </section>
