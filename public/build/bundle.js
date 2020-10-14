@@ -27,6 +27,10 @@ var app = (function () {
     function is_empty(obj) {
         return Object.keys(obj).length === 0;
     }
+
+    function append(target, node) {
+        target.appendChild(node);
+    }
     function insert(target, node, anchor) {
         target.insertBefore(node, anchor || null);
     }
@@ -35,6 +39,9 @@ var app = (function () {
     }
     function element(name) {
         return document.createElement(name);
+    }
+    function text(data) {
+        return document.createTextNode(data);
     }
     function attr(node, attribute, value) {
         if (value == null)
@@ -268,6 +275,10 @@ var app = (function () {
     function dispatch_dev(type, detail) {
         document.dispatchEvent(custom_event(type, Object.assign({ version: '3.29.0' }, detail)));
     }
+    function append_dev(target, node) {
+        dispatch_dev("SvelteDOMInsert", { target, node });
+        append(target, node);
+    }
     function insert_dev(target, node, anchor) {
         dispatch_dev("SvelteDOMInsert", { target, node, anchor });
         insert(target, node, anchor);
@@ -313,18 +324,28 @@ var app = (function () {
 
     function create_fragment(ctx) {
     	let section;
+    	let t0;
+    	let br;
+    	let t1;
 
     	const block = {
     		c: function create() {
     			section = element("section");
-    			section.textContent = "Hi";
-    			add_location(section, file, 6, 0, 38);
+    			t0 = text("Manav Seksaria ");
+    			br = element("br");
+    			t1 = text(" github");
+    			add_location(br, file, 21, 24, 456);
+    			attr_dev(section, "class", "svelte-42xk50");
+    			add_location(section, file, 21, 0, 432);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section, anchor);
+    			append_dev(section, t0);
+    			append_dev(section, br);
+    			append_dev(section, t1);
     		},
     		p: noop,
     		i: noop,
@@ -384,8 +405,8 @@ var app = (function () {
     		c: function create() {
     			main = element("main");
     			create_component(centerbox.$$.fragment);
-    			attr_dev(main, "class", "svelte-1b91htx");
-    			add_location(main, file$1, 13, 0, 173);
+    			attr_dev(main, "class", "svelte-pvxvk1");
+    			add_location(main, file$1, 15, 0, 226);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
