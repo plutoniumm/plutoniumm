@@ -1,16 +1,11 @@
 <script>
+      export let codeCg;
 </script>
 
 <style type="text/scss">
-      section {
+      .section {
             width: 500px;
-            height: 200px;
-            border-radius: 25px;
-            display: flex;
-            border-bottom: 4px solid #7eb6ff;
-            background: #fff;
-            padding: 1em;
-            pointer-events: none;
+            height: auto;
             .left {
                   padding-right: 20px;
                   img {
@@ -33,12 +28,9 @@
             }
       }
       @media (max-width: 600px) {
-            section {
-                  width: 300px;
+            .section {
+                  width: 375px;
                   height: auto;
-                  flex-wrap: wrap;
-                  text-align: center;
-                  border-radius: 20px;
                   .left,
                   .right {
                         width: 100%;
@@ -48,18 +40,25 @@
       }
 </style>
 
-<section>
-      <div class="left"><img src="./assets/pic.jpeg" alt="" /></div>
-      <div class="right">
-            <p class="title">Manav Seksaria</p>
-            <p>Cyber Security Researcher, Full Stack Javascript</p>
-            <div style="line-height:1.5em">
-                  <a href="https://frontier.nukes.in">@frontier</a>
-                  <br />
-                  <a href="https://github.com/plutoniumm">@plutoniumm</a>
-                  <br />
-                  <a
-                        href="mailto:plutoniumm@icloud.com">plutoniumm@icloud.com</a>
+<section style="display:flex;flex-direction:column;">
+      <div class="code" on:click={codeCg}>
+            <svg viewBox="0 0 32 32" width="32" height="32" fill="none">
+                  <path d="M10 9 L3 17 10 25 M22 9 L29 17 22 25 M18 7 L14 27" />
+            </svg>
+      </div>
+      <div class="section">
+            <div class="left"><img src="./assets/pic.jpeg" alt="" /></div>
+            <div class="right">
+                  <p class="title">Manav Seksaria</p>
+                  <p>Cyber Security Researcher, Full Stack Javascript</p>
+                  <div style="line-height:1.5em">
+                        <a href="https://frontier.nukes.in">@frontier</a>
+                        <br />
+                        <a href="https://github.com/plutoniumm">@plutoniumm</a>
+                        <br />
+                        <a
+                              href="mailto:plutoniumm@icloud.com">plutoniumm@icloud.com</a>
+                  </div>
             </div>
       </div>
 </section>

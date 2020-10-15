@@ -11,3 +11,41 @@ body {
 	box-sizing: border-box;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
+
+svg {
+	stroke:currentcolor;
+	stroke-linecap:round;
+	stroke-linejoin:round;
+	stroke-width:2;
+}
+
+.code {
+	text-align: center;
+	padding: 0.75em;
+	color: #aaa8;
+	svg {
+		border: 1px solid #8880;
+		padding: 0.25em;
+	}
+	&:hover {
+		color: #222;
+		cursor: pointer;
+		transition: color 0.3s ease;
+	}
+}
+.section {
+	border-radius: 25px;
+	display: flex;
+	border-bottom: 4px solid #7eb6ff;
+	background: #fff;
+	padding: 1em;
+	pointer-events: none;
+}
+
+ @media (max-width: 600px) {
+	.section {
+		flex-wrap: wrap;
+		text-align: center;
+		border-radius: 20px;
+	}
+}
