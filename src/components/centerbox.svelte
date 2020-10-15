@@ -29,7 +29,7 @@
       }
       @media (max-width: 600px) {
             .section {
-                  width: 375px;
+                  width: 325px;
                   height: auto;
                   .left,
                   .right {

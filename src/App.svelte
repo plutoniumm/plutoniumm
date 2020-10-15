@@ -23,12 +23,12 @@
 
 <main>
 	{#if !code}
-		<div transition:fade>
+		<div in:fade>
 			<CenterBox {codeCg} />
 		</div>
 	{/if}
 	{#if code}
-		<div transition:fade>
+		<div in:fade>
 			<CodeBox {codeCg} />
 		</div>
 	{/if}
