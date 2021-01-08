@@ -18,20 +18,11 @@ svg {
 	stroke-width:2;
 }
 
-.code {
-	text-align: center;
-	padding: 0.75em;
-	color: #aaa8;
-	svg {
-		border: 1px solid #8880;
-		padding: 0.25em;
-	}
-	&:hover {
-		color: #222;
-		cursor: pointer;
-		transition: color 0.3s ease;
-	}
+a,a:visited,a:hover{
+	text-decoration: none;
+	color: unset;
 }
+
 .section {
 	border-radius: 25px;
 	display: flex;
