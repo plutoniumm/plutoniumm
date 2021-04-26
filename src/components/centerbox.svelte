@@ -41,8 +41,6 @@
       <p class="title">Manav Seksaria</p>
       <p>Cyber Security <br /> Full Stack Javascript</p>
       <div style="line-height:1.5em;color: #7eb6ff;pointer-events: all;">
-            <a href="https://frontier.nukes.in">@frontier</a>
-            <br />
             <a href="https://github.com/plutoniumm">@plutoniumm</a>
             <br />
             <a href="mailto:plutoniumm@icloud.com">plutoniumm@icloud.com</a>
