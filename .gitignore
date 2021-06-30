@@ -1,9 +1,17 @@
-node_modules
-
+# GEN
 .DS_Store
-*/.DS_Store
+**/.DS_Store
+logs
+*.log
 
-*-lock.*
+# NODE
+node_modules/
+*lock*.yaml
+*lock*.yml
+**/*.css.map
+**/*.js.map
 
-*.css.map
-*.js.map
+# APP
+.svelte-kit/
+.svelte/
+build/
