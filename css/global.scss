@@ -32,7 +32,7 @@ section {
 
 a,a:visited,a:hover{
 	text-decoration: none;
-	color: unset;
+	color: var(--theme-hl);
 }
 
 .fade {
