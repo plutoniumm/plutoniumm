@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="/css/global.css">
 	<link rel="stylesheet" href="/css/atomic.css">
 
-	
+	<script src="/helpers/uglify.js " data-svelte="svelte-qohbgi"></script>
 
 		
 
@@ -17,10 +17,10 @@
 		<link rel="modulepreload" href="/./_app/chunks/vendor-7056ec56.js">
 		<link rel="modulepreload" href="/./_app/chunks/paths-45dac81d.js">
 		<link rel="modulepreload" href="/./_app/pages/__layout.svelte-73e1ad1e.js">
-		<link rel="modulepreload" href="/./_app/pages/index.svelte-1e20ad30.js">
+		<link rel="modulepreload" href="/./_app/pages/toolkit.svelte-a2d65e4e.js">
 		<link rel="modulepreload" href="/./_app/chunks/card-aad9ca5b.js">
 		<link rel="stylesheet" href="/./_app/assets/start-a8cd1609.css">
-		<link rel="stylesheet" href="/./_app/assets/pages/index.svelte-8d21d325.css">
+		<link rel="stylesheet" href="/./_app/assets/pages/toolkit.svelte-cb5ed7b2.css">
 		<link rel="stylesheet" href="/./_app/assets/card-d427dfce.css">
 
 		<script type="module">
@@ -38,11 +38,11 @@
 					error: null,
 					nodes: [
 						import("/./_app/pages/__layout.svelte-73e1ad1e.js"),
-						import("/./_app/pages/index.svelte-1e20ad30.js")
+						import("/./_app/pages/toolkit.svelte-a2d65e4e.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
-						path: "/",
+						path: "/toolkit",
 						query: new URLSearchParams(""),
 						params: {}
 					}
@@ -55,19 +55,15 @@
 	
 
 
-<section class="h-100 flex-col f-wrap"><svg class="m-20 o-50 svelte-1ew98u" viewBox="0 0 32 32"><text></text></svg>
-	<div class="card  svelte-97uyxm active fade"><canvas class="left rx-100" width="200px" height="200px"></canvas>
-<div class="right p-20 svelte-1ew98u"><div class="title svelte-1ew98u">Manav Seksaria</div>
-	<p>I&#39;m a dev, primarily working on Svelte things nowadays. I also
-		like InfoSec a lot.
-	</p>
-	<div class="details svelte-1ew98u"><a href="https://github.com/plutoniumm">@plutoniumm</a>
-		<br>
-		<a href="mailto:plutoniumm@icloud.com">plutoniumm@icloud.com</a></div></div>
-</div>
-	<svg class="m-20 o-50 svelte-1ew98u" viewBox="0 0 32 32"><path d="M30 12 L16 24 2 12"></path></svg></section>
-<section class="h-100 flex-col"><div class="card  svelte-97uyxm  fade">Cyber Security
+<section class="h-100 flex-col">
 
+<div class="dropdown svelte-vxzh13"><div id="inf" class="elt p-10 rx-10 m-10 svelte-vxzh13">Choose Function ▼</div>
+    <div class="wrapper m-10 rx-10 svelte-vxzh13"><div class="elt p-10 svelte-vxzh13" id="0">CSS Minify
+            </div><div class="elt p-10 svelte-vxzh13" id="1">JS Minify
+            </div></div>
+</div>
+
+    <div class="card  svelte-97uyxm  fade"><textarea class="w-100 h-100 p-0 m-0 svelte-wlhb52" placeholder=".Paste{some:CSS;}" rows="10" id=""></textarea>
 </div>
 </section>
 
