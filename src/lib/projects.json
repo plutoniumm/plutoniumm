@@ -1,6 +1,18 @@
 [
     {
         "where": "Franklin Templeton",
-        "title": "Cyber Security"
+        "title": "Cyber Security",
+        "about": "Just some Cyber Security Stuff around the then new Government regulations for AMCs and also messing with company policy :P"
+    },
+    {
+        "where": "Ultratech Cement",
+        "title": "Summer Intern",
+        "about": "Summer of 2020 just came and went away. Lets not get bogged down by details and agree that cement is important but also bad for the sky"
+    },
+    {
+        "where": "At Home",
+        "title": "Indoor Nerd",
+        "about": "Got carried away doing math for JEE, check it out ",
+        "url": "https://www.ripublication.com/irph/ijmr18/ijmrv10n1_01.pdf"
     }
 ]

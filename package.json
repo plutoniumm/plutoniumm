@@ -1,17 +1,19 @@
 {
+  "type": "module",
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "rm -rf build .svelte-kit && svelte-kit build",
-    "sass": "node-sass static/global.scss static/global.css -w --output-style compressed & node-sass static/atomic.scss static/atomic.css -w --output-style compressed ",
-    "deploy": "npx gh-pages -d build -t true",
+    "deploy": "npm run build && npx gh-pages -d build -t true",
     "start": "php -q -S localhost:3000"
   },
-  "type": "module",
   "devDependencies": {
-    "@sveltejs/adapter-static": "^1.0.0-next.13",
+    "@sveltejs/adapter-static": "next",
     "@sveltejs/kit": "next",
-    "sass": "^1.35.1",
-    "svelte-preprocess": "^4.7.3",
-    "svelte": "^3.34.0"
+    "sass": "1.35.1",
+    "svelte": "3.34.0",
+    "svelte-preprocess": "4.7.3"
+  },
+  "dependencies": {
+    "uglify-js": "^3.13.10"
   }
 }

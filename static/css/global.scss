@@ -23,9 +23,16 @@ svg {
 	stroke-width:2;
 }
 
+section {
+	justify-content: center;
+	align-items: center;
+	scroll-snap-align: start;
+	scroll-snap-stop: normal;
+}
+
 a,a:visited,a:hover{
 	text-decoration: none;
-	color: unset;
+	color: var(--theme-hl);
 }
 
 .fade {

@@ -14,7 +14,7 @@
 			canvas.getContext("2d").drawImage(img, 0, 0, 200, 200);
 			fade = 1;
 		};
-		img.src = base + "/assets/pic.jpeg";
+		img.src = base + "/assets/pic.png";
 	});
 </script>
 
@@ -49,18 +49,27 @@
 <section class="h-100 flex-col">
 	{#each projects as project}
 		<Card fade>
-			{project.title}
+			<div class="w-100">
+				<div class="p-5">
+					<div class="f-wt7" style="font-size:1.1em;">
+						{project.title}
+					</div>
+					<div style="color:#888;">
+						{project.where}
+					</div>
+				</div>
+				<div class="p-5">
+					{project.about}
+					{#if project.url}
+						<a target="_blank" href={project.url}>here</a>
+					{/if}
+				</div>
+			</div>
 		</Card>
 	{/each}
 </section>
 
 <style type="text/scss">
-	section {
-		justify-content: center;
-		align-items: center;
-		scroll-snap-align: start;
-		scroll-snap-stop: normal;
-	}
 	svg {
 		width: 32px;
 		height: 32px;
@@ -75,7 +84,6 @@
 	}
 	.details {
 		line-height: 1.5em;
-		color: var(--theme-hl);
 	}
 	@media (max-width: 600px) {
 		.right {
