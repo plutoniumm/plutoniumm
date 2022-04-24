@@ -11,7 +11,7 @@
     "@sveltejs/kit": "next",
     "sass": "1.35.1",
     "svelte": "3.34.0",
-    "svelte-preprocess": "4.7.3"
+    "svelte-preprocess": "4.10.6"
   },
   "dependencies": {
     "uglify-js": "^3.13.10"
