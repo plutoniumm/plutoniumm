@@ -1,28 +1,31 @@
 <script>
-    export let //
-        important = false,
-        fade = false;
+    const { important } = $$props;
 </script>
 
-<div class:active={important} class:fade class="card m-10">
+<div {important} class="card fade rx20 p20 ∆-ct ƒ o-0 m10">
     <slot />
 </div>
 
 <style>
     .card {
-        opacity: 0;
         font-size: 16px;
         width: 600px;
-        display: flex;
-        justify-content: center;
         align-items: center;
         background: #fff;
-        border-radius: 15px;
-        padding: 1em;
     }
-    .active {
+
+    [important] {
         border-radius: 25px;
         border-bottom: 4px solid var(--theme-hl);
+    }
+
+    :global(code) {
+        font-size: 0.9em;
+        font-family: monospace;
+        display: inline-block;
+        background: #3a3d41;
+        padding: 1px 3px;
+        border-radius: 3px;
     }
 
     @media (max-width: 600px) {
