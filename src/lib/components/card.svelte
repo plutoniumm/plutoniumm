@@ -1,8 +1,8 @@
 <script>
-    const { important } = $$props;
+    const { important, className } = $$props;
 </script>
 
-<div {important} class="card fade rx20 p20 ∆-ct ƒ o-0 m10">
+<div {important} class="card fade rx20 p20 ∆-ct o-0 m10 {className}">
     <slot />
 </div>
 

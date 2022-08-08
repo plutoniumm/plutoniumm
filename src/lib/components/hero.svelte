@@ -1,11 +1,12 @@
 <img
-    class="left rx20"
-    width="200px"
-    height="200px"
+    class="left"
+    width="150px"
+    height="150px"
     src="/assets/pic.png"
     alt=""
+    style="object-fit: fit;transform:scale(1.33);padding: 10px 10px 0 10px;"
 />
-<div class="right fade p20">
+<div class="right fade" style="padding: 20px 20px 0 20px;">
     <div class="title fw6">Manav Seksaria</div>
     <p>
         I'm a dev, primarily working on Svelte things nowadays. I also like
@@ -19,7 +20,6 @@
 </div>
 
 <style>
-
     .title {
         font-size: 2rem;
         line-height: 1rem;

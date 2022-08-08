@@ -1,8 +1,8 @@
 {
   "type": "module",
   "scripts": {
-    "dev": "svelte-kit dev",
-    "build": "rm -rf build .svelte-kit && svelte-kit build",
+    "dev": "vite dev",
+    "build": "rm -rf build .svelte-kit && vite build",
     "deploy": "npm run build && npx gh-pages -d build -t true"
   },
   "devDependencies": {
@@ -11,5 +11,8 @@
     "sass": "1.35.1",
     "svelte": "3.48.0",
     "svelte-preprocess": "4.10.6"
+  },
+  "dependencies": {
+    "vite": "^3.0.4"
   }
 }
