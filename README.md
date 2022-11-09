@@ -1,7 +1,7 @@
-## Hi, I'm plutoniumm!
+## Hi, I'm plutoniumm! 🇮🇳
 I don't write the code, 4 cats 🐈‍ sitting in the basement with an Ouija Board and some Rum 🍾 do
 
-I'm a Dev from 🇮🇳
+I'm primarily work in Full Stack, Cyber Security & Quantum Mechanics 
 
 Rust 🤎 &nbsp;|&nbsp;
 JavaScript 💛 &nbsp;|&nbsp;
