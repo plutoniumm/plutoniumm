@@ -6,7 +6,6 @@
 	<link rel="icon" href="/favicon.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<link rel="stylesheet" href="/global.css">
 	<link rel="stylesheet" href="https://api.nukes.in/cms/css?name=global.css">
 	<link rel="stylesheet" href="https://api.nukes.in/cms/css?name=keyframes.css">
 
@@ -26,15 +25,54 @@
 	<meta property="twitter:description" content="Don't worry I'm a coder">
 	<meta property="twitter:image" content="/assets/meta.png">
 
+
+	<style>
+		:root {
+			--theme: #cae1ff;
+			--theme-hl: #7eb6ff;
+		}
+
+		body {
+			background: var(--theme);
+			font-family: var(--baseFont);
+			overflow-y: scroll;
+			scroll-snap-type: y mandatory;
+		}
+
+		svg {
+			stroke: currentcolor;
+			stroke-linecap: round;
+			stroke-linejoin: round;
+			stroke-width: 2;
+		}
+
+		section {
+			justify-content: center;
+			align-items: center;
+			scroll-snap-align: start;
+			scroll-snap-stop: normal;
+		}
+
+		a,
+		a:visited,
+		a:hover {
+			color: var(--theme-hl) !important;
+		}
+	</style>
+
+
 	<meta http-equiv="content-security-policy" content="">
-	<link rel="stylesheet" href="/_app/immutable/assets/__layout-c78504aa.css">
-	<link rel="stylesheet" href="/_app/immutable/assets/faq-3f3c3f5d.css">
-	<link rel="stylesheet" href="/_app/immutable/assets/card-7f2e0978.css">
-	<link rel="modulepreload" href="/_app/immutable/start-3491f40d.js">
-	<link rel="modulepreload" href="/_app/immutable/chunks/index-24b0ec59.js">
-	<link rel="modulepreload" href="/_app/immutable/pages/__layout.svelte-829fb6d7.js">
-	<link rel="modulepreload" href="/_app/immutable/pages/faq.svelte-4495c46f.js">
-	<link rel="modulepreload" href="/_app/immutable/chunks/card-961c2096.js">
+		<link href="./_app/immutable/assets/_layout-c78504aa.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/_page-3f3c3f5d.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/card-7f2e0978.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/start-c6af287e.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index-4ddc05de.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons-1f5933d3.js">
+		<link rel="modulepreload" href="./_app/immutable/components/pages/_layout.svelte-cdbcd6af.js">
+		<link rel="modulepreload" href="./_app/immutable/modules/pages/_layout.js-7b9cbfbc.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/_layout-8d2a742b.js">
+		<link rel="modulepreload" href="./_app/immutable/components/pages/faq/_page.svelte-084e4e43.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/card-46ca315a.js">
 </head>
 
 <body xmlns:svg="http://www.w3.org/2000/svg">
@@ -52,26 +90,25 @@
 
 
 		<script type="module" data-sveltekit-hydrate="1u4965r">
-		import { set_public_env, start } from "/_app/immutable/start-3491f40d.js";
+			import { start } from "./_app/immutable/start-c6af287e.js";
 
-		set_public_env({});
-
-		start({
-			target: document.querySelector('[data-sveltekit-hydrate="1u4965r"]').parentNode,
-			paths: {"base":"","assets":""},
-			session: {},
-			route: true,
-			spa: false,
-			trailing_slash: "never",
-			hydrate: {
-				status: 200,
-				error: null,
-				nodes: [0, 2],
-				params: {},
-				routeId: "faq"
-			}
-		});
-	</script>
+			start({
+				env: {},
+				hydrate: {
+					status: 200,
+					error: null,
+					node_ids: [0, 3],
+					params: {},
+					route: {"id":"/faq"},
+					data: [null,null],
+					form: null
+				},
+				paths: {"base":"","assets":""},
+				target: document.querySelector('[data-sveltekit-hydrate="1u4965r"]').parentNode,
+				trailing_slash: "never"
+			});
+		</script>
+	
 </body>
 
 </html>
