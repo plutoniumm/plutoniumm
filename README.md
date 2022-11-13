@@ -11,4 +11,4 @@ Swift 🧡 &nbsp;|&nbsp;
 Python 💔 &nbsp;
 
 ## GitHub Stuff
-<img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=plutoniumm&theme=dark&hide=Shell,HTML,CSS,SCSS&langs_count=10&layout=compact" />
+<img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=plutoniumm&theme=dark&hide=Shell,HTML,CSS,SCSS,Dockerfile&langs_count=10&layout=compact" />
