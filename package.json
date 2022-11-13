@@ -3,7 +3,7 @@
   "scripts": {
     "dev": "vite dev",
     "build": "rm -rf build .svelte-kit && vite build",
-    "deploy": "sh ./scripts/deploy.sh"
+    "deploy": "npx gh-pages -d build -t true"
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "next",
