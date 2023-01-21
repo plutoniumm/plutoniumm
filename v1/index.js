@@ -1,7 +1,7 @@
 const q = ( qe ) => document.querySelector( qe );
 q( '#time' ).innerHTML = new Date().toLocaleTimeString( 'en-GB', { hour: '2-digit', minute: '2-digit' } );;
 
-let projects = [
+let projects = Object.freeze( [
       {
             "name": "Searock 2019",
             "month": "June",
@@ -47,7 +47,7 @@ let projects = [
             "link": "http://www.abhigyaan-bpgc.in/",
             "image": "https://ohcampus.com/uploads/ohcampus_searock.jpg",
       }
-];
+] );
 
 
 function List ( projects ) {

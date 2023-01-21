@@ -1,111 +1,31 @@
 {
-  "node_modules/.pnpm/@sveltejs+kit@1.0.0-next.544_svelte@3.48.0+vite@3.2.3/node_modules/@sveltejs/kit/src/runtime/client/start.js": {
-    "file": "_app/immutable/start-c6af287e.js",
-    "src": "node_modules/.pnpm/@sveltejs+kit@1.0.0-next.544_svelte@3.48.0+vite@3.2.3/node_modules/@sveltejs/kit/src/runtime/client/start.js",
-    "isEntry": true,
-    "imports": [
-      "_index-4ddc05de.js",
-      "_singletons-1f5933d3.js"
-    ],
-    "dynamicImports": [
-      ".svelte-kit/generated/nodes/0.js",
-      ".svelte-kit/generated/nodes/1.js",
-      ".svelte-kit/generated/nodes/2.js",
-      ".svelte-kit/generated/nodes/3.js"
-    ]
+  "src/routes/+layout.css": {
+    "file": "_app/immutable/assets/_layout-258167cc.css",
+    "src": "src/routes/+layout.css"
   },
-  "src/routes/+layout.svelte": {
-    "file": "_app/immutable/components/pages/_layout.svelte-cdbcd6af.js",
-    "src": "src/routes/+layout.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-4ddc05de.js"
-    ],
-    "css": [
-      "_app/immutable/assets/_layout-c78504aa.css"
-    ]
+  "src/routes/faq/+page.css": {
+    "file": "_app/immutable/assets/_page-3f3c3f5d.css",
+    "src": "src/routes/faq/+page.css"
   },
-  "node_modules/.pnpm/@sveltejs+kit@1.0.0-next.544_svelte@3.48.0+vite@3.2.3/node_modules/@sveltejs/kit/src/runtime/components/error.svelte": {
-    "file": "_app/immutable/components/error.svelte-e0eb4deb.js",
-    "src": "node_modules/.pnpm/@sveltejs+kit@1.0.0-next.544_svelte@3.48.0+vite@3.2.3/node_modules/@sveltejs/kit/src/runtime/components/error.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-4ddc05de.js",
-      "_singletons-1f5933d3.js"
-    ]
+  "card.css": {
+    "file": "_app/immutable/assets/card-9991d18d.css",
+    "src": "card.css"
   },
-  "src/routes/+page.svelte": {
-    "file": "_app/immutable/components/pages/_page.svelte-dbea6d21.js",
-    "src": "src/routes/+page.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-4ddc05de.js",
-      "_card-46ca315a.js"
-    ],
-    "css": [
-      "_app/immutable/assets/_page-a3a767b8.css"
-    ]
-  },
-  "src/routes/faq/+page.svelte": {
-    "file": "_app/immutable/components/pages/faq/_page.svelte-084e4e43.js",
-    "src": "src/routes/faq/+page.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-4ddc05de.js",
-      "_card-46ca315a.js"
-    ],
-    "css": [
-      "_app/immutable/assets/_page-3f3c3f5d.css"
-    ]
-  },
-  "src/routes/+layout.js": {
-    "file": "_app/immutable/modules/pages/_layout.js-7b9cbfbc.js",
-    "src": "src/routes/+layout.js",
-    "isEntry": true,
-    "imports": [
-      "__layout-8d2a742b.js"
-    ]
-  },
-  "_singletons-1f5933d3.js": {
-    "file": "_app/immutable/chunks/singletons-1f5933d3.js",
-    "imports": [
-      "_index-4ddc05de.js"
-    ]
-  },
-  "_index-4ddc05de.js": {
-    "file": "_app/immutable/chunks/index-4ddc05de.js"
-  },
-  "__layout-8d2a742b.js": {
-    "file": "_app/immutable/chunks/_layout-8d2a742b.js"
-  },
-  "_card-46ca315a.js": {
-    "file": "_app/immutable/chunks/card-46ca315a.js",
-    "imports": [
-      "_index-4ddc05de.js"
-    ],
-    "css": [
-      "_app/immutable/assets/card-7f2e0978.css"
-    ]
+  "src/routes/+page.css": {
+    "file": "_app/immutable/assets/_page-c9da4c45.css",
+    "src": "src/routes/+page.css"
   },
   ".svelte-kit/generated/nodes/0.js": {
-    "file": "_app/immutable/chunks/0-93185617.js",
+    "file": "_app/immutable/chunks/0-24ea4d86.js",
     "src": ".svelte-kit/generated/nodes/0.js",
     "isDynamicEntry": true,
     "imports": [
-      "__layout-8d2a742b.js",
+      "__layout-da46b06b.js",
       "src/routes/+layout.svelte"
     ]
   },
-  ".svelte-kit/generated/nodes/1.js": {
-    "file": "_app/immutable/chunks/1-c2294a1c.js",
-    "src": ".svelte-kit/generated/nodes/1.js",
-    "isDynamicEntry": true,
-    "imports": [
-      "node_modules/.pnpm/@sveltejs+kit@1.0.0-next.544_svelte@3.48.0+vite@3.2.3/node_modules/@sveltejs/kit/src/runtime/components/error.svelte"
-    ]
-  },
   ".svelte-kit/generated/nodes/2.js": {
-    "file": "_app/immutable/chunks/2-94eb4c74.js",
+    "file": "_app/immutable/chunks/2-1a8239e7.js",
     "src": ".svelte-kit/generated/nodes/2.js",
     "isDynamicEntry": true,
     "imports": [
@@ -113,27 +33,107 @@
     ]
   },
   ".svelte-kit/generated/nodes/3.js": {
-    "file": "_app/immutable/chunks/3-286c56e6.js",
+    "file": "_app/immutable/chunks/3-0894e397.js",
     "src": ".svelte-kit/generated/nodes/3.js",
     "isDynamicEntry": true,
     "imports": [
       "src/routes/faq/+page.svelte"
     ]
   },
-  "src/routes/+layout.css": {
-    "file": "_app/immutable/assets/_layout-c78504aa.css",
-    "src": "src/routes/+layout.css"
+  ".svelte-kit/generated/nodes/1.js": {
+    "file": "_app/immutable/chunks/1-679903b2.js",
+    "src": ".svelte-kit/generated/nodes/1.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/.pnpm/@sveltejs+kit@1.2.2_svelte@3.54.0+vite@4.0.4/node_modules/@sveltejs/kit/src/runtime/components/error.svelte"
+    ]
   },
-  "card.css": {
-    "file": "_app/immutable/assets/card-7f2e0978.css",
-    "src": "card.css"
+  "__layout-da46b06b.js": {
+    "file": "_app/immutable/chunks/_layout-da46b06b.js"
   },
-  "src/routes/faq/+page.css": {
-    "file": "_app/immutable/assets/_page-3f3c3f5d.css",
-    "src": "src/routes/faq/+page.css"
+  "src/routes/+layout.js": {
+    "file": "_app/immutable/modules/pages/_layout.js-9cbb603b.js",
+    "src": "src/routes/+layout.js",
+    "isEntry": true,
+    "imports": [
+      "__layout-da46b06b.js"
+    ]
   },
-  "src/routes/+page.css": {
-    "file": "_app/immutable/assets/_page-a3a767b8.css",
-    "src": "src/routes/+page.css"
+  "node_modules/.pnpm/@sveltejs+kit@1.2.2_svelte@3.54.0+vite@4.0.4/node_modules/@sveltejs/kit/src/runtime/components/error.svelte": {
+    "file": "_app/immutable/components/error.svelte-13cb65c8.js",
+    "src": "node_modules/.pnpm/@sveltejs+kit@1.2.2_svelte@3.54.0+vite@4.0.4/node_modules/@sveltejs/kit/src/runtime/components/error.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-0ef59afd.js",
+      "_singletons-7eae5fab.js"
+    ]
+  },
+  "_singletons-7eae5fab.js": {
+    "file": "_app/immutable/chunks/singletons-7eae5fab.js",
+    "imports": [
+      "_index-0ef59afd.js"
+    ]
+  },
+  "src/routes/+layout.svelte": {
+    "file": "_app/immutable/components/pages/_layout.svelte-9827a5a1.js",
+    "src": "src/routes/+layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-0ef59afd.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_layout-258167cc.css"
+    ]
+  },
+  "_index-0ef59afd.js": {
+    "file": "_app/immutable/chunks/index-0ef59afd.js"
+  },
+  "src/routes/faq/+page.svelte": {
+    "file": "_app/immutable/components/pages/faq/_page.svelte-d8b58d9f.js",
+    "src": "src/routes/faq/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-0ef59afd.js",
+      "_card-2a997ba9.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page-3f3c3f5d.css"
+    ]
+  },
+  "_card-2a997ba9.js": {
+    "file": "_app/immutable/chunks/card-2a997ba9.js",
+    "imports": [
+      "_index-0ef59afd.js"
+    ],
+    "css": [
+      "_app/immutable/assets/card-9991d18d.css"
+    ]
+  },
+  "src/routes/+page.svelte": {
+    "file": "_app/immutable/components/pages/_page.svelte-e3f39bfa.js",
+    "src": "src/routes/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-0ef59afd.js",
+      "_card-2a997ba9.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page-c9da4c45.css"
+    ]
+  },
+  "node_modules/.pnpm/@sveltejs+kit@1.2.2_svelte@3.54.0+vite@4.0.4/node_modules/@sveltejs/kit/src/runtime/client/start.js": {
+    "file": "_app/immutable/start-21555ac5.js",
+    "src": "node_modules/.pnpm/@sveltejs+kit@1.2.2_svelte@3.54.0+vite@4.0.4/node_modules/@sveltejs/kit/src/runtime/client/start.js",
+    "isEntry": true,
+    "imports": [
+      "_index-0ef59afd.js",
+      "_singletons-7eae5fab.js"
+    ],
+    "dynamicImports": [
+      ".svelte-kit/generated/nodes/0.js",
+      ".svelte-kit/generated/nodes/1.js",
+      ".svelte-kit/generated/nodes/2.js",
+      ".svelte-kit/generated/nodes/3.js"
+    ]
   }
 }

@@ -6,23 +6,23 @@
 	<link rel="icon" href="/favicon.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<link rel="stylesheet" href="https://api.nukes.in/cms/css?name=global.css">
-	<link rel="stylesheet" href="https://api.nukes.in/cms/css?name=keyframes.css">
+	<link rel="stylesheet" href="https://api.nukes.in/css/global.css">
+	<link rel="stylesheet" href="https://api.nukes.in/css/keyframes.css">
 
 	<title>Plutoniumm</title>
 	<meta name="title" content="Plutoniumm">
-	<meta name="description" content="Don't worry I'm a coder">
+	<meta name="description" content="Don't worry I'm a programmer">
 
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://nukes.in/">
 	<meta property="og:title" content="Plutoniumm">
-	<meta property="og:description" content="Don't worry I'm a coder">
+	<meta property="og:description" content="Don't worry I'm a programmer">
 	<meta property="og:image" content="/assets/meta.png">
 
 	<meta property="twitter:card" content="summary_large_image">
 	<meta property="twitter:url" content="https://nukes.in/">
 	<meta property="twitter:title" content="Plutoniumm">
-	<meta property="twitter:description" content="Don't worry I'm a coder">
+	<meta property="twitter:description" content="Don't worry I'm a programmer">
 	<meta property="twitter:image" content="/assets/meta.png">
 
 
@@ -33,10 +33,20 @@
 		}
 
 		body {
-			background: var(--theme);
-			font-family: var(--baseFont);
+			/* // Purple, top right */
+			/* // Pink, bottom right */
+			/* // Green, top right */
+			/* // Orange, bottom left */
+			background:
+				radial-gradient(50% 55% at 21vw 19vh, #cbadeb, transparent),
+				radial-gradient(50% 85% at 85vw 77vh, #edb2d0, transparent),
+				radial-gradient(70% 50% at 90vw 10vh, #7ae6c7, transparent),
+				radial-gradient(87% 81% at 16vw 91vh, #f4c4b3, transparent);
+			background-repeat: no-repeat;
+			background-position: fixed;
+			height: 100vh;
+			width: 100vw;
 			overflow-y: scroll;
-			scroll-snap-type: y mandatory;
 		}
 
 		svg {
@@ -62,50 +72,46 @@
 
 
 	<meta http-equiv="content-security-policy" content="">
-		<link href="./_app/immutable/assets/_layout-c78504aa.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/_layout-258167cc.css" rel="stylesheet">
 		<link href="./_app/immutable/assets/_page-3f3c3f5d.css" rel="stylesheet">
-		<link href="./_app/immutable/assets/card-7f2e0978.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/start-c6af287e.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/index-4ddc05de.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/singletons-1f5933d3.js">
-		<link rel="modulepreload" href="./_app/immutable/components/pages/_layout.svelte-cdbcd6af.js">
-		<link rel="modulepreload" href="./_app/immutable/modules/pages/_layout.js-7b9cbfbc.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/_layout-8d2a742b.js">
-		<link rel="modulepreload" href="./_app/immutable/components/pages/faq/_page.svelte-084e4e43.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/card-46ca315a.js">
+		<link href="./_app/immutable/assets/card-9991d18d.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/start-21555ac5.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index-0ef59afd.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons-7eae5fab.js">
+		<link rel="modulepreload" href="./_app/immutable/components/pages/_layout.svelte-9827a5a1.js">
+		<link rel="modulepreload" href="./_app/immutable/modules/pages/_layout.js-9cbb603b.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/_layout-da46b06b.js">
+		<link rel="modulepreload" href="./_app/immutable/components/pages/faq/_page.svelte-d8b58d9f.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/card-2a997ba9.js">
 </head>
 
 <body xmlns:svg="http://www.w3.org/2000/svg">
 	
 
 
-<main class="w-100 †c"><section class="mx-a w-50"><br>
-    <div class="card fade rx20 p20 ∆-ct o-0 m10 m20 †l svelte-107gsyg"><div class="q svelte-1e3n0x7">Is Flutter Garbage?</div>
+<main class="w-100 svelte-15iljge"><section class="mx-a w-50"><br>
+    <div class="card blur p-rel fade rx20 p20 ∆-ct o-0 m10 m20 †l svelte-ygbn18"><div class="q svelte-1e3n0x7">Is Flutter Garbage?</div>
         <div class="a">Yes. Please use only React Native if, at all, not actual Native.
             Flutter tries to reinvent the wheel by having its own renderer.
             </div>
 </div>
-</section>
-</main>
+</section></main>
 
 
-		<script type="module" data-sveltekit-hydrate="1u4965r">
-			import { start } from "./_app/immutable/start-c6af287e.js";
+		<script type="module" data-sveltekit-hydrate="x7l4zb">
+			import { start } from "./_app/immutable/start-21555ac5.js";
 
 			start({
 				env: {},
+				paths: {"assets":"","base":""},
+				target: document.querySelector('[data-sveltekit-hydrate="x7l4zb"]').parentNode,
+				version: "1674282337192",
 				hydrate: {
-					status: 200,
-					error: null,
 					node_ids: [0, 3],
-					params: {},
-					route: {"id":"/faq"},
 					data: [null,null],
-					form: null
-				},
-				paths: {"base":"","assets":""},
-				target: document.querySelector('[data-sveltekit-hydrate="1u4965r"]').parentNode,
-				trailing_slash: "never"
+					form: null,
+					error: null
+				}
 			});
 		</script>
 	
