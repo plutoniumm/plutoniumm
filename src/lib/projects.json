@@ -1,30 +1,36 @@
 [
     {
-        "icon": "fas:check",
+        "icon": "fas:atom",
         "where": "CQuICC, IIT Madras",
         "title": "Research Assistant",
         "about": "Quantum Machine Learning"
     },
     {
-        "icon": "fas:check",
+        "icon": "fas:building-ngo",
+        "where": "The Barabari Project",
+        "title": "Wifi Fixer",
+        "about": "Joined an NGO for obvious reasons "
+    },
+    {
+        "icon": "fas:robot",
         "where": "Wavelabs Technologies",
         "title": "Machine Learning",
         "about": "Trying to do Chemical Reactions with Machine Learning"
     },
     {
-        "icon": "fas:check",
+        "icon": "fas:graduation-cap",
         "where": "BITS Pilani",
         "title": "Completed Degree",
         "about": "So I guess I'm finally a Chemical Engineer and more important a Mathematician"
     },
     {
-        "icon": "fas:check",
+        "icon": "fas:fingerprint",
         "where": "Franklin Templeton",
         "title": "Cyber Security",
         "about": "Just some Cyber Security Stuff around the then <code><span style='color:#C586C0'>new</span> <span style='color:#4EC9B0'>GovernmentRegulations<span style='color:#CD9731'>()</span></span></code> for AMCs and also messing with company policy :P"
     },
     {
-        "icon": "fas:check",
+        "icon": "fas:city",
         "where": "Ultratech Cement",
         "title": "Summer Intern",
         "about": "Summer of 2020 just came and went away. Lets not get bogged down by details and agree that cement is important but also bad for the sky"

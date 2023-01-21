@@ -1,16 +1,27 @@
 <script>
     export let project = Object.create(null);
+    export let index = 0;
+
+    const colors = ["2af", "2fa", "f2a", "fa2", "a2f", "af2"];
 </script>
 
-<div class="card fade rx20 ƒ p20 o-0 m10 ">
-    <img height="75px" src="//api.nukes.in/icon/{project.icon}.svg" alt="" />
+<div
+    class="card fade rx20 ƒ p20 o-0 m10"
+    style="background:#{colors[index % colors.length]}6;"
+>
+    <img
+        height="40px"
+        width="40px"
+        src="//api.nukes.in/icon/{project.icon}.svg"
+        alt=""
+    />
     <div style="flex:5">
         <div class="w-100" style="margin-left:10px;">
             <div class="fw7" style="font-size:1.1em;padding-bottom:5px;">
                 {project.title}
-                <span style="color:#888;">@{project.where}</span>
+                <span style="color:#666a;">@{project.where}</span>
             </div>
-            <div>{@html project.about} {project.about.length}</div>
+            <div class="fw3">{@html project.about}</div>
         </div>
     </div>
 </div>
@@ -23,11 +34,10 @@
         background: #fff;
         img {
             object-fit: contain;
-            object-position: center center;
-            flex: 1;
-            background: var(--theme);
+            filter: invert(100%);
+            opacity: 75%;
+            mix-blend-mode: overlay;
             aspect-ratio: 1;
-            border-radius: 100px;
         }
     }
 </style>

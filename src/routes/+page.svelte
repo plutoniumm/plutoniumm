@@ -12,9 +12,9 @@
 
 <section class="ƒ-col">
 	<h1 class="w-100 †c">Life Updates</h1>
-	<div style="max-height:95vh;overflow-y:scroll">
-		{#each projects as project}
-			<Project {project} />
+	<div style="max-height:85vh;overflow-y:scroll">
+		{#each projects as project, index}
+			<Project {project} {index} />
 		{/each}
 	</div>
 </section>
