@@ -1,8 +1,6 @@
-<script>
-    const { important, className } = $$props;
-</script>
-
-<div {important} class="card fade rx20 p20 ∆-ct o-0 m10 {className}">
+<div
+    class="card blur p-rel fade rx20 p20 ∆-ct o-0 m10 {$$props.className || ''}"
+>
     <slot />
 </div>
 
@@ -11,12 +9,20 @@
         font-size: 16px;
         width: 600px;
         align-items: center;
-        background: #fff;
+        border: 1px solid #fff8;
+        --bg: #fff8;
+        --sz: 8px;
     }
-
-    [important] {
-        border-radius: 25px;
-        border-bottom: 4px solid var(--theme-hl);
+    .card::after {
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        content: "";
+        height: calc(100% + 20px);
+        width: calc(100% + 20px);
+        -webkit-filter: blur(8px);
+        filter: blur(8px);
+        z-index: -1;
     }
 
     :global(code) {

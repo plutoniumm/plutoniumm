@@ -7,7 +7,7 @@
     style="object-fit: fit;transform:scale(1.33);padding: 10px 10px 0 10px;"
 />
 <div class="right fade" style="padding: 20px 20px 0 20px;">
-    <div class="title fw6">Manav Seksaria</div>
+    <div class="title fw5">Manav Seksaria</div>
     <p>
         I'm a dev, primarily working on Svelte things nowadays. I also like
         InfoSec a lot.

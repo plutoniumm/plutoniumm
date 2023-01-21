@@ -7,25 +7,14 @@
 </script>
 
 <section class="p-rel ƒ-col ƒ∑" style="overflow:hidden;">
-	<Card important className="†l">
-		<div class="ƒ">
-			<Hero />
-		</div>
-		<hr class="o-25 w-50" />
-		<div class="ƒ ∆-ar">
-			<div>
-				<img src="" alt="" />
-				<span>&nbsp;</span>
-			</div>
-		</div>
-	</Card>
+	<Card className="ƒ"><Hero /></Card>
 </section>
 
 <section class="ƒ-col">
 	<h1 class="w-100 †c">Life Updates</h1>
-	{#each projects as project}
-		<Card>
+	<div style="max-height:95vh;overflow-y:scroll">
+		{#each projects as project}
 			<Project {project} />
-		</Card>
-	{/each}
+		{/each}
+	</div>
 </section>

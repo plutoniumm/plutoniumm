@@ -6,23 +6,23 @@
 	<link rel="icon" href="/favicon.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<link rel="stylesheet" href="https://api.nukes.in/cms/css?name=global.css">
-	<link rel="stylesheet" href="https://api.nukes.in/cms/css?name=keyframes.css">
+	<link rel="stylesheet" href="https://api.nukes.in/css/global.css">
+	<link rel="stylesheet" href="https://api.nukes.in/css/keyframes.css">
 
 	<title>Plutoniumm</title>
 	<meta name="title" content="Plutoniumm">
-	<meta name="description" content="Don't worry I'm a coder">
+	<meta name="description" content="Don't worry I'm a programmer">
 
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://nukes.in/">
 	<meta property="og:title" content="Plutoniumm">
-	<meta property="og:description" content="Don't worry I'm a coder">
+	<meta property="og:description" content="Don't worry I'm a programmer">
 	<meta property="og:image" content="/assets/meta.png">
 
 	<meta property="twitter:card" content="summary_large_image">
 	<meta property="twitter:url" content="https://nukes.in/">
 	<meta property="twitter:title" content="Plutoniumm">
-	<meta property="twitter:description" content="Don't worry I'm a coder">
+	<meta property="twitter:description" content="Don't worry I'm a programmer">
 	<meta property="twitter:image" content="/assets/meta.png">
 
 
@@ -33,10 +33,20 @@
 		}
 
 		body {
-			background: var(--theme);
-			font-family: var(--baseFont);
+			/* // Purple, top right */
+			/* // Pink, bottom right */
+			/* // Green, top right */
+			/* // Orange, bottom left */
+			background:
+				radial-gradient(50% 55% at 21vw 19vh, #cbadeb, transparent),
+				radial-gradient(50% 85% at 85vw 77vh, #edb2d0, transparent),
+				radial-gradient(70% 50% at 90vw 10vh, #7ae6c7, transparent),
+				radial-gradient(87% 81% at 16vw 91vh, #f4c4b3, transparent);
+			background-repeat: no-repeat;
+			background-position: fixed;
+			height: 100vh;
+			width: 100vw;
 			overflow-y: scroll;
-			scroll-snap-type: y mandatory;
 		}
 
 		svg {
