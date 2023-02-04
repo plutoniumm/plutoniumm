@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="https://api.nukes.in/css/global.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/theme/simple.css" id="theme">
+
+  <style>
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      list-style-type: none;
+    }
+
+    .box {
+      margin: 10px;
+      padding: 5px;
+      border-radius: 2px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      background: #f00;
+      color: #fff;
+      font-size: 0.4em;
+    }
+
+    .box+*:not(.box) {
+      font-size: 1.75rem;
+      line-height: 40px;
+      align-self: center;
+    }
+
+    img {
+      object-fit: contain;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Slide 0 -->
+      <section>
+        <h1>Objective</h1>
+        New Q Kernel $f^n$s for SVMs
+      </section>
+      <!-- Slide 1 -->
+      <section data-auto-animate>
+        <h3>Types of Problems</h3>
+        <div class="ƒ">
+          <img
+            src="https://www.baeldung.com/wp-content/uploads/sites/4/2020/03/P-NP-NP_Hard-NP-Complete-1-1-1024x783.png"
+            style="max-width: 40%;">
+          <ul>
+            <li class="ƒ">
+              <div class="box">NP🏋🏻</div>
+              <div>Nightmares: Halting Problem</div>
+            </li>
+            <li class="ƒ">
+              <div class="box">NP✅</div>
+              <div>NP Reducible: Knapsack Prob</div>
+            </li>
+            <li class="ƒ">
+              <div class="box">NP</div>
+              <div>Non P: TSP, Poly Proofs</div>
+            </li>
+            <li class="ƒ">
+              <div class="box">P</div>
+              <div>Poly Time: 1D Peak Finding</div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- Slide 2 -->
+      <section data-auto-animate class="†c">
+        <h3>We intend to attack classification problems</h3>
+        <img class="mx-a" src="https://styles.redditmedia.com/t5_adbcw/styles/communityIcon_anc30b6ykk461.jpg"
+          style="max-width: 50%;">
+        <br />
+        <ul>
+          <li class="ƒ">
+            <div class="box">NP✅</div>
+            <div>NP Reducible: Knapsack Prob</div>
+          </li>
+        </ul>
+      </section>
+      <!-- Slide 3 -->
+      <section>
+        <h3>Examples</h3>
+        <div class="ƒ ƒ∑ ∆-ar">
+          <img class="w-50"
+            src="https://vitalflux.com/wp-content/uploads/2021/09/Spam-email-classification-using-machine-learning-algorithms.jpg">
+          <img class="w-50"
+            src="https://vitalflux.com/wp-content/uploads/2021/01/image-classification-CNN-model-example.jpg">
+          <img class="w-50" src="https://upload.wikimedia.org/wikipedia/commons/2/27/MnistExamples.png">
+          <img class="w-50"
+            src="https://cleantechnica.com/files/2020/04/2016.01-ford-ces-lidar-autonomous-ai-sensing-KYLE-scaled.jpg">
+        </div>
+      </section>
+      <!-- Slide 4 -->
+      <section data-markdown="">
+        <iframe class="rpm-0 b0" scrolling="no" title="3D Scatter Plot with Plotly.js Charts"
+          src="https://codepen.io/plutoniumblast/embed/gOjqoNJ?default-tab=result&data-show-tab-bar='no'"
+          frameborder="no" allowtransparency="true" allowfullscreen="true" style="width:100%;height: 80vh;">
+        </iframe>
+      </section>
+      <!-- Slide 5 -->
+
+    </div>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/math/math.js"></script>
+  <script>
+    Reveal.initialize( {
+      history: true,
+      transition: 'linear',
+      showSlideNumber: 'all',
+      fragments: false,
+      hideCursorTime: 1e3,
+      dependencies: [
+        { src: '//cdn.jsdelivr.net/npm/reveal-plantuml' },
+      ],
+      math: {
+        config: 'TeX-AMS_HTML-full',
+        TeX: { Macros: { R: '\\mathbb{R}', set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ] } }
+      },
+      plugins: [ RevealMath ]
+    } );
+  </script>
+</body>
+
+</html>
