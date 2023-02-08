@@ -2,7 +2,7 @@
     export let project = Object.create(null);
     export let index = 0;
 
-    const colors = ["2af", "2fa", "f2a", "fa2", "a2f", "af2"];
+    const colors = Object.freeze(["2af", "2fa", "f2a", "fa2", "a2f", "af2"]);
 </script>
 
 <div

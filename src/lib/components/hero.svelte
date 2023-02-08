@@ -16,40 +16,49 @@
     <div class="tags">
         <img
             src={badge(
-                "JavaScript-F7DF1E",
-                "javascript&logoColor=000000&labelColor=%000000"
+                "JavaScript-FD2",
+                "javascript&logoColor=000&labelColor=%000"
             )}
             class="rx5"
             alt=""
         />
         <img
-            src={badge("Kali-557C94", "kalilinux&logoColor=ffffff")}
+            src={badge("Kali-589", "kalilinux&logoColor=fff")}
             class="rx5"
             alt=""
         />
         <img
-            src={badge("Qiskit-6929C4", "qiskit&logoColor=ffffff")}
+            src={badge("Qiskit-73C", "qiskit&logoColor=fff")}
             class="rx5"
             alt=""
         />
         <img
-            src={badge("Pytorch-EE4C2C", "pytorch&logoColor=ffffff")}
+            src={badge("Pytorch-F53", "pytorch&logoColor=fff")}
             class="rx5"
             alt=""
         />
     </div>
     <p>
         I'm a dev, primarily working on Svelte things nowadays. I also like
-        InfoSec a lot.
+        CyberSec a lot.
     </p>
-    <div class="details">
-        <a href="https://github.com/plutoniumm">@plutoniumm</a>
-        <br />
-        <div>plutoniumm[at]icloud[dot]com</div>
+    <div class="details ƒ">
+        <a href="https://github.com/plutoniumm">
+            <img
+                class="icon m5"
+                src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/github.svg"
+                alt="Github"
+            />
+        </a>
     </div>
 </div>
 
 <style lang="scss">
+    .icon {
+        height: 24px;
+        width: 24px;
+        object-fit: contain;
+    }
     .title {
         font-size: 2rem;
         line-height: 1rem;

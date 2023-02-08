@@ -2,7 +2,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "rm -rf build .svelte-kit && vite build",
+    "build": "rm -rf build .svelte* && vite build",
     "deploy": "npx gh-pages -d build -t true"
   },
   "devDependencies": {
