@@ -191,14 +191,14 @@
       </section>
       <!-- Slide 8: Codepen Anim -->
       <section>
-        <iframe class="rpm-0 b0" scrolling="no" title="3D Scatter Plot with Plotly.js Charts"
+        <iframe sandbox="allow-scripts" class="rpm-0 b0" scrolling="no"
           src="https://codepen.io/plutoniumblast/embed/gOjqoNJ?default-tab=result&data-show-tab-bar='no'"
           frameborder="no" allowtransparency="true" allowfullscreen="true" style="width:100%;height: 80vh;">
         </iframe>
       </section>
       <!-- Slide 9: MNIST Classif -->
       <section>
-        <iframe class="rpm-0 b0 w-100" scrolling="no" title="3D Scatter Plot with Plotly.js Charts"
+        <iframe sandbox="allow-scripts" class="rpm-0 b0 w-100" scrolling="no"
           src="https://furkan-gulsen.github.io/Recognize-Handwritten-Digits/tfjs.html" frameborder="no"
           allowtransparency="true" allowfullscreen="true"
           style="width:100%;height:100vh;transform:translateY(-20vh) scale(0.99);">
@@ -248,11 +248,11 @@
       <!-- Slide 11: Plan of Work -->
       <section>
         <ul>
-          <li>We Will Look First at What Kernel Functions are and how they work?</li>
-          <li>Then we will try to make some complex kernels and apply them since Kernels are composable</li>
-          <li>Looking @ existing Quantum Kernels</li>
-          <li>Looking for Optimisations in finding kernels</li>
-          <li>A possibly fruitless direction of trying Genetic Algorithms since Kernels have structure and Grid Search
+          <li>- We Will Look First at What Kernel Functions are and how they work?</li>
+          <li>- Then we will try to make some complex kernels and apply them since Kernels are composable</li>
+          <li>- Looking @ existing Quantum Kernels</li>
+          <li>- Looking for Optimisations in finding kernels</li>
+          <li>- A possibly fruitless direction of trying Genetic Algorithms since Kernels have structure and Grid Search
             is more expensive than the US Military</li>
         </ul>
       </section>
@@ -263,19 +263,21 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/math/math.js"></script>
   <script>
-    Reveal.initialize( {
-      history: true,
-      transition: 'linear',
-      showSlideNumber: 'all',
-      fragments: false,
-      hideCursorTime: 1e3,
-      viewDistance: 3,
-      math: {
-        config: 'TeX-AMS_HTML-full',
-        TeX: { Macros: { R: '\\mathbb{R}', set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ] } }
-      },
-      plugins: [ RevealMath ]
-    } );
+    if ( Reveal )
+      Reveal.initialize( {
+        history: true,
+        transition: 'linear',
+        showSlideNumber: 'all',
+        fragments: false,
+        hideCursorTime: 1e3,
+        viewDistance: 3,
+        math: {
+          config: 'TeX-AMS_HTML-full',
+          TeX: { Macros: { R: '\\mathbb{R}', set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ] } }
+        },
+        plugins: [ RevealMath ]
+      } )
+    else console.log( "Reveal not found" )
   </script>
   <style type="text/css">
     .reveal .reveal_section {
