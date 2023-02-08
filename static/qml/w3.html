@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="https://api.nukes.in/css/global.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/theme/simple.css" id="theme">
+
+  <style>
+    ul {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    li {
+      list-style-type: none;
+      font-size: 1rem;
+    }
+
+    .box {
+      margin: 10px;
+      padding: 5px;
+      border-radius: 2px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      background: #f00;
+      color: #fff;
+      font-size: 0.4em;
+    }
+
+    .box+*:not(.box) {
+      font-size: 1.75rem;
+      line-height: 40px;
+      align-self: center;
+    }
+
+    img {
+      object-fit: contain;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="reveal">
+    <div class="slides">
+      <!-- Slide 0: Objective -->
+      <section>
+        <h1 class="ƒ ∆-ct" style="align-self: center;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Qiskit-Logo.svg" height="150">
+          bjective
+        </h1>
+        <div>New Kernels for QSVMs</div>
+      </section>
+      <!-- Slide 1: Types of Problems -->
+      <section data-auto-animate>
+        <h3>Types of Problems</h3>
+        <div class="ƒ">
+          <img
+            src="https://www.baeldung.com/wp-content/uploads/sites/4/2020/03/P-NP-NP_Hard-NP-Complete-1-1-1024x783.png"
+            style="max-width: 40%;">
+          <ul>
+            <li class="ƒ">
+              <div class="box">NP🏋🏻</div>
+              <div>Nightmares: Halting Problem</div>
+            </li>
+            <li class="ƒ">
+              <div class="box">NP✅</div>
+              <div>NP Reducible: Knapsack Prob</div>
+            </li>
+            <li class="ƒ">
+              <div class="box">NP</div>
+              <div>Non P: TSP, Poly Proofs</div>
+            </li>
+            <li class="ƒ">
+              <div class="box">P</div>
+              <div>Poly Time: 1D Peak Finding</div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- Slide 2: Cat Meme Photo -->
+      <section data-auto-animate>
+        <h3>Generally Where ML Tends to be</h3>
+        <div class="ƒ">
+          <img class="mx-a" src="https://styles.redditmedia.com/t5_adbcw/styles/communityIcon_anc30b6ykk461.jpg"
+            style="max-width: 40%;">
+          <ul>
+            <li class="ƒ o-25">
+              <div class="box">NP🏋🏻</div>
+              <div>Nightmares: Halting Problem</div>
+            </li>
+            <li class="ƒ">
+              <div class="box">NP✅</div>
+              <div>NP Reducible: Knapsack Prob</div>
+            </li>
+            <li class="ƒ">
+              <div class="box">NP</div>
+              <div>Non P: TSP, Poly Proofs</div>
+            </li>
+            <li class="ƒ o-25">
+              <div class="box">P</div>
+              <div>Poly Time: 1D Peak Finding</div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- Slide 3: Supervised, Unsupervised, Reinforcement -->
+      <section>
+        <h3>Types of ML</h3>
+        <ul class="ƒ ∆-bw w-100">
+          <li class="rpm-10 †c w-25" style="background: #ddd;transform: scale(1.25);">
+            <h3>SUPERVISED</h3>
+            <ul>
+              <li><b>Classification:</b> Animal Type, Digit Recognition</li>
+              <li><b>Regression:</b> House Pricing, Fuel Efficiency</li>
+            </ul>
+          </li>
+          <li class="rpm-10 †c w-25" style="background: #ddd;transform: scale(1.25);">
+            <h3>UNSUPERVISED</h3>
+            <ul>
+              <li><b>Clustering:</b> Customer Grouping by Buying Habits</li>
+              <li><b>Dimensionality Reduction:</b> PCA</li>
+            </ul>
+          </li>
+          <li class="rpm-10 †c w-25" style="background: #ddd;transform: scale(1.25);">
+            <h3>REINFORCEMENT</h3>
+            <ul>
+              <li><b>Markov Decision Processes:</b> Resource Allocation</li>
+              <li><b>Temporal Difference Learning:</b> Playing Games</li>
+            </ul>
+          </li>
+        </ul>
+        <blockquote>Our Focus: Classification</blockquote>
+      </section>
+      <!-- Slide 4: Examples Grid -->
+      <section>
+        <h3>Examples</h3>
+        <div class="ƒ ƒ∑ ∆-ar">
+          <img class="w-50"
+            src="https://vitalflux.com/wp-content/uploads/2021/09/Spam-email-classification-using-machine-learning-algorithms.jpg">
+          <img class="w-50"
+            src="https://vitalflux.com/wp-content/uploads/2021/01/image-classification-CNN-model-example.jpg">
+          <img class="w-50" src="https://upload.wikimedia.org/wikipedia/commons/2/27/MnistExamples.png">
+          <img class="w-50"
+            src="https://cleantechnica.com/files/2020/04/2016.01-ford-ces-lidar-autonomous-ai-sensing-KYLE-scaled.jpg">
+        </div>
+      </section>
+      <!-- Slide 5: Cat and Dog -->
+      <section data-auto-animate>
+        <h3>Primitive Approaches</h3>
+        <ul>
+          <li>Bayes Theorem [Spam Filters] &rarr; Scalable</li>
+          <li>Hard Coding the Features &rarr; Non-Scalable</li>
+        </ul>
+
+        <img class="mx-a" src="https://www-edlab.cs.umass.edu/~smaji/cmpsci670/fa14/hw/recognition/catvsdog.png" alt="">
+        <div class="mx-a">Pointy Ears vs Round Ears</div>
+      </section>
+      <!-- Slide 6: Cat and Dog 2 -->
+      <section data-auto-animate>
+        <img class="mx-a" src="https://www-edlab.cs.umass.edu/~smaji/cmpsci670/fa14/hw/recognition/catvsdog.png"
+          style="max-height:15vh">
+        <img src="https://miro.medium.com/max/1038/1*4lPMjSPaS2JLWZAaYrXr2Q.jpeg" alt="">
+      </section>
+      <!-- Slide 7: Cat and Dog 3 -->
+      <section data-auto-animate>
+        <img class="mx-a" src="https://www-edlab.cs.umass.edu/~smaji/cmpsci670/fa14/hw/recognition/catvsdog.png"
+          style="max-height:15vh">
+        <div>
+          <h5>The Problem</h5>
+          <div class="ƒ ∆-ar">
+            <div>
+              <img src="/assets/qml/scooby.png" style="height:30vh;">
+              <span>Cat</span>
+            </div>
+            <div>
+              <img src="/assets/qml/garf.png" style="height:30vh;">
+              <span>???</span>
+            </div>
+            <div>
+              <img src="/assets/qml/simba.png" style="height:30vh;">
+              <span>Dog</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Slide 8: Codepen Anim -->
+      <section>
+        <iframe class="rpm-0 b0" scrolling="no" title="3D Scatter Plot with Plotly.js Charts"
+          src="https://codepen.io/plutoniumblast/embed/gOjqoNJ?default-tab=result&data-show-tab-bar='no'"
+          frameborder="no" allowtransparency="true" allowfullscreen="true" style="width:100%;height: 80vh;">
+        </iframe>
+      </section>
+      <!-- Slide 9: MNIST Classif -->
+      <section>
+        <iframe class="rpm-0 b0 w-100" scrolling="no" title="3D Scatter Plot with Plotly.js Charts"
+          src="https://furkan-gulsen.github.io/Recognize-Handwritten-Digits/tfjs.html" frameborder="no"
+          allowtransparency="true" allowfullscreen="true"
+          style="width:100%;height:100vh;transform:translateY(-20vh) scale(0.99);">
+        </iframe>
+      </section>
+      <!-- Slide 10: Important Theorems -->
+      <section>
+        <h3>Important Theorems</h3>
+        <ul>
+          <li class="rpm-5" style="background: #ddd;">
+            <b>Kitaev's Theorem</b>
+            <div>Finite Quantum Gates can simulate any Unitary Transform</div>
+            <cite>Kitaev, A. Y. (1997). Quantum measurements and the abelian stabilizer problem. arXiv preprint
+              quant-ph/9511026.</cite>
+          </li>
+          <li class="rpm-5" style="background: #ddd;">
+            <b>Universal Approximation Theorem</b>
+            <div>A single layer of NNs can approximate any continuous function to an arbitrary accuracy.</div>
+            <cite>Cybenko, G. (1989). Approximation by superpositions of a sigmoidal function. Mathematics of control,
+              signals and systems, 2(4), 303-314.</cite>
+          </li>
+          <li class="rpm-5" style="background: #ddd;margin-left: 5%;">
+            <b>Every Grad Desc Model is approx a KM</b>
+            <div>Deep networks learned through gradient descent are similar to kernel machines, which memorize the data
+              for prediction through a similarity function (kernel). and hold data in a superposition
+            </div>
+            <cite>Pedro Domingos, (2020). "Gradient Descent as a Kernel Machine." arXiv preprint arXiv:2012.00152</cite>
+          </li>
+          <li class="rpm-5" style="background: #ddd;">
+            <b>Representer Theorem</b>
+            <div>The pptimal solution to an SVM can be shown to be a linear combination of the training data.</div>
+            <cite>Schölkopf, B., & Smola, A. J. (2002). Learning with kernels: support vector machines, regularization,
+              optimization, and beyond. MIT press.</cite>
+          </li>
+          <li class="rpm-5" style="background: #ddd;">
+            <b>Mercer's Theorem</b>
+            <div>Any positive definite kernel can be represented as a possibly infinite
+              sum of kernel functions, each of which corresponds to a dot product in a higher dimensional feature space
+              i.e To find similarity we need to be able to find the dot product, so Mercer lets us map a non linear
+              space to a linear space
+            </div>
+            <cite>Mercer, J. (1909). Functions of positive and negative type and their connection with the theory of
+              integral equations. Philosophical Transactions of the Royal Society of London. A, 209, 415-466.</cite>
+          </li>
+        </ul>
+      </section>
+      <!-- Slide 11: Plan of Work -->
+      <section>
+        <ul>
+          <li>We Will Look First at What Kernel Functions are and how they work?</li>
+          <li>Then we will try to make some complex kernels and apply them since Kernels are composable</li>
+          <li>Looking @ existing Quantum Kernels</li>
+          <li>Looking for Optimisations in finding kernels</li>
+          <li>A possibly fruitless direction of trying Genetic Algorithms since Kernels have structure and Grid Search
+            is more expensive than the US Military</li>
+        </ul>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/math/math.js"></script>
+  <script>
+    Reveal.initialize( {
+      history: true,
+      transition: 'linear',
+      showSlideNumber: 'all',
+      fragments: false,
+      hideCursorTime: 1e3,
+      viewDistance: 3,
+      math: {
+        config: 'TeX-AMS_HTML-full',
+        TeX: { Macros: { R: '\\mathbb{R}', set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ] } }
+      },
+      plugins: [ RevealMath ]
+    } );
+  </script>
+  <style type="text/css">
+    .reveal .reveal_section {
+      position: relative;
+    }
+
+    .reveal .caption {
+      position: absolute;
+      bottom: 0px;
+      left: 50px;
+    }
+  </style>
+</body>
+
+</html>
