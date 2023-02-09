@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@sveltejs/adapter-static': ^1.0.5
+  '@sveltejs/adapter-static': ^2.0.0
   '@sveltejs/kit': ^1.2.2
   sass: 1.35.1
   svelte: 3.55.1
@@ -9,7 +9,7 @@ specifiers:
   vite: ^4.0.4
 
 dependencies:
-  '@sveltejs/adapter-static': 1.0.5_@sveltejs+kit@1.2.2
+  '@sveltejs/adapter-static': 2.0.1_@sveltejs+kit@1.2.2
   '@sveltejs/kit': 1.2.2_svelte@3.55.1+vite@4.0.4
   vite: 4.0.4_sass@1.35.1
 
@@ -226,10 +226,10 @@ packages:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
     dev: false
 
-  /@sveltejs/adapter-static/1.0.5_@sveltejs+kit@1.2.2:
-    resolution: {integrity: sha512-W5jbgvy9sbYEHs27NQOSFEun+zQwdcL4kpk5qc2kSHl8cKsP5wfXuWDTDRmD1Co40aFcesi5Az5ZzdnPI8KCVg==}
+  /@sveltejs/adapter-static/2.0.1_@sveltejs+kit@1.2.2:
+    resolution: {integrity: sha512-o5/q3YwD/ErxYCFlK1v3ydvldyNKk1lh3oeyxn4mhz+Pkbx/uuxhzmbOpytTlp5aVqNHDVsb04xadUzOFCDDzw==}
     peerDependencies:
-      '@sveltejs/kit': ^1.0.0
+      '@sveltejs/kit': ^1.5.0
     dependencies:
       '@sveltejs/kit': 1.2.2_svelte@3.55.1+vite@4.0.4
     dev: false
