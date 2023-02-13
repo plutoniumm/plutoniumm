@@ -1,9 +1,13 @@
 // vite.config.js
 import { sveltekit } from '@sveltejs/kit/vite';
+import plainText from 'vite-plugin-plain-text';
 import path from 'path';
 
 const config = {
-    plugins: [ sveltekit() ],
+    plugins: [
+        sveltekit(),
+        plainText( [ /\.mmd$/ ] ),
+    ],
     resolve: {
         alias: {
             '@component': path.resolve( 'src/lib/components' )
