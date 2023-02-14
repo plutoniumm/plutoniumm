@@ -73,77 +73,73 @@
 
 	<meta http-equiv="content-security-policy" content="">
 		<link href="./_app/immutable/assets/_layout-258167cc.css" rel="stylesheet">
-		<link href="./_app/immutable/assets/_page-6f6f7b64.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/start-bd4a20cc.js">
+		<link href="./_app/immutable/assets/_page-c666588a.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/start-f7b37b87.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/index-6786a9ee.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/singletons-3b6e979e.js">
 		<link rel="modulepreload" href="./_app/immutable/components/pages/_layout.svelte-035e8cfb.js">
 		<link rel="modulepreload" href="./_app/immutable/modules/pages/_layout.js-9cbb603b.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/_layout-da46b06b.js">
-		<link rel="modulepreload" href="./_app/immutable/components/pages/qml/_page.svelte-224d18cd.js">
+		<link rel="modulepreload" href="./_app/immutable/components/pages/qml/_page.svelte-1cff23a8.js">
 </head>
 
 <body xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 	
 
 
-<main class="w-100 svelte-15iljge"><section class="svelte-2bbesa"><header class="svelte-2bbesa">General</header>
+<main class="w-100 svelte-15iljge"><article class="p-abs rpm-10 svelte-1ccyqdn" id="toc" style="right: 10px;top:10px;background:#fff;padding-right:15px;"><ol></ol></article>
+<section class="svelte-1ccyqdn"><header class="svelte-1ccyqdn">General</header>
   <h4>Problem: Finding new Quantum Kernel Functions for data mapping to be used in
     QSVMs and other QML Algorithms
   </h4>
   <div><b>Probable Tools</b>
-    <div><chip class="svelte-2bbesa"><a href="https://youtu.be/RI35E5ewBuI" class="svelte-2bbesa">Liquid Neural Nets</a></chip></div></div></section>
-
-<section class="svelte-2bbesa"><header class="svelte-2bbesa">Week 4</header>
-  <div><pre class="d-n">  <!-- HTML_TAG_START -->graph LR
-    NewKernel --> Derivation --> CNNs("From Convolutions")
+    <div><chip class="svelte-1ccyqdn"><a href="https://youtu.be/RI35E5ewBuI" class="svelte-1ccyqdn">Liquid Neural Nets</a></chip></div>
+    <b>Current State</b>
+    <pre class="d-n">  <!-- HTML_TAG_START -->graph LR
     Derivation --> Generalisation --> x["Currently: RBF -> Matern"]
+    NewKernel --> Derivation --> CNNs("From Convolutions")
     Derivation --> RidgeRegression("From Ridge Regression")
 
+    x -- "..." --> x0(("convergence @ some point"))
+
     CoreMath --> DeepNets("Deep Nets are Kernels")
+    CoreMath --> UAT("Universal Approximation Theorem")
 
     Optimisations --> GeneticOpti("Genetic Optimisation")
-    Optimisations --> EvolutionaryLearning("Evolutionary Learning")
-    Optimisations --> HybridGenetic("Hybrid Genetic")
 
     Quantum --> QKerns("Quantum Kernels")
-    Quantum --> QKernsApplied("Quantum Kernels Applied")
-    Quantum --> QKernsTraining("Training on Quantum Kernels")
+    Quantum --> Hybrid("Hybrid Quantum Algorithms") --> x0
 
     Other --> FeynmanPath("Feynman Path Integral as data analysis tool")
 
-
-
-%% Study Order
-%% - Intro
-    %% - Derivation of Kernels from Ridge - https://youtu.be/wBVSbVktLIY
-    %% - Ridge Regression
-    %% - CNN Kern Relation https://homepages.inf.ed.ac.uk/rbf/HIPR2/log.htm
-    %% - Qiskit QKerns https://qiskit.org/documentation/machine-learning/tutorials/03_quantum_kernel.html
-    %% - Matern Kernel https://scikit-learn.org/stable/modules/generated/sklearn.gaussian_process.kernels.Matern.html
-    %% - Kernel List -> Composition https://towardsdatascience.com/gaussian-process-kernels-96bafb4dd63e
-%% - Mathematical STruct
-    %% - DeepNets are Kerns https://youtu.be/ahRPdiCop3E
-    %% - Kerns Podcast https://youtu.be/y_RjsDHl5Y4
-    %% -
-%% - Opti
-    %% - Genetic Opti for SVM Kernels https://inpressco.com/wp-content/uploads/2013/06/Paper87713-716.pdf
-    %% - Evolutionary Learning Kernel https://christian-igel.github.io/paper/EKL.pdf
-    %% - Hybrid Genetic Algo for Regression https://www.sciencedirect.com/science/article/pii/S095741740800300X
-%% - Quantum
-%%     - Quantum Kernels Applied IBM ML https://youtu.be/LmQcSxgINis
-%%     - Classification of QKerns https://medium.com/mlearning-ai/classification-using-quantum-kernels-tutorial-8a2f442fd188
-%%     - Training on QKerns https://medium.com/qiskit/training-quantum-kernels-for-machine-learning-using-qiskit-617f6e4ed9ac
-    %% -<!-- HTML_TAG_END -->
+    subgraph "StartingPoints"
+        NewKernel
+        CoreMath
+        Optimisations
+        Quantum
+        Other
+    end
+<!-- HTML_TAG_END -->
 </pre>
 <main><div id="rendered"><!-- HTML_TAG_START --><!-- HTML_TAG_END --></div>
 </main></div></section>
 
-<section class="svelte-2bbesa"><header class="svelte-2bbesa">Week 3</header>
-  <details class="mini svelte-2bbesa"><summary class="svelte-2bbesa">Presentation</summary>
-    <iframe src="/qml/w3.html" sandbox="allow-scripts" title="w3" frameborder="0" class="svelte-2bbesa"></iframe></details>
-  <details class="mini svelte-2bbesa"><summary class="svelte-2bbesa">Code</summary>
-    <iframe src="/qml/w3py.html" sandbox="allow-scripts" title="w3py" frameborder="0" class="svelte-2bbesa"></iframe></details>
+<section class="svelte-1ccyqdn"><header class="svelte-1ccyqdn">Week 5</header>
+  <div>???</div></section>
+<section class="svelte-1ccyqdn"><header class="svelte-1ccyqdn">Week 4</header>
+  <pre class="d-n">  <!-- HTML_TAG_START -->
+    graph LR
+    GaussianKernel --> RBFKernel --> PeriodicKernel --> MaternKernel --> Unkown["???"]
+  <!-- HTML_TAG_END -->
+</pre>
+<main><div id="rendered"><!-- HTML_TAG_START --><!-- HTML_TAG_END --></div>
+</main>
+  <details class="mini svelte-1ccyqdn"><summary class="svelte-1ccyqdn">Presentation</summary>
+    <iframe src="/qml/w3.html" sandbox="allow-scripts" title="w3" frameborder="0" class="svelte-1ccyqdn"></iframe></details></section>
+
+<section class="svelte-1ccyqdn"><header class="svelte-1ccyqdn">Week 3</header>
+  <details class="mini svelte-1ccyqdn"><summary class="svelte-1ccyqdn">Code</summary>
+    <iframe src="/qml/w3py.html" sandbox="allow-scripts" title="w3py" frameborder="0" class="svelte-1ccyqdn"></iframe></details>
   <b>Useful Questions</b>
   <ul><li><input type="checkbox" checked disabled>
       What are Kernel Functions
@@ -165,28 +161,28 @@
     </li></ul>
 
   <b>Useful Resources</b>
-  <ul><li><a href="https://www.nature.com/articles/s41567-021-01287-z" class="svelte-2bbesa">[Nature] Q-kernel estimation provide Exp Q Speedup via the use of
+  <ul><li class="svelte-1ccyqdn"><a href="https://www.nature.com/articles/s41567-021-01287-z" class="svelte-1ccyqdn">[Nature] Q-kernel estimation provide Exp Q Speedup via the use of
         Q-enhanced feature spaces
       </a></li>
-    <li><a href="https://ar5iv.labs.arxiv.org/html/2111.06063" class="svelte-2bbesa">[Ar5iv] Infinite NNs are not blackboxes but SVMs
+    <li class="svelte-1ccyqdn"><a href="https://ar5iv.labs.arxiv.org/html/2111.06063" class="svelte-1ccyqdn">[Ar5iv] Infinite NNs are not blackboxes but SVMs
       </a></li>
-    <li><a href="https://cognitivemedium.com/magic_paper/assets/Hornik.pdf" class="svelte-2bbesa">Multilayer NNs are universal approximators (Universal Approximation
+    <li class="svelte-1ccyqdn"><a href="https://cognitivemedium.com/magic_paper/assets/Hornik.pdf" class="svelte-1ccyqdn">Multilayer NNs are universal approximators (Universal Approximation
         Thm): Can be used to make a Kernel out of NN (a relatively newer idea
         floating around
-        <a href="https://ieeexplore.ieee.org/abstract/document/7877043" class="svelte-2bbesa">here</a>
+        <a href="https://ieeexplore.ieee.org/abstract/document/7877043" class="svelte-1ccyqdn">here</a>
         )?
       </a></li>
-    <li><a href="https://www.nature.com/articles/s41598-018-20275-7" class="svelte-2bbesa">Optimisation Techniques using Self Organised Criticality (SOC)
+    <li class="svelte-1ccyqdn"><a href="https://www.nature.com/articles/s41598-018-20275-7" class="svelte-1ccyqdn">Optimisation Techniques using Self Organised Criticality (SOC)
         Search(was shown to be more efficient than simulated annealing, incl on
         problems equivalent to finding ground state on Ising Spin Glass)</a></li>
-    <li><a href="https://ar5iv.labs.arxiv.org/html/2107.03402" class="svelte-2bbesa">The above paper is important since it was theorized here, that training
+    <li class="svelte-1ccyqdn"><a href="https://ar5iv.labs.arxiv.org/html/2107.03402" class="svelte-1ccyqdn">The above paper is important since it was theorized here, that training
         dynamics of NNs are attracted towards SOC States, (this however might be
         too far from our use case since we&#39;re not looking at NNs directly but
         SVMs, not sure)</a></li></ul></section>
 
-<details class="svelte-2bbesa"><summary class="svelte-2bbesa">Week 2</summary>
+<details class="svelte-1ccyqdn"><summary class="svelte-1ccyqdn">Week 2</summary>
   <div><ul><li>Doing LitRev of QML Algorithms</li></ul>
-    <b>Picking Topics:</b>
+    <b>Picking Topics</b>
     <ul><li>Encoding Kernel Function Finding efficient kernel fns for QML (like
         DLOG) that work better on QCs than on classical computers
       </li>
@@ -196,24 +192,24 @@
       <li>Problems in Finance Finding better ways to solve problems in finance
       </li></ul></div></details>
 
-<details class="svelte-2bbesa"><summary class="svelte-2bbesa">Week 1</summary>
-  <div><ul><li>Revision:
-        <a href="https://youtube.com/playlist?list=PLvvQ7qimTOklI0uO9gYfng__EyFfOoSna" class="svelte-2bbesa">[WILP: QIC]
+<details class="svelte-1ccyqdn"><summary class="svelte-1ccyqdn">Week 1</summary>
+  <div><ul><li class="svelte-1ccyqdn">Revision:
+        <a href="https://youtube.com/playlist?list=PLvvQ7qimTOklI0uO9gYfng__EyFfOoSna" class="svelte-1ccyqdn">[WILP: QIC]
         </a></li>
-      <li>Started:
-        <a href="https://youtube.com/playlist?list=PLmRxgFnCIhaMgvot-Xuym_hn69lmzIokg" class="svelte-2bbesa">[UnivWaterloo: QML MOOC]
+      <li class="svelte-1ccyqdn">Started:
+        <a href="https://youtube.com/playlist?list=PLmRxgFnCIhaMgvot-Xuym_hn69lmzIokg" class="svelte-1ccyqdn">[UnivWaterloo: QML MOOC]
         </a></li></ul></div>
 </details></main>
 
 
-		<script type="module" data-sveltekit-hydrate="yp1ge">
-			import { start } from "./_app/immutable/start-bd4a20cc.js";
+		<script type="module" data-sveltekit-hydrate="35gk8m">
+			import { start } from "./_app/immutable/start-f7b37b87.js";
 
 			start({
 				env: {},
 				paths: {"assets":"","base":""},
-				target: document.querySelector('[data-sveltekit-hydrate="yp1ge"]').parentNode,
-				version: "1676343355255",
+				target: document.querySelector('[data-sveltekit-hydrate="35gk8m"]').parentNode,
+				version: "1676352921395",
 				hydrate: {
 					node_ids: [0, 4],
 					data: [null,null],
