@@ -191,14 +191,14 @@
       </section>
       <!-- Slide 8: Codepen Anim -->
       <section>
-        <iframe sandbox="allow-scripts" class="rpm-0 b0" scrolling="no"
+        <iframe class="rpm-0 b0" scrolling="no" title="3D Scatter Plot with Plotly.js Charts"
           src="https://codepen.io/plutoniumblast/embed/gOjqoNJ?default-tab=result&data-show-tab-bar='no'"
           frameborder="no" allowtransparency="true" allowfullscreen="true" style="width:100%;height: 80vh;">
         </iframe>
       </section>
       <!-- Slide 9: MNIST Classif -->
       <section>
-        <iframe sandbox="allow-scripts" class="rpm-0 b0 w-100" scrolling="no"
+        <iframe class="rpm-0 b0 w-100" scrolling="no" title="3D Scatter Plot with Plotly.js Charts"
           src="https://furkan-gulsen.github.io/Recognize-Handwritten-Digits/tfjs.html" frameborder="no"
           allowtransparency="true" allowfullscreen="true"
           style="width:100%;height:100vh;transform:translateY(-20vh) scale(0.99);">
@@ -263,21 +263,19 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/math/math.js"></script>
   <script>
-    if ( Reveal )
-      Reveal.initialize( {
-        history: true,
-        transition: 'linear',
-        showSlideNumber: 'all',
-        fragments: false,
-        hideCursorTime: 1e3,
-        viewDistance: 3,
-        math: {
-          config: 'TeX-AMS_HTML-full',
-          TeX: { Macros: { R: '\\mathbb{R}', set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ] } }
-        },
-        plugins: [ RevealMath ]
-      } )
-    else console.log( "Reveal not found" )
+    Reveal.initialize( {
+      history: true,
+      transition: 'linear',
+      showSlideNumber: 'all',
+      fragments: false,
+      hideCursorTime: 1e3,
+      viewDistance: 3,
+      math: {
+        config: 'TeX-AMS_HTML-full',
+        TeX: { Macros: { R: '\\mathbb{R}', set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ] } }
+      },
+      plugins: [ RevealMath ]
+    } );
   </script>
   <style type="text/css">
     .reveal .reveal_section {
