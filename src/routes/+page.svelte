@@ -21,7 +21,7 @@
 			<img class="icon" src="//api.nukes.in/icon/fas:pen.svg" alt="/" />
 			<div>Updates</div>
 		</a>
-		<a class="ƒ label fw4 ∆-ct rpm-10" href="books.nukes.in">
+		<a class="ƒ label fw4 ∆-ct rpm-10" href="//books.nukes.in">
 			<img
 				class="icon"
 				src="//api.nukes.in/icon/fas:book-bookmark.svg"
