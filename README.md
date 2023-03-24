@@ -10,4 +10,5 @@ Cyber Security
 and some Machine Learning![pytorch](https://img.shields.io/badge/-Pytorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=ffffff)
 
 <br/>
-<img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=plutoniumm&theme=dark&hide=Shell,HTML,CSS,SCSS,Dockerfile&langs_count=8&layout=compact" />
+
+<img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=plutoniumm&theme=dark&hide=HTML,CSS&langs_count=10&layout=compact" />
