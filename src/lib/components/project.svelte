@@ -6,7 +6,7 @@
 </script>
 
 <div
-    class="card fade rx20 ƒ p20 o-0 m10"
+    class="card rx20 f p20 m10"
     style="background:#{colors[index % colors.length]}6;"
 >
     <img

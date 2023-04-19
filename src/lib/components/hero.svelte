@@ -42,7 +42,7 @@
         I'm a dev, primarily working on Svelte things nowadays. I also like
         CyberSec a lot.
     </p>
-    <div class="details ƒ">
+    <div class="details f">
         <a href="https://github.com/plutoniumm">
             <img
                 class="icon m5"

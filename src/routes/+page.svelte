@@ -6,10 +6,10 @@
 	import projects from "$lib/projects.json";
 </script>
 
-<section class="p-rel ƒ-col ƒ∑" style="overflow:hidden;">
-	<Card className="ƒ"><Hero /></Card>
-	<div class="p10 ƒ ∆-ar w-50">
-		<a class="ƒ label fw4 ∆-ct rpm-10" href="/faq">
+<section class="p-rel f-col fw" style="overflow:hidden;">
+	<Card className="f"><Hero /></Card>
+	<div class="p10 f j-ar w-50">
+		<a class="f label fw4 j-ct rpm-10" href="/faq">
 			<img
 				class="icon"
 				src="//api.nukes.in/icon/fas:clipboard-question.svg"
@@ -17,11 +17,11 @@
 			/>
 			<div>FAQ</div>
 		</a>
-		<a class="ƒ label fw4 ∆-ct rpm-10" href="#lifeUpdates">
+		<a class="f label fw4 j-ct rpm-10" href="#lifeUpdates">
 			<img class="icon" src="//api.nukes.in/icon/fas:pen.svg" alt="/" />
 			<div>Updates</div>
 		</a>
-		<a class="ƒ label fw4 ∆-ct rpm-10" href="//books.nukes.in">
+		<a class="f label fw4 j-ct rpm-10" href="//books.nukes.in">
 			<img
 				class="icon"
 				src="//api.nukes.in/icon/fas:book-bookmark.svg"
@@ -32,8 +32,8 @@
 	</div>
 </section>
 
-<section class="ƒ-col">
-	<h1 id="lifeUpdates" class="w-100 †c">Life Updates</h1>
+<section class="f-col">
+	<h1 id="lifeUpdates" class="w-100 tc">Life Updates</h1>
 	<div style="max-height:85vh;overflow-y:scroll">
 		{#each projects as project, index}
 			<Project {project} {index} />

@@ -13,3 +13,12 @@ node_modules/
 .svelte-kit/
 .svelte/
 build/
+
+secrets/
+
+# Added by cargo
+
+/target
+/Cargo.lock
+pkg/
+target/

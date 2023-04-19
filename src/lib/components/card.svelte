@@ -1,6 +1,4 @@
-<div
-    class="card blur p-rel fade rx20 p20 ∆-ct o-0 m10 {$$props.className || ''}"
->
+<div class="card blur p-rel rx20 p20 j-ct m10 {$$props.className || ''}">
     <slot />
 </div>
 
