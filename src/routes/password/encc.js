@@ -1,14 +1,38 @@
-#!/usr/bin/env node
-import { randomFillSync } from 'crypto';
-import { Pwbox as PWBOX } from '../../../pkg/plutoniumm';
+// cryptojs
+import CryptoJS from 'crypto-js';
 
-const box = new PWBOX( { fillBytes: randomFillSync } );
-const password = 'correct horse battery staple';
-const data = "I'm a little teapot, short and stout. Here is my handle, here is my spout. When I get all steamed up, hear me shout. Tip me over and pour me out!";
+export const encrypt = async ( message, pass ) => {
+  const password = await pass;
 
-console.log( 'Original data:', data );
+  const salt = CryptoJS.lib.WordArray.random( 128 / 8 );
+  const key = CryptoJS.PBKDF2( password, salt, {
+    keySize: 256 / 32,
+    iterations: 1000,
+  } );
+  const iv = CryptoJS.lib.WordArray.random( 128 / 8 );
+  const encrypted = CryptoJS.AES.encrypt( message, key, {
+    iv,
+    padding: CryptoJS.pad.Pkcs7,
+    mode: CryptoJS.mode.CBC,
+  } );
+  const transitmessage = salt.toString() + iv.toString() + encrypted.toString();
+  return transitmessage;
+}
 
-const encrypted = box.encrypt( password, data );
-console.log( 'Encrypted data:', encrypted );
-const decrypted = Buffer.from( box.decrypt( password, encrypted ) );
-console.log( 'Decrypted data:', decrypted );
+export const decrypt = async ( transitmessage, pass ) => {
+  const password = await pass;
+
+  const salt = CryptoJS.enc.Hex.parse( transitmessage.substr( 0, 32 ) );
+  const iv = CryptoJS.enc.Hex.parse( transitmessage.substr( 32, 32 ) );
+  const encrypted = transitmessage.substring( 64 );
+  const key = CryptoJS.PBKDF2( password, salt, {
+    keySize: 256 / 32,
+    iterations: 1000,
+  } );
+  const decrypted = CryptoJS.AES.decrypt( encrypted, key, {
+    iv,
+    padding: CryptoJS.pad.Pkcs7,
+    mode: CryptoJS.mode.CBC,
+  } );
+  return decrypted.toString( CryptoJS.enc.Utf8 );
+}
