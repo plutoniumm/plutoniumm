@@ -1,7 +1,8 @@
 <script>
   import { onMount } from "svelte";
   import { hash } from "predefined";
-  import { chunked, getQRGen } from "./utils";
+  import QRCode from "qrcode-generator";
+  // https://github.com/kazuhikoarase/qrcode-generator
   import { encrypt, decrypt } from "./encc";
   import { PASSWORD, images } from "../../../secrets/password.js";
 
@@ -9,16 +10,14 @@
 
   const decr_uri = (data) => prefix + encodeURIComponent(data);
   const generateQR = (encrypted, query) => {
-    const data = decr_uri(encrypted);
     const el = document.getElementById(query);
-    getQRGen(data)
-      .getRawData("png")
-      .then((png) => {
-        const image = new Image();
+    const data = decr_uri(encrypted);
 
-        image.src = URL.createObjectURL(new Blob([png], { type: "image/png" }));
-        image.onload = () => el.appendChild(image);
-      });
+    const QR = QRCode(0, "H");
+    QR.addData(data);
+    QR.make();
+
+    el.innerHTML = QR.createSvgTag(4, 0);
     return encrypted;
   };
 
@@ -34,38 +33,41 @@
       console.log(decrypted);
     }
   });
+
+  export let data;
 </script>
 
 <!-- Path: src/routes/password/+page.svelte -->
 <div class="w-100 f fw" style="word-wrap: break-word;">
-  {#each chunked as chunk, index}
+  {#each data.chunked as chunk, index}
     {@const id = `canvas-${index}`}
-    {@const reduced = chunk.map(({ name, username, password }) => [
-      name,
-      username,
-      password,
-    ])}
-    {@const rand = (Math.random() * 20) | 0}
-    {@const string = JSON.stringify(reduced).replaceAll("www.", "")}
+    {@const string = chunk.string}
 
     <div class="f-col tc p10">
       <div {id} />
       {#await encrypt(string, PASSWORD) then encrypted}
         <a class="p5 rx10 mx-a fw7 button" href={decr_uri(encrypted)}>
-          Decrypt {generateQR(encrypted, id).length + rand}
+          Decrypt {(generateQR(encrypted, id).length + Math.random() * 20) | 0}
         </a>
         <div>
-          {#each reduced as name}
-            {#if Object.hasOwn(images, name[0])}
-              <img class="p5 rx10" src={images[name[0]]} alt="name[0]" />
+          {#each chunk.images as name}
+            {#if Object.hasOwn(images, name)}
+              <img class="p5 rx10" src={images[name]} alt="name[0]" />
             {:else}
-              <a href={name[0]}>{name[0]} </a>
+              <a href={name}>{name}</a>
             {/if}
           {/each}
         </div>
       {/await}
     </div>
   {/each}
+
+  <style>
+    svg {
+      width: 300px;
+      height: 300px;
+    }
+  </style>
 </div>
 
 <style>
