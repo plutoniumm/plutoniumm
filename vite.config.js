@@ -18,6 +18,11 @@ const config = {
         fs: {
             allow: [ "." ]
         }
+    },
+    build: {
+        minify: "esbuild",
+        cssMinify: true,
+        sourcemap: false
     }
 };
 

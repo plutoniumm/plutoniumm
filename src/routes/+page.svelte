@@ -12,17 +12,17 @@
 		<a class="f label fw4 j-ct rpm-10" href="/faq">
 			<img
 				class="icon"
-				src="//api.nukes.in/m2/i/fas:clipboard-question"
+				src="//api.manav.ch/m2/i/fas:clipboard-question"
 				alt="/"
 			/>
 			<div>FAQ</div>
 		</a>
 		<a class="f label fw4 j-ct rpm-10" href="#lifeUpdates">
-			<img class="icon" src="//api.nukes.in/m2/i/fas:pen" alt="/" />
+			<img class="icon" src="//api.manav.ch/m2/i/fas:pen" alt="/" />
 			<div>Updates</div>
 		</a>
-		<a class="f label fw4 j-ct rpm-10" href="//books.nukes.in">
-			<img class="icon" src="//api.nukes.in/m2/i/fas:book-bookmark" alt="/" />
+		<a class="f label fw4 j-ct rpm-10" href="//books.manav.ch">
+			<img class="icon" src="//api.manav.ch/m2/i/fas:book-bookmark" alt="/" />
 			<div>Books</div>
 		</a>
 	</div>
