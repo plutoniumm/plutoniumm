@@ -79,6 +79,9 @@
         width: 20px;
         object-fit: contain;
         opacity: 0.5;
+        &:hover {
+            opacity: 1;
+        }
     }
     .title {
         font-size: 2rem;

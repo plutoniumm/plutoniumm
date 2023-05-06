@@ -34,7 +34,7 @@
 
     @media (max-width: 600px) {
         .card {
-            width: calc(95% - 20px);
+            width: calc(95% - 40px);
             flex-wrap: wrap;
             text-align: center;
         }

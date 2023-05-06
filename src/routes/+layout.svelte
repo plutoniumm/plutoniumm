@@ -11,5 +11,7 @@
         overflow-y: scroll;
         scroll-snap-type: y mandatory;
         background: transparent;
+        width: 100vw;
+        overflow-x: hidden;
     }
 </style>

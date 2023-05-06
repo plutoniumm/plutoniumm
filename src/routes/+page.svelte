@@ -4,25 +4,23 @@
 	import Hero from "@component/hero.svelte";
 
 	import projects from "$lib/projects.json";
+
+	const i = (str) => `https://x.manav.ch/m2/i${str}`;
 </script>
 
 <section class="p-rel f-col fw" style="overflow:hidden;">
 	<Card className="f"><Hero /></Card>
 	<div class="p10 f j-ar w-50">
 		<a class="f label fw4 j-ct rpm-10" href="/faq">
-			<img
-				class="icon"
-				src="//api.manav.ch/m2/i/fas:clipboard-question"
-				alt="/"
-			/>
+			<img class="icon" src={i("/fas:clipboard-question")} alt="/" />
 			<div>FAQ</div>
 		</a>
 		<a class="f label fw4 j-ct rpm-10" href="#lifeUpdates">
-			<img class="icon" src="//api.manav.ch/m2/i/fas:pen" alt="/" />
+			<img class="icon" src={i("/fas:pen")} alt="/" />
 			<div>Updates</div>
 		</a>
 		<a class="f label fw4 j-ct rpm-10" href="//books.manav.ch">
-			<img class="icon" src="//api.manav.ch/m2/i/fas:book-bookmark" alt="/" />
+			<img class="icon" src={i("/fas:book-bookmark")} alt="/" />
 			<div>Books</div>
 		</a>
 	</div>
@@ -31,8 +29,8 @@
 <section class="f-col">
 	<h1 id="lifeUpdates" class="w-100 tc">Life Updates</h1>
 	<div style="max-height:85vh;overflow-y:scroll">
-		{#each projects as project, index}
-			<Project {project} {index} />
+		{#each projects as project}
+			<Project {project} />
 		{/each}
 	</div>
 </section>
