@@ -8,12 +8,13 @@ logs
 node_modules/
 **/*.css.map
 **/*.js.map
+posts/*-ig/
 
 # APP
 .svelte-kit/
 .svelte/
 build/
-
+static/images/set
 secrets/
 
 # Added by cargo

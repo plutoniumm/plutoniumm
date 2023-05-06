@@ -1,23 +1,17 @@
 // vite.config.js
 import { sveltekit } from '@sveltejs/kit/vite';
-import dsv from "@rollup/plugin-dsv";
-import path from 'path';
+import { resolve } from 'path';
 
 const config = {
-    plugins: [
-        dsv(),
-        sveltekit(),
-    ],
+    plugins: [ sveltekit() ],
     resolve: {
         alias: {
-            '@component': path.resolve( 'src/lib/components' )
+            '$component': resolve( '/components' ),
         }
     },
     server: {
         port: 3000,
-        fs: {
-            allow: [ "." ]
-        }
+        fs: { allow: [ "." ] }
     },
     build: {
         minify: "esbuild",

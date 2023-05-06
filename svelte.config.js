@@ -1,9 +1,16 @@
 import sveltePreprocess from 'svelte-preprocess';
 import statix from '@sveltejs/adapter-static';
 
+/** @type {import('@sveltejs/kit').Config} */
 export default {
-	preprocess: sveltePreprocess(),
+	extensions: [ '.svelte', '.mdx', '.md' ],
+	preprocess: [
+		sveltePreprocess( {} )
+	],
 	kit: {
-		adapter: statix()
+		adapter: statix(),
+		prerender: {
+			concurrency: 8
+		}
 	}
 };

@@ -2,8 +2,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "rm -rf build .svelte* && vite build",
-    "deploy": "npx gh-pages -d build -t true"
+    "prebuild": "rm -rf build .svelte*",
+    "build": "vite build",
+    "deploy": "npx gh-pages -d build -t true",
+    "postdeploy": "rm -rf build .svelte*"
   },
   "devDependencies": {
     "sass": "1.35.1",
@@ -11,12 +13,9 @@
     "svelte-preprocess": "4.10.6"
   },
   "dependencies": {
-    "@rollup/plugin-dsv": "^3.0.2",
-    "@sveltejs/adapter-static": "^1.0.5",
-    "@sveltejs/kit": "^1.2.2",
-    "crypto-js": "^4.1.1",
-    "predefined": "^3.0.0",
-    "qrcode-generator": "^1.4.4",
-    "vite": "^4.0.4"
+    "@sveltejs/adapter-static": "1.0.5",
+    "@sveltejs/kit": "1.2.2",
+    "typescript": "5.0.4",
+    "vite": "4.0.4"
   }
 }

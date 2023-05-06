@@ -19,73 +19,39 @@
     <div class="title fw5">Manav Seksaria</div>
     <br />
     <div class="tags">
-        <img
-            src={badge(
-                "JavaScript-FD2",
-                "javascript&logoColor=000&labelColor=%000"
-            )}
-            class="rx5"
-            alt=""
-        />
-        <img
-            src={badge("Kali-589", "kalilinux&logoColor=fff")}
-            class="rx5"
-            alt=""
-        />
-        <img
-            src={badge("Qiskit-73C", "qiskit&logoColor=fff")}
-            class="rx5"
-            alt=""
-        />
-        <img
-            src={badge("Pytorch-F53", "pytorch&logoColor=fff")}
-            class="rx5"
-            alt=""
-        />
+        <a
+            href="https://github.com/plutoniumm"
+            rel="external noreferrer noopener"
+            target="_blank"
+        >
+            <img
+                src={badge("GitHub-fff", "github&logoColor=000")}
+                class="rx5"
+                alt=""
+            />
+        </a>
+        <a
+            href="https://twitter.com/mplutoniumm"
+            rel="external noreferrer noopener"
+            target="_blank"
+        >
+            <img
+                src={badge("Twitter-2AF", "twitter&logoColor=fff")}
+                class="rx5"
+                alt=""
+            />
+        </a>
     </div>
     <p>
         I'm a dev, primarily working on Quantum Machine Learning nowadays. I
         also like CyberSec a lot.
     </p>
-    <div class="details f">
-        <a
-            class="fw7 f"
-            href="https://github.com/plutoniumm"
-            style="align-items: center;"
-        >
-            <img
-                class="icon m5"
-                src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/github.svg"
-                alt="Github"
-            />
-        </a>
-        <a
-            class="fw7 f"
-            href="https://twitter.com/faxudinger"
-            style="align-items: center;"
-        >
-            <img
-                class="icon m5"
-                src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/twitter.svg"
-                alt="Github"
-            />
-        </a>
-    </div>
 </div>
 
 <style lang="scss">
-    .icon {
-        height: 20px;
-        width: 20px;
-        object-fit: contain;
-        opacity: 0.5;
-    }
     .title {
         font-size: 2rem;
         line-height: 1rem;
-    }
-    .details {
-        line-height: 1.5em;
     }
     .left {
         transform: scale(1.33);

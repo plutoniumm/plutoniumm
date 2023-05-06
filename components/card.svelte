@@ -1,15 +1,12 @@
-<div class="card blur p-rel rx20 p20 j-ct m10 {$$props.className || ''}">
+<div class="card blur-fff8 p-rel rx20 p20 j-ct m10 {$$props.className || ''}">
     <slot />
 </div>
 
 <style>
     .card {
         font-size: 16px;
-        width: 600px;
+        width: calc(min(600px, 100%) - 60px);
         align-items: center;
-        border: 1px solid #fff8;
-        --bg: #fff8;
-        --sz: 8px;
     }
     .card::after {
         position: absolute;
@@ -34,7 +31,7 @@
 
     @media (max-width: 600px) {
         .card {
-            width: calc(95% - 20px);
+            width: calc(95% - 40px);
             flex-wrap: wrap;
             text-align: center;
         }

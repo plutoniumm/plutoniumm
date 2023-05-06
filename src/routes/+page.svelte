@@ -1,43 +1,56 @@
 <script>
-	import Card from "@component/card.svelte";
-	import Project from "@component/project.svelte";
-	import Hero from "@component/hero.svelte";
-
+	import Card from "$component/card.svelte";
+	import Hero from "$component/hero.svelte";
 	import projects from "$lib/projects.json";
+
+	const i = (str) => `https://x.manav.ch/m2/i${str}`;
+
+	const links = [["//books.manav.ch", "/fas:book-bookmark", "Readenings"]];
 </script>
 
-<section class="p-rel f-col fw" style="overflow:hidden;">
+<section class="p-rel f-col fw flow-x-h flow-yh">
 	<Card className="f"><Hero /></Card>
-	<div class="p10 f j-ar w-50">
-		<a class="f label fw4 j-ct rpm-10" href="/faq">
-			<img
-				class="icon"
-				src="//api.manav.ch/m2/i/fas:clipboard-question"
-				alt="/"
-			/>
-			<div>FAQ</div>
-		</a>
-		<a class="f label fw4 j-ct rpm-10" href="#lifeUpdates">
-			<img class="icon" src="//api.manav.ch/m2/i/fas:pen" alt="/" />
-			<div>Updates</div>
-		</a>
-		<a class="f label fw4 j-ct rpm-10" href="//books.manav.ch">
-			<img class="icon" src="//api.manav.ch/m2/i/fas:book-bookmark" alt="/" />
-			<div>Books</div>
+	<div class="p10 f j-ar" style="width: calc(50% - 2em);">
+		{#each links as link}
+			<a class="f label fw4 j-ct rpm-10" href={link[0]}>
+				<img class="icon" src={i(link[1])} alt="/" />
+				<div>{link[2]}</div>
+			</a>
+		{/each}
+	</div>
+	<div class="f j-ar w-50">
+		<a class="f label fw4 j-ct rx10 m20" href="#lifeUpdates">
+			<svg height="32px" width="32px" viewBox="0 0 32 32" fill="none">
+				<path d="M 30 12 L 16 20 L 2 12" />
+			</svg>
 		</a>
 	</div>
 </section>
 
 <section class="f-col">
 	<h1 id="lifeUpdates" class="w-100 tc">Life Updates</h1>
-	<div style="max-height:85vh;overflow-y:scroll">
-		{#each projects as project, index}
-			<Project {project} {index} />
+	<div class="flow-y-s" style="max-height:85vh;">
+		{#each projects as project}
+			<div class="card rx20 p20 blur-fff8">
+				<div class="w-100" style="margin-left:10px;">
+					<div class="fw7" style="font-size:1.1em;padding-bottom:5px;">
+						{project.title}
+						<span class="fw4" style="color:#666a;">@{project.where}</span>
+					</div>
+					<div class="fw3">{@html project.about}</div>
+				</div>
+			</div>
 		{/each}
 	</div>
 </section>
 
 <style lang="scss">
+	.card {
+		margin: 10px auto;
+		font-size: 1rem;
+		width: calc(min(660px, 100%) - 60px);
+		align-items: center;
+	}
 	.icon {
 		width: 1rem;
 		height: 1rem;

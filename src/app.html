@@ -3,7 +3,8 @@
 
 <head>
 	<meta charset="utf-8" />
-	<link rel="icon" href="/favicon.png" />
+	<link rel="icon" href="/assets/meta.png" />
+	<link rel="apple-touch-icon" href="/assets/meta.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 	<link rel="stylesheet" href="/atomic.css">
@@ -32,10 +33,34 @@
 		}
 
 		body {
-			/* // Purple, top right */
-			/* // Pink, bottom right */
-			/* // Green, top right */
-			/* // Orange, bottom left */
+			height: 100vh;
+			width: 100vw;
+			overflow-y: scroll;
+			z-index: 1;
+			background:
+				radial-gradient(50% 55% at 21vw 19vh, #cbadeb, transparent),
+				radial-gradient(50% 85% at 85vw 77vh, #edb2d0, transparent),
+				radial-gradient(70% 50% at 90vw 10vh, #7ae6c7, transparent),
+				radial-gradient(87% 81% at 16vw 91vh, #f4c4b3, transparent);
+			background-repeat: no-repeat;
+		}
+
+		@keyframes mock-rotate {
+
+			0%,
+			100% {
+				opacity: 0;
+			}
+
+			50% {
+				opacity: 1;
+			}
+		}
+
+		body::before {
+			/* gradient to rotate */
+			content: " ";
+			position: fixed;
 			background:
 				radial-gradient(50% 55% at 21vw 19vh, #cbadeb, transparent),
 				radial-gradient(50% 85% at 85vw 77vh, #edb2d0, transparent),
@@ -43,16 +68,13 @@
 				radial-gradient(87% 81% at 16vw 91vh, #f4c4b3, transparent);
 			background-repeat: no-repeat;
 			background-position: fixed;
-			height: 100vh;
+			transform: rotate(180deg);
 			width: 100vw;
-			overflow-y: scroll;
-		}
+			height: 100vh;
+			top: 0;
+			left: 0;
 
-		svg {
-			stroke: currentcolor;
-			stroke-linecap: round;
-			stroke-linejoin: round;
-			stroke-width: 2;
+			animation: mock-rotate 60s linear infinite;
 		}
 
 		section {
@@ -62,13 +84,14 @@
 			scroll-snap-stop: normal;
 		}
 
-		a,
-		a:visited,
-		a:hover {
-			color: var(--theme-hl) !important;
+		.blur-fff8 {
+			backdrop-filter: blur(8px);
+			-webkit-backdrop-filter: blur(8px);
+			-moz-backdrop-filter: blur(8px);
+			background: #fff8;
+			border: 1px solid #fff8;
 		}
 	</style>
-
 
 	%sveltekit.head%
 </head>

@@ -14,6 +14,14 @@ a:hover {
   text-decoration: none;
 }
 
+svg {
+  stroke: currentcolor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+
 img {
   object-fit: cover;
 }
@@ -177,6 +185,17 @@ textarea:focus {
   border-radius: 20px;
 }
 
+.rx2,
+.rx5,
+.rx10,
+.rx20,
+.rpm-0,
+.rpm-5,
+.rpm-10,
+.rpm-20 {
+  overflow: hidden;
+}
+
 .fw1 {
   font-weight: 100;
 }
@@ -327,16 +346,50 @@ textarea:focus {
   display: inline-block;
 }
 
+.d-i {
+  display: inline;
+}
+
+.d-c {
+  display: contents;
+}
+
+.d-b {
+  display: block;
+}
+
+.d-if {
+  display: inline-flex;
+}
+
 .d-u {
   display: unset;
 }
 
-.hover {
-  will-change: opacity;
-  opacity: 0;
-  transition: opacity 0.2s ease;
+.flow-x-s {
+  overflow-x: scroll;
 }
 
-.hover:hover {
-  opacity: 1;
+.flow-y-s {
+  overflow-y: scroll;
+}
+
+.flow-x-h {
+  overflow-x: hidden;
+}
+
+.flow-y-h {
+  overflow-y: hidden;
+}
+
+.ptr {
+  cursor: pointer;
+}
+
+.al-ct {
+  align-items: center;
+}
+
+.al-bl {
+  align-items: baseline;
 }
