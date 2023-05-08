@@ -1,22 +1,25 @@
 <script>
     import Card from "@component/card.svelte";
+    import QnA from "./data.csv";
 </script>
 
-<section class="mx-a">
-    <br />
-    <Card className="m10 mx-a tl">
-        <div class="q">Is Flutter Garbage?</div>
-        <div class="a">
-            Yes. Please use only React Native if, at all, not actual Native.
-            Flutter tries to reinvent the wheel by having its own renderer.
-            <!-- https://youtu.be/3_FcxGCCnUs -->
-        </div>
-    </Card>
+<section class="mx-a w-100">
+    {#each QnA as qa}
+        <Card className="m10 w-100 tl">
+            <div class="q">{qa.question}</div>
+            <div class="a">{qa.answer}</div>
+        </Card>
+    {/each}
 </section>
 
 <style>
+    section {
+        padding-top: 10px;
+        max-width: min(100%, 600px);
+    }
     .q {
         font-size: 1.2rem;
         font-weight: bold;
+        margin-bottom: 7px;
     }
 </style>

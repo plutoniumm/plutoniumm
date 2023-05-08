@@ -5,7 +5,7 @@
 <style>
     .card {
         font-size: 16px;
-        width: 600px;
+        width: min(600px, 100%);
         align-items: center;
         border: 1px solid #fff8;
         --bg: #fff8;
