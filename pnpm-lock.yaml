@@ -13,12 +13,18 @@ dependencies:
   crypto-js:
     specifier: ^4.1.1
     version: 4.1.1
+  mdsvex:
+    specifier: ^0.10.6
+    version: 0.10.6(svelte@3.55.1)
   predefined:
     specifier: ^3.0.0
     version: 3.0.0
   qrcode-generator:
     specifier: ^1.4.4
     version: 1.4.4
+  typescript:
+    specifier: ^5.0.4
+    version: 5.0.4
   vite:
     specifier: ^4.0.4
     version: 4.0.4(sass@1.35.1)
@@ -32,7 +38,7 @@ devDependencies:
     version: 3.55.1
   svelte-preprocess:
     specifier: 4.10.6
-    version: 4.10.6(sass@1.35.1)(svelte@3.55.1)
+    version: 4.10.6(sass@1.35.1)(svelte@3.55.1)(typescript@5.0.4)
 
 packages:
 
@@ -351,6 +357,10 @@ packages:
       '@types/node': 18.11.11
     dev: true
 
+  /@types/unist@2.0.6:
+    resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
+    dev: false
+
   /anymatch@3.1.3:
     resolution: {integrity: sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw==}
     engines: {node: '>= 8'}
@@ -617,6 +627,18 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: false
 
+  /mdsvex@0.10.6(svelte@3.55.1):
+    resolution: {integrity: sha512-aGRDY0r5jx9+OOgFdyB9Xm3EBr9OUmcrTDPWLB7a7g8VPRxzPy4MOBmcVYgz7ErhAJ7bZ/coUoj6aHio3x/2mA==}
+    peerDependencies:
+      svelte: 3.x
+    dependencies:
+      '@types/unist': 2.0.6
+      prism-svelte: 0.4.7
+      prismjs: 1.29.0
+      svelte: 3.55.1
+      vfile-message: 2.0.4
+    dev: false
+
   /mime@3.0.0:
     resolution: {integrity: sha512-jSCU7/VB1loIWBZe14aEYHU/+1UMEHoaO7qxCOVJOw9GgH72VAWppxNcjU+x9a2k3GSIBXNKxXQFqRvvZ7vr3A==}
     engines: {node: '>=10.0.0'}
@@ -703,6 +725,15 @@ packages:
 
   /predefined@3.0.0:
     resolution: {integrity: sha512-NIBunJlpRobsN1/LNRd1bW2hSIcgRR1N7rHKJceYEWeinoFHiqwUTufxTZdwta3nG23aQjz6su9Pe+OFzBYr7A==}
+    dev: false
+
+  /prism-svelte@0.4.7:
+    resolution: {integrity: sha512-yABh19CYbM24V7aS7TuPYRNMqthxwbvx6FF/Rw920YbyBWO3tnyPIqRMgHuSVsLmuHkkBS1Akyof463FVdkeDQ==}
+    dev: false
+
+  /prismjs@1.29.0:
+    resolution: {integrity: sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q==}
+    engines: {node: '>=6'}
     dev: false
 
   /qrcode-generator@1.4.4:
@@ -829,7 +860,7 @@ packages:
       svelte: 3.55.1
     dev: false
 
-  /svelte-preprocess@4.10.6(sass@1.35.1)(svelte@3.55.1):
+  /svelte-preprocess@4.10.6(sass@1.35.1)(svelte@3.55.1)(typescript@5.0.4):
     resolution: {integrity: sha512-I2SV1w/AveMvgIQlUF/ZOO3PYVnhxfcpNyGt8pxpUVhPfyfL/CZBkkw/KPfuFix5FJ9TnnNYMhACK3DtSaYVVQ==}
     engines: {node: '>= 9.11.2'}
     requiresBuild: true
@@ -878,6 +909,7 @@ packages:
       sorcery: 0.10.0
       strip-indent: 3.0.0
       svelte: 3.55.1
+      typescript: 5.0.4
     dev: true
 
   /svelte@3.55.1:
@@ -907,11 +939,29 @@ packages:
     engines: {node: '>=6'}
     dev: false
 
+  /typescript@5.0.4:
+    resolution: {integrity: sha512-cW9T5W9xY37cc+jfEnaUvX91foxtHkza3Nw3wkoF4sSlKn0MONdkdEndig/qPBWXNkmplh3NzayQzCiHM4/hqw==}
+    engines: {node: '>=12.20'}
+    hasBin: true
+
   /undici@5.15.1:
     resolution: {integrity: sha512-XLk8g0WAngdvFqTI+VKfBtM4YWXgdxkf1WezC771Es0Dd+Pm1KmNx8t93WTC+Hh9tnghmVxkclU1HN+j+CvIUA==}
     engines: {node: '>=12.18'}
     dependencies:
       busboy: 1.6.0
+    dev: false
+
+  /unist-util-stringify-position@2.0.3:
+    resolution: {integrity: sha512-3faScn5I+hy9VleOq/qNbAd6pAx7iH5jYBMS9I1HgQVijz/4mv5Bvw5iw1sC/90CODiKo81G/ps8AJrISn687g==}
+    dependencies:
+      '@types/unist': 2.0.6
+    dev: false
+
+  /vfile-message@2.0.4:
+    resolution: {integrity: sha512-DjssxRGkMvifUOJre00juHoP9DPWuzjxKuMDrhNbk2TdaYYBNMStsNhEOt3idrtI12VQYM/1+iM0KOzXi4pxwQ==}
+    dependencies:
+      '@types/unist': 2.0.6
+      unist-util-stringify-position: 2.0.3
     dev: false
 
   /vite@4.0.4(sass@1.35.1):

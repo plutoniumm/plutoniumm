@@ -15,8 +15,10 @@
     "@sveltejs/adapter-static": "^1.0.5",
     "@sveltejs/kit": "^1.2.2",
     "crypto-js": "^4.1.1",
+    "mdsvex": "^0.10.6",
     "predefined": "^3.0.0",
     "qrcode-generator": "^1.4.4",
+    "typescript": "^5.0.4",
     "vite": "^4.0.4"
   }
 }
