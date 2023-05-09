@@ -10,7 +10,8 @@ const config = {
     ],
     resolve: {
         alias: {
-            '@component': path.resolve( 'src/lib/components' )
+            '$component': path.resolve( '/components' ),
+            '$posts': path.resolve( '/posts' )
         }
     },
     server: {

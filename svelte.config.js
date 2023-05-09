@@ -13,9 +13,6 @@ export default {
 		} )
 	],
 	kit: {
-		adapter: statix(),
-		alias: {
-			'$posts': './posts/'
-		}
+		adapter: statix()
 	}
 };

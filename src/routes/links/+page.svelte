@@ -13,7 +13,7 @@
     <div class="tc">Hello, Manav Here</div>
     {#each data as d}
       <a
-        class="rpm-20 link blur f"
+        class="rpm-20 link blur-fff8 f"
         href={d[2]}
         rel="external"
         referrerpolicy="noreferrer"
@@ -30,8 +30,5 @@
 <style>
   .link {
     display: block;
-    border: 1px solid #fff8;
-    --bg: #fff8;
-    --sz: 8px;
   }
 </style>

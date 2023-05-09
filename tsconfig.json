@@ -8,6 +8,9 @@
       "$posts": [
         "./posts"
       ],
+      "$components": [
+        "./components"
+      ],
       "$lib": [
         "./src/lib"
       ]

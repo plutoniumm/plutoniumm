@@ -1,5 +1,5 @@
 <script>
-    import Card from "@component/card.svelte";
+    import Card from "$component/card.svelte";
     import QnA from "./data.csv";
 </script>
 

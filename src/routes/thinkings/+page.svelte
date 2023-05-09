@@ -1,5 +1,5 @@
 <script>
-  import Card from "@component/card.svelte";
+  import Card from "$component/card.svelte";
   import { onMount } from "svelte";
   export let data;
 
@@ -10,8 +10,24 @@
 
 <section class="mx-a w-100">
   {#each data.posts as p}
-    <Card className="m10 w-100 tl">
-      {JSON.stringify(p)}
+    <Card className="w-100 tl">
+      <!-- {"title":"Why so many people dislike Math?","desc":"Despite being the most universal possible language and the only known tools to understand the universe, Math is often disliked. Why?","date":1683570600000,"image":"","slug":"math-art"} -->
+      <a class="f" href="/t/{p.slug}">
+        {#if p.image}
+          <img class="rx5" src={p.image} alt="" />
+        {/if}
+        <div>
+          <h3>{p.title}</h3>
+          <span class="dt">
+            {new Date(p.date).toLocaleDateString("en-GB", {
+              year: "numeric",
+              month: "long",
+              day: "2-digit",
+            })}
+          </span>
+          <p>{p.desc}</p>
+        </div>
+      </a>
     </Card>
   {/each}
 </section>
@@ -20,5 +36,27 @@
   section {
     padding-top: 10px;
     max-width: min(100%, 600px);
+  }
+  a,
+  a:visited,
+  a:active,
+  a:hover {
+    text-decoration: none;
+    color: #000 !important;
+    display: block;
+  }
+  img {
+    height: 50px;
+    width: 50px;
+    aspect-ratio: 1;
+    margin-right: 10px;
+  }
+  h3 {
+    padding: 0;
+    margin: 0 0 7px 0;
+  }
+  .dt {
+    font-size: 0.9em;
+    color: #666;
   }
 </style>

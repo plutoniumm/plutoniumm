@@ -1,7 +1,7 @@
 <script>
-	import Card from "@component/card.svelte";
-	import Project from "@component/project.svelte";
-	import Hero from "@component/hero.svelte";
+	import Card from "$component/card.svelte";
+	import Project from "$component/project.svelte";
+	import Hero from "$component/hero.svelte";
 
 	import projects from "$lib/projects.json";
 
