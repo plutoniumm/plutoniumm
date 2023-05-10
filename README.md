@@ -9,4 +9,11 @@ I'm primarily work in \
 
 <br/>
 
-<img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=plutoniumm&theme=dark&hide=HTML,CSS&langs_count=10&layout=compact" />
+<img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=plutoniumm&theme=dark&hide=HTML,CSS,Jupyter%20Notebook&langs_count=10&layout=compact" />
+
+
+<!-- https://ungh.cc/repos/plutoniumm/plutoniumm/files/master -->
+<!-- owner/name -->
+
+<!-- Visualisations -->
+<!-- https://twitter.com/gabrielpeyre -->
