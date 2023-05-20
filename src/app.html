@@ -32,10 +32,34 @@
 		}
 
 		body {
-			/* // Purple, top right */
-			/* // Pink, bottom right */
-			/* // Green, top right */
-			/* // Orange, bottom left */
+			height: 100vh;
+			width: 100vw;
+			overflow-y: scroll;
+			z-index: 1;
+			background:
+				radial-gradient(50% 55% at 21vw 19vh, #cbadeb, transparent),
+				radial-gradient(50% 85% at 85vw 77vh, #edb2d0, transparent),
+				radial-gradient(70% 50% at 90vw 10vh, #7ae6c7, transparent),
+				radial-gradient(87% 81% at 16vw 91vh, #f4c4b3, transparent);
+			background-repeat: no-repeat;
+		}
+
+		@keyframes mock-rotate {
+
+			0%,
+			100% {
+				opacity: 0;
+			}
+
+			50% {
+				opacity: 1;
+			}
+		}
+
+		body::before {
+			/* gradient to rotate */
+			content: " ";
+			position: fixed;
 			background:
 				radial-gradient(50% 55% at 21vw 19vh, #cbadeb, transparent),
 				radial-gradient(50% 85% at 85vw 77vh, #edb2d0, transparent),
@@ -43,9 +67,13 @@
 				radial-gradient(87% 81% at 16vw 91vh, #f4c4b3, transparent);
 			background-repeat: no-repeat;
 			background-position: fixed;
-			height: 100vh;
+			transform: rotate(180deg);
 			width: 100vw;
-			overflow-y: scroll;
+			height: 100vh;
+			top: 0;
+			left: 0;
+
+			animation: mock-rotate 60s linear infinite;
 		}
 
 		section {

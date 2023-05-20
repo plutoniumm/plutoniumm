@@ -13,20 +13,27 @@ export interface Post {
 }
 
 // Get all posts and add metadata
-let md: any = Object.entries(
-  import.meta.glob<GlobEntry>(
-    './**/*.mdx', { eager: true }
-  )
-);
-const len = md.length;
+let md: any = Object.entries(import.meta.glob<GlobEntry>(
+  './**/*.mdx', { eager: true }
+));
 
-for (let i = 0; i < len; i++) {
+let meta = {};
+for (let i = 0; i < md.length; i++) {
   const [key, value] = md[i];
+  meta = value.metadata;
+
+  if (!meta?.date || meta.draft) {
+    md[i] = null;
+    continue;
+  };
+
   md[i] = ({
-    ...value.metadata,
+    ...meta,
     slug: key.split('/').at(-2),
-    date: +new Date(value.metadata.date)
+    date: +new Date(meta.date)
   })
 };
 
-export const posts: Post[] = md.sort((a, b) => +new Date(b.date) - +new Date(a.date));
+export const posts: Post[] = md
+  .filter(Boolean)
+  .sort((a, b) => b.date - a.date);
