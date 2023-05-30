@@ -15,7 +15,6 @@
     "@sveltejs/adapter-static": "1.0.5",
     "@sveltejs/kit": "1.2.2",
     "mdsvex": "0.10.6",
-    "predefined": "3.0.0",
     "typescript": "5.0.4",
     "vite": "4.0.4"
   }
