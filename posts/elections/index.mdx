@@ -1,0 +1,67 @@
+---
+title: Elections, Games & Gaming Elections
+desc: A look at how elections are run and how they can be gamed
+date: 3 June 2023
+image: ""
+---
+
+<conf hl="Reasongrad, Analyticaland, Logicia"/>
+
+<script>
+  import Table from "../../components/table.svelte";
+</script>
+
+Let's consider the fictitious city of Rationalia who's sitting president is Neil Degrasse Tyson.
+
+// In US House of representatives the proportions of seats are given as per the state population. So a state with a higher population will have more seats in the house of representatives.
+## Apportionment
+Lets say Rationalia has 2 states Reasongrad and Analyticaland. So lets now divide 5 seats between the states as follows with 2 cases just to see how we round them
+
+<div class="f tc mx-a j-ar">
+<Table
+titles={["state", "population", "share"]}
+rows={[
+  ["<b>Case 1</b>", "", ""],
+  ["Reasongrad", 2200, "44%"],
+  ["Analyticaland", 2800, "56%"],
+  ["<b>Case 2</b>", "", ""],
+  ["Reasongrad", 2510, "51%"],
+  ["Analyticaland", 2390, "49%"],
+]} />
+<div class="p20" style="font-size:2em;line-height:7em">➡️</div>
+<Table
+titles={["seats"]}
+rows={[
+  ["-"],
+  ["2 (Round Down 2.2 seats)"],
+  ["3 (Round Up 2.8 seats)"],
+  ["-"],
+  ["3 (Round Up 2.51 seats)"],
+  ["2 (Round Down 2.39 seats)"],
+]} />
+
+</div>
+
+But now let's add another state, Logicia, but let's not change the number of seats and the populations of the states. So redistributing the populations of the states we get the following
+
+<div class="f tc mx-a j-ar">
+<Table
+titles={["state", "population", "share"]}
+rows={[
+  ["Reasongrad", 1650, "33%"],
+  ["Analyticaland", 1600, "32%"],
+  ["Logicia", 1750, "35%"],
+]} />
+<div class="p20" style="font-size:2em;line-height:3em">➡️</div>
+<Table
+titles={["seats"]}
+rows={[
+  ["2 (Round Up 1.65 seats)"],
+  ["2 (Round Up 1.6 seats)"],
+  ["2 (Round Up 1.75 seats)"],
+]} />
+</div>
+
+But now suddenly we need 6 seats, when we have only 5. So who do we round down?
+
+The way this was first proposed to be solved it keep rounding up from the number closest to the next integer till whoever else is left gets rounded down even if they're closer to the next integer. This is called the [Hamilton's Method](https://en.wikipedia.org/wiki/Largest_remainder_method). So in this case we would round up Reasongrad and Analyticaland and round down Logicia. So we actually get 2 seats for Reasongrad and Analyticaland and 1 seat for Logicia.

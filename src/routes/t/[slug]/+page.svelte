@@ -4,6 +4,20 @@
   export let data: PageData;
 </script>
 
+<svelte:head>
+  <script src="/article.js"></script>
+  <style>
+    :root {
+      --hl-0: #2af;
+      --hl-1: #a2f;
+      --hl-2: #f2a;
+      --hl-3: #fa2;
+      --hl-4: #2fa;
+      --hl-5: #af2;
+    }
+  </style>
+</svelte:head>
+
 <div class="p20">
   <article
     class="blur-fff8 rpm-10 mx-a"
