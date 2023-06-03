@@ -339,12 +339,6 @@ textarea:focus {
   display: unset;
 }
 
-.hover {
-  will-change: opacity;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-
-.hover:hover {
-  opacity: 1;
+.ptr {
+  cursor: pointer;
 }

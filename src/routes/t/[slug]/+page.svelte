@@ -15,6 +15,16 @@
       --hl-4: #2fa;
       --hl-5: #af2;
     }
+    .scroll-x {
+      max-width: 100%;
+      overflow-x: auto;
+    }
+    img {
+      max-width: 100%;
+      max-height: min(100%, 300px);
+      border-radius: 10px;
+      margin: 5px auto;
+    }
   </style>
 </svelte:head>
 
