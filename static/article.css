@@ -1,0 +1,77 @@
+:root {
+  --hl-0: #2af;
+  --hl-1: #a2f;
+  --hl-2: #f2a;
+  --hl-3: #fa2;
+  --hl-4: #2fa;
+  --hl-5: #af2;
+}
+
+.scroll-x {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+img {
+  max-width: 100%;
+  max-height: min(100%, 300px);
+  border-radius: 10px;
+  margin: 5px auto;
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+  color: #00f;
+  text-decoration: underline;
+}
+
+/* add css counter for toc */
+#toc {
+  display: flex;
+  width: 100%;
+}
+
+#toc ul {
+  margin: 0;
+  counter-reset: toc;
+  padding: 0 0 10px 1ch;
+  width: 100%;
+  overflow-x: scroll;
+}
+
+#toc ul:first-child {
+  display: flex;
+}
+
+#toc ul li:before {
+  font-size: 1.25rem;
+}
+
+#toc ul ul li::before {
+  font-size: 1rem;
+}
+
+#toc li {
+  min-width: 250px !important;
+  list-style: none;
+  line-height: 1.5em;
+}
+
+#toc>ul li a {
+  color: #444;
+  font-size: 1.25rem;
+}
+
+#toc>ul li li a {
+  color: var(--theme-hl);
+  font-size: 1rem;
+}
+
+#toc li:before {
+  counter-increment: toc;
+  content: counter(toc) " ";
+  font-weight: 400;
+  color: #444;
+}

@@ -6,26 +6,7 @@
 
 <svelte:head>
   <script src="/article.js"></script>
-  <style>
-    :root {
-      --hl-0: #2af;
-      --hl-1: #a2f;
-      --hl-2: #f2a;
-      --hl-3: #fa2;
-      --hl-4: #2fa;
-      --hl-5: #af2;
-    }
-    .scroll-x {
-      max-width: 100%;
-      overflow-x: auto;
-    }
-    img {
-      max-width: 100%;
-      max-height: min(100%, 300px);
-      border-radius: 10px;
-      margin: 5px auto;
-    }
-  </style>
+  <link rel="stylesheet" href="/article.css" />
 </svelte:head>
 
 <div class="p20">
@@ -36,6 +17,8 @@
     <header>
       <h1>{data.post.title}</h1>
     </header>
+    <div style="color:#888">Table of Contents</div>
+    <div id="toc" style="padding:5px 0;" />
     <!-- render the post -->
     <main>
       <svelte:component this={data.component} />

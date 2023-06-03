@@ -18,26 +18,28 @@ Lets say Rationalia has 2 states Reasongrad and Analyticaland. So lets now divid
 
 <div class="f tc mx-a j-ar scroll-x">
 <Table
-titles={["state", "population", "share"]}
-rows={[
-  ["<b>Case 1</b>", "", ""],
-  ["Reasongrad", 2200, "44%"],
-  ["Analyticaland", 2800, "56%"],
-  ["<b>Case 2</b>", "", ""],
-  ["Reasongrad", 2510, "51%"],
-  ["Analyticaland", 2390, "49%"],
-]} />
+  titles={["state", "population", "share"]}
+  rows={[
+    ["<b>Case 1</b>", "", ""],
+    ["Reasongrad", 2200, "44%"],
+    ["Analyticaland", 2800, "56%"],
+    ["<b>Case 2</b>", "", ""],
+    ["Reasongrad", 2510, "51%"],
+    ["Analyticaland", 2390, "49%"],
+  ]}
+ />
 <div class="p20" style="font-size:1.5em;line-height:6em">➡️</div>
 <Table
-titles={["seats"]}
-rows={[
-  ["-"],
-  ["2 (Round Down 2.2 seats)"],
-  ["3 (Round Up 2.8 seats)"],
-  ["-"],
-  ["3 (Round Up 2.51 seats)"],
-  ["2 (Round Down 2.39 seats)"],
-]} />
+  titles={["seats"]}
+  rows={[
+    ["-"],
+    ["2 (Round Down 2.2 seats)"],
+    ["3 (Round Up 2.8 seats)"],
+    ["-"],
+    ["3 (Round Up 2.51 seats)"],
+    ["2 (Round Down 2.39 seats)"],
+  ]}
+ />
 
 </div>
 
@@ -45,20 +47,20 @@ But now let's add another state, Logicia, but let's not change the number of sea
 
 <div class="f tc mx-a j-ar scroll-x">
 <Table
-titles={["state", "population", "share"]}
-rows={[
-  ["Reasongrad", 1650, "33%"],
-  ["Analyticaland", 1600, "32%"],
-  ["Logicia", 1750, "35%"],
-]} />
+  titles={["state", "population", "share"]}
+  rows={[
+    ["Reasongrad", 1650, "33%"],
+    ["Analyticaland", 1600, "32%"],
+    ["Logicia", 1750, "35%"],
+  ]} />
 <div class="p20" style="font-size:1.5em;line-height:3em">➡️</div>
 <Table
-titles={["seats"]}
-rows={[
-  ["2 (Round Up 1.65 seats)"],
-  ["2 (Round Up 1.6 seats)"],
-  ["2 (Round Up 1.75 seats)"],
-]} />
+  titles={["seats"]}
+  rows={[
+    ["2 (Round Up 1.65 seats)"],
+    ["2 (Round Up 1.6 seats)"],
+    ["2 (Round Up 1.75 seats)"],
+  ]} />
 </div>
 
 But now suddenly we need 6 seats, when we have only 5. So who do we round down?
@@ -70,27 +72,27 @@ So if some state needs 0.3 more seats to round up to 3 (from 2.7) they will be r
 
 <div class="f tc mx-a j-ar scroll-x">
 <Table
-titles={["state", "population", "percent", "share", "remaining fraction"]}
-rows={[
-  ["A", 3_252, "8.1%", 3.49, 0.49],
-  ["B", 21_878, "54.6%", 23.47, 0.47],
-  ["C", 4_167, "10.4%", 4.47, 0.47],
-  ["D", 9_731, "24.2%", 10.42, 0.42],
-  ["E", 1_065, "2.7%", 1.14, 0.14]
-]}
-label="43 seats"
+  titles={["state", "population", "percent", "share", "remaining fraction"]}
+  rows={[
+    ["A", 3_252, "8.1%", 3.49, 0.49],
+    ["B", 21_878, "54.6%", 23.47, 0.47],
+    ["C", 4_167, "10.4%", 4.47, 0.47],
+    ["D", 9_731, "24.2%", 10.42, 0.42],
+    ["E", 1_065, "2.7%", 1.14, 0.14]
+  ]}
+  label="43 seats"
 />
 <div class="p20" style="font-size:1.5em;line-height:6em">vs</div>
 <Table
-titles={["state", "population", "percent", "share", "remaining fraction"]}
-rows={[
-  ["D", 9_731, "24.2%", 10.66, 0.66],
-  ["C", 4_167, "10.4%", 4.57, 0.58],
-  ["A", 3_252, "8.1%", 3.57, 0.57],
-  ["E", 1_065, "2.7%", 1.17, 0.17],
-  ["B", 21_878, "54.6%", 24.02, 0.02]
-]}
-label="44 seats"
+  titles={["state", "population", "percent", "share", "remaining fraction"]}
+  rows={[
+    ["D", 9_731, "24.2%", 10.66, 0.66],
+    ["C", 4_167, "10.4%", 4.57, 0.58],
+    ["A", 3_252, "8.1%", 3.57, 0.57],
+    ["E", 1_065, "2.7%", 1.17, 0.17],
+    ["B", 21_878, "54.6%", 24.02, 0.02]
+  ]}
+  label="44 seats"
 />
 </div>
 
@@ -104,39 +106,51 @@ Get ready for a whole new level of shitfuckery.
 Jefferson proposed that the 'divisors' for all states are set the SAME such that they all get rounded down first. And the number of seats are added. The same divisor is then gradually decreased till we reach the required number of seats
 
 <Table
-titles={["state", "population", "portion"]}
-rows={[
-  ["Reasongrad", 1650, `1650/1000 = 16.5`],
-  ["Analyticaland", 1600, `1600/1000 = 16.0`],
-  ["Logicia", 1750, `1750/1000 = 17.5`]
-]} />
+  titles={["state", "population", "portion"]}
+  rows={[
+    ["Reasongrad", 1650, `1650/1000 = 16.5`],
+    ["Analyticaland", 1600, `1600/1000 = 16.0`],
+    ["Logicia", 1750, `1750/1000 = 17.5`]
+  ]}
+/>
 
 <div class="f tc mx-a j-ar scroll-x">
 <Table mini
-titles={["seats"]}
-label="Force Round Down"
-rows={[[1], [1], [1]]} />
+  titles={["seats"]}
+  label="Force Round Down"
+  rows={[[1], [1], [1]]}
+/>
 <div class="p20" style="font-size:1em;line-height:8em">vs</div>
 <Table mini
-titles={["seats"]}
-label="Reduce to 850"
-rows={[[1], [1], [2]]} />
+  titles={["seats"]}
+  label="Reduce to 850"
+  rows={[[1], [1], [2]]}
+/>
 <div class="p20" style="font-size:1em;line-height:8em">vs</div>
 <Table mini
-titles={["seats"]}
-label="Reduce to 820"
-rows={[[2], [1], [2]]} />
+  titles={["seats"]}
+  label="Reduce to 820"
+  rows={[[2], [1], [2]]}
+/>
 </div>
 
 This was actually the method they went with from 1792 to 1840. The one massive problem with this issue is, as we decrease the denominator, since its a fraction, larger numbers increase faster. So say 1000/50 = 20 and 1000/40 = 25 whereas 100/50 = 2 and 100/40 = 2.5, notice how for a state with a 1000 population they gained 5 seats whereas the 100 population state gained only 0.5 seat which they may or may not even get. So the larger states get more seats faster than the smaller states. This is called the [Jefferson's Method](https://en.wikipedia.org/wiki/Jefferson_method).
 
-### Adam's Method
+### Adam's Method & Webster's Method
 Adam's method exactly the same as Jefferson's method except rather than force round down and then slowly decrease the denominator, we force round UP and slowly increase the denominator. This is called the [Adam's Method](https://en.wikipedia.org/wiki/Adam%27s_method). The Jefferson method favours the larger states and the Adam's method favours the smaller states (for the same reason, since large numbers move faster, the larger states also lose seats faster).
 
-### Violating the Quota Rule
+Webster's method is again the same as Adam's & Jefferson's except rather than force round up or down, we round to the nearest integer like a normal human. This is called the [Webster's Method](https://en.wikipedia.org/wiki/Webster%27s_method).
+
+### Violating Rules
 Consider the following data generated graciously by Mr. Matt Parker (linked in See Also)
 ![Data](https://i.imgur.com/WQcE5mV.png)
 
 Notice how New Triangle jumped from 23.47 to 22. Which should technically not be allowed since rounding can happen only up or down to the next or previous number. Jumping numbers is not allowed in the [Quota Rule](https://en.wikipedia.org/wiki/Quota_rule). This was a common occurance in both the Jefferson and Adam's method. The reason to why this was allowed to stay for so long was because the Jefferson Rule favoured big states. And guess who had more power (more votes)? Big states -\_-.
 
-<div id="scroller"></div>
+They later went to the Hamilton's method in 1840, till 1880 when someone rediscovered the Alabama Paradox. So then if it looks like its impossible to avoid either the Violation of the Quota Rule or the Alabama Paradox, what do we use?
+
+### Huntington-Hill Method
+This is too complex to explain its just one big clusterfuck. There is a Geometric Mean, A square root and an ambiguous defination involved somewhere. The general idea is that this too has Quota Rule Violations. Hill also stays because it technically by default favours the smaller states which is a political decision and not a mathematical one.
+
+
+<div id="scroller">&nbsp;</div>
