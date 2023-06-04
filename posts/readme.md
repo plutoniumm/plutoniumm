@@ -24,3 +24,10 @@
 - https://youtu.be/Oo89kOv9pVk
 > why a+b=a or a+b~=a+b sometimes
 ￼
+## Posts Config
+```jsx
+<conf
+  hl="words, to, highlight"
+  notoc // no table of contents
+/>
+```

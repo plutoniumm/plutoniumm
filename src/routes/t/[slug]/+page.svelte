@@ -14,15 +14,14 @@
     class="blur-fff8 rpm-10 mx-a"
     style="background-color: #fff8;max-width:991px;"
   >
-    <header>
-      <h1>{data.post.title}</h1>
+    <header style="display:block;margin: 10px 0;">
+      <h1 class="m0">{data.post.title}</h1>
+      <div id="time" style="color:#888" />
     </header>
     <div style="color:#888">Table of Contents</div>
     <div id="toc" style="padding:5px 0;" />
     <!-- render the post -->
-    <main>
-      <svelte:component this={data.component} />
-    </main>
+    <svelte:component this={data.component} />
   </article>
 </div>
 

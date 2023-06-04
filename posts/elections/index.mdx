@@ -4,17 +4,16 @@ desc: A look at how elections are run and how they can be gamed
 date: 3 June 2023
 image: ""
 ---
-<conf hl="Reasongrad, Analyticaland, Logicia" />
+<conf hl="Reasongrad, Analyticaland, Logicia, Hawking, Einstien, Newton" />
 
 <script>
   import Table from "../../components/table.svelte";
 </script>
 
-Let's consider the fictitious city of Rationalia who's sitting president is Neil Degrasse Tyson. Lets then see how to hack the elections and hacking the hacks and so on. We'll also look for better election systems alltogether too.
+Let's consider the fictitious city of Rationalia, whose sitting president is Neil Degrasse Tyson. Let's then see how to hack the elections and hacking the hacks and so on. We'll also look for better election systems altogether too.
 
-// In US House of representatives the proportions of seats are given as per the state population. So a state with a higher population will have more seats in the house of representatives.
 ## Apportionment
-Lets say Rationalia has 2 states Reasongrad and Analyticaland. So lets now divide 5 seats between the states as follows with 2 cases just to see how we round them
+Let's say Rationalia has 2 states, Reasongrad and Analyticaland. So lets now divide 5 seats between the states as follows with 2 cases just to see how we round them
 
 <div class="f tc mx-a j-ar scroll-x">
 <Table
@@ -43,7 +42,7 @@ Lets say Rationalia has 2 states Reasongrad and Analyticaland. So lets now divid
 
 </div>
 
-But now let's add another state, Logicia, but let's not change the number of seats and the populations of the states. So redistributing the populations of the states we get the following
+But now, let's add another state, Logicia, but let's not change the number of seats and the populations of the states. So redistributing the populations of the states, we get the following
 
 <div class="f tc mx-a j-ar scroll-x">
 <Table
@@ -63,47 +62,47 @@ But now let's add another state, Logicia, but let's not change the number of sea
   ]} />
 </div>
 
-But now suddenly we need 6 seats, when we have only 5. So who do we round down?
+But now suddenly we need 6 seats when we have only 5. So who do we round down?
 
 ### Hamilton's Method
-The way this was first proposed to be solved it keep rounding up from the number closest to the next integer till whoever else is left gets rounded down even if they're closer to the next integer. This is called the [Hamilton's Method](https://en.wikipedia.org/wiki/Largest_remainder_method). So in this case we would round up Reasongrad and Analyticaland and round down Logicia. So we actually get 2 seats for Reasongrad and Analyticaland and 1 seat for Logicia. This method is exactly what was also first proposed for Alabama in 1792.
+The way this was first proposed to be solved, it keeps rounding up from the number closest to the next integer till whoever else is left gets rounded down, even if they're closer to the next integer. This is called the [Hamilton's Method](https://en.wikipedia.org/wiki/Largest_remainder_method). So, in this case, we would round up Reasongrad and Analyticaland and round down Logicia. So we actually get 2 seats for Reasongrad and Analyticaland and 1 seat for Logicia. This method is exactly what was also first proposed for Alabama in 1792.
 
-So if some state needs 0.3 more seats to round up to 3 (from 2.7) they will be rounded up to 3 even if there exists a state with 26.6 seats that needs 0.4 more seats to round up to 27. This allows for what would be 'fair' rounding since a given state is closest to the next integer. The problem arises when we add just 1 more seat. Then which number is closest to the next integer jumps around completely randomly. Consider the below actual example from Alabama (sorted by descending remaining fraction)
+So if some state needs 0.3 more seats to round up to 3 (from 2.7), they will be rounded up to 3 even if there exists a state with 26.6 seats that needs 0.4 more seats to round up to 27. This allows for what would be 'fair' rounding since a given state is closest to the next integer. The problem arises when we add just 1 more seat. Then which number is closest to the next integer jumps around completely randomly. Consider the below actual example from Alabama (sorted by descending remaining fraction)
 
 <div class="f tc mx-a j-ar scroll-x">
 <Table
-  titles={["state", "population", "percent", "share", "remaining fraction"]}
+  titles={["state", "population", "share", "remaining fraction"]}
   rows={[
-    ["A", 3_252, "8.1%", 3.49, 0.49],
-    ["B", 21_878, "54.6%", 23.47, 0.47],
-    ["C", 4_167, "10.4%", 4.47, 0.47],
-    ["D", 9_731, "24.2%", 10.42, 0.42],
-    ["E", 1_065, "2.7%", 1.14, 0.14]
+    ["A", 3_252, 3.49, 0.49],
+    ["B", 21_878, 23.47, 0.47],
+    ["C", 4_167, 4.47, 0.47],
+    ["D", 9_731, 10.42, 0.42],
+    ["E", 1_065, 1.14, 0.14]
   ]}
   label="43 seats"
 />
 <div class="p20" style="font-size:1.5em;line-height:6em">vs</div>
 <Table
-  titles={["state", "population", "percent", "share", "remaining fraction"]}
+  titles={["state", "population", "share", "remaining fraction"]}
   rows={[
-    ["D", 9_731, "24.2%", 10.66, 0.66],
-    ["C", 4_167, "10.4%", 4.57, 0.58],
-    ["A", 3_252, "8.1%", 3.57, 0.57],
-    ["E", 1_065, "2.7%", 1.17, 0.17],
-    ["B", 21_878, "54.6%", 24.02, 0.02]
+    ["D", 9_731, 10.66, 0.66],
+    ["C", 4_167, 4.57, 0.58],
+    ["A", 3_252, 3.57, 0.57],
+    ["E", 1_065, 1.17, 0.17],
+    ["B", 21_878, 24.02, 0.02]
   ]}
   label="44 seats"
 />
 </div>
 
-Notice how with these numbers with just 1 more seat, while first A and B were getting extra seats, now D and C are getting extra seats, and A in fact lost a seat. This is a problem because the number of seats is not a continuous function of the population. It is a discrete function. So the number of seats jumps around semi-randomly. This is called the [Alabama Paradox](https://en.wikipedia.org/wiki/Alabama_paradox).
+Notice how with these numbers, with just 1 more seat, while first A and B were getting extra seats, now D and C are getting extra seats, and A, in fact, lost a seat. This is a problem because the number of seats is not a continuous function of the population. It is a discrete function. So the number of seats jumps around semi-randomly. This is called the [Alabama Paradox](https://en.wikipedia.org/wiki/Alabama_paradox).
 
-(The method was then veto'd by President Mr Washington, but for a different reason alltogether, it was a law interpretation difference [See Apportionment Act of 1792](https://en.wikipedia.org/wiki/Apportionment_Act_of_1792).)
+(The method was then vetoed by President Mr Washington, but for a different reason altogether; it was a law interpretation difference [See Apportionment Act of 1792](https://en.wikipedia.org/wiki/Apportionment_Act_of_1792).)
 
 ### Jefferson's Method
 Get ready for a whole new level of shitfuckery.
 
-Jefferson proposed that the 'divisors' for all states are set the SAME such that they all get rounded down first. And the number of seats are added. The same divisor is then gradually decreased till we reach the required number of seats
+Jefferson proposed that the 'divisors' for all states are set the SAME such that they all get rounded down first. And the number of seats is added. The same divisor is then gradually decreased till we reach the required number of seats
 
 <Table
   titles={["state", "population", "portion"]}
@@ -134,23 +133,53 @@ Jefferson proposed that the 'divisors' for all states are set the SAME such that
 />
 </div>
 
-This was actually the method they went with from 1792 to 1840. The one massive problem with this issue is, as we decrease the denominator, since its a fraction, larger numbers increase faster. So say 1000/50 = 20 and 1000/40 = 25 whereas 100/50 = 2 and 100/40 = 2.5, notice how for a state with a 1000 population they gained 5 seats whereas the 100 population state gained only 0.5 seat which they may or may not even get. So the larger states get more seats faster than the smaller states. This is called the [Jefferson's Method](https://en.wikipedia.org/wiki/Jefferson_method).
+This was actually the method they went with from 1792 to 1840. The one massive problem with this issue is as we decrease the denominator, since it's a fraction, larger numbers increase faster. So say 1000/50 = 20 and 1000/40 = 25, whereas 100/50 = 2 and 100/40 = 2.5; notice how a state with a 1000 population they gained 5 seats, whereas the 100 population state gained only 0.5 seats, which may or may not even get. So the larger states get more seats faster than the smaller states. This is called the [Jefferson's Method](https://en.wikipedia.org/wiki/Jefferson_method).
 
 ### Adam's Method & Webster's Method
-Adam's method exactly the same as Jefferson's method except rather than force round down and then slowly decrease the denominator, we force round UP and slowly increase the denominator. This is called the [Adam's Method](https://en.wikipedia.org/wiki/Adam%27s_method). The Jefferson method favours the larger states and the Adam's method favours the smaller states (for the same reason, since large numbers move faster, the larger states also lose seats faster).
+Adam's method is exactly the same as Jefferson's method, except rather than force round down and then slowly decrease the denominator, we force round UP and slowly increase the denominator. This is called the [Adam's Method](https://en.wikipedia.org/wiki/Adam%27s_method). The Jefferson method favours the larger states, and the Adam's method favours the smaller states (for the same reason, since large numbers move faster, the larger states also lose seats faster).
 
-Webster's method is again the same as Adam's & Jefferson's except rather than force round up or down, we round to the nearest integer like a normal human. This is called the [Webster's Method](https://en.wikipedia.org/wiki/Webster%27s_method).
+Webster's method is again the same as Adam's & Jefferson's, except rather than force round up or down, we round to the nearest integer like a normal human. This is called the [Webster's Method](https://en.wikipedia.org/wiki/Webster%27s_method).
 
 ### Violating Rules
 Consider the following data generated graciously by Mr. Matt Parker (linked in See Also)
 ![Data](https://i.imgur.com/WQcE5mV.png)
 
-Notice how New Triangle jumped from 23.47 to 22. Which should technically not be allowed since rounding can happen only up or down to the next or previous number. Jumping numbers is not allowed in the [Quota Rule](https://en.wikipedia.org/wiki/Quota_rule). This was a common occurance in both the Jefferson and Adam's method. The reason to why this was allowed to stay for so long was because the Jefferson Rule favoured big states. And guess who had more power (more votes)? Big states -\_-.
+Notice how New Triangle jumped from 23.47 to 22. Which should technically not be allowed since rounding can happen only up or down to the next or previous number. Jumping numbers is not allowed in the [Quota Rule](https://en.wikipedia.org/wiki/Quota_rule). This was a common occurrence in both Jefferson's and Adam's methods. The reason why this was allowed to stay for so long was because the Jefferson Rule favoured big states. And guess who had more power (more votes)? Big states -\_-.
 
-They later went to the Hamilton's method in 1840, till 1880 when someone rediscovered the Alabama Paradox. So then if it looks like its impossible to avoid either the Violation of the Quota Rule or the Alabama Paradox, what do we use?
+They later went to Hamilton's method in 1840, till 1880, when someone rediscovered the Alabama Paradox. So then, if it looks like it's impossible to avoid either the Violation of the Quota Rule or the Alabama Paradox, what do we use?
 
 ### Huntington-Hill Method
-This is too complex to explain its just one big clusterfuck. There is a Geometric Mean, A square root and an ambiguous defination involved somewhere. The general idea is that this too has Quota Rule Violations. Hill also stays because it technically by default favours the smaller states which is a political decision and not a mathematical one.
+This is too complex to explain it's just one big clusterfuck. There is a Geometric Mean, A square root and an ambiguous definition involved somewhere. The general idea is that this, too, has Quota Rule Violations. Hill also stays because it technically, by default, favours the smaller states, which is a political decision and not a mathematical one.
 
+## Winner & Voting Strategies
+Before discussing Strategies, we assume. Each Citizen has exactly 1 Vote is true under any circumstance
 
-<div id="scroller">&nbsp;</div>
+### Winner Take All
+A system where 'the most votes' wins. Let's consider 5 cities Logicia, Analyticaland, Reasongrad, Sensibilia, and Flatland (Cameo).
+<Table
+titles={["City", "Got Votes"]}
+label="Winner Take All"
+rows={[
+  ["Logicia", "20%"],
+  ["Analyticaland", "18%"],
+  ["Reasongrad", "22%"],
+  ["Sensibilia", "21%"],
+  ["Flatland", "19%"]
+]}
+/>
+
+We can clearly see here how Reasongrad, with the most votes, won this election, but they made a leader which, in fact, 78% of people did not want. So this is technically a minority rule system since all states are minorities. So we have effectively been unfair to 78% of the population. We can see how this system gets worse when there are more and more cities. If there were 20 candidates, then someone with only 6% of the votes could win simply because of the most votes despite being only favoured by 6% of the population.
+
+This method, unfortunately also forces a two-party system. In every election, they see what happens, at the fact that they have abysmal results and eventually, the voters decide to go with the candidates they LEAST DISAGREE within an endless cycle till there are only two candidates. Given enough time, all [First Past the Post](https://en.wikipedia.org/wiki/First-past-the-post_voting) systems will eventually become two-party systems. This is often called the [Duverger's Law](https://en.wikipedia.org/wiki/Duverger%27s_law). This has been clearly seen in several countries like the US, UK, India, Canada, Australia, etc. There do, however exist some rare exceptions like the Philippines, where since 1987, no party has been able to control the House of Representatives
+
+This eventually has another problem where the majority of the voter base who did not originally want the now 2 majority parties eventually become disinterested in the political process and stop voting in what is often termed [Voter Apathy](https://en.wikipedia.org/wiki/Voter_apathy) where the voters stop wanting to vote because they feel their vote does not matter or does not meaningfully express who they want as a candidate.
+
+#### Gerrymandering
+Gerrymandering is the process of redrawing the borders of a state to favour a particular party. This is often done by the party in power to ensure they stay in power. This is often done by splitting the opposition party's voter base into multiple districts so that they have a majority in all districts but not a majority in any one district. This is often called [Cracking](https://en.wikipedia.org/wiki/Gerrymandering) & [Packing](https://en.wikipedia.org/wiki/Gerrymandering).
+
+Consider the following example. Let's day Newton, Einstien and Hawking are 3 candidates, and there are 3 voters who want Newton, 3 Who want Einstien and 4 who want Hawking. Now if we split the district voters into the following 2 ways
+
+- Constituency 1: Newton, Newton, Newton, Hawking, Hawking
+- Constituency 2: Einstien, Einstien, Einstien, Hawking, Hawking
+
+We can now see how Newton and Einstien have a majority in both constituencies despite each being less than Hawking, and in the end, Hawking voters would have been eliminated completely

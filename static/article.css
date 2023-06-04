@@ -3,8 +3,32 @@
   --hl-1: #a2f;
   --hl-2: #f2a;
   --hl-3: #fa2;
-  --hl-4: #2fa;
-  --hl-5: #af2;
+  --hl-4: #2c8;
+  --hl-5: #8c2;
+}
+
+hl[ix="0"] {
+  color: var(--hl-0);
+}
+
+hl[ix="1"] {
+  color: var(--hl-1);
+}
+
+hl[ix="2"] {
+  color: var(--hl-2);
+}
+
+hl[ix="3"] {
+  color: var(--hl-3);
+}
+
+hl[ix="4"] {
+  color: var(--hl-4);
+}
+
+hl[ix="5"] {
+  color: var(--hl-5);
 }
 
 .scroll-x {
@@ -74,4 +98,8 @@ a:active {
   content: counter(toc) " ";
   font-weight: 400;
   color: #444;
+}
+
+article p:first-of-type {
+  margin-top: 0;
 }
