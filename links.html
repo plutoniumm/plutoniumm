@@ -32,10 +32,34 @@
 		}
 
 		body {
-			/* // Purple, top right */
-			/* // Pink, bottom right */
-			/* // Green, top right */
-			/* // Orange, bottom left */
+			height: 100vh;
+			width: 100vw;
+			overflow-y: scroll;
+			z-index: 1;
+			background:
+				radial-gradient(50% 55% at 21vw 19vh, #cbadeb, transparent),
+				radial-gradient(50% 85% at 85vw 77vh, #edb2d0, transparent),
+				radial-gradient(70% 50% at 90vw 10vh, #7ae6c7, transparent),
+				radial-gradient(87% 81% at 16vw 91vh, #f4c4b3, transparent);
+			background-repeat: no-repeat;
+		}
+
+		@keyframes mock-rotate {
+
+			0%,
+			100% {
+				opacity: 0;
+			}
+
+			50% {
+				opacity: 1;
+			}
+		}
+
+		body::before {
+			/* gradient to rotate */
+			content: " ";
+			position: fixed;
 			background:
 				radial-gradient(50% 55% at 21vw 19vh, #cbadeb, transparent),
 				radial-gradient(50% 85% at 85vw 77vh, #edb2d0, transparent),
@@ -43,9 +67,13 @@
 				radial-gradient(87% 81% at 16vw 91vh, #f4c4b3, transparent);
 			background-repeat: no-repeat;
 			background-position: fixed;
-			height: 100vh;
+			transform: rotate(180deg);
 			width: 100vw;
-			overflow-y: scroll;
+			height: 100vh;
+			top: 0;
+			left: 0;
+
+			animation: mock-rotate 60s linear infinite;
 		}
 
 		section {
@@ -55,23 +83,26 @@
 			scroll-snap-stop: normal;
 		}
 
-		a,
-		a:visited,
-		a:hover {
-			color: var(--theme-hl) !important;
+		.blur-fff8 {
+			backdrop-filter: blur(8px);
+			-webkit-backdrop-filter: blur(8px);
+			-moz-backdrop-filter: blur(8px);
+			background: #fff8;
+			border: 1px solid #fff8;
 		}
 	</style>
 
 	<meta http-equiv="content-security-policy" content="">
 		<link href="./_app/immutable/assets/_layout-1548f59b.css" rel="stylesheet">
-		<link href="./_app/immutable/assets/_page-fd8dd49f.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/start-02103d0e.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/index-0b9241d4.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/singletons-a2142d24.js">
-		<link rel="modulepreload" href="./_app/immutable/components/pages/_layout.svelte-23a95c92.js">
+		<link href="./_app/immutable/assets/_page-19b84cfa.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/start-314d2566.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index-fe928154.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons-21695cfb.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/preload-helper-41c905a7.js">
+		<link rel="modulepreload" href="./_app/immutable/components/pages/_layout.svelte-6b6827cf.js">
 		<link rel="modulepreload" href="./_app/immutable/modules/pages/_layout.js-b518efc3.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/_layout-38454bf1.js">
-		<link rel="modulepreload" href="./_app/immutable/components/pages/links/_page.svelte-7860ad08.js">
+		<link rel="modulepreload" href="./_app/immutable/components/pages/links/_page.svelte-30da076a.js">
 </head>
 
 <body xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -80,26 +111,26 @@
 
 
 <main class="w-100 svelte-j0q9fz"><section class="p10" style="width: calc(100% - 20px);overflow-y:scroll;"><article class="mx-a" style="max-width:min(100%, 600px)"><div class="tc">Hello, Manav Here</div>
-    <a class="rpm-20 link blur f svelte-1wyvsw8" href="//github.com/plutoniumm" rel="external" referrerpolicy="noreferrer"><img src="//https://x.manav.ch/m2/i/fas:github" alt="@plutoniumm">
+    <a class="rpm-20 link blur-fff8 f svelte-qf07td" href="//github.com/plutoniumm" rel="external" referrerpolicy="noreferrer"><img src="//https://x.manav.ch/m2/i/fas:github" alt="@plutoniumm">
         <div>https://x.manav.ch/m2/i/fas:github - @plutoniumm</div>
-      </a><a class="rpm-20 link blur f svelte-1wyvsw8" href="//twitter.com/fauxdinger" rel="external" referrerpolicy="noreferrer"><img src="//https://x.manav.ch/m2/i/fas:twitter" alt="@fauxdinger">
+      </a><a class="rpm-20 link blur-fff8 f svelte-qf07td" href="//twitter.com/fauxdinger" rel="external" referrerpolicy="noreferrer"><img src="//https://x.manav.ch/m2/i/fas:twitter" alt="@fauxdinger">
         <div>https://x.manav.ch/m2/i/fas:twitter - @fauxdinger</div>
-      </a><a class="rpm-20 link blur f svelte-1wyvsw8" href="/" rel="external" referrerpolicy="noreferrer"><img src="//https://x.manav.ch/m2/i/fas:website" alt="Homepage">
+      </a><a class="rpm-20 link blur-fff8 f svelte-qf07td" href="/" rel="external" referrerpolicy="noreferrer"><img src="//https://x.manav.ch/m2/i/fas:website" alt="Homepage">
         <div>https://x.manav.ch/m2/i/fas:website - Homepage</div>
-      </a><a class="rpm-20 link blur f svelte-1wyvsw8" href="//books.manav.ch" rel="external" referrerpolicy="noreferrer"><img src="//https://x.manav.ch/m2/i/fas:books" alt="Books">
+      </a><a class="rpm-20 link blur-fff8 f svelte-qf07td" href="//books.manav.ch" rel="external" referrerpolicy="noreferrer"><img src="//https://x.manav.ch/m2/i/fas:books" alt="Books">
         <div>https://x.manav.ch/m2/i/fas:books - Books</div>
       </a></article>
 </section></main>
 
 
-		<script type="module" data-sveltekit-hydrate="f87uje">
-			import { start } from "./_app/immutable/start-02103d0e.js";
+		<script type="module" data-sveltekit-hydrate="11bjxi2">
+			import { start } from "./_app/immutable/start-314d2566.js";
 
 			start({
 				env: {},
 				paths: {"assets":"","base":""},
-				target: document.querySelector('[data-sveltekit-hydrate="f87uje"]').parentNode,
-				version: "1683554972086",
+				target: document.querySelector('[data-sveltekit-hydrate="11bjxi2"]').parentNode,
+				version: "1685941402139",
 				hydrate: {
 					node_ids: [0, 4],
 					data: [null,null],

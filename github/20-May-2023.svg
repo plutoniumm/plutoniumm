@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" aria-labelledby="descId" viewBox="0 0 300 215">
+  <style>
+    @keyframes slideInAnimation{0%{width:0}to{width:calc(100% -100px)}}@keyframes growWidthAnimation{0%{width:0}to{width:100%}}@keyframes scaleInAnimation{0%{transform:translate(-5px,5px) scale(0)}to{transform:translate(-5px,5px) scale(1)}}@keyframes fadeInAnimation{0%{opacity:0}to{opacity:1}}.lang-name{font:400 11px&quot;Segoe UI&quot;,Ubuntu,Sans-Serif;fill:#dbdbdb}.stagger{opacity:0;animation:fadeInAnimation .3s ease-in-out forwards}
+  </style>
+  <rect width="299" height="99%" x="1" y="1" fill="#0d1117" stroke="#e4e2e2" stroke-opacity="0" data-testid="card-bg" rx="4.5"/>
+  <g data-testid="card-title">
+    <text fill="#ff7372" data-testid="header" style="font:600 18px&quot;Segoe UI&quot;,Ubuntu,Sans-Serif;animation:fadeInAnimation .8s ease-in-out forwards" transform="translate(25 35)">Most Used Languages</text>
+  </g>
+  <g data-testid="main-card-body" transform="translate(0 55)">
+<svg x="25" data-testid="lang-items">
+  <mask id="rect-mask">
+    <rect width="250" height="8" fill="#fff" rx="5" style="animation:slideInAnimation 1s ease-in-out forwards"/>
+  </mask>
+  <path fill="#f1e05a" d="M0 0h137v8H0z" mask="url(#rect-mask)"/>
+  <path fill="#41b883" d="M137 0h45v8h-45z" mask="url(#rect-mask)"/>
+  <path fill="#ff3e00" d="M182 0h30v8h-30z" mask="url(#rect-mask)"/>
+  <path fill="#3572A5" d="M212 0h14v8h-14z" mask="url(#rect-mask)"/>
+  <path fill="#ff5a03" d="M225 0h18v8h-18z" mask="url(#rect-mask)"/>
+  <path fill="#4d41b1" d="M233 0h17v8h-17z" mask="url(#rect-mask)"/>
+  <path fill="#f34b7d" d="M240 0h14v8h-14z" mask="url(#rect-mask)"/>
+  <path fill="#89e051" d="M244 0h13v8h-13z" mask="url(#rect-mask)"/>
+  <path fill="#3178c6" d="M247 0h13v8h-13z" mask="url(#rect-mask)"/>
+  <path fill="#101F1F" d="M250 0h11v8h-11z" mask="url(#rect-mask)"/>
+  <g class="stagger" style="animation-delay:450ms" transform="translate(0 25)">
+    <circle cx="5" cy="6" r="5" fill="#f1e05a"/>
+    <text x="15" y="10" class="lang-name">JavaScript 54.79%</text>
+  </g>
+  <g class="stagger" style="animation-delay:600ms" transform="translate(0 50)">
+    <circle cx="5" cy="6" r="5" fill="#41b883"/>
+    <text x="15" y="10" class="lang-name">Vue 18.08%</text>
+  </g>
+  <g class="stagger" style="animation-delay:750ms" transform="translate(0 75)">
+    <circle cx="5" cy="6" r="5" fill="#ff3e00"/>
+    <text x="15" y="10" class="lang-name">Svelte 11.84%</text>
+  </g>
+  <g class="stagger" style="animation-delay:900ms" transform="translate(0 100)">
+    <circle cx="5" cy="6" r="5" fill="#3572A5"/>
+    <text x="15" y="10" class="lang-name">Python 5.42%</text>
+  </g>
+  <g class="stagger" style="animation-delay:1050ms" transform="translate(0 125)">
+    <circle cx="5" cy="6" r="5" fill="#ff5a03"/>
+    <text x="15" y="10" class="lang-name">Astro 3.04%</text>
+  </g>
+  <g class="stagger" style="animation-delay:450ms" transform="translate(150 25)">
+    <circle cx="5" cy="6" r="5" fill="#4d41b1"/>
+    <text x="15" y="10" class="lang-name">Fortran 2.72%</text>
+  </g>
+  <g class="stagger" style="animation-delay:600ms" transform="translate(150 50)">
+    <circle cx="5" cy="6" r="5" fill="#f34b7d"/>
+    <text x="15" y="10" class="lang-name">C++ 1.71%</text>
+  </g>
+  <g class="stagger" style="animation-delay:750ms" transform="translate(150 75)">
+    <circle cx="5" cy="6" r="5" fill="#89e051"/>
+    <text x="15" y="10" class="lang-name">Shell 1.15%</text>
+  </g>
+  <g class="stagger" style="animation-delay:900ms" transform="translate(150 100)">
+    <circle cx="5" cy="6" r="5" fill="#3178c6"/>
+    <text x="15" y="10" class="lang-name">TypeScript 1.06%</text>
+  </g>
+  <g class="stagger" style="animation-delay:1050ms" transform="translate(150 125)">
+    <circle cx="5" cy="6" r="5" fill="#101F1F"/>
+    <text x="15" y="10" class="lang-name">AppleScript 0.21%</text>
+  </g>
+</svg>
+  </g>
+</svg>
