@@ -80,7 +80,8 @@ function calculateTime () {
   const words = main.split( ' ' ).filter( Boolean )
   let speed = words.length / 200; // 225 wpm
 
-  document.querySelector( '#time' ).innerText = `${ Math.round( speed ) } min read`;
+  // since articles are dense, add a 10% non linear penalty
+  document.querySelector( '#time' ).innerText = `${ Math.round( speed ** 1.1 ) } min read`;
 };
 
 

@@ -11,7 +11,15 @@ image: ""
   import Table from "../../components/table.svelte";
 </script>
 
-Let's consider the fictitious city of Rationalia, whose sitting president is Neil Degrasse Tyson. Let's then see how to hack the elections and hacking the hacks and so on. We'll also look for better election systems altogether too.
+Let's consider the fictitious city of [Rationalia](https://neildegrassetyson.com/commentary/2016-08-07-reflections-on-rationalia/), whose sitting president is Dr. Neil Degrasse Tyson. Let's then see how to hack the elections and hacking the hacks and so on. We'll also look for better election systems altogether too. Lets divide this into largely two sections: Apportionment and Systems
+
+Apportionment will be about how to divide the seats between the states, rounding and other such things. Systems will be about how to actually do the voting and which process has what merits. Apportionment & Systems can themselves be read independently of each other however the order inside each section is important.
+
+There are a few basic assumptions made here before we move
+- The Countries are Democracies, unlike say [Saudi Arabia](https://en.wikipedia.org/wiki/Politics_of_Saudi_Arabia) or [Iran](https://en.wikipedia.org/wiki/Politics_of_Iran) where the people don't have a say in who rules them
+- Elections are GENERALLY Free & Fair, unlike say [Singapore](https://youtu.be/Hkxf4SC_SBk) or [China](https://en.wikipedia.org/wiki/Elections_in_China) where the party in power is the only party **that can win** that exists and the elections are just a formality
+- The Countries are stable Democracies, unlike say [Pakistan](https://en.wikipedia.org/wiki/Politics_of_Pakistan) or [Afghanistan](https://en.wikipedia.org/wiki/Politics_of_Afghanistan) where the government is overthrown every few years. While is not really necessary but in case of conflicts its a good tie breaker to have. So I don't think we'll ever hit a situation where this condition ever comes into play
+
 
 ## Apportionment
 Let's say Rationalia has 2 states, Reasongrad and Analyticaland. So lets now divide 5 seats between the states as follows with 2 cases just to see how we round them
@@ -26,7 +34,7 @@ Let's say Rationalia has 2 states, Reasongrad and Analyticaland. So lets now div
     ["<b>Case 2</b>", "", ""],
     ["Reasongrad", 2510, "51%"],
     ["Analyticaland", 2390, "49%"],
-  ]}
+]}
  />
 <div class="p20" style="font-size:1.5em;line-height:6em">➡️</div>
 <Table
@@ -38,7 +46,7 @@ Let's say Rationalia has 2 states, Reasongrad and Analyticaland. So lets now div
     ["-"],
     ["3 (Round Up 2.51 seats)"],
     ["2 (Round Down 2.39 seats)"],
-  ]}
+]}
  />
 
 </div>
@@ -52,7 +60,7 @@ But now, let's add another state, Logicia, but let's not change the number of se
     ["Reasongrad", 1650, "33%"],
     ["Analyticaland", 1600, "32%"],
     ["Logicia", 1750, "35%"],
-  ]} />
+]} />
 <div class="p20" style="font-size:1.5em;line-height:3em">➡️</div>
 <Table
   titles={["seats"]}
@@ -60,7 +68,7 @@ But now, let's add another state, Logicia, but let's not change the number of se
     ["2 (Round Up 1.65 seats)"],
     ["2 (Round Up 1.6 seats)"],
     ["2 (Round Up 1.75 seats)"],
-  ]} />
+]} />
 </div>
 
 But now suddenly we need 6 seats when we have only 5. So who do we round down?
@@ -79,7 +87,7 @@ So if some state needs 0.3 more seats to round up to 3 (from 2.7), they will be 
     ["C", 4_167, 4.47, 0.47],
     ["D", 9_731, 10.42, 0.42],
     ["E", 1_065, 1.14, 0.14]
-  ]}
+]}
   label="43 seats"
 />
 <div class="p20" style="font-size:1.5em;line-height:6em">vs</div>
@@ -91,7 +99,7 @@ So if some state needs 0.3 more seats to round up to 3 (from 2.7), they will be 
     ["A", 3_252, 3.57, 0.57],
     ["E", 1_065, 1.17, 0.17],
     ["B", 21_878, 24.02, 0.02]
-  ]}
+]}
   label="44 seats"
 />
 </div>
@@ -111,7 +119,7 @@ Jefferson proposed that the 'divisors' for all states are set the SAME such that
     ["Reasongrad", 1650, `1650/1000 = 16.5`],
     ["Analyticaland", 1600, `1600/1000 = 16.0`],
     ["Logicia", 1750, `1750/1000 = 17.5`]
-  ]}
+]}
 />
 
 <div class="f tc mx-a j-ar scroll-x">
@@ -152,7 +160,7 @@ They later went to Hamilton's method in 1840, till 1880, when someone rediscover
 ### Huntington-Hill Method
 This is too complex to explain it's just one big clusterfuck. There is a Geometric Mean, A square root and an ambiguous definition involved somewhere. The general idea is that this, too, has Quota Rule Violations. Hill also stays because it technically, by default, favours the smaller states, which is a political decision and not a mathematical one.
 
-## Winner & Voting Strategies
+## Electoral Systems
 Before discussing Strategies, we assume. Each Citizen has exactly 1 Vote is true under any circumstance
 
 ### Winner Take All
@@ -327,11 +335,18 @@ graph LR
 </pre>
 </div>
 
-
 ### Single Transferable Vote
+Also called "The Single Greatest Voting System To Have Ever Existed" (by at least 1 people). This is a system where you rank candidates in order of preference. Our objectives here are
+- Majority Happiness
+- Local Elections (not just one national)
+- Allow multiple representatives
 
+There is no way I can explain this without an animation so just follow this video below
 
-## Conclusions
+<iframe title="some stuff about stv" src="https://www.youtube-nocookie.com/embed/M91jraoo6t8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Conclusions & Caveats
+### Possibilities
 It is in theory mathematically possible to show that for any system, there is some criteria which a reasonable human would include in the idea of 'fairness' that gets left out ([Arrow's Impossibility Theorem](https://en.wikipedia.org/wiki/Arrow%27s_impossibility_theorem)).
 - [Mutual Majority](https://en.wikipedia.org/wiki/Pareto_efficiency)
 - [Non Dictatorship](https://en.wikipedia.org/wiki/Dictatorship_mechanism)
@@ -344,3 +359,21 @@ A simpler way to say this would be with the results of [Gibbard's Theorem](https
 - The process is dictatorial
 - The process is susceptible to tactical voting
 - The process limits the possible outcomes to TWO options only
+
+### Comparisons
+Of all the systems we have seen, we can clearly see how each of them have their own advantages and disadvantages. So usually when selecting a political system it's not a matter of what's best but what is least worst. So say in a large democracy like India it may not even be feasible to do Multiple Runoff in the first place or it may not be fair to do something else somewhere else. So it's not a matter of what's best but what's least worst since we know there IS inevitably going to be SOME problems
+
+[Here](https://en.wikipedia.org/wiki/List_of_electoral_systems_by_country#Maps) are some of the electoral systems used by countries around the world. You can see that there is no one system that is used by all countries. There are some countries that use multiple systems for different elections. For example, in India, the Lok Sabha elections use First Past The Post while the Rajya Sabha elections use Single Transferable Vote. There are also some countries that use multiple systems for the same election. For example,
+
+### Caveats
+There is SOME influence of how each system itself is implemented say,
+
+Weather or not Voting is compulsory in a system or not, so there are 4 types of systems
+- Enforced Compulsory Voting: Ex. Australia, Brazil etc
+- Non Enforced Compulsory Voting: Ex. Turkey, Belgium etc
+- Partially Compulsory Voting (men only): Ex. Egypt, Lybia etc
+- Voluntary Voting: Ex. India, USA etc
+
+Or weather or not reservations exist, the most significant example by far would be India where minorities and reserved castes have a significant influence on the outcome of the election. This is often such a deal breaker that parties tend to get commonly accused of ['Vote Bank Politics'](https://en.wikipedia.org/wiki/Votebank) or ['Minority Appeasement'](https://en.wikipedia.org/wiki/Pseudo-secularism) where they try to appease a certain group of people to get their votes. There are also other countries like Morocco where the reservations are not only by caste or gender but also by age, they have 30 reserved seats for [people under 40](https://en.wikipedia.org/wiki/Parliament_of_Morocco), and it's well known that generally younger people lean left-er than older people and they [gradually become more conservative](https://www.jstor.org/stable/1041104) as they age.
+
+So a few things done occaisonally in some systems are Gerrymandering around likelyhood of voting of a region or demographics, say if its compulsory to vote for men and a region favours you then skew for that or if women dislike your party, then split apart regions where women tend to vote high. While these are generally things that do make a difference I decided to not go into too much detail into them since it can be deduced as a special case of the systems we have already seen.

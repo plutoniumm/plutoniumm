@@ -17,7 +17,7 @@
     overflow: hidden;
   }
   progress::-webkit-progress-bar {
-    background-color: #888;
+    background-color: #ccc8;
   }
   progress::-webkit-progress-value {
     background-color: #2af;

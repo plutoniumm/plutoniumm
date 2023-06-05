@@ -7,6 +7,15 @@
   --hl-5: #950;
 }
 
+iframe[src*="youtube"] {
+  width: min(100%, 600px);
+  margin: 5px auto;
+  border-radius: 10px;
+  display: block;
+  border: 0;
+  aspect-ratio: 16/9;
+}
+
 hl[ix="0"] {
   color: var(--hl-0);
 }
@@ -69,8 +78,25 @@ a:active {
   display: flex;
 }
 
+#toc ul:first-child li {
+  /* border-right: 1px solid #ccc8; */
+  border-image: linear-gradient(to right, #0000 0%, #0000 90%, #cccc 100%) 1;
+  border-width: 2px;
+  border-style: solid;
+  margin-right: 8px;
+  padding-right: 8px;
+}
+
+#toc ul:first-child ul li {
+  border: none;
+}
+
 #toc ul li:before {
   font-size: 1.25rem;
+}
+
+#toc ul ul {
+  overflow: hidden;
 }
 
 #toc ul ul li::before {
