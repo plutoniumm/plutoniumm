@@ -4,7 +4,7 @@ function autoHighlight () {
   const hl = conf.getAttribute( 'hl' ).split( ',' ).map( x => x.trim() );
 
   // replace out all hl words by paragraph
-  let ps = document.querySelectorAll( 'p, li' );
+  let ps = document.querySelectorAll( 'p, li, td' );
   ps = Array.from( ps ).filter(
     p => hl.some( word => p.innerHTML.includes( word ) )
   );
@@ -18,9 +18,24 @@ function autoHighlight () {
     } );
 
     p.innerHTML = text;
-  }
+  };
+}
 
-  console.log( "HL Words: ", hl );
+async function mermaid () {
+  const pre = document.querySelectorAll( 'pre' );
+  if ( !pre ) return 0;
+
+  let mermaid = ( await import( 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs' ) ).default;
+  let config = {
+    theme: 'base',
+    startOnLoad: false,
+    flowchart: {
+      useMaxWidth: false,
+      htmlLabels: true
+    }
+  };
+  mermaid.initialize( config );
+  mermaid.run();
 }
 
 function makeToc () {
@@ -41,6 +56,7 @@ function makeToc () {
     if ( heading.id )
       id = heading.id;
     else {
+      // create & set
       id = text.replace( / /g, '-' ).toLowerCase();
       heading.id = id;
     };
@@ -64,21 +80,18 @@ function calculateTime () {
   const words = main.split( ' ' ).filter( Boolean )
   let speed = words.length / 200; // 225 wpm
 
-  console.log( "Speed:", speed );
-
-  const time = document.querySelector( '#time' );
-  time.innerText = `${ Math.round( speed ) } min read`;
+  document.querySelector( '#time' ).innerText = `${ Math.round( speed ) } min read`;
 };
 
 
 //
 function main () {
   conf = document.querySelector( 'conf' )
-  console.log( "conf", conf );
   setTimeout( () => {
     autoHighlight();
     makeToc();
-    calculateTime()
+    calculateTime();
+    mermaid();
   }, 100 );
 }
 

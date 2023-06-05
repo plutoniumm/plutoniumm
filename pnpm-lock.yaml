@@ -13,9 +13,6 @@ dependencies:
   mdsvex:
     specifier: 0.10.6
     version: 0.10.6(svelte@3.55.1)
-  predefined:
-    specifier: 3.0.0
-    version: 3.0.0
   typescript:
     specifier: 5.0.4
     version: 5.0.4
@@ -715,10 +712,6 @@ packages:
       nanoid: 3.3.6
       picocolors: 1.0.0
       source-map-js: 1.0.2
-    dev: false
-
-  /predefined@3.0.0:
-    resolution: {integrity: sha512-NIBunJlpRobsN1/LNRd1bW2hSIcgRR1N7rHKJceYEWeinoFHiqwUTufxTZdwta3nG23aQjz6su9Pe+OFzBYr7A==}
     dev: false
 
   /prism-svelte@0.4.7:

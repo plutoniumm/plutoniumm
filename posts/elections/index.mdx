@@ -7,6 +7,7 @@ image: ""
 <conf hl="Reasongrad, Analyticaland, Logicia, Hawking, Einstien, Newton" />
 
 <script>
+  import Progress from "../../components/progress.svelte";
   import Table from "../../components/table.svelte";
 </script>
 
@@ -135,7 +136,7 @@ Jefferson proposed that the 'divisors' for all states are set the SAME such that
 
 This was actually the method they went with from 1792 to 1840. The one massive problem with this issue is as we decrease the denominator, since it's a fraction, larger numbers increase faster. So say 1000/50 = 20 and 1000/40 = 25, whereas 100/50 = 2 and 100/40 = 2.5; notice how a state with a 1000 population they gained 5 seats, whereas the 100 population state gained only 0.5 seats, which may or may not even get. So the larger states get more seats faster than the smaller states. This is called the [Jefferson's Method](https://en.wikipedia.org/wiki/Jefferson_method).
 
-### Adam's Method & Webster's Method
+### Adam & Webster Methods
 Adam's method is exactly the same as Jefferson's method, except rather than force round down and then slowly decrease the denominator, we force round UP and slowly increase the denominator. This is called the [Adam's Method](https://en.wikipedia.org/wiki/Adam%27s_method). The Jefferson method favours the larger states, and the Adam's method favours the smaller states (for the same reason, since large numbers move faster, the larger states also lose seats faster).
 
 Webster's method is again the same as Adam's & Jefferson's, except rather than force round up or down, we round to the nearest integer like a normal human. This is called the [Webster's Method](https://en.wikipedia.org/wiki/Webster%27s_method).
@@ -182,4 +183,164 @@ Consider the following example. Let's day Newton, Einstien and Hawking are 3 can
 - Constituency 1: Newton, Newton, Newton, Hawking, Hawking
 - Constituency 2: Einstien, Einstien, Einstien, Hawking, Hawking
 
-We can now see how Newton and Einstien have a majority in both constituencies despite each being less than Hawking, and in the end, Hawking voters would have been eliminated completely
+We can now see how Newton and Einstien have a majority in both constituencies despite each being less than Hawking, and in the end, Hawking voters would have been eliminated completely. Gerrymandering gives whoever draws the lines, an unfair advantage on the system.
+
+#### The Spoiler Effect
+The Spoiler Effect is when a third party candidate takes votes away from a major party candidate, causing a loss. This is often used as an argument against third parties. So rather than actually helping us choose more candidates it just becomes a way to play more politics. So if Einstien gives Hawking money to stand in an election and then say it proposes SIMILAR but not same ideologies as Newton, some of Newton's voters will now vote for Hawking, thus taking away soem chance of Newton winning. This is often called the [Spoiler Effect](https://en.wikipedia.org/wiki/Spoiler_effect).
+
+So far now we need 3 things to make a better system
+- We should be able to vote for who we want
+- No Gerrymandering
+- More parties are better
+- AND it should be open to newcomers (IMPORTANT)
+
+### Instant Runoff Voting
+In this system rather than voting for one candidate, we rank them. So let's say we have 5 candidates, A, B, C, D, E. We can rank them in the order we want. So If I would like to see B in power I put B first, then I put whoever I would like in power IF B didn't run next, so say A and so on...
+
+Consider The following Ratios:
+<table>
+  <tr><td>Newton: </td><td><Progress value="42"/></td></tr>
+  <tr><td>Einstien: </td><td><Progress value="26"/></td></tr>
+  <tr><td>Hawking: </td><td><Progress value="17"/></td></tr>
+  <tr><td>Archimedes: </td><td><Progress value="15"/></td></tr>
+</table>
+
+So no we need to eliminate the last candidate, Archimedes. So we take all the votes that voted for Archimedes and see who they voted for next, so lets say ALL of those who voted for Archimedes voted for Hawking next. Making the new results
+
+<table>
+  <tr><td>Newton: </td><td><Progress value="42"/></td></tr>
+  <tr><td>Einstien: </td><td><Progress value="26"/></td></tr>
+  <tr><td>Hawking: </td><td><Progress value="32"/></td></tr>
+</table>
+
+Now we eliminate Einstien and see who they voted for next, so lets say ALL of those who voted for Einstien voted for Hawking next. Making the new results
+
+<table>
+  <tr><td>Newton: </td><td><Progress value="42"/></td></tr>
+  <tr><td>Hawking: </td><td><Progress value="58"/></td></tr>
+</table>
+
+Giving us the final winner of Hawking. This is called the [Instant Runoff Voting](https://en.wikipedia.org/wiki/Instant-runoff_voting) system.
+
+This method so far solves one key issue for us that it is very open to new parties and the spoiler effect cannot affect the results as much. Since now if there are 2 candidates and a third party candidate comes in, the third party candidate will still take away some votes away from whoever they're paid to take it away from. But now that the third party candidate is eliminated, the votes will go to whoever the voters wanted next, so now the votes just go back to whoever they were taken from in the first place.
+
+Despite solving one issue, this method still has the issue of Gerrymandering etc from [Winner Takes All](#winner-take-all) system, such as notice how despite having started out 3rd in the first round, Hawking still won the election. It doesn't seem like it would be fair for a candidate who was 3rd to win the election. So we need a system that solves this issue.
+
+### Multiple Runoff
+This system is similar to the [Instant Runoff Voting](#instant-runoff-voting) system, but rather than eliminating the last candidate immidiately and just recalculating the votes, we have multiple rounds of voting. So we have the first round, we vote again with 3 candidates, then we vote again with 2 candidates and so on. Or we can have a system similar to Brazil where we have 2 rounds of voting (assuming there is no clear &gt;50% in one shot), the first round is similar to the [Instant Runoff Voting](#instant-runoff-voting) system, and the second round is a [Winner Takes All](#winner-take-all) system. This is called the [Multiple Runoff](https://en.wikipedia.org/wiki/Two-round_system) system.
+
+Consider a multiple run of system where Hawking has to skew the results even if they know they cannot win since the votes after 2nd round may change. So if Hawking knows that Einstien has a good chance of winning and say theirs is lower, they can still skew the results to make sure Einstien has a lower percentage of votes in the first round itself by having all their candidates vote for Archimedes in the first round giving us
+
+<table>
+  <tr><td>Newton: </td><td><Progress value="42"/></td></tr>
+  <tr><td>Einstien: </td><td><Progress value="26"/></td></tr>
+  <tr><td>Archimedes: </td><td><Progress value="32"/></td></tr>
+</table>
+
+Notice how in this situation since Einstien is clearly the lowest and immidiately gets eliminated. So now as before all of Einstien's votes go to Archimedes, giving us
+
+<table>
+  <tr><td>Newton: </td><td><Progress value="42"/></td></tr>
+  <tr><td>Archimedes: </td><td><Progress value="58"/></td></tr>
+</table>
+
+So here now despite not having won themselves, Hawking has managed to skew the results to make sure Einstien doesn't win AND that the candidate he most agrees with has won. Notice how here despite having the LEAST amount of initial votes 15, Hawking has managed to make Archimedes win. This suddenly went from slightly unfair to complete anarchy. A method which incentivises people lying shouldn't really be a candidate for an 'ideal' system. So we need a system that solves this issue.
+
+### Condorcet Method
+What if we were to have a system where we could vote for every possible match up of candidates. So if we have 4 candidates we vote for each of the following cases
+
+- A vs B, A vs C, A vs D
+- B vs C, B vs D
+- C vs D
+
+So if we have 4 candidates, we have 6 possible match-ups. So let us take a sample game where the following are the perferences expressed by people in each match up
+
+<div class="f tc mx-a j-ar scroll-x">
+
+<div class="tc">
+<table>
+<tr><td>&nbsp;</td><td>A vs B</td></tr>
+<tr><td>A</td><td><Progress value="68"/></td></tr>
+<tr><td>B</td><td><Progress value="32"/></td></tr>
+</table>
+<table>
+<tr><td>&nbsp;</td><td>C vs A</td></tr>
+<tr><td>C</td><td><Progress value="42"/></td></tr>
+<tr><td>A</td><td><Progress value="58"/></td></tr>
+</table>
+<table>
+<tr><td>&nbsp;</td><td>A vs D</td></tr>
+<tr><td>A</td><td><Progress value="68"/></td></tr>
+<tr><td>D</td><td><Progress value="32"/></td></tr>
+</table>
+</div>
+
+<div class="tc">
+<table>
+<tr><td>&nbsp;</td><td>C vs B</td></tr>
+<tr><td>C</td><td><Progress value="42"/></td></tr>
+<tr><td>B</td><td><Progress value="58"/></td></tr>
+</table>
+<table>
+<tr><td>&nbsp;</td><td>C vs D</td></tr>
+<tr><td>C</td><td><Progress value="42"/></td></tr>
+<tr><td>D</td><td><Progress value="58"/></td></tr>
+</table>
+<table>
+<tr><td>&nbsp;</td><td>B vs D</td></tr>
+<tr><td>B</td><td><Progress value="17"/></td></tr>
+<tr><td>D</td><td><Progress value="83"/></td></tr>
+</div>
+</div>
+
+Notice that in such a method we can see that A is the most preferred candidate, since A has the highest percentage in 3 of the 6 match ups. So we can say that A is the winner. This is called the [Condorcet Method](https://en.wikipedia.org/wiki/Condorcet_method). There is however one BIG problem in this method. WHAT IF, lets say we had 3 candidates and the results came out in stone paper scissor such that
+
+<pre class="mermaid tc">
+graph LR
+  A --> B
+  B --> C
+  C --> A
+</pre>
+
+In such a case, we have a situation where A is preferred over B, B is preferred over C and C is preferred over A. So we have a situation where there is no clear winner. This is called a [Condorcet Paradox](https://en.wikipedia.org/wiki/Condorcet_paradox). This situation may infact occur for any number of candidates and candidates may even game the system to form loops so for example, both of the following cases are a problem
+
+<div class="f tc mx-a j-ar scroll-x">
+<pre class="mermaid">
+graph LR
+  X["Loop"]
+  A --- B
+  A --- C
+  C --> D["..."]
+  B --- D
+</pre>
+
+<pre class="mermaid">
+graph LR
+  X --> Y
+  Y --> A
+  subgraph Loop
+    direction TB
+    A --> B
+    B --> C
+    C --> A
+  end
+</pre>
+</div>
+
+
+### Single Transferable Vote
+
+
+## Conclusions
+It is in theory mathematically possible to show that for any system, there is some criteria which a reasonable human would include in the idea of 'fairness' that gets left out ([Arrow's Impossibility Theorem](https://en.wikipedia.org/wiki/Arrow%27s_impossibility_theorem)).
+- [Mutual Majority](https://en.wikipedia.org/wiki/Pareto_efficiency)
+- [Non Dictatorship](https://en.wikipedia.org/wiki/Dictatorship_mechanism)
+- [Condorcet Criterion](https://en.wikipedia.org/wiki/Condorcet_winner_criterion)
+- [Independence of Irrelevant Alternatives](https://en.wikipedia.org/wiki/Independence_of_irrelevant_alternatives#In_social_choice)
+- [Monotonicity](https://en.wikipedia.org/wiki/Monotonicity_criterion)
+- Etc, head over to the Technical Defination of Arrow's Impossibility Theorem for more details.
+
+A simpler way to say this would be with the results of [Gibbard's Theorem](https://en.wikipedia.org/wiki/Gibbard%27s_theorem) (which is a consequence of Arrow's Theorem) which states that for any process of collective decision, one of the following MUST, hold
+- The process is dictatorial
+- The process is susceptible to tactical voting
+- The process limits the possible outcomes to TWO options only
