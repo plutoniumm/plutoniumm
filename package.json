@@ -3,7 +3,7 @@
   "scripts": {
     "dev": "vite dev",
     "build": "rm -rf build .svelte* && vite build",
-    "deploy": "npx gh-pages -d build -t true"
+    "deploy": "npx gh-pages -d build -t true && rm -rf build .svelte*"
   },
   "devDependencies": {
     "sass": "1.35.1",

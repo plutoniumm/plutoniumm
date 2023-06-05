@@ -80,8 +80,11 @@ function calculateTime () {
   const words = main.split( ' ' ).filter( Boolean )
   let speed = words.length / 200; // 225 wpm
 
+  // round words to nearest 500
+  const rounded = ( ( words.length / 500 ) | 0 ) * 500;
+
   // since articles are dense, add a 10% non linear penalty
-  document.querySelector( '#time' ).innerText = `${ Math.round( speed ** 1.1 ) } min read`;
+  document.querySelector( '#time' ).innerText = `${ Math.round( speed ** 1.1 ) } min read | ~${ rounded } words`;
 };
 
 

@@ -4,7 +4,7 @@ import { mdsvex } from 'mdsvex';
 
 /** @type {import('@sveltejs/kit').Config} */
 export default {
-	extensions: [ '.svelte', '.mdx' ],
+	extensions: [ '.svelte', '.mdx', '.md' ],
 	preprocess: [
 		sveltePreprocess( {} ),
 		mdsvex( {

@@ -16,9 +16,7 @@ const config = {
     },
     server: {
         port: 3000,
-        fs: {
-            allow: [ "." ]
-        }
+        fs: { allow: [ "." ] }
     },
     build: {
         minify: "esbuild",
