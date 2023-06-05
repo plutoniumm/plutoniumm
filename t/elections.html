@@ -96,7 +96,7 @@
 		<link href="../_app/immutable/assets/_layout-1548f59b.css" rel="stylesheet">
 		<link href="../_app/immutable/assets/_page-b649b80e.css" rel="stylesheet">
 		<link href="../_app/immutable/assets/index-f2fe3723.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/start-314d2566.js">
+		<link rel="modulepreload" href="../_app/immutable/start-502c8f36.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/index-fe928154.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/singletons-21695cfb.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper-41c905a7.js">
@@ -104,8 +104,8 @@
 		<link rel="modulepreload" href="../_app/immutable/modules/pages/_layout.js-b518efc3.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/_layout-38454bf1.js">
 		<link rel="modulepreload" href="../_app/immutable/components/pages/t/_slug_/_page.svelte-af75a27f.js">
-		<link rel="modulepreload" href="../_app/immutable/modules/pages/t/_slug_/_page.ts-2e2e80ec.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/_page-771c52e3.js"><!-- HEAD_svelte-18l6f7l_START --><script src="/article.js"></script><link rel="stylesheet" href="/article.css"><!-- HEAD_svelte-18l6f7l_END -->
+		<link rel="modulepreload" href="../_app/immutable/modules/pages/t/_slug_/_page.ts-4a84afcf.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/_page-d5fcacca.js"><!-- HEAD_svelte-18l6f7l_START --><script src="/article.js"></script><link rel="stylesheet" href="/article.css"><!-- HEAD_svelte-18l6f7l_END -->
 </head>
 
 <body xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -120,15 +120,15 @@
     <div style="color:#888">Table of Contents</div>
     <div id="toc" style="padding:5px 0;"></div>
     
-    <conf hl="Reasongrad, Analyticaland, Logicia, Hawking, Einstien, Newton"></conf>
-<p>Let’s consider the fictitious city of <a href="https://neildegrassetyson.com/commentary/2016-08-07-reflections-on-rationalia/" rel="nofollow">Rationalia</a>, whose sitting president is Dr. Neil Degrasse Tyson. Let’s then see how to hack the elections and hacking the hacks and so on. We’ll also look for better election systems altogether too. Lets divide this into largely two sections: Apportionment and Systems</p>
-<p>Apportionment will be about how to divide the seats between the states, rounding and other such things. Systems will be about how to actually do the voting and which process has what merits. Apportionment &amp; Systems can themselves be read independently of each other however the order inside each section is important.</p>
-<p>There are a few basic assumptions made here before we move</p>
-<ul><li>The Countries are Democracies, unlike say <a href="https://en.wikipedia.org/wiki/Politics_of_Saudi_Arabia" rel="nofollow">Saudi Arabia</a> or <a href="https://en.wikipedia.org/wiki/Politics_of_Iran" rel="nofollow">Iran</a> where the people don’t have a say in who rules them</li>
+    <conf hl="Reasongrad, Analyticaland, Logicia, Hawking, Einstein, Newton"></conf>
+<p>let us consider the fictitious city of <a href="https://neildegrassetyson.com/commentary/2016-08-07-reflections-on-rationalia/" rel="nofollow">Rationalia</a>, whose sitting president is Dr Neil Degrasse Tyson. Let us then see how to hack the elections and hacking the hacks and so on. We will look for better election systems altogether too. Let us divide this into largely two sections: Apportionment and Systems.</p>
+<p>Apportionment will be about how to divide the seats between the states, rounding and other such things. Systems will be about how to do the voting and which process has what merits. Apportionment &amp; Systems can be read independently; however, the order inside each section is essential.</p>
+<p>There are a few basic assumptions made here before we move.</p>
+<ul><li>The Countries are Democracies, unlike, say <a href="https://en.wikipedia.org/wiki/Politics_of_Saudi_Arabia" rel="nofollow">Saudi Arabia</a> or <a href="https://en.wikipedia.org/wiki/Politics_of_Iran" rel="nofollow">Iran</a>, where the people do not have a say in who rules them</li>
 <li>Elections are GENERALLY Free &amp; Fair, unlike say <a href="https://youtu.be/Hkxf4SC_SBk" rel="nofollow">Singapore</a> or <a href="https://en.wikipedia.org/wiki/Elections_in_China" rel="nofollow">China</a> where the party in power is the only party <strong>that can win</strong> that exists and the elections are just a formality</li>
-<li>The Countries are stable Democracies, unlike say <a href="https://en.wikipedia.org/wiki/Politics_of_Pakistan" rel="nofollow">Pakistan</a> or <a href="https://en.wikipedia.org/wiki/Politics_of_Afghanistan" rel="nofollow">Afghanistan</a> where the government is overthrown every few years. While is not really necessary but in case of conflicts its a good tie breaker to have. So I don’t think we’ll ever hit a situation where this condition ever comes into play</li></ul>
+<li>The Countries are stable Democracies, unlike, say <a href="https://en.wikipedia.org/wiki/Politics_of_Pakistan" rel="nofollow">Pakistan</a> or <a href="https://en.wikipedia.org/wiki/Politics_of_Afghanistan" rel="nofollow">Afghanistan</a>, where the government is overthrown every few years. While it is unnecessary, it is a good tiebreaker in case of conflicts. So I do not think we will ever hit a situation where this condition ever comes into play</li></ul>
 <h2>Apportionment</h2>
-<p>Let’s say Rationalia has 2 states, Reasongrad and Analyticaland. So lets now divide 5 seats between the states as follows with 2 cases just to see how we round them</p>
+<p>let us say Rationalia has two states, Reasongrad and Analyticaland. So lets now divide five seats between the states as follows with 2 cases to see how we round them.</p>
 <div class="f tc mx-a j-ar scroll-x"><div>
   <table class="rx5 tc w-100 svelte-h5rbt1"><thead><tr><th class="svelte-h5rbt1">state</th><th class="svelte-h5rbt1">population</th><th class="svelte-h5rbt1">share</th></tr></thead>
     <tbody><tr><td class="svelte-h5rbt1"><!-- HTML_TAG_START --><b>Case 1</b><!-- HTML_TAG_END --></td><td class="svelte-h5rbt1"><!-- HTML_TAG_START --><!-- HTML_TAG_END --></td><td class="svelte-h5rbt1"><!-- HTML_TAG_START --><!-- HTML_TAG_END --></td>
@@ -150,7 +150,7 @@
         </tr><tr><td class="svelte-h5rbt1"><!-- HTML_TAG_START -->2 (Round Down 2.39 seats)<!-- HTML_TAG_END --></td>
         </tr></tbody></table>
 </div></div>
-<p>But now, let’s add another state, Logicia, but let’s not change the number of seats and the populations of the states. So redistributing the populations of the states, we get the following</p>
+<p>However, now, let us add another state, Logicia, but let us not change the number of seats and the populations of the states. So redistributing the populations of the states, we get the following.</p>
 <div class="f tc mx-a j-ar scroll-x"><div>
   <table class="rx5 tc w-100 svelte-h5rbt1"><thead><tr><th class="svelte-h5rbt1">state</th><th class="svelte-h5rbt1">population</th><th class="svelte-h5rbt1">share</th></tr></thead>
     <tbody><tr><td class="svelte-h5rbt1"><!-- HTML_TAG_START -->Reasongrad<!-- HTML_TAG_END --></td><td class="svelte-h5rbt1"><!-- HTML_TAG_START -->1650<!-- HTML_TAG_END --></td><td class="svelte-h5rbt1"><!-- HTML_TAG_START -->33%<!-- HTML_TAG_END --></td>
@@ -168,8 +168,8 @@
 </div></div>
 <p>But now suddenly we need 6 seats when we have only 5. So who do we round down?</p>
 <h3>Hamilton’s Method</h3>
-<p>The way this was first proposed to be solved, it keeps rounding up from the number closest to the next integer till whoever else is left gets rounded down, even if they’re closer to the next integer. This is called the <a href="https://en.wikipedia.org/wiki/Largest_remainder_method" rel="nofollow">Hamilton’s Method</a>. So, in this case, we would round up Reasongrad and Analyticaland and round down Logicia. So we actually get 2 seats for Reasongrad and Analyticaland and 1 seat for Logicia. This method is exactly what was also first proposed for Alabama in 1792.</p>
-<p>So if some state needs 0.3 more seats to round up to 3 (from 2.7), they will be rounded up to 3 even if there exists a state with 26.6 seats that needs 0.4 more seats to round up to 27. This allows for what would be ‘fair’ rounding since a given state is closest to the next integer. The problem arises when we add just 1 more seat. Then which number is closest to the next integer jumps around completely randomly. Consider the below actual example from Alabama (sorted by descending remaining fraction)</p>
+<p>The way this was proposed to be solved, it keeps rounding up from the number closest to the next integer until whoever else is left gets rounded down, even if they’re closer to the next integer. This is called the <a href="https://en.wikipedia.org/wiki/Largest_remainder_method" rel="nofollow">Hamilton’s Method</a>. So, in this case, we would round up Reasongrad and Analyticaland and round down Logicia. So we get two seats for Reasongrad and Analyticaland and one for Logicia. This method is precisely what was also first proposed for Alabama in 1792.</p>
+<p>So if some state needs 0.3 more seats to round up to 3 (from 2.7), they will be rounded up to 3 even if there exists a state with 26.6 seats that need 0.4 more seats to round up to 27. This allows for what would be ‘fair’ rounding since a given state is closest to the next integer. The problem arises when we add just one more seat. Then which number is closest to the next integer jumps around completely randomly. Consider the below actual example from Alabama (sorted by descending remaining fraction)</p>
 <div class="f tc mx-a j-ar scroll-x"><div><div class="tc w-100 fw7 p5"><!-- HTML_TAG_START -->43 seats<!-- HTML_TAG_END --></div>
   <table class="rx5 tc w-100 svelte-h5rbt1"><thead><tr><th class="svelte-h5rbt1">state</th><th class="svelte-h5rbt1">population</th><th class="svelte-h5rbt1">share</th><th class="svelte-h5rbt1">remaining fraction</th></tr></thead>
     <tbody><tr><td class="svelte-h5rbt1"><!-- HTML_TAG_START -->A<!-- HTML_TAG_END --></td><td class="svelte-h5rbt1"><!-- HTML_TAG_START -->3252<!-- HTML_TAG_END --></td><td class="svelte-h5rbt1"><!-- HTML_TAG_START -->3.49<!-- HTML_TAG_END --></td><td class="svelte-h5rbt1"><!-- HTML_TAG_START -->0.49<!-- HTML_TAG_END --></td>
@@ -189,7 +189,7 @@
         </tr><tr><td class="svelte-h5rbt1"><!-- HTML_TAG_START -->B<!-- HTML_TAG_END --></td><td class="svelte-h5rbt1"><!-- HTML_TAG_START -->21878<!-- HTML_TAG_END --></td><td class="svelte-h5rbt1"><!-- HTML_TAG_START -->24.02<!-- HTML_TAG_END --></td><td class="svelte-h5rbt1"><!-- HTML_TAG_START -->0.02<!-- HTML_TAG_END --></td>
         </tr></tbody></table>
 </div></div>
-<p>Notice how with these numbers, with just 1 more seat, while first A and B were getting extra seats, now D and C are getting extra seats, and A, in fact, lost a seat. This is a problem because the number of seats is not a continuous function of the population. It is a discrete function. So the number of seats jumps around semi-randomly. This is called the <a href="https://en.wikipedia.org/wiki/Alabama_paradox" rel="nofollow">Alabama Paradox</a>.</p>
+<p>Notice how with these numbers, with just one more seat, while first A and B were getting extra seats, now D and C are getting extra seats, and A lost a seat. This is a problem because the number of seats is not a continuous function of the population. It is a discrete function. So the number of seats jumps around semi-randomly. This is called the <a href="https://en.wikipedia.org/wiki/Alabama_paradox" rel="nofollow">Alabama Paradox</a>.</p>
 <p>(The method was then vetoed by President Mr Washington, but for a different reason altogether; it was a law interpretation difference <a href="https://en.wikipedia.org/wiki/Apportionment_Act_of_1792" rel="nofollow">See Apportionment Act of 1792</a>.)</p>
 <h3>Jefferson’s Method</h3>
 <p>Get ready for a whole new level of shitfuckery.</p>
@@ -224,7 +224,7 @@
         </tr><tr><td class="svelte-h5rbt1"><!-- HTML_TAG_START -->2<!-- HTML_TAG_END --></td>
         </tr></tbody></table>
 </div></div>
-<p>This was actually the method they went with from 1792 to 1840. The one massive problem with this issue is as we decrease the denominator, since it’s a fraction, larger numbers increase faster. So say 1000/50 = 20 and 1000/40 = 25, whereas 100/50 = 2 and 100/40 = 2.5; notice how a state with a 1000 population they gained 5 seats, whereas the 100 population state gained only 0.5 seats, which may or may not even get. So the larger states get more seats faster than the smaller states. This is called the <a href="https://en.wikipedia.org/wiki/Jefferson_method" rel="nofollow">Jefferson’s Method</a>.</p>
+<p>This was actually the method they went with from 1792 to 1840. The one massive problem with this issue is as we decrease the denominator since it is a fraction, larger numbers increase faster. So say 1000/50 = 20 and 1000/40 = 25, whereas 100/50 = 2 and 100/40 = 2.5; notice how a state with a 1000 population gained 5 seats, whereas the 100 population state gained only 0.5 seats, which may or may not even get. So the larger states get more seats faster than the smaller states. This is called the <a href="https://en.wikipedia.org/wiki/Jefferson_method" rel="nofollow">Jefferson’s Method</a>.</p>
 <h3>Adam &amp; Webster Methods</h3>
 <p>Adam’s method is exactly the same as Jefferson’s method, except rather than force round down and then slowly decrease the denominator, we force round UP and slowly increase the denominator. This is called the <a href="https://en.wikipedia.org/wiki/Adam%27s_method" rel="nofollow">Adam’s Method</a>. The Jefferson method favours the larger states, and the Adam’s method favours the smaller states (for the same reason, since large numbers move faster, the larger states also lose seats faster).</p>
 <p>Webster’s method is again the same as Adam’s &amp; Jefferson’s, except rather than force round up or down, we round to the nearest integer like a normal human. This is called the <a href="https://en.wikipedia.org/wiki/Webster%27s_method" rel="nofollow">Webster’s Method</a>.</p>
@@ -232,13 +232,13 @@
 <p>Consider the following data generated graciously by Mr. Matt Parker (linked in See Also)
 <img src="https://i.imgur.com/WQcE5mV.png" alt="Data"></p>
 <p>Notice how New Triangle jumped from 23.47 to 22. Which should technically not be allowed since rounding can happen only up or down to the next or previous number. Jumping numbers is not allowed in the <a href="https://en.wikipedia.org/wiki/Quota_rule" rel="nofollow">Quota Rule</a>. This was a common occurrence in both Jefferson’s and Adam’s methods. The reason why this was allowed to stay for so long was because the Jefferson Rule favoured big states. And guess who had more power (more votes)? Big states -_-.</p>
-<p>They later went to Hamilton’s method in 1840, till 1880, when someone rediscovered the Alabama Paradox. So then, if it looks like it’s impossible to avoid either the Violation of the Quota Rule or the Alabama Paradox, what do we use?</p>
+<p>They later went to Hamilton’s method in 1840, till 1880, when someone rediscovered the Alabama Paradox. So then, if it looks like it is impossible to avoid either the Violation of the Quota Rule or the Alabama Paradox, what do we use?</p>
 <h3>Huntington-Hill Method</h3>
-<p>This is too complex to explain it’s just one big clusterfuck. There is a Geometric Mean, A square root and an ambiguous definition involved somewhere. The general idea is that this, too, has Quota Rule Violations. Hill also stays because it technically, by default, favours the smaller states, which is a political decision and not a mathematical one.</p>
+<p>This is too complex to explain. it is just one big clusterfuck. There is a Geometric Mean, A square root and an ambiguous definition involved somewhere. The general idea is that this, too, has Quota Rule Violations. Hill also stays because it technically, by default, favours the smaller states, which is a political decision and not a mathematical one.</p>
 <h2>Electoral Systems</h2>
 <p>Before discussing Strategies, we assume. Each Citizen has exactly 1 Vote is true under any circumstance</p>
 <h3>Winner Take All</h3>
-<p>A system where ‘the most votes’ wins. Let’s consider 5 cities Logicia, Analyticaland, Reasongrad, Sensibilia, and Flatland (Cameo).</p>
+<p>A system where ‘the most votes’ wins. let us consider 5 cities Logicia, Analyticaland, Reasongrad, Sensibilia, and Flatland (Cameo).</p>
 <div><div class="tc w-100 fw7 p5"><!-- HTML_TAG_START -->Winner Take All<!-- HTML_TAG_END --></div>
   <table class="rx5 tc w-100 svelte-h5rbt1"><thead><tr><th class="svelte-h5rbt1">City</th><th class="svelte-h5rbt1">Got Votes</th></tr></thead>
     <tbody><tr><td class="svelte-h5rbt1"><!-- HTML_TAG_START -->Logicia<!-- HTML_TAG_END --></td><td class="svelte-h5rbt1"><!-- HTML_TAG_START -->20%<!-- HTML_TAG_END --></td>
@@ -249,29 +249,29 @@
         </tr></tbody></table>
 </div>
 <p>We can clearly see here how Reasongrad, with the most votes, won this election, but they made a leader which, in fact, 78% of people did not want. So this is technically a minority rule system since all states are minorities. So we have effectively been unfair to 78% of the population. We can see how this system gets worse when there are more and more cities. If there were 20 candidates, then someone with only 6% of the votes could win simply because of the most votes despite being only favoured by 6% of the population.</p>
-<p>This method, unfortunately also forces a two-party system. In every election, they see what happens, at the fact that they have abysmal results and eventually, the voters decide to go with the candidates they LEAST DISAGREE within an endless cycle till there are only two candidates. Given enough time, all <a href="https://en.wikipedia.org/wiki/First-past-the-post_voting" rel="nofollow">First Past the Post</a> systems will eventually become two-party systems. This is often called the <a href="https://en.wikipedia.org/wiki/Duverger%27s_law" rel="nofollow">Duverger’s Law</a>. This has been clearly seen in several countries like the US, UK, India, Canada, Australia, etc. There do, however exist some rare exceptions like the Philippines, where since 1987, no party has been able to control the House of Representatives</p>
+<p>This method, unfortunately, also forces a two-party system. In every election, they see what happens, at the fact that they have abysmal results and eventually, the voters decide to go with the candidates they LEAST DISAGREE within an endless cycle till there are only two candidates. Given enough time, all <a href="https://en.wikipedia.org/wiki/First-past-the-post_voting" rel="nofollow">First Past the Post</a> systems will eventually become two-party systems. This is often called the <a href="https://en.wikipedia.org/wiki/Duverger%27s_law" rel="nofollow">Duverger’s Law</a>. This has been clearly seen in several countries like the US, UK, India, Canada, Australia, etc. There do, however, exist some rare exceptions like the Philippines, where since 1987, no party has been able to control the House of Representatives</p>
 <p>This eventually has another problem where the majority of the voter base who did not originally want the now 2 majority parties eventually become disinterested in the political process and stop voting in what is often termed <a href="https://en.wikipedia.org/wiki/Voter_apathy" rel="nofollow">Voter Apathy</a> where the voters stop wanting to vote because they feel their vote does not matter or does not meaningfully express who they want as a candidate.</p>
 <h4>Gerrymandering</h4>
 <p>Gerrymandering is the process of redrawing the borders of a state to favour a particular party. This is often done by the party in power to ensure they stay in power. This is often done by splitting the opposition party’s voter base into multiple districts so that they have a majority in all districts but not a majority in any one district. This is often called <a href="https://en.wikipedia.org/wiki/Gerrymandering" rel="nofollow">Cracking</a> &amp; <a href="https://en.wikipedia.org/wiki/Gerrymandering" rel="nofollow">Packing</a>.</p>
-<p>Consider the following example. Let’s day Newton, Einstien and Hawking are 3 candidates, and there are 3 voters who want Newton, 3 Who want Einstien and 4 who want Hawking. Now if we split the district voters into the following 2 ways</p>
+<p>Consider the following example. let us say, Newton, Einstein, and Hawking are 3 candidates, and there are 3 voters who want Newton, 3 Who want Einstein and 4 who want Hawking. Now if we split the district voters into the following 2 ways</p>
 <ul><li>Constituency 1: Newton, Newton, Newton, Hawking, Hawking</li>
-<li>Constituency 2: Einstien, Einstien, Einstien, Hawking, Hawking</li></ul>
-<p>We can now see how Newton and Einstien have a majority in both constituencies despite each being less than Hawking, and in the end, Hawking voters would have been eliminated completely. Gerrymandering gives whoever draws the lines, an unfair advantage on the system.</p>
+<li>Constituency 2: Einstein, Einstein, Einstein, Hawking, Hawking</li></ul>
+<p>We can now see how Newton and Einstein have a majority in both constituencies despite each being less than Hawking, and in the end, Hawking voters would have been eliminated completely. Gerrymandering gives whoever draws the lines an unfair advantage on the system.</p>
 <h4>The Spoiler Effect</h4>
-<p>The Spoiler Effect is when a third party candidate takes votes away from a major party candidate, causing a loss. This is often used as an argument against third parties. So rather than actually helping us choose more candidates it just becomes a way to play more politics. So if Einstien gives Hawking money to stand in an election and then say it proposes SIMILAR but not same ideologies as Newton, some of Newton’s voters will now vote for Hawking, thus taking away soem chance of Newton winning. This is often called the <a href="https://en.wikipedia.org/wiki/Spoiler_effect" rel="nofollow">Spoiler Effect</a>.</p>
-<p>So far now we need 3 things to make a better system</p>
+<p>The Spoiler Effect is when a third-party candidate takes votes away from a major party candidate, causing a loss. This is often used as an argument against third parties. So rather than actually helping us choose more candidates, it just becomes a way to play more politics. So if Einstein gives Hawking money to stand in an election and then says it proposes SIMILAR but not the same ideologies as Newton, some of Newton’s voters will now vote for Hawking, thus taking away some chance of Newton winning. This is often called the <a href="https://en.wikipedia.org/wiki/Spoiler_effect" rel="nofollow">Spoiler Effect</a>.</p>
+<p>So far now, we need 3 things to make a better system</p>
 <ul><li>We should be able to vote for who we want</li>
 <li>No Gerrymandering</li>
 <li>More parties are better</li>
-<li>AND it should be open to newcomers (IMPORTANT)</li></ul>
+<li>And it should be open to newcomers (IMPORTANT)</li></ul>
 <h3>Instant Runoff Voting</h3>
-<p>In this system rather than voting for one candidate, we rank them. So let’s say we have 5 candidates, A, B, C, D, E. We can rank them in the order we want. So If I would like to see B in power I put B first, then I put whoever I would like in power IF B didn’t run next, so say A and so on…</p>
+<p>In this system, rather than voting for one candidate, we rank them. So let us say we have 5 candidates, A, B, C, D, E. We can rank them in the order we want. So If I would like to see B in power, I put B first, then I put whoever I would like in power. IF B didn’t run next, so say A and so on…</p>
 <p>Consider The following Ratios:</p>
 <table><tr><td>Newton: </td><td><div class="p-rel d-ib"><div style="left:50%;transform:translateX(-50%);top:0;" class="p-abs">42%
   </div>
   <progress class="rx2 svelte-5zyg45" value="42" max="100"></progress>
 </div></td></tr>
-  <tr><td>Einstien: </td><td><div class="p-rel d-ib"><div style="left:50%;transform:translateX(-50%);top:0;" class="p-abs">26%
+  <tr><td>Einstein: </td><td><div class="p-rel d-ib"><div style="left:50%;transform:translateX(-50%);top:0;" class="p-abs">26%
   </div>
   <progress class="rx2 svelte-5zyg45" value="26" max="100"></progress>
 </div></td></tr>
@@ -283,12 +283,12 @@
   </div>
   <progress class="rx2 svelte-5zyg45" value="15" max="100"></progress>
 </div></td></tr></table>
-<p>So no we need to eliminate the last candidate, Archimedes. So we take all the votes that voted for Archimedes and see who they voted for next, so lets say ALL of those who voted for Archimedes voted for Hawking next. Making the new results</p>
+<p>So no, we need to eliminate the last candidate, Archimedes. So we take all the votes that voted for Archimedes and see who they voted for next, so let us say ALL of those who voted for Archimedes voted for Hawking next. Making the new results</p>
 <table><tr><td>Newton: </td><td><div class="p-rel d-ib"><div style="left:50%;transform:translateX(-50%);top:0;" class="p-abs">42%
   </div>
   <progress class="rx2 svelte-5zyg45" value="42" max="100"></progress>
 </div></td></tr>
-  <tr><td>Einstien: </td><td><div class="p-rel d-ib"><div style="left:50%;transform:translateX(-50%);top:0;" class="p-abs">26%
+  <tr><td>Einstein: </td><td><div class="p-rel d-ib"><div style="left:50%;transform:translateX(-50%);top:0;" class="p-abs">26%
   </div>
   <progress class="rx2 svelte-5zyg45" value="26" max="100"></progress>
 </div></td></tr>
@@ -296,7 +296,7 @@
   </div>
   <progress class="rx2 svelte-5zyg45" value="32" max="100"></progress>
 </div></td></tr></table>
-<p>Now we eliminate Einstien and see who they voted for next, so lets say ALL of those who voted for Einstien voted for Hawking next. Making the new results</p>
+<p>Now we eliminate Einstein and see who they voted for next, so let us say ALL of those who voted for Einstein voted for Hawking next. Making the new results</p>
 <table><tr><td>Newton: </td><td><div class="p-rel d-ib"><div style="left:50%;transform:translateX(-50%);top:0;" class="p-abs">42%
   </div>
   <progress class="rx2 svelte-5zyg45" value="42" max="100"></progress>
@@ -306,16 +306,16 @@
   <progress class="rx2 svelte-5zyg45" value="58" max="100"></progress>
 </div></td></tr></table>
 <p>Giving us the final winner of Hawking. This is called the <a href="https://en.wikipedia.org/wiki/Instant-runoff_voting" rel="nofollow">Instant Runoff Voting</a> system.</p>
-<p>This method so far solves one key issue for us that it is very open to new parties and the spoiler effect cannot affect the results as much. Since now if there are 2 candidates and a third party candidate comes in, the third party candidate will still take away some votes away from whoever they’re paid to take it away from. But now that the third party candidate is eliminated, the votes will go to whoever the voters wanted next, so now the votes just go back to whoever they were taken from in the first place.</p>
-<p>Despite solving one issue, this method still has the issue of Gerrymandering etc from Winner Takes All system, such as notice how despite having started out 3rd in the first round, Hawking still won the election. It doesn’t seem like it would be fair for a candidate who was 3rd to win the election. So we need a system that solves this issue.</p>
+<p>This method so far solves one key issue for us that it is very open to new parties, and the spoiler effect cannot affect the results as much. Since now, if there are 2 candidates and a third party candidate comes in, the third party candidate will still take away some votes away from whoever they’re paid to take it away from. But now that the third party candidate is eliminated, the votes will go to whoever the voters wanted next, so now the votes just go back to whoever they were taken from in the first place.</p>
+<p>Despite solving one issue, this method still has the issue of Gerrymandering etc, from the Winner Takes All system, such as noticing how despite having started out 3rd in the first round, Hawking still won the election. It doesn’t seem like it would be fair for a candidate who was 3rd to win the election. So we need a system that solves this issue.</p>
 <h3>Multiple Runoff</h3>
-<p>This system is similar to the Instant Runoff Voting system, but rather than eliminating the last candidate immidiately and just recalculating the votes, we have multiple rounds of voting. So we have the first round, we vote again with 3 candidates, then we vote again with 2 candidates and so on. Or we can have a system similar to Brazil where we have 2 rounds of voting (assuming there is no clear &gt;50% in one shot), the first round is similar to the Instant Runoff Voting system, and the second round is a Winner Takes All system. This is called the <a href="https://en.wikipedia.org/wiki/Two-round_system" rel="nofollow">Multiple Runoff</a> system.</p>
-<p>Consider a multiple run of system where Hawking has to skew the results even if they know they cannot win since the votes after 2nd round may change. So if Hawking knows that Einstien has a good chance of winning and say theirs is lower, they can still skew the results to make sure Einstien has a lower percentage of votes in the first round itself by having all their candidates vote for Archimedes in the first round giving us</p>
+<p>This system is similar to the Instant Runoff Voting system, but rather than eliminating the last candidate immediately and just recalculating the votes; we have multiple rounds of voting. So we have the first round, we vote again with 3 candidates, then we vote again with 2 candidates and so on. Or we can have a system similar to Brazil where we have 2 rounds of voting (assuming there is no clear &gt;50% in one shot), the first round is similar to the Instant Runoff Voting system, and the second round is a Winner Takes All system. This is called the <a href="https://en.wikipedia.org/wiki/Two-round_system" rel="nofollow">Multiple Runoff</a> system.</p>
+<p>Consider a multiple-run system where Hawking has to skew the results even if they know they cannot win since the votes after 2nd round may change. So if Hawking knows that Einstein has a good chance of winning and say theirs is lower, they can still skew the results to make sure Einstein has a lower percentage of votes in the first round itself by having all their candidates vote for Archimedes in the first round giving us</p>
 <table><tr><td>Newton: </td><td><div class="p-rel d-ib"><div style="left:50%;transform:translateX(-50%);top:0;" class="p-abs">42%
   </div>
   <progress class="rx2 svelte-5zyg45" value="42" max="100"></progress>
 </div></td></tr>
-  <tr><td>Einstien: </td><td><div class="p-rel d-ib"><div style="left:50%;transform:translateX(-50%);top:0;" class="p-abs">26%
+  <tr><td>Einstein: </td><td><div class="p-rel d-ib"><div style="left:50%;transform:translateX(-50%);top:0;" class="p-abs">26%
   </div>
   <progress class="rx2 svelte-5zyg45" value="26" max="100"></progress>
 </div></td></tr>
@@ -323,7 +323,7 @@
   </div>
   <progress class="rx2 svelte-5zyg45" value="32" max="100"></progress>
 </div></td></tr></table>
-<p>Notice how in this situation since Einstien is clearly the lowest and immidiately gets eliminated. So now as before all of Einstien’s votes go to Archimedes, giving us</p>
+<p>Notice how in this situation since Einstein is clearly the lowest and immediately gets eliminated. So now, as before, all of Einstein’s votes go to Archimedes, giving us</p>
 <table><tr><td>Newton: </td><td><div class="p-rel d-ib"><div style="left:50%;transform:translateX(-50%);top:0;" class="p-abs">42%
   </div>
   <progress class="rx2 svelte-5zyg45" value="42" max="100"></progress>
@@ -332,13 +332,13 @@
   </div>
   <progress class="rx2 svelte-5zyg45" value="58" max="100"></progress>
 </div></td></tr></table>
-<p>So here now despite not having won themselves, Hawking has managed to skew the results to make sure Einstien doesn’t win AND that the candidate he most agrees with has won. Notice how here despite having the LEAST amount of initial votes 15, Hawking has managed to make Archimedes win. This suddenly went from slightly unfair to complete anarchy. A method which incentivises people lying shouldn’t really be a candidate for an ‘ideal’ system. So we need a system that solves this issue.</p>
+<p>So here now, despite not having won, Hawking has managed to skew the results to make sure Einstein doesn’t win AND that the candidate he most agrees with has won. Notice how here, despite having the LEAST amount of initial votes 15, Hawking has managed to make Archimedes win. This suddenly went from slightly unfair to complete anarchy. A method which incentivises people to lie shouldn’t really be a candidate for an ‘ideal’ system. So we need a system that solves this issue.</p>
 <h3>Condorcet Method</h3>
-<p>What if we were to have a system where we could vote for every possible match up of candidates. So if we have 4 candidates we vote for each of the following cases</p>
+<p>What if we were to have a system where we could vote for every possible match-up of candidates? So if we have 4 candidates, we vote for each of the following cases</p>
 <ul><li>A vs B, A vs C, A vs D</li>
 <li>B vs C, B vs D</li>
 <li>C vs D</li></ul>
-<p>So if we have 4 candidates, we have 6 possible match-ups. So let us take a sample game where the following are the perferences expressed by people in each match up</p>
+<p>So if we have 4 candidates, we have 6 possible match-ups. So let us take a sample game where the following are the preferences expressed by people in each matchup</p>
 <div class="f tc mx-a j-ar scroll-x"><div class="tc"><table><tr><td> </td><td>A vs B</td></tr>
 <tr><td>A</td><td><div class="p-rel d-ib"><div style="left:50%;transform:translateX(-50%);top:0;" class="p-abs">68%
   </div>
@@ -393,13 +393,13 @@
   </div>
   <progress class="rx2 svelte-5zyg45" value="83" max="100"></progress>
 </div></td></tr></table></div></div>
-<p>Notice that in such a method we can see that A is the most preferred candidate, since A has the highest percentage in 3 of the 6 match ups. So we can say that A is the winner. This is called the <a href="https://en.wikipedia.org/wiki/Condorcet_method" rel="nofollow">Condorcet Method</a>. There is however one BIG problem in this method. WHAT IF, lets say we had 3 candidates and the results came out in stone paper scissor such that</p>
+<p>Notice that in such a method, we can see that A is the most preferred candidate since A has the highest percentage in 3 of the 6 matchups. So we can say that A is the winner. This is called the <a href="https://en.wikipedia.org/wiki/Condorcet_method" rel="nofollow">Condorcet Method</a>. There is, however, one BIG problem with this method. WHAT IF, let us say, we had 3 candidates and the results came out in stone paper and scissors such that</p>
 <pre class="mermaid tc">graph LR
   A --&gt; B
   B --&gt; C
   C --&gt; A
 </pre>
-<p>In such a case, we have a situation where A is preferred over B, B is preferred over C and C is preferred over A. So we have a situation where there is no clear winner. This is called a <a href="https://en.wikipedia.org/wiki/Condorcet_paradox" rel="nofollow">Condorcet Paradox</a>. This situation may infact occur for any number of candidates and candidates may even game the system to form loops so for example, both of the following cases are a problem</p>
+<p>In such a case, we have a situation where A is preferred over B, B is preferred over C and C is preferred over A. So we have a situation where there is no clear winner. This is called a <a href="https://en.wikipedia.org/wiki/Condorcet_paradox" rel="nofollow">Condorcet Paradox</a>. This situation may, in fact, occur for any number of candidates, and candidates may even game the system to form loops. So, for example, both of the following cases are a problem</p>
 <div class="f tc mx-a j-ar scroll-x"><pre class="mermaid">graph LR
   X[&quot;Loop&quot;]
   A --- B
@@ -418,49 +418,49 @@
   end
 </pre></div>
 <h3>Single Transferable Vote</h3>
-<p>Also called “The Single Greatest Voting System To Have Ever Existed” (by at least 1 people). This is a system where you rank candidates in order of preference. Our objectives here are</p>
+<p>Also called “The Single Greatest Voting System To Have Ever Existed” (by at least 1 person). This is a system where you rank candidates in order of preference. Our objectives here are</p>
 <ul><li>Majority Happiness</li>
 <li>Local Elections (not just one national)</li>
 <li>Allow multiple representatives</li></ul>
-<p>There is no way I can explain this without an animation so just follow this video below</p>
+<p>There is no way I can explain this without an animation, so just follow this video below</p>
 <iframe title="some stuff about stv" src="https://www.youtube-nocookie.com/embed/M91jraoo6t8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <h2>Conclusions &amp; Caveats</h2>
 <h3>Possibilities</h3>
-<p>It is in theory mathematically possible to show that for any system, there is some criteria which a reasonable human would include in the idea of ‘fairness’ that gets left out (<a href="https://en.wikipedia.org/wiki/Arrow%27s_impossibility_theorem" rel="nofollow">Arrow’s Impossibility Theorem</a>).</p>
+<p>It is, in theory, mathematically possible to show that for any system, there are some criteria that a reasonable human would include in the idea of ‘fairness’ that gets left out (<a href="https://en.wikipedia.org/wiki/Arrow%27s_impossibility_theorem" rel="nofollow">Arrow’s Impossibility Theorem</a>).</p>
 <ul><li><a href="https://en.wikipedia.org/wiki/Pareto_efficiency" rel="nofollow">Mutual Majority</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Dictatorship_mechanism" rel="nofollow">Non Dictatorship</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Condorcet_winner_criterion" rel="nofollow">Condorcet Criterion</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Independence_of_irrelevant_alternatives#In_social_choice" rel="nofollow">Independence of Irrelevant Alternatives</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Monotonicity_criterion" rel="nofollow">Monotonicity</a></li>
-<li>Etc, head over to the Technical Defination of Arrow’s Impossibility Theorem for more details.</li></ul>
+<li>Etc, head over to the Technical Definition of Arrow’s Impossibility Theorem for more details.</li></ul>
 <p>A simpler way to say this would be with the results of <a href="https://en.wikipedia.org/wiki/Gibbard%27s_theorem" rel="nofollow">Gibbard’s Theorem</a> (which is a consequence of Arrow’s Theorem) which states that for any process of collective decision, one of the following MUST, hold</p>
 <ul><li>The process is dictatorial</li>
 <li>The process is susceptible to tactical voting</li>
 <li>The process limits the possible outcomes to TWO options only</li></ul>
 <h3>Comparisons</h3>
-<p>Of all the systems we have seen, we can clearly see how each of them have their own advantages and disadvantages. So usually when selecting a political system it’s not a matter of what’s best but what is least worst. So say in a large democracy like India it may not even be feasible to do Multiple Runoff in the first place or it may not be fair to do something else somewhere else. So it’s not a matter of what’s best but what’s least worst since we know there IS inevitably going to be SOME problems</p>
+<p>Of all the systems we have seen, we can clearly see how each of them have their own advantages and disadvantages. So usually, when selecting a political system, it is not a matter of what’s best but what is least bad. So say in a large democracy like India, it may not even be feasible to do Multiple Runoff in the first place, or it may not be fair to do something else somewhere else. So it is not a matter of what’s best but what’s least bad since we know there are inevitably going to be SOME problems</p>
 <p><a href="https://en.wikipedia.org/wiki/List_of_electoral_systems_by_country#Maps" rel="nofollow">Here</a> are some of the electoral systems used by countries around the world. You can see that there is no one system that is used by all countries. There are some countries that use multiple systems for different elections. For example, in India, the Lok Sabha elections use First Past The Post while the Rajya Sabha elections use Single Transferable Vote. There are also some countries that use multiple systems for the same election. For example,</p>
 <h3>Caveats</h3>
-<p>There is SOME influence of how each system itself is implemented say,</p>
-<p>Weather or not Voting is compulsory in a system or not, so there are 4 types of systems</p>
+<p>There is SOME influence on how each system itself is implemented, say,</p>
+<p>Whether or not voting is compulsory in a system or not, so there are 4 types of systems</p>
 <ul><li>Enforced Compulsory Voting: Ex. Australia, Brazil etc</li>
 <li>Non Enforced Compulsory Voting: Ex. Turkey, Belgium etc</li>
 <li>Partially Compulsory Voting (men only): Ex. Egypt, Lybia etc</li>
 <li>Voluntary Voting: Ex. India, USA etc</li></ul>
-<p>Or weather or not reservations exist, the most significant example by far would be India where minorities and reserved castes have a significant influence on the outcome of the election. This is often such a deal breaker that parties tend to get commonly accused of <a href="https://en.wikipedia.org/wiki/Votebank" rel="nofollow">‘Vote Bank Politics’</a> or <a href="https://en.wikipedia.org/wiki/Pseudo-secularism" rel="nofollow">‘Minority Appeasement’</a> where they try to appease a certain group of people to get their votes. There are also other countries like Morocco where the reservations are not only by caste or gender but also by age, they have 30 reserved seats for <a href="https://en.wikipedia.org/wiki/Parliament_of_Morocco" rel="nofollow">people under 40</a>, and it’s well known that generally younger people lean left-er than older people and they <a href="https://www.jstor.org/stable/1041104" rel="nofollow">gradually become more conservative</a> as they age.</p>
-<p>So a few things done occaisonally in some systems are Gerrymandering around likelyhood of voting of a region or demographics, say if its compulsory to vote for men and a region favours you then skew for that or if women dislike your party, then split apart regions where women tend to vote high. While these are generally things that do make a difference I decided to not go into too much detail into them since it can be deduced as a special case of the systems we have already seen.</p>
-<p>There has also been no mention of strategies political parties use to target certain demographics, the fact that that is done is implicit in ways to game any system.</p></article>
+<p>Or whether or not reservations exist, the most significant example by far would be India, where minorities and reserved castes have a significant influence on the outcome of the election. This is often such a deal breaker that parties tend to get commonly accused of <a href="https://en.wikipedia.org/wiki/Votebank" rel="nofollow">‘Vote Bank Politics’</a> or <a href="https://en.wikipedia.org/wiki/Pseudo-secularism" rel="nofollow">‘Minority Appeasement’</a> where they try to appease a certain group of people to get their votes. There are also other countries like Morocco where the reservations are not only by caste or gender but also by age, they have 30 reserved seats for <a href="https://en.wikipedia.org/wiki/Parliament_of_Morocco" rel="nofollow">people under 40</a>, and it is well known that generally younger people lean left-er than older people and they <a href="https://www.jstor.org/stable/1041104" rel="nofollow">gradually become more conservative</a> as they age.</p>
+<p>So a few things done occasionally in some systems are Gerrymandering around the likelihood of voting of a region or demographics, say if it is compulsory to vote for men and a region favours you, then skew for that, or if women dislike your party, then split apart regions where women tend to vote high. While these are generally things that do make a difference, I decided not to go into too much detail about them since they can be deduced as a special case of the systems we have already seen.</p>
+<p>There has also been no mention of strategies political parties use to target certain demographics; the fact that that is done is implicit in ways to game any system.</p></article>
 </div></main>
 
 
-		<script type="module" data-sveltekit-hydrate="1glhyqo">
-			import { start } from "../_app/immutable/start-314d2566.js";
+		<script type="module" data-sveltekit-hydrate="1tph3cb">
+			import { start } from "../_app/immutable/start-502c8f36.js";
 
 			start({
 				env: {},
 				paths: {"assets":"","base":""},
-				target: document.querySelector('[data-sveltekit-hydrate="1glhyqo"]').parentNode,
-				version: "1685941402139",
+				target: document.querySelector('[data-sveltekit-hydrate="1tph3cb"]').parentNode,
+				version: "1685944395351",
 				hydrate: {
 					node_ids: [0, 6],
 					data: [null,{type:"data",data:{post:{title:"Elections, Games & Gaming Elections",desc:"A look at how elections are run and how they can be gamed",date:1685903400000,image:"",slug:"elections"}},uses:{params:["slug"]}}],
