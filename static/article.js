@@ -1,4 +1,4 @@
-let conf;
+var conf;
 
 function autoHighlight () {
   const hl = conf.getAttribute( 'hl' ).split( ',' ).map( x => x.trim() );

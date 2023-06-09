@@ -335,8 +335,32 @@ textarea:focus {
   display: inline-block;
 }
 
+.d-b {
+  display: block;
+}
+
+.d-if {
+  display: inline-flex;
+}
+
 .d-u {
   display: unset;
+}
+
+.flow-x-s {
+  overflow-x: scroll;
+}
+
+.flow-y-s {
+  overflow-y: scroll;
+}
+
+.flow-x-h {
+  overflow-x: hidden;
+}
+
+.flow-y-h {
+  overflow-y: hidden;
 }
 
 .ptr {
