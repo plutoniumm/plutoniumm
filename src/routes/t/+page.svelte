@@ -1,6 +1,9 @@
 <script>
   import Card from "$component/card.svelte";
+  import QnA from "./data.csv";
+
   import { onMount } from "svelte";
+
   export let data;
 
   onMount(() => {
@@ -30,9 +33,21 @@
       </a>
     </Card>
   {/each}
+  <br />
+  <h1>Mini Thinks</h1>
+  {#each QnA as qa}
+    <Card className="m10 w-100 tl">
+      <div class="q">{qa.question}</div>
+      <div class="a">{qa.answer}</div>
+    </Card>
+  {/each}
 </section>
 
 <style>
+  .q {
+    font-weight: bold;
+    margin-bottom: 7px;
+  }
   section {
     padding-top: 10px;
     max-width: min(100%, 600px);
