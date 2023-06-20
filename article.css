@@ -16,6 +16,13 @@ iframe[src*="youtube"] {
   aspect-ratio: 16/9;
 }
 
+.hero {
+  aspect-ratio: 2.21;
+  object-fit: cover;
+  max-height: 300px;
+  margin: 10px auto;
+}
+
 hl[ix="0"] {
   color: var(--hl-0);
 }
@@ -38,11 +45,6 @@ hl[ix="4"] {
 
 hl[ix="5"] {
   color: var(--hl-5);
-}
-
-.scroll-x {
-  max-width: 100%;
-  overflow-x: auto;
 }
 
 img {
