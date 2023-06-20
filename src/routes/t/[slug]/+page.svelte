@@ -16,16 +16,33 @@
   >
     <header style="display:block;margin: 10px 0;">
       <h1 class="m0">{data.post.title}</h1>
-      <div id="time" style="color:#888" />
+      <div class="g" id="time" />
     </header>
-    <div style="color:#888">Table of Contents</div>
+    <div class="g">Table of Contents</div>
     <div id="toc" style="padding:5px 0;" />
+
+    {#if data.post.image}
+      <img
+        class="hero"
+        src="/posts/{data.post.slug}/{data.post.image}"
+        alt={data.post.caption}
+      />
+      {#if data.post.caption}
+        <div class="g" style="padding-bottom:1em">
+          {data.post.caption}
+        </div>
+      {/if}
+    {/if}
+
     <!-- render the post -->
     <svelte:component this={data.component} />
   </article>
 </div>
 
 <style>
+  .g {
+    color: #888;
+  }
   .blur-fff8 {
     overflow: hidden;
     word-wrap: break-word;

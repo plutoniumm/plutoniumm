@@ -10,6 +10,7 @@ export interface Post {
   date: number;
   slug: string;
   image: string;
+  caption?: string;
 }
 
 // Get all posts and add metadata

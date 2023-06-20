@@ -17,7 +17,11 @@
       <!-- {"title":"Why so many people dislike Math?","desc":"Despite being the most universal possible language and the only known tools to understand the universe, Math is often disliked. Why?","date":1683570600000,"image":"","slug":"math-art"} -->
       <a class="f" href="/t/{p.slug}">
         {#if p.image}
-          <img class="rx5" src={p.image} alt="" />
+          <img
+            class="rx5"
+            src={`/posts/${p.slug}/${p.image}`}
+            alt={p.caption}
+          />
         {/if}
         <div>
           <h3>{p.title}</h3>
@@ -28,7 +32,7 @@
               day: "2-digit",
             })}
           </span>
-          <p>{p.desc}</p>
+          <p style="margin-bottom: 0;">{p.desc}</p>
         </div>
       </a>
     </Card>
@@ -37,7 +41,7 @@
   <h1>Mini Thinks</h1>
   {#each QnA as qa}
     <Card className="m10 w-100 tl">
-      <div class="q">{qa.question}</div>
+      <div class="q fw5">{qa.question}</div>
       <div class="a">{qa.answer}</div>
     </Card>
   {/each}
@@ -45,7 +49,6 @@
 
 <style>
   .q {
-    font-weight: bold;
     margin-bottom: 7px;
   }
   section {
@@ -61,8 +64,10 @@
     display: block;
   }
   img {
-    height: 50px;
-    width: 50px;
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    object-position: center center;
     aspect-ratio: 1;
     margin-right: 10px;
   }

@@ -1,8 +1,9 @@
 ---
 title: Elections, Games & Gaming Elections
-desc: A look at how elections are run and how they can be gamed
+desc: "A look at some mathematics of elections and how they can be gamed"
 date: 5 June 2023
-image: ""
+image: deepmind.jpg
+caption: "MuZero press release: A system that learns all of these rules and strategies on its own, from scratch, and without any human knowledge for Shogi, Chess and Go."
 ---
 
 <conf hl="Reasongrad, Analyticaland, Logicia, Hawking, Einstein, Newton" />
@@ -10,6 +11,7 @@ image: ""
 <script>
   import Progress from "../../components/progress.svelte";
   import Table from "../../components/table.svelte";
+  import Image from "./deepmind.jpg";
 </script>
 
 let us consider the fictitious city of [Rationalia](https://neildegrassetyson.com/commentary/2016-08-07-reflections-on-rationalia/), whose sitting president is Dr Neil Degrasse Tyson. Let us then see how to hack the elections and hacking the hacks and so on. We will look for better election systems altogether too. Let us divide this into largely two sections: Apportionment and Systems.
@@ -25,7 +27,7 @@ There are a few basic assumptions made here before we move.
 ## Apportionment
 let us say Rationalia has two states, Reasongrad and Analyticaland. So let's now divide five seats between the states as follows with 2 cases to see how we round them.
 
-<div class="f tc mx-a j-ar scroll-x">
+<div class="f tc mx-a flow-x-s">
 <Table
   titles={["state", "population", "share"]}
   rows={[
@@ -54,7 +56,7 @@ let us say Rationalia has two states, Reasongrad and Analyticaland. So let's now
 
 However, now, let us add another state, Logicia, but let us not change the number of seats and the populations of the states. So redistributing the populations of the states, we get the following.
 
-<div class="f tc mx-a j-ar scroll-x">
+<div class="f tc mx-a flow-x-s">
 <Table
   titles={["state", "population", "share"]}
   rows={[
@@ -79,7 +81,7 @@ The way this was proposed to be solved, it keeps rounding up from the number clo
 
 So if some state needs 0.3 more seats to round up to 3 (from 2.7), they will be rounded up to 3 even if there exists a state with 26.6 seats that need 0.4 more seats to round up to 27. This allows for what would be 'fair' rounding since a given state is closest to the next integer. The problem arises when we add just one more seat. Then which number is closest to the next integer jumps around completely randomly. Consider the below actual example from Alabama (sorted by descending remaining fraction)
 
-<div class="f tc mx-a j-ar scroll-x">
+<div class="f tc mx-a flow-x-s">
 <Table
   titles={["state", "population", "share", "remaining fraction"]}
   rows={[
@@ -123,7 +125,7 @@ Jefferson proposed that the 'divisors' for all states are set the SAME such that
 ]}
 />
 
-<div class="f tc mx-a j-ar scroll-x">
+<div class="f tc mx-a flow-x-s">
 <Table mini
   titles={["seats"]}
   label="Force Round Down"
@@ -264,7 +266,7 @@ What if we were to have a system where we could vote for every possible match-up
 
 So if we have four candidates, we have 6 possible match-ups. So let us take a sample game where the following are the preferences expressed by people in each matchup
 
-<div class="f tc mx-a j-ar scroll-x">
+<div class="f tc mx-a flow-x-s">
 
 <div class="tc">
 <table>
@@ -313,7 +315,7 @@ graph LR
 
 In such a case, we have a situation where A is preferred over B, B is preferred over C and C is preferred over A. So we have a situation where there is no clear winner. This is called a [Condorcet Paradox](https://en.wikipedia.org/wiki/Condorcet_paradox). This situation may occur for any number of candidates, and candidates may even game the system to form loops. So, for example, both of the following cases are a problem
 
-<div class="f tc mx-a j-ar scroll-x">
+<div class="f tc mx-a flow-x-s">
 <pre class="mermaid">
 graph LR
   X["Loop"]
