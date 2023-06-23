@@ -19,7 +19,7 @@
         {#if p.image}
           <img
             class="rx5"
-            src={`/posts/${p.slug}/${p.image}`}
+            src={`https://manav.ch/posts/${p.slug}/${p.image}`}
             alt={p.caption}
           />
         {/if}

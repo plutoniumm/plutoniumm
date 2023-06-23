@@ -24,7 +24,7 @@
     {#if data.post.image}
       <img
         class="hero"
-        src="/posts/{data.post.slug}/{data.post.image}"
+        src="http://manav.ch/posts/{data.post.slug}/{data.post.image}"
         alt={data.post.caption}
       />
       {#if data.post.caption}

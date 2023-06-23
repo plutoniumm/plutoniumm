@@ -5,7 +5,7 @@
 <style>
     .card {
         font-size: 16px;
-        width: min(600px, 100%);
+        width: calc(min(600px, 100%) - 60px);
         align-items: center;
     }
     .card::after {

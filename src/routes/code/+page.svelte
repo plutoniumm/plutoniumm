@@ -1,5 +1,6 @@
 <script>
   import Card from "$component/card.svelte";
+  import Code from "./code.svelte";
 
   const base = "manav.ch";
   const codes = [
@@ -19,19 +20,10 @@
   ];
 </script>
 
-<section class="mx-a w-100">
+<section class="mx-a w-100 flow-y-s">
   {#each codes as code}
     <Card className="w-100 tl">
-      <div class="f d-b" target="_blank" rel="noopener noreferrer">
-        <div>
-          <h2 class="m0">{code[2]}</h2>
-          <!-- copy -->
-          <a href={code[0]} style="color:#888;">
-            {code[1]}
-          </a>
-          <p style="margin: 10px 0 0 0;">{code[3]}</p>
-        </div>
-      </div>
+      <Code link={code[0]} copy={code[1]} name={code[2]} desc={code[3]} />
     </Card>
   {/each}
 </section>
