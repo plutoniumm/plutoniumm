@@ -10,10 +10,7 @@
 </svelte:head>
 
 <div class="p20">
-  <article
-    class="blur-fff8 rpm-10 mx-a"
-    style="background-color: #fff8;max-width:991px;"
-  >
+  <article class="blur-fff8 rpm-10 mx-a" style="max-width:991px;">
     <header style="display:block;margin: 10px 0;">
       <h1 class="m0">{data.post.title}</h1>
       <div class="g" id="time" />

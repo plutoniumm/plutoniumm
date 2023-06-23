@@ -1,13 +1,12 @@
 <script>
   import { onMount } from "svelte";
 
-  export let name, link, desc, copy;
+  export let name, link, desc;
 
   let scroll, frame;
 
-  let docs = `/docs/${link}.md`;
   onMount(() =>
-    fetch(docs)
+    fetch(`/docs/${link}.md`)
       .then((r) => r.text())
       .then((text) => {
         const docs = text?.split("===")[1]?.trim();
@@ -38,7 +37,7 @@
     <h2 class="m0">{name}</h2>
     <!-- copy -->
     <a href={link} style="color:#888;">
-      {copy}
+      {link}
     </a>
     <p style="margin: 10px 0 0 0;">{desc}</p>
   </div>
@@ -52,7 +51,8 @@
   />
 
   <div>
-    <br />See Full docs at <a href={docs} style="color:var(--theme-hl)">docs</a>
+    <br />See Full docs at
+    <a href={`/docs/${link}.md`} style="color:var(--theme-hl)">docs</a>
   </div>
   <!-- src="https://lexx.manav.ch" -->
 </div>

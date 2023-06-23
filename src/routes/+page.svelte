@@ -1,8 +1,6 @@
 <script>
 	import Card from "$component/card.svelte";
-	import Project from "$component/project.svelte";
 	import Hero from "$component/hero.svelte";
-
 	import projects from "$lib/projects.json";
 
 	const i = (str) => `https://x.manav.ch/m2/i${str}`;
@@ -38,12 +36,26 @@
 	<h1 id="lifeUpdates" class="w-100 tc">Life Updates</h1>
 	<div class="flow-y-s" style="max-height:85vh;">
 		{#each projects as project}
-			<Project {project} />
+			<div class="card rx20 p20 blur-fff8">
+				<div class="w-100" style="margin-left:10px;">
+					<div class="fw7" style="font-size:1.1em;padding-bottom:5px;">
+						{project.title}
+						<span class="fw4" style="color:#666a;">@{project.where}</span>
+					</div>
+					<div class="fw3">{@html project.about}</div>
+				</div>
+			</div>
 		{/each}
 	</div>
 </section>
 
 <style lang="scss">
+	.card {
+		margin: 10px auto;
+		font-size: 1rem;
+		width: calc(min(660px, 100%) - 60px);
+		align-items: center;
+	}
 	.icon {
 		width: 1rem;
 		height: 1rem;

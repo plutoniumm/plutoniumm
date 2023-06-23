@@ -13,6 +13,9 @@ export default {
 		} )
 	],
 	kit: {
-		adapter: statix()
+		adapter: statix(),
+		prerender: {
+			concurrency: 8
+		}
 	}
 };

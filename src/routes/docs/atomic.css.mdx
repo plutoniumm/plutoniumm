@@ -1,0 +1,78 @@
+# Atomicss Usage
+Atomicss is a CSS library that provides a set of utility classes to help you build your website faster. It is
+minimal as shit and lightweight on minification
+
+## Margin, Padding & Border Radius
+### Individual
+Allowed Values `0, 2px, 5px, 10px, 20px`
+
+- **.mA**: margin: Apx;
+- **.pA**: padding: Apx;
+- **.rxA**: border-radius: Apx;
+
+```html
+<div class="m0 p2 rx5">
+  margin: 0;
+  padding: 2px;
+  border-radius: 5px;
+</div>
+
+<div class="m10 p20">
+  margin: 10px;
+  padding: 20px;
+</div>
+```
+
+### Combination
+Allowed Values `5px, 10px, 20px`
+
+- **.rpm-A**: margin: Apx; padding: Apx; border-radius: Apx;
+
+```html
+<div class="rpm-5">
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+</div>
+```
+
+USAGE
+.o-A
+- A = 0, 25, 33, 50, 66, 75, 100
+- opacity: A%
+
+.b0
+- border: 0 !important
+- outline: none !important
+
+.fwA
+- A = 1, 2, 3, 4, 5, 6, 7
+- font-weight: A00
+
+.tr | .tc | .tj | .tl
+- text-align: right | center | justify | left
+
+.j-A
+- A = ct, bw, ar
+- justify-content: center | space-between | space-around
+
+.w-A
+- A = auto, 100, 50, 33, 25
+- width: A%
+
+.h-A
+- A = auto, 100, 50, 33, 25
+- height: A%
+
+.p-A
+- A = abs | rel | fix | stx
+- padding: absolute | relative | fixed | sticky
+
+.d-A
+- A = n | b | ib | if | u
+- display: none | block | inline-block | inline-flex | unset
+
+.flow-D-A
+- D = x | y
+- A = h | s
+- overflow-D: hidden | scroll

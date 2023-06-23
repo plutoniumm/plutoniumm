@@ -49,21 +49,9 @@
 </div>
 
 <style lang="scss">
-    .icon {
-        height: 20px;
-        width: 20px;
-        object-fit: contain;
-        opacity: 0.5;
-        &:hover {
-            opacity: 1;
-        }
-    }
     .title {
         font-size: 2rem;
         line-height: 1rem;
-    }
-    .details {
-        line-height: 1.5em;
     }
     .left {
         transform: scale(1.33);
