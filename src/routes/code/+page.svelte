@@ -27,6 +27,10 @@
   ];
 </script>
 
+<svelte:head>
+  <link rel="preload" href="https://lexx.manav.ch" as="document" />
+</svelte:head>
+
 <section class="mx-a w-100 flow-y-s">
   {#each codes as code}
     <Card className="w-100 tl">

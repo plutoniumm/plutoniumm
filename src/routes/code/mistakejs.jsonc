@@ -1,6 +1,6 @@
 {
   "/index.html": {
-    "code": "<html>\n<head>\n  <script type=\"svelte\" name=\"sv-count\" src=\"App.svelte\"></script>\n  <script async defer src=\"//manav.ch/mistake.js\"></script>\n</head>\n<body>\n  <sv-count></sv-count>\n  <p>Looks like you made a mistake.</p>\n</body>\n</html>",
+    "code": "<html>\n<head>\n  <script type=\"svelte\" name=\"sv-count\" src=\"App.svelte\"></script>\n  <script async defer src=\"https://manav.ch/mistake.js\"></script>\n</head>\n<body>\n  <sv-count></sv-count>\n  <p>Looks like you made a mistake.</p>\n</body>\n</html>",
     "activeFile": true
   },
   "/App.svelte": {

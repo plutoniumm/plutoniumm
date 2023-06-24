@@ -6,7 +6,9 @@
   let frame;
   onMount(() => {
     const { files, value } = code;
-    frame.contentWindow.postMessage({ type: "files", value, files }, "*");
+    setTimeout(() => {
+      frame.contentWindow.postMessage({ type: "files", value, files }, "*");
+    }, 500);
   });
 </script>
 

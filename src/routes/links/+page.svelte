@@ -8,12 +8,12 @@
   ];
 </script>
 
-<section class="p10" style="width: calc(100% - 20px);overflow-y:scroll;">
+<section class="p10 flow-y-s" style="width: calc(100% - 20px);">
   <article class="mx-a" style="max-width:min(100%, 600px)">
     <div class="tc">Hello, Manav Here</div>
     {#each data as d}
       <a
-        class="rpm-20 link blur-fff8 f"
+        class="rpm-20 d-b link blur-fff8 f"
         href={d[2]}
         rel="external"
         referrerpolicy="noreferrer"
@@ -28,7 +28,4 @@
 </section>
 
 <style>
-  .link {
-    display: block;
-  }
 </style>
