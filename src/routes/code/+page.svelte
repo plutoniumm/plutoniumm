@@ -9,23 +9,19 @@
     value: string;
     files: any;
   }
-
   type PublicCode = [string, string, string, Lexx];
 
   const codes: Array<PublicCode> = [
-    // link, name, description, code
     [
       "atomic.css",
       "Atomicss",
       "A minimal extremely modular CSS list. This is not a framework or a toolchain. Just a dumb definition list",
-      // value, files,
       { value: "static", files: JSON.parse(ATOMICSS) },
     ],
     [
       "mistake.js",
       "MistakeJS",
-      "if you have to use this something has gone catastrophically wrong somewhere without exception",
-      // value, files,
+      "if you have to use this something has gone catastrophically wrong somewhere without exception. It lets you use pure svelte web-components directly in vanilla html",
       { value: "static", files: JSON.parse(MISTAKEJS) },
     ],
   ];

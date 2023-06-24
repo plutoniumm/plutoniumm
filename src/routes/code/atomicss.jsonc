@@ -1,5 +1,5 @@
 {
   "/index.html": {
-    "code": "<html>\n<head>\n  <link rel=\"stylesheet\" href=\"//manav.ch/atomic.css\">\n</head>\n\n<body class=\"f j-ar\">\n  <section class=\"rpm-20 tl\" style=\"background:#faa8;\">\n    This looks\n  </section>\n  <section class=\"rpm-20 tr fw7\" style=\"background:#afa8;\">\n    awesome\n  </section>\n</body>\n</html>"
+    "code": "<html>\n<head>\n  <link rel=\"stylesheet\" href=\"//manav.ch/atomic.css\">\n</head>\n\n<body class=\"f j-ar\">\n  <section class=\"rpm-20\" style=\"background:#faa8;\">\n    This looks\n  </section>\n  <section class=\"rpm-20 fw7\" style=\"background:#afa8;\">\n    awesome\n  </section>\n</body>\n</html>"
   }
 }
