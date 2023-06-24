@@ -1,35 +1,13 @@
 <script>
   import { onMount } from "svelte";
 
-  export let name, link, desc;
+  export let name, link, desc, code;
 
-  let scroll, frame;
-
-  onMount(() =>
-    fetch(`/docs/${link}.md`)
-      .then((r) => r.text())
-      .then((text) => {
-        const docs = text?.split("===")[1]?.trim();
-        console.log(docs);
-        if (!docs) {
-          scroll.remove();
-          return frame.remove();
-        }
-
-        frame.contentWindow.postMessage(
-          {
-            type: "files",
-            value: "static",
-            files: {
-              "index.html": {
-                code: docs,
-              },
-            },
-          },
-          "*"
-        );
-      })
-  );
+  let frame;
+  onMount(() => {
+    const { files, value } = code;
+    frame.contentWindow.postMessage({ type: "files", value, files }, "*");
+  });
 </script>
 
 <div class="f d-b fw" target="_blank" rel="noopener noreferrer">
@@ -41,20 +19,19 @@
     </a>
     <p style="margin: 10px 0 0 0;">{desc}</p>
   </div>
-  <div bind:this={scroll} class="scroll tr w-100">Scroll For Demo</div>
+  <div class="scroll tr w-100">Scroll For Demo</div>
   <iframe
     bind:this={frame}
     class="rx10 w-100"
-    src="//localhost:3001"
+    src="https://lexx.manav.ch"
     frameborder="0"
     title="lexx editor"
   />
 
   <div>
     <br />See Full docs at
-    <a href={`/docs/${link}.md`} style="color:var(--theme-hl)">docs</a>
+    <a href="/docs/{link}" style="color:var(--theme-hl)">docs</a>
   </div>
-  <!-- src="https://lexx.manav.ch" -->
 </div>
 
 <style>
