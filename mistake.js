@@ -1,6 +1,8 @@
 const root = "https://x.manav.ch/s2/svelte/";
 // const root = "http://localhost:8787/s2/svelte/"; // for testing
 
+console.log( "Congratulations, the mistake has been made" );
+
 const getModule = ( src, name ) => fetch( src )
   .then( res => res.text() )
   .then( ( body ) => fetch( root + name + "/", {
@@ -31,5 +33,7 @@ document.querySelectorAll( 'script[type="svelte"]' ).forEach( async ( svelte ) =
 
   getModule( src, name ).then( ( compiled ) =>
     customElements.define( name, compiled.default )
-  );
+  ).catch( ( err ) => console.error(
+    "Aborted due to error", err
+  ) );
 } )

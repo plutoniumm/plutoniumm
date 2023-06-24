@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="/assets/meta.png" />
+	<link rel="apple-touch-icon" href="/assets/meta.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<link rel="stylesheet" href="/atomic.css">
+
+	<title>Plutoniumm</title>
+	<meta name="title" content="Plutoniumm">
+	<meta name="description" content="Don't worry I'm a programmer">
+
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://manav.ch/">
+	<meta property="og:title" content="Plutoniumm">
+	<meta property="og:description" content="Don't worry I'm a programmer">
+	<meta property="og:image" content="/assets/meta.png">
+
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://manav.ch/">
+	<meta property="twitter:title" content="Plutoniumm">
+	<meta property="twitter:description" content="Don't worry I'm a programmer">
+	<meta property="twitter:image" content="/assets/meta.png">
+
+
+	<style>
+		:root {
+			--theme: #cae1ff;
+			--theme-hl: #7eb6ff;
+		}
+
+		body {
+			height: 100vh;
+			width: 100vw;
+			overflow-y: scroll;
+			z-index: 1;
+			background:
+				radial-gradient(50% 55% at 21vw 19vh, #cbadeb, transparent),
+				radial-gradient(50% 85% at 85vw 77vh, #edb2d0, transparent),
+				radial-gradient(70% 50% at 90vw 10vh, #7ae6c7, transparent),
+				radial-gradient(87% 81% at 16vw 91vh, #f4c4b3, transparent);
+			background-repeat: no-repeat;
+		}
+
+		@keyframes mock-rotate {
+
+			0%,
+			100% {
+				opacity: 0;
+			}
+
+			50% {
+				opacity: 1;
+			}
+		}
+
+		body::before {
+			/* gradient to rotate */
+			content: " ";
+			position: fixed;
+			background:
+				radial-gradient(50% 55% at 21vw 19vh, #cbadeb, transparent),
+				radial-gradient(50% 85% at 85vw 77vh, #edb2d0, transparent),
+				radial-gradient(70% 50% at 90vw 10vh, #7ae6c7, transparent),
+				radial-gradient(87% 81% at 16vw 91vh, #f4c4b3, transparent);
+			background-repeat: no-repeat;
+			background-position: fixed;
+			transform: rotate(180deg);
+			width: 100vw;
+			height: 100vh;
+			top: 0;
+			left: 0;
+
+			animation: mock-rotate 60s linear infinite;
+		}
+
+		section {
+			justify-content: center;
+			align-items: center;
+			scroll-snap-align: start;
+			scroll-snap-stop: normal;
+		}
+
+		.blur-fff8 {
+			backdrop-filter: blur(8px);
+			-webkit-backdrop-filter: blur(8px);
+			-moz-backdrop-filter: blur(8px);
+			background: #fff8;
+			border: 1px solid #fff8;
+		}
+	</style>
+
+	<meta http-equiv="content-security-policy" content="">
+		<link href="../_app/immutable/assets/_layout-1548f59b.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/_page-df082f51.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/start-36d6e53f.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index-847d9848.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/singletons-64c26a7c.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper-41c905a7.js">
+		<link rel="modulepreload" href="../_app/immutable/components/pages/_layout.svelte-9d1654e1.js">
+		<link rel="modulepreload" href="../_app/immutable/modules/pages/_layout.js-b518efc3.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/_layout-38454bf1.js">
+		<link rel="modulepreload" href="../_app/immutable/components/pages/docs/_slug_/_page.svelte-94d8d774.js">
+		<link rel="modulepreload" href="../_app/immutable/modules/pages/docs/_slug_/_page.ts-045ac300.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/dynamic-import-helper-be004503.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/_page-ee4eb003.js"><!-- HEAD_svelte-t1fioy_START --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/PrismJS/prism-themes@1.9.0/themes/prism-vsc-dark-plus.css" crossorigin="anonymous" referrerpolicy="no-referrer"><style>pre {
+      border-radius: 10px;
+    }
+  </style><!-- HEAD_svelte-t1fioy_END -->
+</head>
+
+<body xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<div style="display: contents;">
+		
+
+
+<main class="w-100 svelte-j0q9fz">
+
+<article class="blur-fff8 rx10 p10 svelte-ikynwf" style="max-width:991px;"><h2>MistakeJS Usage</h2>
+<p>Mistake is a simple wrapper around fetch to talk to my server to compile Svelte components. If you have to use this something somewhere has catastrophically gone wrong i.e you have made a mistake.</p>
+<h3>Usage</h3>
+<pre class="language-html"><!-- HTML_TAG_START --><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">async</span> <span class="token attr-name">defer</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>//manav.ch/mistake.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+
+<span class="token comment">&lt;!-- Multiple components also work --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>svelte<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sv-count<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>App.svelte<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sv-count</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>sv-count</span><span class="token punctuation">></span></span></code><!-- HTML_TAG_END --></pre>
+<p>This will fetch App.svelte and compile it as a web component of <code>type=svelte</code> with the tag name <code>sv-count</code></p>
+<h2>Example Svelte file</h2>
+<p>As long as you don’t have any local file dependencies, you should generally be able to compile any self contained pure component. You can also use <code>import</code> statements to import modules from npm.</p>
+<pre class="language-svelte"><!-- HTML_TAG_START --><code class="language-svelte"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+  <span class="token comment">// Sufficiently complex file</span>
+  <span class="token keyword">import</span> <span class="token punctuation">&#123;</span> onMount <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">"svelte"</span><span class="token punctuation">;</span>
+  <span class="token keyword">import</span> <span class="token punctuation">&#123;</span> transition_in <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">"svelte/internal"</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// all modules will be auto-injected</span>
+  <span class="token keyword">import</span> moment <span class="token keyword">from</span> <span class="token string">"moment"</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+  <span class="token function">onMount</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">const</span> ctr <span class="token operator">=</span>
+      <span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">moment</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"dddd"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">clearInterval</span><span class="token punctuation">(</span>ctr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>gr<span class="token punctuation">"</span></span> <span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>color:red;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token language-javascript"><span class="token punctuation">&#123;</span>i<span class="token punctuation">&#125;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">.gr</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code><!-- HTML_TAG_END --></pre>
+</article></main>
+
+
+		<script type="module" data-sveltekit-hydrate="1hriglx">
+			import { start } from "../_app/immutable/start-36d6e53f.js";
+
+			start({
+				env: {},
+				paths: {"assets":"","base":""},
+				target: document.querySelector('[data-sveltekit-hydrate="1hriglx"]').parentNode,
+				version: "1687574095760",
+				hydrate: {
+					node_ids: [0, 4],
+					data: [null,null],
+					form: null,
+					error: null
+				}
+			});
+		</script>
+	
+	</div>
+</body>
+
+</html>
