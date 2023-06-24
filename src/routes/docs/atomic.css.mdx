@@ -2,6 +2,16 @@
 Atomicss is a CSS library that provides a set of utility classes to help you build your website faster. It is
 minimal as shit and lightweight on minification
 
+**Note:**
+- I will GENERALLY not change this
+- No old classes will be changed
+- I may add new styles anytime
+
+## Add
+```html
+<link rel="stylesheet" href="//manav.ch/atomic.css">
+```
+
 ## Margin, Padding & Border Radius
 ### Individual
 Allowed Values `0, 2px, 5px, 10px, 20px`
@@ -36,43 +46,67 @@ Allowed Values `5px, 10px, 20px`
 </div>
 ```
 
-USAGE
-.o-A
-- A = 0, 25, 33, 50, 66, 75, 100
-- opacity: A%
+## Text Behaviour
 
-.b0
-- border: 0 !important
-- outline: none !important
+- **.fwA**: font-weight: A00; (Allow from 100-700)
+- **.tA**: text-align: `l | r | j | c` (left | right | justify | center)
+- **.j-A**: justify-content `ct | bw | ar` (center | space-between | space-around)
 
-.fwA
-- A = 1, 2, 3, 4, 5, 6, 7
-- font-weight: A00
+```html
+<div class="fw3 tr j-ar">
+  font-weight: 300;
+  text-align: right;
+  justify-content: space-around;
+</div>
 
-.tr | .tc | .tj | .tl
-- text-align: right | center | justify | left
+<div class="fw7 tj j-ct">
+  font-weight: 700;
+  text-align: justify;
+  justify-content: center;
+</div>
+```
 
-.j-A
-- A = ct, bw, ar
-- justify-content: center | space-between | space-around
+## Layouts
+- **.w-A**: width: auto | A%; (Allowed `auto, 100, 50, 33, 25, 20, 0`)
+- **.h-A**: height: auto | 100vh | A% ; (Allowed `auto, 1vh, 100, 50, 33, 25, 20, 0`)
+- **.d-A**: display: `n | b | ib | if | u` (none | block | inline-block | inline-flex | unset)
+- **.p-A**: position: `abs | rel | fix | stx` (absolute | relative | fixed | sticky)
 
-.w-A
-- A = auto, 100, 50, 33, 25
-- width: A%
+```html
+<div class="w-100 h-1vh d-b p-abs">
+  width: 100%;
+  height: 100vh;
+  display: block;
+  position: absolute;
+</div>
 
-.h-A
-- A = auto, 100, 50, 33, 25
-- height: A%
+<div class="w-50 h-50 d-ib p-rel">
+  width: 50%;
+  height: 50%;
+  display: inline-block;
+  position: relative;
+</div>
+```
 
-.p-A
-- A = abs | rel | fix | stx
-- padding: absolute | relative | fixed | sticky
+## Minor Specifics
+- **.o-A**: opacity: A%; (Allowed `0, 25, 33, 50, 66, 75, 100`)
+- **.b0**: border: 0 !important; outline: none !important;
+- **.flow-D-A**: overflow-D: `hidden | scroll` (D = `x | y`)
+- **.ptr**: cursor: pointer;
+- **.mx-a**: margin: 0 auto;
 
-.d-A
-- A = n | b | ib | if | u
-- display: none | block | inline-block | inline-flex | unset
+```html
+<div class="o-50 b0 flow-x-hidden ptr mx-a">
+  opacity: 50%;
+  border: 0 !important;
+  outline: none !important;
+  overflow-x: hidden;
+  cursor: pointer;
+  margin: 0 auto;
+</div>
 
-.flow-D-A
-- D = x | y
-- A = h | s
-- overflow-D: hidden | scroll
+<div class="o-33 flow-y-scroll">
+  opacity: 33%;
+  overflow-y: scroll;
+</div>
+```

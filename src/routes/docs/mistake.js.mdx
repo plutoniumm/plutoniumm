@@ -1,0 +1,45 @@
+## MistakeJS Usage
+Mistake is a simple wrapper around fetch to talk to my server to compile Svelte components. If you have to use this something somewhere has catastrophically gone wrong i.e you have made a mistake.
+
+### Usage
+```html
+<script async defer src="//manav.ch/mistake.js"></script>
+
+<!-- Multiple components also work -->
+<script type="svelte" name="sv-count" src="App.svelte"></script>
+<sv-count></sv-count>
+```
+
+This will fetch App.svelte and compile it as a web component of `type=svelte` with the tag name `sv-count`
+
+## Example Svelte file
+As long as you don't have any local file dependencies, you should generally be able to compile any self contained pure component. You can also use `import` statements to import modules from npm.
+```svelte
+<script>
+  // Sufficiently complex file
+  import { onMount } from "svelte";
+  import { transition_in } from "svelte/internal";
+
+  // all modules will be auto-injected
+  import moment from "moment";
+
+  let i = 0;
+
+  onMount(() => {
+    const ctr =
+      setInterval(() => (i++), 1000);
+
+    console.log(moment().format("dddd"));
+
+    return () => clearInterval(ctr);
+  });
+</script>
+
+<h1 class="gr" style="color:red;">{i}</h1>
+
+<style>
+  .gr {
+    background: green;
+  }
+</style>
+```
