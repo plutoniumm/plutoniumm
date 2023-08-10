@@ -1,7 +1,7 @@
 const root = "https://x.manav.ch/s2/svelte/";
 // const root = "http://localhost:8787/s2/svelte/"; // for testing
 
-console.log( "Congratulations, the mistake has been made" );
+console.log( "Congratulations, you may make your mistake now" );
 
 const getModule = ( src, name ) => fetch( src )
   .then( res => res.text() )
@@ -14,9 +14,13 @@ const getModule = ( src, name ) => fetch( src )
     body
   } ) // response m-239-meta contains name in JSON too
     .then( res => res.text() )
-    .then( ( script ) => import( URL.createObjectURL( // import as blob
-      new Blob( [ script ], { type: 'application/javascript' } )
-    ) ) )
+    .then( ( script ) => {
+      const url = new Blob( [ script ], { type: 'application/javascript' } );
+      console.log( url );
+      const module = import( URL.createObjectURL( url ) );
+
+      return module;
+    } )
     .catch( ( err ) => console.error(
       "We have an explosion in the engine room", err
     ) )
@@ -36,4 +40,12 @@ document.querySelectorAll( 'script[type="svelte"]' ).forEach( async ( svelte ) =
   ).catch( ( err ) => console.error(
     "Aborted due to error", err
   ) );
+
+  // preload svelte internals
+  const link = document.createElement( "link" );
+  link.rel = "preload";
+  link.as = "script";
+  link.href = "https://unpkg.com/svelte@3.58.0/internal/index.mjs";
+  link.crossOrigin = "anonymous";
+  document.head.appendChild( link );
 } )

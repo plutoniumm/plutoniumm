@@ -185,6 +185,17 @@ textarea:focus {
   border-radius: 20px;
 }
 
+.rx2,
+.rx5,
+.rx10,
+.rx20,
+.rpm-0,
+.rpm-5,
+.rpm-10,
+.rpm-20 {
+  overflow: hidden;
+}
+
 .fw1 {
   font-weight: 100;
 }
@@ -333,6 +344,14 @@ textarea:focus {
 
 .d-ib {
   display: inline-block;
+}
+
+.d-i {
+  display: inline;
+}
+
+.d-c {
+  display: contents;
 }
 
 .d-b {
