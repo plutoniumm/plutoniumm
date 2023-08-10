@@ -2,6 +2,13 @@
   import type { PageData } from "./$types";
 
   export let data: PageData;
+
+  const getLG = (image: string) => {
+    if (!image) return "";
+    const lg = image.split(".");
+    lg[lg.length - 2] += "-lg";
+    return lg.join(".");
+  };
 </script>
 
 <svelte:head>
@@ -19,10 +26,12 @@
     <div id="toc" style="padding:5px 0;" />
 
     {#if data.post.image}
+      {@const img = data.post.image}
       <img
         class="hero"
-        src="http://manav.ch/posts/{data.post.slug}/{data.post.image}"
+        src="/images/set/{getLG(img)}"
         alt={data.post.caption}
+        onerror="this.onerror=null;this.src='/images/{img}';"
       />
       {#if data.post.caption}
         <div class="g" style="padding-bottom:1em">

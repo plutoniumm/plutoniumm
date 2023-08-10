@@ -9,6 +9,13 @@
   onMount(() => {
     console.log(data);
   });
+
+  const getSM = (image) => {
+    if (!image) return "";
+    const sm = image.split(".");
+    sm[sm.length - 2] += "-sm";
+    return sm.join(".");
+  };
 </script>
 
 <section class="mx-a w-100">
@@ -19,7 +26,7 @@
         {#if p.image}
           <img
             class="rx5"
-            src={`https://manav.ch/posts/${p.slug}/${p.image}`}
+            src={`/images/set/${getSM(p.image)}`}
             alt={p.caption}
           />
         {/if}

@@ -13,7 +13,7 @@ node_modules/
 .svelte-kit/
 .svelte/
 build/
-
+static/images/set
 secrets/
 
 # Added by cargo
