@@ -6,8 +6,7 @@
 
   const tags = new Map([
     ["ACTIVE", { txt: "Active", col: "#2a2" }],
-    ["NUAD", { txt: "Not Under Active Dev", col: "#aa2" }],
-    ["DEAD", { txt: "Deprecated", col: "#a22" }],
+    ["NUAD", { txt: "Dead/Archived", col: "#aa2" }],
     ["PLAN", { txt: "Planned", col: "#888" }],
   ]);
 

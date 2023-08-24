@@ -4,10 +4,27 @@
   import Tag from "./tag.svelte";
 
   export let data;
+
+  let value = "";
 </script>
 
 <section class="mx-a w-100 flow-y-s">
-  {#each data.list as repo}
+  <input
+    bind:value
+    placeholder="filter"
+    type="text"
+    class="w-100 rpm-10 blur-fff8"
+  />
+
+  {#each data.list.filter((repo) => {
+    if (!value) return true;
+    return value
+      .toLowerCase()
+      .split(" ")
+      .every((v) => JSON.stringify(Object.values(repo))
+          .toLowerCase()
+          .includes(v));
+  }) as repo}
     <Card className="w-100 tl">
       <div class="repo">
         <a
@@ -24,14 +41,9 @@
             <Tag name={repo.tag} inner={repo.tagDesc} />
             <Tag name="license" inner={repo.license} />
           </div>
-          <div>
-            {#if repo.description}
-              <p>{repo.description}</p>
-            {/if}
-            <div class="updated">
-              Last updated {cascade(Date.now() / 1000 - repo.updated)} ago
-            </div>
-          </div>
+          {#if repo.description}
+            <p>{repo.description}</p>
+          {/if}
         </div>
       </div>
     </Card>
@@ -39,6 +51,13 @@
 </section>
 
 <style lang="scss">
+  input[type="text"] {
+    border: 1px solid #fff;
+    width: calc(100% - 40px);
+  }
+  .tags {
+    margin-top: 7px;
+  }
   .repo {
     .title {
       text-transform: capitalize;
