@@ -37,10 +37,11 @@ interface Repo {
 }
 
 const list: Repo[] = repos
+  .filter((r) => !r.fork)
   .map((r) => {
     return {
       name: r.name,
-      description: r.description,
+      description: r?.description || null,
       updated: +new Date(r.updated_at) / 1000 | 0,
       created: +new Date(r.created_at) / 1000 | 0,
       license: r.license?.key || "none",
