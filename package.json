@@ -16,7 +16,9 @@
     "@rollup/plugin-dsv": "3.0.2",
     "@sveltejs/adapter-static": "1.0.5",
     "@sveltejs/kit": "1.2.2",
+    "jsdom": "^22.1.0",
     "mdsvex": "0.10.6",
+    "predefined": "^3.0.0",
     "sharp": "^0.32.4",
     "typescript": "5.0.4",
     "vite": "4.0.4"

@@ -1,6 +1,10 @@
 ## MistakeJS Usage
 Mistake is a simple wrapper around fetch to talk to my server to compile Svelte components. If you have to use this something somewhere has catastrophically gone wrong i.e you have made a mistake.
 
+I may support other frameworks if needed as long as
+- They are not JSX based. I can't deal with leaky abstractions.
+- They are not VDOM based. The objective is to sacrifice speed not throw it out altogether.
+
 ### Usage
 ```html
 <script async defer src="//manav.ch/mistake.js"></script>

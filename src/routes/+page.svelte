@@ -15,7 +15,7 @@
 
 <section class="p-rel f-col fw flow-x-h flow-yh">
 	<Card className="f"><Hero /></Card>
-	<div class="p10 f j-ar w-50">
+	<div class="p10 f j-ar" style="width: calc(50% - 2em);">
 		{#each links as link}
 			<a class="f label fw4 j-ct rpm-10" href={link[0]}>
 				<img class="icon" src={i(link[1])} alt="/" />
