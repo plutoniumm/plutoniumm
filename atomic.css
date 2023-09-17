@@ -385,3 +385,11 @@ textarea:focus {
 .ptr {
   cursor: pointer;
 }
+
+.al-ct {
+  align-items: center;
+}
+
+.al-bl {
+  align-items: baseline;
+}
