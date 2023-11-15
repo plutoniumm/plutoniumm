@@ -1,7 +1,8 @@
 var conf;
 
 function autoHighlight () {
-  const hl = conf.getAttribute( 'hl' ).split( ',' ).map( x => x.trim() );
+  const hl = conf?.getAttribute( 'hl' )?.split( ',' )?.map( x => x.trim() );
+  if ( !hl ) return 0;
 
   // replace out all hl words by paragraph
   let ps = document.querySelectorAll( 'p, li, td' );
@@ -39,7 +40,7 @@ async function mermaid () {
 }
 
 function makeToc () {
-  const notoc = conf.getAttribute( 'notoc' );
+  const notoc = conf?.getAttribute( 'notoc' ) || false;
   if ( notoc ) return 0;
   // ignore title
   let headings = Array.from( document.querySelectorAll( 'h1, h2, h3' ) ).slice( 1 )

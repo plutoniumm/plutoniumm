@@ -7,6 +7,14 @@
   --hl-5: #950;
 }
 
+blockquote {
+  color: #666;
+  margin-left: 5px;
+  padding-left: 5px;
+  border-radius: 5px;
+  border-left: 4px solid var(--theme-hl);
+}
+
 iframe[src*="youtube"] {
   width: min(100%, 600px);
   margin: 5px auto;
