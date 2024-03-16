@@ -1,72 +1,94 @@
 <script>
-	import Card from "$component/card.svelte";
-	import Hero from "$component/hero.svelte";
-	import projects from "$lib/projects.json";
-
-	const i = (str) => `https://x.manav.ch/m2/i${str}`;
-
-	const links = [["//books.manav.ch", "/fas:book-bookmark", "Readenings"]];
+	const i = (str) => `https://x.manav.ch/m2/i/${str}`;
+	const links = [
+		["@plutoniumm", "//github.com/plutoniumm", "fab:github", "github"],
+		["@mplutoniumm", "//twitter.com/mplutoniumm", "fab:twitter", "twitter"],
+		["Books", "//books.manav.ch", "fas:book-bookmark", "Readenings"],
+	];
 </script>
 
-<section class="p-rel f-col fw flow-x-h flow-yh">
-	<Card className="f"><Hero /></Card>
-	<div class="p10 f j-ar" style="width: calc(50% - 2em);">
+<section class="p-rel f-col fw flow-x-h flow-yh main">
+	<div class="p-rel">
+		<img
+			class="left p10"
+			width="125px"
+			height="125px"
+			src="/assets/pic.png"
+			alt=""
+		/>
+		<div id="wave" class="p-abs">
+			<span class="d-ib" style="transform: rotate(-30deg);"> ✋🏽 </span>
+		</div>
+	</div>
+	<div class="right fade p20">
+		<div class="title fw5">Manav Seksaria</div>
+		<br />
 		{#each links as link}
-			<a class="f label fw4 j-ct rpm-10" href={link[0]}>
-				<img class="icon" src={i(link[1])} alt="/" />
-				<div>{link[2]}</div>
+			<a href={link[1]} rel="external noreferrer noopener" target="_blank">
+				<img src={i(link[2])} alt={link[3]} />
+				{link[0]}
 			</a>
-		{/each}
-	</div>
-	<div class="f j-ar w-50">
-		<a class="f label fw4 j-ct rx10 m20" href="#lifeUpdates">
-			<svg height="32px" width="32px" viewBox="0 0 32 32" fill="none">
-				<path d="M 30 12 L 16 20 L 2 12" />
-			</svg>
-		</a>
-	</div>
-</section>
-
-<section class="f-col">
-	<h1 id="lifeUpdates" class="w-100 tc">Life Updates</h1>
-	<div class="flow-y-s" style="max-height:85vh;">
-		{#each projects as project}
-			<div class="card rx20 p20 blur-fff8">
-				<div class="w-100" style="margin-left:10px;">
-					<div class="fw7" style="font-size:1.1em;padding-bottom:5px;">
-						{project.title}
-						<span class="fw4" style="color:#666a;">@{project.where}</span>
-					</div>
-					<div class="fw3">{@html project.about}</div>
-				</div>
-			</div>
 		{/each}
 	</div>
 </section>
 
 <style lang="scss">
-	.card {
-		margin: 10px auto;
-		font-size: 1rem;
-		width: calc(min(660px, 100%) - 60px);
-		align-items: center;
+	.main {
+		color: #fff;
 	}
-	.icon {
-		width: 1rem;
-		height: 1rem;
-		margin-right: 0.5rem;
-		object-fit: contain;
-	}
-	.label {
-		min-width: 100px;
-		opacity: 0.5;
-		color: #000 !important;
-		align-self: center;
+	.title {
+		font-size: 1.5rem;
 		line-height: 1rem;
-		transition: all 0.2s ease-in-out;
-		&:hover {
-			opacity: 1;
-			background: #fff8;
+	}
+	a[target="_blank"] {
+		display: block;
+		margin: 4px 0;
+		font-size: 18px;
+		position: relative;
+		img {
+			position: relative;
+			top: 6px;
+			height: 24px;
+			width: 24px;
+			filter: invert(1);
 		}
+	}
+	.left {
+		transform: scale(1.33);
+		padding-bottom: 0;
+	}
+	@keyframes wave {
+		0% {
+			transform: rotate(0deg);
+		}
+		10% {
+			transform: rotate(14deg);
+		}
+		20% {
+			transform: rotate(-8deg);
+		}
+		30% {
+			transform: rotate(14deg);
+		}
+		40% {
+			transform: rotate(-4deg);
+		}
+		50% {
+			transform: rotate(10deg);
+		}
+		60% {
+			transform: rotate(0deg);
+		} /* Reset for the last half to pause */
+		100% {
+			transform: rotate(0deg);
+		}
+	}
+	#wave {
+		font-size: 0.8em;
+		animation: 2.5s wave infinite;
+		transform-origin: 70% 70%;
+		bottom: 2px;
+		left: 2px;
+		font-size: 52px;
 	}
 </style>

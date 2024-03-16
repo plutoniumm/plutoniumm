@@ -6,7 +6,7 @@ const config = {
     plugins: [ sveltekit() ],
     resolve: {
         alias: {
-            '$component': resolve( '/components' ),
+            '$component': resolve( '/src/components' ),
         }
     },
     server: {

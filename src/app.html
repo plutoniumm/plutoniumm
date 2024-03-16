@@ -27,54 +27,30 @@
 
 
 	<style>
-		:root {
-			--theme: #cae1ff;
-			--theme-hl: #7eb6ff;
+		html {
+			background: #111;
 		}
 
 		body {
 			height: 100vh;
 			width: 100vw;
-			overflow-y: scroll;
 			z-index: 1;
-			background:
-				radial-gradient(50% 55% at 21vw 19vh, #cbadeb, transparent),
-				radial-gradient(50% 85% at 85vw 77vh, #edb2d0, transparent),
-				radial-gradient(70% 50% at 90vw 10vh, #7ae6c7, transparent),
-				radial-gradient(87% 81% at 16vw 91vh, #f4c4b3, transparent);
-			background-repeat: no-repeat;
 		}
 
-		@keyframes mock-rotate {
-
-			0%,
-			100% {
-				opacity: 0;
-			}
-
-			50% {
-				opacity: 1;
-			}
+		.noise {
+			position: relative;
 		}
 
-		body::before {
-			/* gradient to rotate */
-			content: " ";
-			position: fixed;
-			background:
-				radial-gradient(50% 55% at 21vw 19vh, #cbadeb, transparent),
-				radial-gradient(50% 85% at 85vw 77vh, #edb2d0, transparent),
-				radial-gradient(70% 50% at 90vw 10vh, #7ae6c7, transparent),
-				radial-gradient(87% 81% at 16vw 91vh, #f4c4b3, transparent);
-			background-repeat: no-repeat;
-			background-position: fixed;
-			transform: rotate(180deg);
-			width: 100vw;
-			height: 100vh;
+		.noise::before {
+			background: url('/assets/noise.webp') repeat;
+			content: '';
+			position: absolute;
+			opacity: 0.15;
 			top: 0;
 			left: 0;
-
-			animation: mock-rotate 60s linear infinite;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
 		}
 
 		section {
@@ -83,20 +59,12 @@
 			scroll-snap-align: start;
 			scroll-snap-stop: normal;
 		}
-
-		.blur-fff8 {
-			backdrop-filter: blur(8px);
-			-webkit-backdrop-filter: blur(8px);
-			-moz-backdrop-filter: blur(8px);
-			background: #fff8;
-			border: 1px solid #fff8;
-		}
 	</style>
 
 	%sveltekit.head%
 </head>
 
-<body xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<body class="noise" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 	<div style="display: contents;">
 		%sveltekit.body%
 	</div>
