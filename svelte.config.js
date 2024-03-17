@@ -1,11 +1,16 @@
 import sveltePreprocess from 'svelte-preprocess';
 import statix from '@sveltejs/adapter-static';
+import { mdsvex } from 'mdsvex';
 
 /** @type {import('@sveltejs/kit').Config} */
 export default {
 	extensions: [ '.svelte', '.mdx', '.md' ],
 	preprocess: [
-		sveltePreprocess( {} )
+		sveltePreprocess( {} ),
+		mdsvex( {
+			extensions: [ '.mdx', '.md' ],
+			smartypants: {},
+		} )
 	],
 	kit: {
 		adapter: statix(),

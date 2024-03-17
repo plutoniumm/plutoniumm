@@ -1,9 +1,9 @@
 <script>
 	const i = (str) => `https://x.manav.ch/m2/i/${str}`;
 	const links = [
-		["@plutoniumm", "//github.com/plutoniumm", "fab:github", "github"],
-		["@mplutoniumm", "//twitter.com/mplutoniumm", "fab:twitter", "twitter"],
-		["Books", "//books.manav.ch", "fas:book-bookmark", "Readenings"],
+		["plutoniumm", "//github.com/plutoniumm", "fab:github", "github"],
+		["mplutoniumm", "//twitter.com/mplutoniumm", "fab:twitter", "twitter"],
+		["Books", "//books.manav.ch", "fas:book-bookmark", "Book List"],
 	];
 </script>
 
