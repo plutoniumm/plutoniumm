@@ -60,7 +60,6 @@ textarea:focus {
   background: var(--bg);
   backdrop-filter: blur(var(--sz));
   -webkit-backdrop-filter: blur(var(--sz));
-  -ms-backdrop-filter: blur(var(--sz));
   -moz-backdrop-filter: blur(var(--sz));
 }
 
@@ -356,10 +355,6 @@ textarea:focus {
 
 .d-b {
   display: block;
-}
-
-.d-if {
-  display: inline-flex;
 }
 
 .d-u {
