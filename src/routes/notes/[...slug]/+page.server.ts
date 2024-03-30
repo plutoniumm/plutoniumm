@@ -4,10 +4,8 @@ import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ params }) => {
   const { slug } = params;
-  console.log('slug', slug);
-
   const post = posts.find((post) => slug === post.slug);
 
-  if (!post) throw error(404, 'Post not found');
+  if (!post) throw error(404, slug + ' :not found');
   return { post };
 };

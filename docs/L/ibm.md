@@ -1,25 +1,25 @@
 ---
 title: "The Ls of IBM"
-desc: "Some well known Ls of IBM"
+desc: "Some well known Ls of IBM ranging from corruption to human rights abuses. Not a comprehensive list but rather a collection of some of the most well known ones."
 date: 25 March 2024
-image: ""
-caption: ""
+image: "/docs/L/idk.webp"
+caption: "IDK logo."
 ---
 
-All corporations have some amazing Ls. This is just those for what is effectively the world's oldest computer company. These are not failures in business or technology (like say the clusterfuck of Watson Healthcare<sup>[[0.1]](https://theconversation.com/from-a-deranged-provocateur-to-ibms-failed-ai-superproject-the-controversial-story-of-how-data-has-transformed-healthcare-189362)</sup>), but rather in ethics and morality.
+All corporations have some amazing Ls. This is just those for what is effectively the world's oldest computer company. These are not failures in business or technology (like say the clusterfuck of Watson Healthcare[[0.1]](https://theconversation.com/from-a-deranged-provocateur-to-ibms-failed-ai-superproject-the-controversial-story-of-how-data-has-transformed-healthcare-189362)), but rather in ethics and morality.
 
-> Sidenote: To be fair Watson healthcare is sort of an ethical failure too since Ferrucci, the guy who created said Watson said it's not ready for outside of games and Big Blue decided to put it to use in Healthcare <sup>[[0.2]](https://www.statnews.com/wp-content/uploads/2018/09/IBMs-Watson-recommended-unsafe-and-incorrect-cancer-treatments-STAT.pdf)</sup>. Now that's a whole new meaning to putting in Jeopardy!
+> Sidenote: To be fair Watson healthcare is sort of an ethical failure too since Ferrucci, the guy who created said Watson said it's not ready for outside of games and Big Blue decided to put it to use in Healthcare [[0.2]](https://www.statnews.com/wp-content/uploads/2018/09/IBMs-Watson-recommended-unsafe-and-incorrect-cancer-treatments-STAT.pdf). Now that's a whole new meaning to putting in Jeopardy!
 
 ## Part 1: Briberies and Corruption
-- Argentina (1993-2000)<sup>[[1.1]](https://www.nytimes.com/1996/03/09/business/ibm-contends-with-a-scandal-in-argentina.html)</sup> \
+- Argentina (1993-2000)[[1.1]](https://www.nytimes.com/1996/03/09/business/ibm-contends-with-a-scandal-in-argentina.html) \
 In 1993-2000 IBM was reported to have bribed government officials in Argentina to win a $250 million contract to modernize the computer systems of [Banco de la Nación Argentina](https://es.wikipedia.org/wiki/Caso_IBM-Banco_Naci%C3%B3n). IBM not only was [fined](https://www.wsj.com/articles/SB977440372530767305) $300K for this but they also pledged to never do it again.
-- South Korea/China (2004-2009) <sup>[[1.2]](https://www.wsj.com/articles/SB10001424052748704608504576208634150691292) [[1.3]](https://www.reuters.com/article/idUSN18103187/) </sup> \
+- South Korea/China (2004-2009) [[1.2]](https://www.wsj.com/articles/SB10001424052748704608504576208634150691292) [[1.3]](https://www.reuters.com/article/idUSN18103187/)  \
 In a [2011 lawsuit](https://www.sec.gov/files/litigation/complaints/2011/comp21889.pdf) 100s of IBM employees created slush funds with local travel agencies in China and South Korea to pay for travel expenses of government officials among other gifts. IBM was fined $10 million for this.
-- India (2011-2014) <sup>[[1.4]](https://techcrunch.com/2014/03/24/ibm-india-battles-fraud-amid-scramble-to-save-its-2-5b-airtel-contract/)</sup> \
+- India (2011-2014) [[1.4]](https://techcrunch.com/2014/03/24/ibm-india-battles-fraud-amid-scramble-to-save-its-2-5b-airtel-contract/) \
 IBM's Bharti Airtel contract was reduced from $2.5B to less than $400M as fraud schemes were discovered with employees involving Mara Ison. They even overstated revenues by over $8 million.
-- Australia (2013-2016) <sup>[[1.5]](https://www.itnews.com.au/news/queenslands-ibm-ban-lives-on-420969)</sup> \
+- Australia (2013-2016) [[1.5]](https://www.itnews.com.au/news/queenslands-ibm-ban-lives-on-420969) \
 IBM was found to do bid rigging and price fixing in a contract with Queensland. They used leaked information about competitors and attempting to access tender responses such as by Accenture and Logica to win a contract. They were subsequently banned from doing business with the state for 12 months.
-- Canada (2015) <sup>[[1.6]](https://www.cbc.ca/news/canada/montreal/ibm-revenue-quebec-employees-arrested-in-upac-raid-1.2990211)</sup> \
+- Canada (2015) [[1.6]](https://www.cbc.ca/news/canada/montreal/ibm-revenue-quebec-employees-arrested-in-upac-raid-1.2990211) \
 7 people including officials from Revenue Quebec and IBM were arrested for bribery. IBM was accused of paying bribes to Revenue Quebec officials to win a $24M contract.
 
 ## Part 2: Research
@@ -45,7 +45,7 @@ IBM just won a jury verdict against Groupon for $82.5M.  Does that make IBM a pa
 IBM for some reason is also going to now pretend to "fight patent trolls" as if its not just another business opportunity for then [[2.3]](https://www.techtarget.com/searchsoftwarequality/news/252476909/IBM-expands-patent-troll-fight-with-its-massive-IP-portfolio)
 
 
-### Deep Blue <sup>[[2.1]](https://www.google.co.in/books/edition/Deep_Thinking/ffYZDQAAQBAJ)</sup>
+### Deep Blue [[2.1]](https://www.google.co.in/books/edition/Deep_Thinking/ffYZDQAAQBAJ)
 From Garry Kasparov's book "Deep Thinking" we know that IBM was willing to push the boundaries of ethical behaviour to improve Deep Blue’s chances in any way. Here are excerpts from the book:
 
 Miguel Illescas [chess player who worked for IBM], gave an interview in 2009 “New In Chess”, where he said
@@ -66,7 +66,7 @@ It is worth noting that IBM retired Deep Blue after the match, and it was never 
 
 Some Notes
 - IBM was required by contract to give Kasparov a copy of the Deep Blue's 'previous games' database. They did not citing: "the games were played with engineers not publicly so therefore no played public games exist".
-- The famous 'counterintuitive move as a sign of superior intelligence' was actually a bug in the software. The move was a result of a bug in the software that caused the computer to make a random move.<sup>[[2.2]](https://www.wired.com/2012/09/deep-blue-computer-bug/)</sup>
+- The famous 'counterintuitive move as a sign of superior intelligence' was actually a bug in the software. The move was a result of a bug in the software that caused the computer to make a random move.[[2.2]](https://www.wired.com/2012/09/deep-blue-computer-bug/)
 - After the match, IBM stock jumped 20%.
 
 ## Part 3: Human Rights
@@ -101,5 +101,5 @@ IBM has been sued by America for Anti-Trust multiple times, so much so that I'm 
 - [1996](https://supreme.justia.com/cases/federal/us/517/843/)
 
 ## Part N: Minor Ls
-- HackAHairDryer <sup>[[N.1]](https://www.visibrain.com/en/blog/ibm-hackahairdryer-twitter-controversy/)</sup>
-- CEO Pays <sup>[[N.2]](https://pastebin.com/sNxrA7QK)</sup>
+- HackAHairDryer [[N.1]](https://www.visibrain.com/en/blog/ibm-hackahairdryer-twitter-controversy/)
+- CEO Pays [[N.2]](https://pastebin.com/sNxrA7QK)

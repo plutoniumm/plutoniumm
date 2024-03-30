@@ -3,8 +3,6 @@ import type { PageLoad } from './$types';
 export const load: PageLoad = async ({ data, params }) => {
   const loc = data.post.slug;
   const splitName = loc.split('/');
-  console.log('splitName', splitName);
-
 
   let component;
   if (splitName.length === 1) {

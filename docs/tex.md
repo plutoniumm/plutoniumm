@@ -1,9 +1,9 @@
 ---
 title: "Why Tex is Crap"
-desc: "why I hate Tex."
+desc: "Why I am unable to can deal with TeX and the absolute dinosaur that it is. To be clear the problem is not the Math part, it's the English part."
 date: 25 September 2022
-image: ""
-caption: ""
+image: "/docs/tex.png"
+caption: "TeX icon. It's literally written in spongebob case"
 ---
 
 This is not just about LaTex, but the Tex system as a whole, including [ConTexT](https://wiki.contextgarden.net/Main_Page)
