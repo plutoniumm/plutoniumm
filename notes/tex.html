@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="/assets/meta.png" />
+	<link rel="apple-touch-icon" href="/assets/meta.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<link rel="stylesheet" href="/atomic.css">
+
+	<title>Plutoniumm</title>
+	<meta name="title" content="Plutoniumm">
+	<meta name="description" content="Don't worry I'm a programmer">
+
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://manav.ch/">
+	<meta property="og:title" content="Plutoniumm">
+	<meta property="og:description" content="Don't worry I'm a programmer">
+	<meta property="og:image" content="/assets/meta.png">
+
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://manav.ch/">
+	<meta property="twitter:title" content="Plutoniumm">
+	<meta property="twitter:description" content="Don't worry I'm a programmer">
+	<meta property="twitter:image" content="/assets/meta.png">
+
+
+	<style>
+		html {
+			background: #111;
+		}
+
+		body {
+			height: 100vh;
+			width: 100vw;
+			z-index: 1;
+		}
+
+		.noise {
+			position: relative;
+		}
+
+		.noise::before {
+			background: url('/assets/noise.webp') repeat;
+			content: '';
+			position: absolute;
+			opacity: 0.15;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+		}
+
+		section {
+			justify-content: center;
+			align-items: center;
+			scroll-snap-align: start;
+			scroll-snap-stop: normal;
+		}
+	</style>
+
+	<meta http-equiv="content-security-policy" content="">
+		<link href="../_app/immutable/assets/_layout-1548f59b.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/_page-9690d6d9.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/start-1e839ecf.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index-5f46b728.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/singletons-f41aac80.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper-5e4dbdac.js">
+		<link rel="modulepreload" href="../_app/immutable/components/pages/_layout.svelte-b4318e33.js">
+		<link rel="modulepreload" href="../_app/immutable/modules/pages/_layout.js-2bb958f9.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/_layout-8b3d678d.js">
+		<link rel="modulepreload" href="../_app/immutable/components/pages/notes/_...slug_/_page.svelte-63cde1f3.js">
+		<link rel="modulepreload" href="../_app/immutable/modules/pages/notes/_...slug_/_page.ts-7934afe7.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/_page-d2c3407a.js">
+</head>
+
+<body class="noise" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<div style="display: contents;">
+		
+
+
+<main class="w-100 svelte-j0q9fz"><div class="p20"><style>img {
+      max-width: 100%;
+      max-height: 400px;
+      border-radius: 5px;
+    }
+
+    pre,
+    code {
+      white-space: pre-wrap !important;
+      word-break: break-word !important;
+    }
+  </style>
+  <link rel="stylesheet" href="/css/prismvsc.css">
+  <article class="rpm-10 fw3 mx-a svelte-1jp8wqv"><header class="d-b" style="margin: 10px 0;"><h1 class="m20 tc">Why Tex is Crap</h1>
+
+      <div class="nav w-100 f j-bw">25 September 2022</div></header>
+
+    <div class="p-rel mx-a w-100"><img fetchpriority="high" class="hero w-100 rx10 p-rel svelte-1jp8wqv" src="/docs/tex.png" alt="TeX icon. It's literally written in spongebob case" style="background: #fff;">
+        <div class="p5 rx10 p-abs capt svelte-1jp8wqv">TeX icon. It's literally written in spongebob case</div></div>
+
+    
+    <p>This is not just about LaTex, but the Tex system as a whole, including <a href="https://wiki.contextgarden.net/Main_Page" rel="nofollow">ConTexT</a></p>
+<h2>Convenience</h2>
+<h3>Someone Else’s</h3>
+<p>It is worth understanding first and foremost that LaTex is not some specifically designed language. It is a set of <strong>macros</strong> that Donald Knuth wrote for his book, <em>The Art of Computer Programming</em>. It is a set of macros that he wrote for his own use, and then released over and above Tex.</p>
+<blockquote><p>Tex: is a typesetting system. LaTex is a set of macros to program Tex.</p></blockquote>
+<p>This inherently means, it was created FOR HIM and his specific use in 1977. It was not created for you, or me, or anyone else. It was created for him. And we know very well that its difficult to adapt to someone else’s idiosyncrasies.</p>
+<h3>Seperation of Concerns</h3>
+<p>In the web at least HTML &amp; CSS offer a clear seperation of concerns. HTML is for content and CSS is for styling. This is not the case with Tex. Tex is a language for both content and styling. It means that you have to write a lot of code to do simple things. For example, to write a simple document with a title, author and date, you have to write the following</p>
+<pre class="language-tex"><!-- HTML_TAG_START --><code class="language-tex"><span class="token function selector">documentclass</span><span class="token punctuation">&#123;</span><span class="token keyword">article</span><span class="token punctuation">&#125;</span>
+<span class="token function selector">&#92;title</span><span class="token punctuation">&#123;</span>My First Document<span class="token punctuation">&#125;</span>
+<span class="token function selector">author</span><span class="token punctuation">&#123;</span>Author's Name<span class="token punctuation">&#125;</span>
+<span class="token function selector">date</span><span class="token punctuation">&#123;</span>Today<span class="token punctuation">&#125;</span>
+<span class="token function selector">egin</span><span class="token punctuation">&#123;</span><span class="token keyword">document</span><span class="token punctuation">&#125;</span>
+   <span class="token function selector">maketitle</span>
+   Hello World!
+<span class="token function selector">end</span><span class="token punctuation">&#123;</span><span class="token keyword">document</span><span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre>
+<p>This is a lot of code for a simple document. Compare this to Markdown</p>
+<pre class="language-md"><!-- HTML_TAG_START --><code class="language-md"><span class="token title important"><span class="token punctuation">#</span> My First Document</span>
+<span class="token italic"><span class="token punctuation">*</span><span class="token content">Author's Name</span><span class="token punctuation">*</span></span>
+Today
+
+Hello World!</code><!-- HTML_TAG_END --></pre>
+<h2>Turing Completeness</h2>
+<p>Latex IS complicated. This is not up for debate. Consider the fact that the most used programming language in the world for machine learning and quantum computing is Python. And even Python has less syntax than Latex. And yet for all it’s complexity Tex can still not parse Natural Language Math. Something both Sympy Python and Matlab can do.</p>
+<p>TeX is Turing complete which means now instead of just writing a 20 page thesis you start coding latex packages like <code>tikz-timing</code>, <code>standalone</code>, <code>svn-multi</code> etc. But that aside, by virtue of being Turing Complete, Tex is subject to <a href="https://en.wikipedia.org/wiki/Rice%27s_theorem" rel="nofollow">Rice’s Theorem</a>. Which means given a general document <code>d</code> and a tex source <code>t</code>, it is undecidable whether <code>t</code> will compile to <code>d</code>. I’m gonna go out on a limb and say that for academic documentation, this is not a good thing.</p>
+<h3>Compatibility</h3>
+<p>This additonally also implies that unless using a language which is equivalent in grammar to Tex or in output isomorphic to <code>dvi</code>/<code>pdf</code> it is impossible to write a compiler from tex to any other language. This however has not been the case for other languages like SGML which are simple and still fully forwards and compatible with HTML5</p>
+<h3>Error Tolerance</h3>
+<p>Carrying forward from HTML we come to error tolerance. HTML is a very error tolerant language. You could replace a lot of statements with gibberish and it would render approximately ok. Whereas in Tex a stray “SPACE” can cause the entire document to catastrophically explode.</p>
+<h2>Syntax Issues</h2>
+<h3>Self Consistency</h3>
+<p>Tex is not self consistent. It is not a single language. It is one big clusterfuck of hacks.</p>
+<ul><li>We have <code>\eq</code> and <code>\neq</code>, so if <code>\in</code> why <code>\notin</code> and not <code>\nin</code></li>
+<li>Why are there only 4 Hebrew letters $(\aleph, \beth, \gimel, \dalet)$, where are the rest?</li>
+<li>Why is <code>\sqrt</code> pre-defined but not <code>\abs</code></li>
+<li>Why is <code>\Re</code> and <code>\Im</code> but <code>\mathbb R</code> and <code>\mathbb C</code></li>
+<li>Why do remaps even exist? So sometimes <code>ff</code> being left arrow makes Affine: <code>A←ine</code> and Diffraction: <code>Di←raction</code></li></ul>
+<h3>Some specifc Misc problems</h3>
+<p>Unintuitive Syntax: <code>\subtitle * {something}</code> WHAT IN GODS GREEN EARTH IS THE ”*” DOING THERE.</p>
+<p>After like 2 minutes of any equation there is just one big mess of <code>{{{{{{</code>. How am I even supposed to properly match brackets here?</p>
+<p>Centering: <code>\begin{center}</code>, <code>\centering</code>, <code>\Centering</code>, and of course <code>|c|</code></p>
+<p><code>\textbf{takes stuff in}</code> but <code>\Huge takes stuff outside declaration</code></p>
+<p><code>\item</code> takes stuff outside but tables take stuff in <code>&amp; {here} &amp; \\</code></p>
+<h3>Rendering Issues</h3>
+<ul><li>You cannot change the DPI</li>
+<li>Images auto rescale unless they are PDFs. Really..? -_-</li>
+<li>SVGs and therefore none of the modern fonts/diagrams are supported</li>
+<li>It is EIGHT BLOODY GIGABYTES. Chrome is 300MB (Best part is that like 50% of HUMANITY already has it.) and some Javascript to literally rewrite the compiler may be 100s of kbs. Even all of libre office is like 500MB. <strong>WHY IS THIS 8GB?????</strong></li>
+<li>Images are inconsistent about <code>[h]</code>, <code>[H]</code>, <code>[ht]</code> and <code>[htb]</code> and <code>[H]</code> is not even the default</li></ul>
+<h2>Evolution</h2>
+<p>To all senior academics using Tex now. I can understand why you use it. And I’m not against that. But it is painful for all involved parties to enfore it even on students unless the source of the document is required. If you only need a PDF, let them use whatever they want to</p>
+<p>You probably started writing Technical documents before I was born, which means that was before: Laser Printers, The World Wide Web and Javascript existed. In fact that was even before LLVM existed let alone Markdown. The world has changed and does the way we write documents need to</p>
+<p>This ↓ is what LaTex was created for</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Linotype_machines%2C_Anthony_Hordern_and_Sons_department_store%2C_c._1935.jpg/1280px-Linotype_machines%2C_Anthony_Hordern_and_Sons_department_store%2C_c._1935.jpg" alt="Linotype Machine"></p>
+<p>and this ↓ is what it is still used for</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Submarine_cable_map_umap.png" alt="Global Internet Backbone"></p>
+<h3>Non-Arguments</h3>
+<p>“But Manav you are resistant to change. Just learn something new!“.</p>
+<p>I will learn something completely perfectly well if it makes sense. I learnt: Rust, Haskell, Javascript, C and C++ all over the last 10 years. I’m not resistant to change. I’m resistant to change for the sake of change. I’m resistant to change for the sake of change when it is not an improvement. I’m resistant to change when it is not an improvement and it is forced upon me.</p>
+<p>I am not resistant to change. I learned everything I had to along my way. You are resistant to change. You are resistant to change because you are still using a 45 year old technology that was created for a completely different purpose and are forcing it on me because YOU don’t want to change.</p>
+<h3>Pretentiousness</h3>
+<p>Latex is also Pretentious, its very deliberately unhelpful. The following is the output of <code>man latex</code></p>
+<pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash">latex <span class="token punctuation">[</span>first-line<span class="token punctuation">]</span>
+
+This manual page is a mere skeleton.
+
+The LaTeX language is described <span class="token keyword">in</span> the book LaTeX - A Document Preparation System. LaTeX is a TeX macro package, not a modification to the TeX <span class="token builtin class-name">source</span> program, so all the capabilities described <span class="token keyword">in</span> tex<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> are present.</code><!-- HTML_TAG_END --></pre>
+<p>Ok thanks man. I’ll just go read a 300 page book to learn how to write a document. I’m sure that’s a good use of my time. Also very helpful manual page. I’m sure I’ll be able to write a document with that.</p>
+<p>I’m not salty. This is Groff (GNU Troff) which is a typesetting system that is older than Latex just for reference</p>
+<pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash">groff <span class="token punctuation">[</span>-abcCeEgGijklNpRsStUVXzZ<span class="token punctuation">]</span> <span class="token punctuation">[</span>-d  ctext<span class="token punctuation">]</span> <span class="token punctuation">[</span>-d  <span class="token assign-left variable">string</span><span class="token operator">=</span> text<span class="token punctuation">]</span> <span class="token punctuation">[</span>-D  fallback-encoding<span class="token punctuation">]</span> <span class="token punctuation">[</span>-f  font-family<span class="token punctuation">]</span> <span class="token punctuation">[</span>-F  font-directory<span class="token punctuation">]</span> <span class="token punctuation">[</span>-I  inclusion-directory<span class="token punctuation">]</span> <span class="token punctuation">[</span>-K  input-encoding<span class="token punctuation">]</span> <span class="token punctuation">[</span>-L  spooler-argument<span class="token punctuation">]</span> <span class="token punctuation">[</span>-m  macro-package<span class="token punctuation">]</span> <span class="token punctuation">[</span>-M  macro-directory<span class="token punctuation">]</span> <span class="token punctuation">[</span>-n  page-number<span class="token punctuation">]</span> <span class="token punctuation">[</span>-o  page-list<span class="token punctuation">]</span> <span class="token punctuation">[</span>-P  postprocessor-argument<span class="token punctuation">]</span> <span class="token punctuation">[</span>-r  cnumeric-expression<span class="token punctuation">]</span> <span class="token punctuation">[</span>-r  <span class="token assign-left variable">register</span><span class="token operator">=</span> numeric-expression<span class="token punctuation">]</span> <span class="token punctuation">[</span>-T  output-device<span class="token punctuation">]</span> <span class="token punctuation">[</span>-w  warning-category<span class="token punctuation">]</span> <span class="token punctuation">[</span>-W  warning-category<span class="token punctuation">]</span> <span class="token punctuation">[</span>file <span class="token builtin class-name">.</span> <span class="token builtin class-name">.</span> .<span class="token punctuation">]</span> groff <span class="token parameter variable">-h</span> groff <span class="token parameter variable">--help</span> groff <span class="token parameter variable">-v</span> <span class="token punctuation">[</span>option <span class="token builtin class-name">.</span> <span class="token builtin class-name">.</span> .<span class="token punctuation">]</span> <span class="token punctuation">[</span>file <span class="token builtin class-name">.</span> <span class="token builtin class-name">.</span> .<span class="token punctuation">]</span> groff <span class="token parameter variable">--version</span> <span class="token punctuation">[</span>option <span class="token builtin class-name">.</span> <span class="token builtin class-name">.</span> .<span class="token punctuation">]</span> <span class="token punctuation">[</span>file <span class="token builtin class-name">.</span> <span class="token builtin class-name">.</span> .<span class="token punctuation">]</span><span class="token operator">&lt;</span>br/<span class="token operator">></span>
+
+groff is the primary front end to the GNU roff document formatting system. GNU roff is a typesetting system that reads plain text input files that include formatting commands to produce output <span class="token keyword">in</span> PostScript, PDF, HTML, DVI, or other formats, or <span class="token keyword">for</span> display to a terminal. Formatting commands can be low-level typesetting primitives, macros from a supplied package, or user-defined macros. All three approaches can be combined. If no <span class="token function">file</span> operands are specified, or <span class="token keyword">if</span> <span class="token function">file</span> is “-”, groff reads the standard input stream.</code><!-- HTML_TAG_END --></pre>
+<h3>Alternatives</h3>
+<p>Markdown, with some preprocessing scripts. You won’t even know the difference.</p>
+<p><code>\end{document}</code></p></article>
+</div></main>
+
+
+		<script type="module" data-sveltekit-hydrate="4rag0k">
+			import { start } from "../_app/immutable/start-1e839ecf.js";
+
+			start({
+				env: {},
+				paths: {"assets":"","base":""},
+				target: document.querySelector('[data-sveltekit-hydrate="4rag0k"]').parentNode,
+				version: "1711759232602",
+				hydrate: {
+					node_ids: [0, 4],
+					data: [null,{type:"data",data:{post:{title:"Why Tex is Crap",desc:"Why I am unable to can deal with TeX and the absolute dinosaur that it is. To be clear the problem is not the Math part, it's the English part.",date:"25 September 2022",image:"\u002Fdocs\u002Ftex.png",caption:"TeX icon. It's literally written in spongebob case",slug:"tex"}},uses:{params:["slug"],url:1}}],
+					form: null,
+					error: null
+				}
+			});
+		</script>
+	
+	</div>
+</body>
+
+</html>
