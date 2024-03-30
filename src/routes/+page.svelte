@@ -1,9 +1,11 @@
 <script>
 	const i = (str) => `https://x.manav.ch/m2/i/${str}`;
 	const links = [
-		["plutoniumm", "//github.com/plutoniumm", "fab:github", "github"],
-		["mplutoniumm", "//twitter.com/mplutoniumm", "fab:twitter", "twitter"],
-		["Books", "//books.manav.ch", "fas:book-bookmark", "Book List"],
+		["plutoniumm", "//github.com/plutoniumm", "fab:github"],
+		["plutoniummm_", "//twitter.com/plutoniummm_", "fab:twitter"],
+		["plutoniumm", "//youtu.be/dQw4w9WgXcQ", "fab:youtube"],
+		["Books", "//books.manav.ch", "fas:book-bookmark"],
+		["Notes", "//books.manav.ch", "fas:comment"],
 	];
 </script>
 
@@ -25,7 +27,7 @@
 		<br />
 		{#each links as link}
 			<a href={link[1]} rel="external noreferrer noopener" target="_blank">
-				<img src={i(link[2])} alt={link[3]} />
+				<img src={i(link[2])} alt={link[0]} />
 				{link[0]}
 			</a>
 		{/each}

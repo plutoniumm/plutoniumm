@@ -5,4 +5,4 @@ type Resp = {
   posts: Post[];
 };
 
-export const load = (): Resp => ({ posts });
+export const load = (): Resp => ({ posts })
