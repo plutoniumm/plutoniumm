@@ -1,0 +1,18 @@
+[
+  {
+    "type": "Article",
+    "url": "https://www.psychologie.hhu.de/fileadmin/redaktion/Oeffentliche_Medien/Fakultaeten/Mathematisch-Naturwissenschaftliche_Fakultaet/Psychologie/AAP/Publikationen/2013/Piepenbrock-2013-Positive_display_polarity_is_.pdf",
+    "name": "Positive display polarity is advantageous for both younger and older adults",
+    "authors": "Piepenbrock, Mayr et al",
+    "loc": "Heinrich Heine University Düsseldorf",
+    "desc": "A little for children and generally universally for adults, light mode is better for visual acuity by a large margin. And for reading speed, very slightly better than dark mode."
+  },
+  {
+    "type": "Article",
+    "url": "https://www.mdpi.com/1099-4300/19/6/275",
+    "name": "The Entropy of Words: Learnability & Expressivity across Languages",
+    "authors": "Bentz, Alikaniotis et al",
+    "loc": "University of Tübingen, University of Cambridge etc",
+    "desc": "Entropy of words is a good measure of learnability and expressivity of languages. It is a good measure of the complexity of a language. We end up speaking at the same speed of information, regardless of the language."
+  }
+]

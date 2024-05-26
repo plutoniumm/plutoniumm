@@ -5,7 +5,7 @@
 		["plutoniummm_", "//twitter.com/plutoniummm_", "fab:twitter"],
 		["plutoniumm", "//youtu.be/dQw4w9WgXcQ", "fab:youtube"],
 		["Books", "//books.manav.ch", "fas:book-bookmark"],
-		["Notes", "//books.manav.ch", "fas:comment"],
+		["Notes", "/notes", "fas:comment"],
 	];
 </script>
 
