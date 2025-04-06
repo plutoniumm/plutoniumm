@@ -34,10 +34,10 @@
   </style>
   <link rel="stylesheet" href="/css/prismvsc.css" />
   <article class="rpm-10 fw3 mx-a">
-    <header class="d-b" style="margin: 10px 0;">
-      <h1 class="m20 tc">{post.title}</h1>
+    <header class="d-b tc" style="margin: 10px 0;">
+      <h1 class="m20">{post.title}</h1>
 
-      <div class="nav w-100 f j-bw">
+      <div class="nav w-100">
         {new Date(post.date).toLocaleDateString("en-GB", {
           year: "numeric",
           month: "long",
@@ -68,8 +68,8 @@
   article {
     color: #eee;
     max-width: min(60ch, 100%);
+    line-height: 1.6;
     font-size: 18px;
-    line-height: 1.25em;
   }
   .hero {
     object-fit: caption;

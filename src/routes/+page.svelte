@@ -1,11 +1,11 @@
 <script>
-	const i = (str) => `https://x.manav.ch/m2/i/${str}`;
+	const i = (str) => `/assets/${str}.svg`;
 	const links = [
-		["plutoniumm", "//github.com/plutoniumm", "fab:github"],
-		["plutoniummm_", "//twitter.com/plutoniummm_", "fab:twitter"],
-		["plutoniumm", "//youtu.be/dQw4w9WgXcQ", "fab:youtube"],
-		["Books", "//books.manav.ch", "fas:book-bookmark"],
-		["Notes", "/notes", "fas:comment"],
+		["plutoniumm", "//github.com/plutoniumm", "github"],
+		["plutoniummm_", "//twitter.com/plutoniummm_", "x"],
+		["plutoniumm", "//youtu.be/dQw4w9WgXcQ", "youtube"],
+		["Books", "//books.manav.ch", "bookmark"],
+		["Notes", "/notes", "comment"],
 	];
 </script>
 
@@ -46,13 +46,14 @@
 		display: block;
 		margin: 4px 0;
 		font-size: 18px;
+		line-height: 1.5;
 		position: relative;
 		img {
 			position: relative;
 			top: 6px;
-			height: 24px;
-			width: 24px;
-			filter: invert(1);
+			left: -2px;
+			height: 22px;
+			width: 22px;
 		}
 	}
 	.left {
