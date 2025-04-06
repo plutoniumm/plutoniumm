@@ -5,7 +5,7 @@
 		["plutoniummm_", "//twitter.com/plutoniummm_", "x"],
 		["plutoniumm", "//youtu.be/dQw4w9WgXcQ", "youtube"],
 		["Books", "//books.manav.ch", "bookmark"],
-		["Notes", "/notes", "comment"],
+		["Scholar", "//scholar.google.com/citations?user=CkJTRyAAAAAJ", "scholar"],
 	];
 </script>
 
@@ -54,6 +54,7 @@
 			left: -2px;
 			height: 22px;
 			width: 22px;
+			filter: grayscale(1);
 		}
 	}
 	.left {
