@@ -2,7 +2,7 @@
 	const i = (str) => `/assets/${str}.svg`;
 	const links = [
 		["plutoniumm", "//github.com/plutoniumm", "github"],
-		["plutoniummm_", "//twitter.com/plutoniummm_", "x"],
+		["pluto_niumm", "//twitter.com/pluto_niumm", "x"],
 		["plutoniumm", "//youtu.be/dQw4w9WgXcQ", "youtube"],
 		["Books", "//books.manav.ch", "bookmark"],
 		["Scholar", "//scholar.google.com/citations?user=CkJTRyAAAAAJ", "scholar"],
