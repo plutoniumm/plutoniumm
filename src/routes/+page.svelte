@@ -6,10 +6,11 @@
 		["plutoniumm", "//youtu.be/dQw4w9WgXcQ", "youtube"],
 		["Books", "//books.manav.ch", "bookmark"],
 		["Scholar", "//scholar.google.com/citations?user=CkJTRyAAAAAJ", "scholar"],
+		// ["Notes", "/notes", "clip"],
 	];
 </script>
 
-<section class="p-rel f-col fw flow-x-h flow-yh main">
+<section class="p-rel al-ct j-ct f-col fw flow-x-h flow-y-h main">
 	<div class="p-rel">
 		<img
 			class="left p10"
@@ -35,9 +36,6 @@
 </section>
 
 <style lang="scss">
-	.main {
-		color: #fff;
-	}
 	.title {
 		font-size: 1.5rem;
 		line-height: 1rem;

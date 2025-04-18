@@ -2,8 +2,28 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "./.svelte-kit/tsconfig.json",
   "compilerOptions": {
-    "target": "es2016",
+    "target": "es2020",
     "ignoreDeprecations": "5.0",
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "$lib/*": [
+        "src/lib/*",
+      ],
+      "$lib": [
+        "src/lib",
+      ],
+      "$data/*": [
+        "src/data/*",
+      ],
+      "$data": [
+        "src/data",
+      ],
+      "$cpt/*": [
+        "src/components/*",
+      ],
+      "$cpt": [
+        "src/components",
+      ],
+    }
   }
 }

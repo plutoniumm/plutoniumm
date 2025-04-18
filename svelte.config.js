@@ -16,6 +16,10 @@ export default {
 		adapter: statix(),
 		prerender: {
 			concurrency: 8
+		},
+		alias: {
+			'$data': '/src/data',
+			'$cpt': '/src/components',
 		}
 	}
 };
