@@ -20,16 +20,16 @@
   date="18 April 2025"
 ></Meta>
 
-I had some time one evening so I decided to play around with the idea of doing
+I had some time one evening, so I decided to play around with the idea of doing
 algebra but with shapes. What does it mean to add two shapes? Some results are
-intuitive, a square of side 5 + a square of side 10 should be a square of side
-15. But what happens when we add a square and circle? or raise a circle to the
+intuitive; a square of side 5 + a square of side 10 should be a square of side
+15. But what happens when we add a square and a circle? Or raise a circle to the
 power of a circle.
 
 <h4>Complex Numbers</h4>
-We in fact start with the question of which number system do we use. It should be
-trivial to see we'll run into issues very fast if we try to manipulate equations
-directly. We can ease our workload by working with complex numbers
+We start with the question of which number system we use. It should be trivial to
+see we'll run into issues very fast if we try to manipulate equations directly. We
+can ease our workload by working with complex numbers.
 
 <svg
   class="mx-a d-b tc"
@@ -60,15 +60,15 @@ directly. We can ease our workload by working with complex numbers
 <p>
   where each number is of the form {@html _(
     "z = a + bi = |z| e^{i\\ \\text{arg}(z)} = r e^{i\\theta}",
-  )}, and then just using a bunch of points for each shape. For example, a
+  )}, and then just use a bunch of points for each shape. For example, a a
   circle can just be 100 complex points
 </p>
 
 <Cartesian data={Dataset("circle", Circ.map(Map.ucirc))}></Cartesian>
 
 <p>
-  So if a shape is just a collection of points, and each point is just a complex
-  number, then we can add, subtract, multiply points.
+  So, if a shape is just a collection of points, and each point is just a
+  complex number, then we can add, subtract, and multiply points.
 </p>
 
 <h4>Adding and Multiplying Shapes</h4>
@@ -147,7 +147,7 @@ directly. We can ease our workload by working with complex numbers
     <p>
       We get a twisting squircle. Sweep the offset from 0 to 8 and watch the
       squircle twist around 45&deg;. This can be imagined as a ring that twists
-      around the cylender as it goes down in 3d. So if we can add shapes, we can
+      around the cylinder as it goes down in 3d. So if we can add shapes, we can
       also multiply them. So a circle times a circle
     </p>
 
@@ -203,7 +203,7 @@ directly. We can ease our workload by working with complex numbers
 <p>
   The parametrised form of a square is {@html _(
     "z(\\theta) = \\sec(\\theta- \\frac \\pi2 \\lfloor \\frac {4\\theta + \\pi}{2\\pi}\\rfloor )e^{i \\theta}",
-  )}, and that of a circle is {@html _("z(\\theta) = e^{i \\theta}")}. So the
+  )}, and that of a circle is {@html _("z(\\theta) = e^{i \\theta}")}. So, the
   product of a circle and a square is
   {@html _(
     "z(\\theta+k) = \\sec(\\theta - \\frac{\\pi}{2} \\lfloor \\frac{4\\theta + \\pi}{2\\pi} \\rfloor) e^{i 2\\theta + k}",
@@ -211,9 +211,9 @@ directly. We can ease our workload by working with complex numbers
 </p>
 
 <p>
-  Obviously here there is one catch. What output we get depends HEAVILY upon
+  Obviously, here, there is one catch. What output we get depends HEAVILY upon
   what parametrisation we select for our shape. Since all parametrisations only
-  promise us that they can complete the shape, they all have different ways of
+  promise that they can complete the shape, they all have different ways of
   going about it.
 </p>
 
@@ -222,7 +222,7 @@ I have chosen a continuous parametrisation, of the square, with {@html _(
 )}, to then give {@html _(
   "(\\cos(\\alpha) f(\\alpha) \\frac X2 +x_0, \\sin(\\alpha) f(\\alpha) \\frac Y2 + y_0) ",
 )}, whereas people may often go for a piecewise linear parametrisation of the
-square which will trace the shape out differently leading to a different
+square, which will trace the shape out differently, leading to a different
 outcome.
 
 <h4>The Power of a Circle</h4>
@@ -265,11 +265,11 @@ or a circle to anything's power.
 </LR>
 
 We're looking at the yellow lines as they vary, the blue and red is just a
-reference of our original circles. Even taking {@html _("|z_1|=|z_2|=1")}, it
+reference to our original circles. Even taking {@html _("|z_1|=|z_2|=1")}, it
 seems when a circle is raised to a circle, we still lose out on normalisation.
 The 2nd term {@html _("e^{ (\\theta + k_1)\\sin\\theta}")} is a damping term, and
 the first term {@html _("e^{i[(\\theta + k_1)\\cos\\theta + k_2]}")} is a rotation
-term. Now what happens if I take square and raise it to a circle
+term. Now, what happens if I take a square and raise it to a circle
 
 <LR>
   <Cartesian
@@ -323,9 +323,9 @@ can take the square root of a square
   ]}
 ></Cartesian>
 
-Now that is certainly cool. The square root of a square is a half octagon with
-curved edges.With some effort it is in fact possible to raise a matrix to the
-power of a matrix or even a matrix to a shape. There is no reason we should
+Now that is certainly cool. The square root of a square is a half-octagon with
+curved edges. With some effort, it is, in fact, possible to raise a matrix to
+the power of a matrix or even a matrix to a shape. There is no reason we should
 limit ourselves to the conventional patterns that happen to be useful to
 physicists and engineers.
 

@@ -8,10 +8,10 @@
 		["plutoniumm", "//youtu.be/dQw4w9WgXcQ", "youtube"],
 		["Books", "//books.manav.ch", "bookmark"],
 		["Scholar", "//scholar.google.com/citations?user=CkJTRyAAAAAJ", "scholar"],
-		// ["Notes", "/notes", "clip"],
-
-		onMount(() => document.body.classList.remove("light")),
+		// ["Notes", "/p", "clip"],
 	];
+
+	onMount(() => document.body.classList.remove("light"));
 </script>
 
 <section class="p-rel al-ct j-ct f-col fw flow-x-h flow-y-h">

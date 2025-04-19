@@ -2,14 +2,6 @@
   import { onMount } from "svelte";
   export let data;
 
-  interface Post {
-    title: string;
-    sub: string;
-    desc: string;
-    date: string;
-    raw: string;
-  }
-
   function fmt(date) {
     const d = new Date(date);
     return d.toLocaleDateString("en-US", {
