@@ -1,4 +1,6 @@
 <script>
+	import { onMount } from "svelte";
+
 	const i = (str) => `/assets/${str}.svg`;
 	const links = [
 		["plutoniumm", "//github.com/plutoniumm", "github"],
@@ -7,10 +9,12 @@
 		["Books", "//books.manav.ch", "bookmark"],
 		["Scholar", "//scholar.google.com/citations?user=CkJTRyAAAAAJ", "scholar"],
 		// ["Notes", "/notes", "clip"],
+
+		onMount(() => document.body.classList.remove("light")),
 	];
 </script>
 
-<section class="p-rel al-ct j-ct f-col fw flow-x-h flow-y-h main">
+<section class="p-rel al-ct j-ct f-col fw flow-x-h flow-y-h">
 	<div class="p-rel">
 		<img
 			class="left p10"
@@ -36,6 +40,10 @@
 </section>
 
 <style lang="scss">
+	section {
+		height: 100vh;
+	}
+
 	.title {
 		font-size: 1.5rem;
 		line-height: 1rem;

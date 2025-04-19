@@ -23,8 +23,6 @@
       animation: false,
     }}
   />
-
-  <slot name="caption"></slot>
 </div>
 
 <style>
