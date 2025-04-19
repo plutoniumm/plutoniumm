@@ -34,6 +34,7 @@ interface Dataset {
   label: string;
   data: any;
   _mch: "dataset";
+  pointRadius: number;
 }
 
 export function Dataset (name: string, data: any): Dataset {
@@ -41,5 +42,6 @@ export function Dataset (name: string, data: any): Dataset {
     _mch: "dataset",
     label: name,
     data: data,
+    pointRadius: 2,
   }
 }

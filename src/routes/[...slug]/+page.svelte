@@ -34,24 +34,34 @@
   {:else}
     <p>Loading...</p>
   {/if}
+
+  <footer class="tc m-a" style="margin-top: 25vw;">
+    <hr class="w-33 o-50" />
+    by<a href="/">plutoniumm.</a>
+  </footer>
 </article>
 
 <style lang="scss">
   :global {
     body {
-      background: #fff !important;
-      color: #111 !important;
+      background: #eee !important;
+      color: #222 !important;
     }
 
     body::before {
       filter: invert(1);
-      opacity: 0.25 !important;
+      opacity: 0.2 !important;
     }
 
     hr {
       margin: 1em auto;
       width: 33%;
       opacity: 0.5;
+    }
+
+    img {
+      border-radius: 5px;
+      opacity: 0.9;
     }
   }
 

@@ -27,11 +27,16 @@
 
 
 	<style>
+		html {
+			overflow-x: hidden;
+		}
+
 		body {
 			background: #111;
 			color: #fff;
 
-			height: 100vh;
+			min-height: 100vh;
+			overflow-y: scroll !important;
 			width: 100vw;
 			z-index: -1;
 		}
@@ -53,11 +58,8 @@
 			pointer-events: none;
 		}
 
-		section {
-			justify-content: center;
-			align-items: center;
-			scroll-snap-align: start;
-			scroll-snap-stop: normal;
+		.katex {
+			font-family: 'Comic Sans MS', 'Comic Sans', cursive !important;
 		}
 	</style>
 

@@ -18,7 +18,7 @@ svg {
   stroke: currentcolor;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 2;
+  stroke-width: 1;
 }
 
 
@@ -283,10 +283,6 @@ textarea:focus {
   height: auto;
 }
 
-.h-1vh {
-  height: 100vh;
-}
-
 .h-100 {
   height: 100%;
 }
@@ -376,6 +372,11 @@ textarea:focus {
 .flow-y-h {
   overflow-y: hidden;
 }
+
+.flow-h {
+  overflow: hidden;
+}
+
 
 .ptr {
   cursor: pointer;

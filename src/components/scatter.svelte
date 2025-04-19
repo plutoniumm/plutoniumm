@@ -10,7 +10,7 @@
   }
 </script>
 
-<div class="square">
+<div class="square h-100 w-100">
   <Scatter
     data={{
       labels: ["Scatter"],
@@ -20,7 +20,7 @@
       responsive: true,
       maintainAspectRatio: true,
       aspectRatio: 1,
-      maxWidth: 400,
+      animation: false,
     }}
   />
 
@@ -29,10 +29,9 @@
 
 <style>
   .square {
-    width: 100%;
-    height: 100%;
-    max-width: 400px;
-    max-height: 400px;
+    --sz: 400px;
+    max-width: var(--sz);
+    max-height: var(--sz);
     margin: 2rem auto;
   }
 </style>
