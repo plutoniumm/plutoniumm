@@ -13,10 +13,10 @@
         "src/lib",
       ],
       "$data/*": [
-        "src/data/*",
+        "src/test/*",
       ],
       "$data": [
-        "src/data",
+        "src/test",
       ],
       "$cpt/*": [
         "src/components/*",
@@ -24,6 +24,9 @@
       "$cpt": [
         "src/components",
       ],
+      "@": [
+        "env.js",
+      ]
     }
   }
 }

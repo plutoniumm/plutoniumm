@@ -19,7 +19,8 @@ export default {
 		},
 		alias: {
 			'$data': '/src/data',
-			'$cpt': '/src/components'
+			'$cpt': '/src/components',
+			"@": '/env.js',
 		}
 	}
 };

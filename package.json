@@ -5,6 +5,7 @@
     "prebuild": "rm -rf build .svelte*",
     "build": "vite build",
     "deploy": "npx gh-pages -d build -t true",
+    "direct": "npm run build && npm run deploy",
     "postdeploy": "rm -rf build .svelte*"
   },
   "devDependencies": {

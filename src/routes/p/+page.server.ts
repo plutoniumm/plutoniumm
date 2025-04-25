@@ -27,17 +27,19 @@ function parseText (text: string) {
   return JSON.parse(string2);
 };
 
-let posts = fs.readdirSync("src/data")
-  .filter(f => f.includes(".svelte"))
-  .map((f) => {
-    const file = fs.readFileSync(`src/data/${f}`, "utf-8");
+let posts = [];
+fs.readdirSync("src/routes/p")
+  .forEach((f) => {
+    if (f.includes(".")) return f;
+    if (f.includes("test")) return f;
+
+    const file = fs.readFileSync(`src/routes/p/${f}/+page.svelte`, "utf-8");
     const stats = parseText(file)
     stats['raw'] = f.replace(".svelte", "");
 
-    return stats;
+    posts.push(stats);
   });
 
-// group posts by year
 posts = posts.reduce((acc, post) => {
   const year = post.date.split(" ")[2];
   if (!acc[year]) {
@@ -47,6 +49,7 @@ posts = posts.reduce((acc, post) => {
   return acc;
 }, {});
 
+export const prerender = true;
 export const load: PageServerLoad = async ({ params }) => {
   return {
     posts: Object.entries(posts)

@@ -1,22 +1,7 @@
 <script>
   import { onMount } from "svelte";
 
-  let component;
-  onMount(() => {
-    const { pathname } = window.location;
-    if (!pathname.includes("/p/")) {
-      console.error("Invalid path. Expected: /p/[slug]");
-      component = false;
-      return;
-    }
-
-    const slug = pathname.split("/").pop();
-    import(`../../data/${slug}.svelte`)
-      .then((m) => (component = m.default))
-      .catch((_) => (component = false));
-
-    document.body.classList.add("light");
-  });
+  onMount(() => document.body.classList.add("light"));
 </script>
 
 <svelte:head>
@@ -29,13 +14,7 @@
 </svelte:head>
 
 <article class="mx-a tl p10">
-  {#if component}
-    <svelte:component this={component} />
-  {:else if component === false}
-    <p>Component not found. Please check the slug.</p>
-  {:else}
-    <p>Loading...</p>
-  {/if}
+  <slot />
 
   <footer class="tc m-a" style="margin-top: 10vw;">
     <hr class="w-33 o-50" />
@@ -67,6 +46,16 @@
   }
 
   :global {
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    li,
+    a {
+      vertical-align: middle;
+    }
+
     hr {
       margin: 1em auto;
       width: 33%;
@@ -76,6 +65,11 @@
     img {
       border-radius: 5px;
       opacity: 0.9;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0.5em 1em;
     }
   }
 </style>

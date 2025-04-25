@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { onMount } from "svelte";
   export let data;
 
   function fmt(date) {
@@ -9,8 +8,6 @@
       day: "2-digit",
     });
   }
-
-  onMount(() => document.body.classList.add("light"));
 </script>
 
 <article class="mx-a">

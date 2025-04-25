@@ -1,6 +1,8 @@
 <script>
   import Cartesian from "$cpt/scatter.svelte";
   import { _, __, Dataset } from "$lib";
+  import Accord from "$cpt/accord.svelte";
+  import Pill from "$cpt/pill.svelte";
   import Meta from "$cpt/meta.svelte";
   import LR from "$cpt/LR.svelte";
   import M from "$lib/math";
@@ -27,9 +29,11 @@ intuitive; a square of side 5 + a square of side 10 should be a square of side
 power of a circle.
 
 <h4>Complex Numbers</h4>
-We start with the question of which number system we use. It should be trivial to
-see we'll run into issues very fast if we try to manipulate equations directly. We
-can ease our workload by working with complex numbers.
+We start by using complex numbers as our base. It should be trivial to see we'll
+run into issues very fast if we try to manipulate equations directly. We can ease
+our workload by working with complex numbers, with which, each point in 2D space,
+is still just a number. And once something is a number it can be added, multiplied,
+and divided.
 
 <svg
   class="mx-a d-b tc"
@@ -328,6 +332,17 @@ curved edges. With some effort, it is, in fact, possible to raise a matrix to
 the power of a matrix or even a matrix to a shape. There is no reason we should
 limit ourselves to the conventional patterns that happen to be useful to
 physicists and engineers.
+
+<Accord title="References">
+  <ul>
+    <li>
+      <a href="https://www.youtube.com/watch?v=iLkOBkWUDkM">
+        <Pill name={"youtube"} id={"UCJZt93WO-evfsfi7YlVmrQA"} />: Using shapes
+        as exponents
+      </a>
+    </li>
+  </ul>
+</Accord>
 
 <style>
   text {
