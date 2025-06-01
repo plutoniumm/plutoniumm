@@ -1,8 +1,7 @@
 <script>
   import Cartesian from "$cpt/scatter.svelte";
   import { _, __, Dataset } from "$lib";
-  import Accord from "$cpt/accord.svelte";
-  import Pill from "$cpt/pill.svelte";
+  import Link from "$cpt/link.svelte";
   import Meta from "$cpt/meta.svelte";
   import LR from "$cpt/LR.svelte";
   import M from "$lib/math";
@@ -37,7 +36,7 @@ and divided.
 
 <svg
   class="mx-a d-b tc"
-  font-family="Comic Sans MS, Comic Sans, cursive"
+  font-family="sans-serif"
   font-weight="300"
   font-size="10"
   width="350"
@@ -62,10 +61,10 @@ and divided.
 </svg>
 
 <p>
-  where each number is of the form {@html _(
+  Each number is of the form {@html _(
     "z = a + bi = |z| e^{i\\ \\text{arg}(z)} = r e^{i\\theta}",
-  )}, and then just use a bunch of points for each shape. For example, a a
-  circle can just be 100 complex points
+  )}, where {@html _("i = \\sqrt{-1}")}. Then just use a bunch of points for
+  each shape. For example, a a circle can just be a 100 complex points
 </p>
 
 <Cartesian data={Dataset("circle", Circ.map(Map.ucirc))}></Cartesian>
@@ -109,10 +108,15 @@ and divided.
 </div>
 
 <p>
-  Naturally a two unit circles added should give a circle of radius 2. Since {@html _(
-    "z = |z| e^{i \\theta}",
-  )}, {@html _(
-    "z_1 + z_2 = |z_1| e^{i \\theta} + |z_2| e^{i \\theta} = |z_1 + z_2| e^{i 2\\theta+k}",
+  Naturally a two unit circles added should give a circle of radius 2. It may be
+  one's primary instinct to try to add their areas first. But that is not how
+  we're defining addition here. Addition can be an abstract operation defined
+  however we want to for fun.
+</p>
+
+<p>
+  Since {@html _("z = r e^{i \\theta}")}, {@html _(
+    "z_1 + z_2 = r_1 e^{i \\theta} + r_2 e^{i \\theta} = (r_1 + r_2) e^{i 2\\theta+k}",
   )}, with an offset parameter {@html _("k")}, since we can choose which angle
   we want the two squares to meet at (this will be important later). And, a
   square added to a square should give a square of side 2 (the edges look choppy
@@ -134,7 +138,7 @@ and divided.
 
   <div class="f-col j-ar h-100" slot="r">
     {@html __(
-      `|z_1| e^{i \\theta} + |z_2| e^{i \\theta}
+      `r_1 e^{i \\theta} + r_2 e^{i \\theta}
         \\newline\\quad\\quad
         \\rightarrow (z_1 + z_2 e^{${mut[0]}})  e^{i \\theta}`,
     )}
@@ -151,11 +155,14 @@ and divided.
     <p>
       We get a twisting squircle. Sweep the offset from 0 to 8 and watch the
       squircle twist around 45&deg;. This can be imagined as a ring that twists
-      around the cylinder as it goes down in 3d. So if we can add shapes, we can
-      also multiply them. So a circle times a circle
+      around the cylinder as it goes down in 3d. just like this building. With
+      the additional change of also getting slimmer in its waist as it goes.
     </p>
 
-    <p>With the additional change of also shrinking as it goes.</p>
+    <p>
+      So if we can add shapes, we can also multiply them. So a circle times a
+      circle
+    </p>
   </div>
 
   <a
@@ -192,8 +199,8 @@ and divided.
 
   <div class="f-col j-ar h-100" slot="r">
     {@html __(
-      `|z_1| e^{i \\theta} * |z_2| e^{i \\theta} \\newline\\quad\\quad
-        \\rightarrow |z_1 * z_2| e^{i 2\\theta+${mut[0]}}`,
+      `r_1 e^{i \\theta} * r_2 e^{i \\theta} \\newline\\quad\\quad
+        \\rightarrow (r_1 * r_2) e^{i 2\\theta+${mut[0]}}`,
     )}
 
     <p style="margin: 0 2rem;">
@@ -269,11 +276,11 @@ or a circle to anything's power.
 </LR>
 
 We're looking at the yellow lines as they vary, the blue and red is just a
-reference to our original circles. Even taking {@html _("|z_1|=|z_2|=1")}, it
-seems when a circle is raised to a circle, we still lose out on normalisation.
-The 2nd term {@html _("e^{ (\\theta + k_1)\\sin\\theta}")} is a damping term, and
-the first term {@html _("e^{i[(\\theta + k_1)\\cos\\theta + k_2]}")} is a rotation
-term. Now, what happens if I take a square and raise it to a circle
+reference to our original circles. Even taking {@html _("r_1=r_2=1")}, it seems
+when a circle is raised to a circle, we still lose out on normalisation. The 2nd
+term {@html _("e^{ (\\theta + k_1)\\sin\\theta}")} is a damping term, and the first
+term {@html _("e^{i[(\\theta + k_1)\\cos\\theta + k_2]}")} is a rotation term. Now,
+what happens if I take a square and raise it to a circle
 
 <LR>
   <Cartesian
@@ -333,16 +340,14 @@ the power of a matrix or even a matrix to a shape. There is no reason we should
 limit ourselves to the conventional patterns that happen to be useful to
 physicists and engineers.
 
-<Accord title="References">
-  <ul>
-    <li>
-      <a href="https://www.youtube.com/watch?v=iLkOBkWUDkM">
-        <Pill name={"youtube"} id={"UCJZt93WO-evfsfi7YlVmrQA"} />: Using shapes
-        as exponents
-      </a>
-    </li>
-  </ul>
-</Accord>
+<h4>References</h4>
+<ul>
+  <li>
+    <Link href="https://www.youtube.com/watch?v=iLkOBkWUDkM">
+      Using shapes as exponents (video)
+    </Link>
+  </li>
+</ul>
 
 <style>
   text {

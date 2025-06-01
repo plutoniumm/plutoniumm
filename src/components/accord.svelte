@@ -2,8 +2,8 @@
   export let title = "";
 </script>
 
-<details class="rpm-20">
-  <summary class="p-rel ptr"> {title}</summary>
+<details class="p20 rx10">
+  <summary class="p-rel ptr p10"> {title}</summary>
 
   <div>
     <slot></slot>
@@ -13,13 +13,13 @@
 <style>
   details {
     background: #fff;
+    margin: 20px 0;
     width: calc(100% - 40px);
     z-index: 5;
   }
 
   summary:focus-visible {
-    outline: 2px solid #007aff;
-    outline-offset: 8px;
+    outline: none;
   }
 
   :root {
@@ -37,6 +37,7 @@
     block-size: auto;
   }
   summary {
+    width: calc(100% - 20px);
     line-height: 1.3;
     margin-inline-start: 1rem;
     list-style-position: outside;

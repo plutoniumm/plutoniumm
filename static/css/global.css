@@ -45,14 +45,14 @@ body.light::before {
 
 p .katex-html,
 .katex-html {
-  font-family: 'Comic Sans MS', 'Comic Sans', cursive !important;
-  font-weight: 300 !important;
+  font-family: sans-serif !important;
   font-size: 18px !important;
 }
 
 article {
-  font-family: "Comic Sans MS", sans-serif;
+  font-family: sans-serif;
   max-width: min(80ch, 720px);
+  font-weight: 400;
   line-height: 1.5;
   font-size: 18px;
 }

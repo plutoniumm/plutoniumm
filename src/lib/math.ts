@@ -60,6 +60,9 @@ export default {
   },
 
   Cplx: {
+    cos: MJS.cos,
+    sin: MJS.sin,
+
     prod: (a: Complex, b: Complex): Complex => {
       const pro: MComplex = MJS.multiply(
         MJS.complex(a[0], a[1]),
@@ -69,7 +72,7 @@ export default {
       return [pro.re, pro.im]
     },
     sum: (a: Complex, b: Complex): Complex => {
-      const sum = MJS.add(
+      const sum: MComplex = MJS.add(
         MJS.complex(a[0], a[1]),
         MJS.complex(b[0], b[1]),
       )
@@ -77,7 +80,7 @@ export default {
       return [sum.re, sum.im]
     },
     pow: (a: Complex, b: Complex): Complex => {
-      const pow = MJS.pow(
+      const pow: MComplex = MJS.pow(
         MJS.complex(a[0], a[1]),
         MJS.complex(b[0], b[1])
       )

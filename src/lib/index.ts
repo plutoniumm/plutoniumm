@@ -1,6 +1,6 @@
-import katex from 'katex';
+import katex from "katex";
 
-function clean (str: string): string {
+function clean(str: string): string {
   str = str
     .replaceAll("&lcub;", "{")
     .replaceAll("&rcub;", "}")
@@ -17,18 +17,18 @@ function clean (str: string): string {
   return String.raw`${str}`;
 }
 
-export function _ (string: string): string {
-  return katex.renderToString(clean(string), {
-    throwOnError: false,
-  });
-};
+export function _(string: string, opts = {}): string {
+  opts["throwOnError"] = false;
 
-export function __ (string: string): string {
-  return katex.renderToString(clean(string), {
-    throwOnError: false,
-    displayMode: true,
-  });
-};
+  return katex.renderToString(clean(string), opts);
+}
+
+export function __(string: string, opts = {}): string {
+  opts["throwOnError"] = false;
+  opts["displayMode"] = true;
+
+  return katex.renderToString(clean(string), opts);
+}
 
 interface Dataset {
   label: string;
@@ -37,11 +37,11 @@ interface Dataset {
   pointRadius: number;
 }
 
-export function Dataset (name: string, data: any): Dataset {
+export function Dataset(name: string, data: any): Dataset {
   return {
     _mch: "dataset",
     label: name,
     data: data,
     pointRadius: 2,
-  }
+  };
 }

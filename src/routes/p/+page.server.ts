@@ -12,7 +12,7 @@ function parseText (text: string) {
     .split("<Meta")[1]
     .split("></Meta>")[0]
     .trim()
-    .split("\n")
+    .split("\n");
   let string2 = "{";
 
   for (let i = 0; i < string.length; i++) {
@@ -34,6 +34,7 @@ fs.readdirSync("src/routes/p")
     if (f.includes("test")) return f;
 
     const file = fs.readFileSync(`src/routes/p/${f}/+page.svelte`, "utf-8");
+    if (file.includes("nodeploy")) return f;
     const stats = parseText(file)
     stats['raw'] = f.replace(".svelte", "");
 

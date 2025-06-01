@@ -16,9 +16,9 @@
 <article class="mx-a tl p10">
   <slot />
 
-  <footer class="tc m-a" style="margin-top: 10vw;">
+  <footer class="tc m-a" style="margin-top: 10vw;font-family:'Comic Sans MS'">
     <hr class="w-33 o-50" />
-    by<a href="/">plutoniumm.</a>
+    <a href="/">powered by plutoniumm.</a>
   </footer>
 </article>
 
@@ -52,6 +52,7 @@
     h4,
     p,
     li,
+    footer,
     a {
       vertical-align: middle;
     }
