@@ -1,47 +1,67 @@
 import katex from "katex";
 
 function clean(str: string): string {
-  str = str
-    .replaceAll("&lcub;", "{")
-    .replaceAll("&rcub;", "}")
-    .replaceAll("&lt;", "<")
-    .replaceAll("&gt;", ">")
-    .replaceAll("&quot;", '"')
-    .replaceAll("&amp;", "&")
-    .replaceAll("&apos;", "'")
-    .replaceAll("&nbsp;", " ")
-    .replaceAll("&copy;", "©")
-    .replaceAll("&reg;", "®")
-    .replaceAll("&trade;", "™");
+    str = str
+        .replaceAll("&lcub;", "{")
+        .replaceAll("&rcub;", "}")
+        .replaceAll("&lt;", "<")
+        .replaceAll("&gt;", ">")
+        .replaceAll("&quot;", '"')
+        .replaceAll("&amp;", "&")
+        .replaceAll("&apos;", "'")
+        .replaceAll("&nbsp;", " ")
+        .replaceAll("&copy;", "©")
+        .replaceAll("&reg;", "®")
+        .replaceAll("&trade;", "™");
 
-  return String.raw`${str}`;
+    return String.raw`${str}`;
 }
 
-export function _(string: string, opts = {}): string {
-  opts["throwOnError"] = false;
+type TSA = TemplateStringsArray;
 
-  return katex.renderToString(clean(string), opts);
+export function _(strings: TSA, ...values: any[]): string {
+    let string = "";
+    try {
+        string = clean(strings.join(""));
+        string = katex.renderToString(string, { throwOnError: false });
+    } catch (e) {
+        console.error("Error rendering KaTeX:", e);
+        console.log(strings);
+        string = "[[ERROR]]: " + strings[0];
+    }
+
+    return string;
 }
 
-export function __(string: string, opts = {}): string {
-  opts["throwOnError"] = false;
-  opts["displayMode"] = true;
+export function __(strings: TSA, ...values: any[]): string {
+    let string = "";
+    try {
+        string = clean(strings.join(""));
+        string = katex.renderToString(string, {
+            throwOnError: false,
+            displayMode: true,
+        });
+    } catch (e) {
+        console.error("Error rendering KaTeX:", e);
+        console.log(strings);
+        string = "[[ERROR]]: " + strings[0];
+    }
 
-  return katex.renderToString(clean(string), opts);
+    return string;
 }
 
 interface Dataset {
-  label: string;
-  data: any;
-  _mch: "dataset";
-  pointRadius: number;
+    label: string;
+    data: any;
+    _mch: "dataset";
+    pointRadius: number;
 }
 
 export function Dataset(name: string, data: any): Dataset {
-  return {
-    _mch: "dataset",
-    label: name,
-    data: data,
-    pointRadius: 2,
-  };
+    return {
+        _mch: "dataset",
+        label: name,
+        data: data,
+        pointRadius: 2,
+    };
 }

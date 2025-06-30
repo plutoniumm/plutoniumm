@@ -1,58 +1,90 @@
 html {
-  overflow-x: hidden;
+    overflow-x: hidden;
 }
 
 body {
-  background: #111;
-  color: #fff;
+    background: #111;
+    color: #fff;
 
-  min-height: 100vh;
-  overflow-y: scroll !important;
-  width: 100vw;
-  z-index: -1;
+    min-height: 100vh;
+    overflow-y: scroll !important;
+    width: 100vw;
+    z-index: -1;
 }
 
 body.light {
-  background: #eee !important;
-  color: #222 !important;
+    background: #eee !important;
+    color: #222 !important;
 }
 
 body.light::before {
-  filter: invert(1);
-  opacity: 0.2 !important;
+    filter: invert(1);
+    opacity: 0.2 !important;
 }
 
 .noise {
-  position: relative;
+    position: relative;
 }
 
 .noise::before {
-  background: url('/assets/noise.webp') repeat;
-  content: '';
-  position: absolute;
-  opacity: 0.15;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  pointer-events: none;
+    background: url("/assets/noise.webp") repeat;
+    content: "";
+    position: absolute;
+    opacity: 0.15;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
 }
 
 .katex-mathml {
-  display: none;
+    display: none;
 }
 
 p .katex-html,
 .katex-html {
-  font-family: sans-serif !important;
-  font-size: 18px !important;
+    font-family: sans-serif !important;
+    font-size: 0.85em !important;
 }
 
 article {
-  font-family: sans-serif;
-  max-width: min(80ch, 720px);
-  font-weight: 400;
-  line-height: 1.5;
-  font-size: 18px;
+    font-family: sans-serif;
+    max-width: min(80ch, 720px);
+    font-weight: 400;
+    line-height: 1.5;
+    font-size: 18px;
+}
+
+block {
+    display: block !important;
+    position: relative;
+    border-radius: 16px;
+    background: #a2f4;
+    height: 200px;
+    width: 100%;
+}
+
+block::after {
+    content: "";
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    width: 150px;
+    height: 150px;
+    /* <a href="https://www.vecteezy.com/free-png/anime-cat">Anime Cat PNGs by Vecteezy</a> */
+    background: url("/images/cat.png") no-repeat center center;
+    background-size: cover;
+}
+
+block::before {
+    content: "Come back later! Kinda eepy right now.";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000;
+    font-weight: 300;
+    font-size: 1.2em;
 }
