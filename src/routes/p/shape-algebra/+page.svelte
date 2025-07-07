@@ -19,7 +19,24 @@
     sub="Recreational Math #001"
     desc="Algebra and 'Arithmetic' on Shapes"
     date="18 April 2025"
+    ignores="z, bi, ⌋)"
 ></Meta>
+
+<define key="f" type="text" content="Abstract function" />
+<define key="X" type="text" content="X coordinate" />
+<define key="x" type="text" content="X coordinate" />
+<define key="Y" type="text" content="Y coordinate" />
+<define key="y" type="text" content="Y coordinate" />
+<define key="k" type="text" content="Variable positive integer" />
+<define key="α" type="text" content="Variable real" />
+<define key="a" type="text" content="Variable real" />
+<define key="b" type="text" content="Variable real" />
+<define key="r" type="text" content="Variable real. Usually 0 &lt; r &lt; 1" />
+<define
+    key="θ"
+    type="text"
+    content="variable real. Usually 0 &lt; θ &lt; 2π or -π &lt; θ &lt; π"
+/>
 
 I had some time one evening, so I decided to play around with the idea of doing
 algebra but with shapes. What does it mean to add two shapes? Some results are

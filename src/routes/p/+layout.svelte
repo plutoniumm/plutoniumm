@@ -1,8 +1,20 @@
 <script>
     import { onMount } from "svelte";
+    import { walk, Defs } from "$lib/define";
 
     onMount(() => {
         document.body.classList.add("light");
+
+        Array.from(document.querySelectorAll(".katex-html")).map(walk);
+
+        let undef = [];
+        setTimeout(() => {
+            Object.entries(Defs).forEach(([key, value]) => {
+                if (value === 0) undef.push(key);
+            });
+
+            console.log("Undefined definitions:", undef);
+        }, 2000);
     });
 </script>
 
@@ -12,6 +24,7 @@
         href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"
         crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="/css/p.css" />
 </svelte:head>
 
 <article class="mx-a tl p10">
@@ -45,35 +58,6 @@
         path {
             stroke: #222a;
             stroke-width: 5;
-        }
-    }
-
-    :global {
-        h1,
-        h2,
-        h3,
-        h4,
-        p,
-        li,
-        footer,
-        a {
-            vertical-align: middle;
-        }
-
-        hr {
-            margin: 1em auto;
-            width: 33%;
-            opacity: 0.5;
-        }
-
-        img {
-            border-radius: 5px;
-            opacity: 0.9;
-        }
-
-        ul {
-            margin: 0;
-            padding: 0.5em 1em;
         }
     }
 </style>

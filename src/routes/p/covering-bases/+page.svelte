@@ -52,7 +52,13 @@
     sub="Recreational Math #002"
     desc="Bases other than positive integers"
     date="29 May 2025"
+    ignores="A, F"
 ></Meta>
+
+<define key="n" type="text" content="Variable. Usually positive integer" />
+<define key="r" type="text" content="Remainder. Usually < divisor base" />
+<define key="b" type="text" content="Base of number system" />
+<define key="ω" type="wikipedia" content="Root_of_unity" />
 
 Numbers are usually represented in base 10, but they can be represented in any
 base. The most common being are binary (base 2), decimal (base 10), and
@@ -68,7 +74,7 @@ is {@html expand_str([1, 1, 0, 1, 0, 0, 1, 0, 0], 2, "")}. Which is written as:
 <Bars top={[1, 1, 0, 1, 0, 0, 1, 0, 0]} base={2}></Bars>
 
 <h3>Base Conversion</h3>
-To convert from base 10 to base 2: divide by 2 repeatedly and record remainders.
+To convert from base 10 to base 2, divide by 2 repeatedly and record the remainder.
 
 {__`
 \begin{align*}
@@ -83,11 +89,11 @@ To convert from base 10 to base 2: divide by 2 repeatedly and record remainders.
 \end{align*}
 `}
 
-Then we read the remainders from bottom to top (incl. the last quotient), which
+Then we read the remainder from bottom to top (incl. the last quotient), which
 gives us the binary number
-{@html toBase(420, 2)}. as we count the number of times we divided by 2 from the
-bottom up. We can also go in the other direction, from base 2 to base 7. The
-easiest way to do this is to go to base 10 first, then to base 7.
+{@html toBase(420, 2)}. We can see the number appear as we count the remainder
+from bottom to top. We can also go in the other direction, from base 2 to base
+7. The easiest way to do this is to go to base 10 first, then to base 7.
 
 {__`
 \begin{align*}
@@ -114,16 +120,16 @@ how the numbers are read.
 
 <Bars top={[1, 1, 1, 0]} base={-2}></Bars>
 The above number is read as {@html expand_str([1, 1, 1, 0], -2, "= -6")}. This
-time we can see we're not only allowed addition but also subtraction depending
+time, we can see we're not only allowed addition but also subtraction depending
 upon which order-of-magnitude place we're in. Negative numbers can be taken one
-step forward with rational powers (say &lt;1). If we use single part fractions,
-i.e {_`\frac1n`}, we can even flip around the traditional positive power numbers
-around the decimal point.
+step forward with rational powers (say &lt;1). If we use single-part fractions,
+i.e. {_`\frac1n`}, we can even flip around the traditional positive power
+numbers around the decimal point.
 
 <Accordion title="Base ½ example">
     Consider the number first in base 10: 31.125. We will follow the process to
-    convert to base two same as before. We can do the left and right parts of
-    the decimal seperately.
+    convert to base two, the same as before. We can do the left and right parts
+    of the decimal separately.
 
     {__`
   \begin{align*}
@@ -142,9 +148,9 @@ around the decimal point.
 
     <Bars top={[1, 1, 1, 1, ".", 0, 0, 1]} base={2}></Bars>
 
-    Now to get the result the same process with base {_`\frac1n`}. We can see
-    easily all that needs to be done is to rotate everything around the decimal
-    point
+    To obtain the same result, follow the same process with the base {_`\frac1n`}.
+    We can see efficiently, all that needs to be done is to rotate everything
+    around the decimal point
 
     <Bars top={[1, 0, 0, 1, ".", 1, 1, 1]} base={1 / 2} base_str={"½"}></Bars>
 
@@ -152,8 +158,8 @@ around the decimal point.
     base {_`\frac1b`} also we can do the same.
 </Accordion>
 
-Now what if we were to consider arbitrary rational bases rather than just those
-which are of thr form {_`\frac1n`}. So say how we write 265 in base {_`\frac73`}.
+Now, what if we were to consider arbitrary rational bases rather than just those
+which are of the form {_`\frac1n`}? So, say how we write 265 in base {_`\frac73`}.
 
 {__`
 \begin{align*}
@@ -170,42 +176,44 @@ So very simply {@html expand_str(
     7 / 3,
     `\approx 265`,
     `\frac73`,
-)}. The small twist here being that once we remember to divide by 7, we also
-have to remember to multiply by 3 in the same iteration. This however also
-implies that we can get the number 265 in base {_`\frac37`} also for free by just
-rotating around the decimal point, i.e. 6.6346, which one can trivially verify.
+)}. The small twist here is that once we remember to divide by 7, we also have
+to remember to multiply by 3 in the same iteration. This however also implies
+that we can get the number 265 in base {_`\frac37`} also for free by just rotating
+around the decimal point, i.e. 6.6346, which one can trivially verify.
 <br />
 <br />
-This however also means that we will be using the same digits 0 to 6 for {_`\frac37`}
-also, which is natural considering that for fractions &lt;1, we don't really have
-any digits, so for a number with base less than 1, we can just use the same digits
-as it's inverse and then rotate around the decimal point.
+Th, however, also means that we will be using the same digits 0 to 6 for {_`\frac37`}
+also, which is natural considering that for fractions &lt;1, we don't have any digits,
+so for a number with a base less than 1, we can just use the same digits as it's
+inverse and then rotates around the decimal point.
 
 <h3>Irrational and Transcendental Bases</h3>
-The easiest to start with is an 'nth' root base, such as {_`\sqrt[4]{5}`}. We
-can see easily that this should be related to being in base 5. So consider 42,
-in base 5, or {parseInt("42", 5)} in base 10. We can very easily first write
+The easiest to start with is an 'nth' root base, such as {_`\sqrt[4]{5}`}. This
+should be related to being in base 5. So consider 42 in base 5, or {parseInt(
+    "42",
+    5,
+)} in base 10. We can very easily first write
 
 <Bars top={[4, 0, 0, 0, 2, 0, 0, 0, 0]} base={Math.pow(5, 0.25)} base_str={"∜5"}
 ></Bars>
 
 <Bars top={[4, 2]} base={5}></Bars>
 
-Clearly we can see both the above representations are functionally equivalent
-with extra place values added in the 'gaps' between the integer place values. It
+We can see both the above representations are functionally equivalent , with
+extra place values added in the 'gaps' between the integer place values. It
 should be trivial to see that {_`(\sqrt[4]5)^{2n}`} are the standard place values
-when we use 5 as our base.
+when we use five as our base.
 <br />
 <br />
-So now if we were to create a new number 421 in base {_`\sqrt[4]{5}`}, it's
+So now, if we were to create a new number 421 in base {_`\sqrt[4]{5}`}, it's
 value would be {@html expand_str(
     [1, 2, 4, 2, 1],
     Math.pow(5, 0.25),
     "= 24.622 \Leftrightarrow [6 + 2 \times 5^{\frac34} + 4 \times 5^{\frac24} + 2 \times 5^{\frac14}]",
     "\sqrt[4]{5}",
 )}. Or as an exercise you can verify that converting {_`\sqrt{5}`} to ten for 1234,
-is {_`[1234]_{\sqrt5} = [14 + 8 \sqrt5]_{10}`}. Finally we can use these ideas
-to use the base {_`\pi`}. Then 123 in base 3 would be {@html expand_str(
+is {_`[1234]_{\sqrt5} = [14 + 8 \sqrt5]_{10}`}. Finally, we can use these ideas
+to use the base {_`\pi`}. Then 123 in base three would be {@html expand_str(
     [1, 2, 3],
     3.1415926535,
     "\approx 19.15",
@@ -213,16 +221,13 @@ to use the base {_`\pi`}. Then 123 in base 3 would be {@html expand_str(
 )}.
 
 <h3>Removing Constraints</h3>
-So far, above we set some very arbitrary rules on what digits we can use for what
-base. In reality however those are the standard preferences for the given bases,
-there don't actually exist any constraints on what base we can use. Consider using
-the symbols of base 16, i.e, {_`[0 \rightarrow 9, A \rightarrow F]`}, but in
-base 7. Then the number F1 would be {@html expand_str(
-    [15, 1],
-    7,
-    "= 106_{10}",
-)}. There are actually no limits to what digit we choose every step. '79A45' is
-a valid base 2 number as long as we do the place value algebra for it correctly {@html expand_str(
+So far, above, we set some very arbitrary rules on what digits we can use for what
+base. In reality, however, those are the standard preferences for the given bases,
+There don't exist any constraints on what base we can use. Consider using the symbols
+of base 16, i.e, {_`[0 \rightarrow 9, A \rightarrow F]`}, but in base 7. Then
+the number F1 would be {@html expand_str([15, 1], 7, "= 106_{10}")}. There are
+actually no limits to what digit we choose every step. '79A45' is a valid base 2
+number as long as we do the place value algebra for it correctly {@html expand_str(
     [7, 9, 10, 4, 5],
     2,
     "= 237",

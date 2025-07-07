@@ -8,14 +8,21 @@
 <Meta
     title="Fractional Complex Derivatives"
     sub="Recreational Math #003"
-    desc="Non integer and other continuous derivatives"
+    desc="Non-integer and other continuous derivatives."
     date="29 June 2025"
+    ignores="d, f, x, z, n"
 ></Meta>
 
-We normally find derivatives of functions at integer orders, such as 1st, 2nd,
-etc. But what if we want to find the derivative at a non-integer order, like
-0.5? What would that even mean? It would natually be something where if applied
-twice, it would be the same as the 1st derivative
+<define key="Γ" type="wikipedia" content="Gamma_function" />
+
+<define key="k" type="text" content="Variable positive integer" />
+<define key="α" type="text" content="Variable real" />
+<define key="D" type="text" content="Derivative operator" />
+
+We usually find derivatives of functions at integer orders, such as 1st, 2nd,
+etc. But what if we want to find the derivative in a non-integer order, like
+0.5? What would that even mean? It would naturally be something where, if
+applied twice, it would be the same as the 1st derivative
 
 {__`
 \frac{d^2}{dx^2} f(x) = \frac{d}{dx} \left( \frac{d}{dx} f(x) \right) \\
@@ -24,14 +31,14 @@ twice, it would be the same as the 1st derivative
 
 First and foremost, we define {_`D^k = \frac{d^k}{dx^k}`} as the kth derivative operator.
 We can start by trying to reverse engineer the kth derivative of {_`x^n`}
-which in general is
+which, in general, is
 
 {__`
     \frac{d^k}{dx^k} x^n = D^k x^n  =\frac{n!}{(n-k)!} x^{n-k} = \frac{\Gamma(n+1)}{\Gamma(n-k+1)} x^{n-k}
 `}
 
 What if we were to convert the factorial to a gamma function and then use that
-to evaluate the derivative at a non-integer order? So then,
+to evaluate the derivative in a non-integer order? So then,
 
 {__`D^{0.5} = \frac{\Gamma(n+1)}{\Gamma(n-\frac12+1)} x^{n-\frac12}`}. We can
 now apply this twice to get the 1st derivative:
@@ -39,9 +46,9 @@ now apply this twice to get the 1st derivative:
 {__`D^{0.5} D^{0.5} x^n = \frac{\Gamma(n+1)}{\Gamma(n-\frac12+1)} \cdot \frac{\Gamma(n-\frac12+1)}{\Gamma(n-1+1)} x^{n-1} = \frac{\Gamma(n+1)}{\Gamma(n-1+1)} x^{n-1} = n x^{n-1} = D x^n.`}
 
 So one can then see that {_`D^{0.5} x = \frac{2}{\sqrt{\pi}} \sqrt{x}`}. This
-also tells us that we can in fact generalize the derivative operator to
-arbitrary real numbers, not just integers. In fact, we can even use imaginary
-numbers but that's a much different conversation.
+also tells us that we can generalize the derivative operator to arbitrary real
+numbers, not just integers. We can even use imaginary numbers, but that's a much
+different conversation.
 
 <h3>Derivatives of {_`e^{kx}`}</h3>
 We know the basic ones like {_`D e^{kx} = k e^{kx}`} and
@@ -58,7 +65,7 @@ back. So then what happens if we feed in {_`k=2, \alpha=i`}
 \end{align*}
 `}
 
-So we can see taking the imaginary derivative of a real function gaves us a
+So, we can see taking the imaginary derivative of a real function gives us a
 complex coefficient.
 <xxx />
 We can now even try to find {_`D^i e^{ix}`} which would be {_`i^i e^{ix}`} or {_`e^{-\frac{\pi}{2}} e^{ix}`}.
@@ -69,7 +76,7 @@ us a real or complex result.
 
 Now if we want a the derivative of say {_`\cos x`}, we can represent {_`\cos x = \frac{e^{ix} + e^{-ix}}{2}`}
 and then proceed from there. One can verify that {_`D^{\alpha} \cos x = \cos x + \frac{\pi}2 \alpha`}.
-So the differential operator is simply a shifting operator for the sinosoidal
+So, the differential operator is simply a shifting operator for the sinusoidal
 function. But now that we've asked the question of an imaginary derivative, we
 are forced to ask. What is {_`D^i x`}?
 
