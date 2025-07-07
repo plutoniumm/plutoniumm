@@ -43,10 +43,15 @@ body.light::before {
     display: none;
 }
 
-p .katex-html,
 .katex-html {
-    font-family: sans-serif !important;
     font-size: 0.85em !important;
+}
+
+.katex-html,
+.katex *,
+.katex .mathnormal,
+.katex-html* {
+    font-family: sans-serif !important;
 }
 
 article {
@@ -87,4 +92,16 @@ block::before {
     color: #000;
     font-weight: 300;
     font-size: 1.2em;
+}
+
+span[id*="dfn-"] {
+    cursor: pointer;
+    border-radius: 2px;
+    border: 1px solid #0000;
+    transition: border 0.2s ease-in-out;
+}
+
+span[id*="dfn-"]:hover {
+    cursor: pointer;
+    border: 1px solid #000;
 }
