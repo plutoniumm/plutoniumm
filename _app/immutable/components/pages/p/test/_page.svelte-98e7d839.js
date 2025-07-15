@@ -1,4 +1,4 @@
-import{S as g,i as w,s as T,x as y,r as k,H as l,d as u,e as v,y as A,v as B,z as p,j as $,f as E,h as M,k as m,A as S,m as h,o as j,t as z,b as C,B as H}from"../../../../chunks/index-86b5a992.js";/* empty css                                                              */import{_ as J,a as K,M as L}from"../../../../chunks/meta-1b423db4.js";function O(d){let t,c,s,r,e,i,o,f,x=J`
+import{S as g,i as w,s as T,x as y,r as k,H as l,d as u,e as v,y as A,v as B,z as p,j as $,f as E,h as M,k as m,A as S,m as h,o as j,t as z,b as C,B as H}from"../../../../chunks/index-74fbc9f8.js";/* empty css                                                              */import{_ as J,a as K,M as L}from"../../../../chunks/meta-846f439e.js";function O(d){let t,c,s,r,e,i,o,f,x=J`
 y = mx + c \\\\
 y = ax^2 + bx + c
 `+"",b=K`E = mc^2`+"";return t=new L({props:{title:"Test Slide",sub:"Recreational Math #00n",desc:"A test slide for math content",date:"21 June 2025"}}),{c(){y(t.$$.fragment),c=k(),s=new l(!1),r=u(`

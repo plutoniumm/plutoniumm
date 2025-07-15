@@ -31,20 +31,6 @@ ul {
     padding: 0.5em 1em;
 }
 
-#undef {
-    list-style-type: none;
-    padding: 0;
-}
-
-#undef li {
-    display: inline-block;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px #fff2;
-    padding: 0.5em 1em;
-    margin: 0.5em;
-}
-
 .sticky {
     font-size: 18px;
     position: fixed;
