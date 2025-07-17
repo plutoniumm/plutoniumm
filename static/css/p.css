@@ -9,12 +9,6 @@ a {
     vertical-align: middle;
 }
 
-define {
-    display: none;
-    pointer-events: none;
-    visibility: hidden;
-}
-
 hr {
     margin: 1em auto;
     width: 33%;

@@ -22,6 +22,10 @@ type TSA = TemplateStringsArray;
 export function _(strings: TSA, ...values: any[]): string {
     let string = "";
     try {
+        if (typeof strings === "string") {
+            strings = [strings.trim()];
+        }
+
         string = clean(strings.join(""));
         string = katex.renderToString(string, { throwOnError: false });
     } catch (e) {
@@ -36,6 +40,9 @@ export function _(strings: TSA, ...values: any[]): string {
 export function __(strings: TSA, ...values: any[]): string {
     let string = "";
     try {
+        if (typeof strings === "string") {
+            strings = [strings.trim()];
+        }
         string = clean(strings.join(""));
         string = katex.renderToString(string, {
             throwOnError: false,

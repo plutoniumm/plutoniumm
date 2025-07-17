@@ -1,9 +1,7 @@
 <script lang="ts">
-    import Accordion from "$cpt/accord.svelte";
-    import { _, __ } from "$lib";
-    import Link from "$cpt/link.svelte";
-    import Meta from "$cpt/meta.svelte";
+    import { Accordion, Link, Meta, Definations, define } from "$cpt";
     import Bars from "./bars.svelte";
+    import { _, __ } from "$lib";
 
     function expand_str(
         nums: number[] = [],
@@ -25,19 +23,14 @@
                 (str1.length > 0 ? " + " : "") +
                 str1;
 
-            if (typeof base === "object") {
-                continue;
-            } else {
-                str2 =
-                    `${num} \cdot (${Math.pow(base, i).toFixed(2)}` +
-                    (str2.length > 0 ? " + " : "") +
-                    str2;
-            }
+            if (typeof base === "object") continue;
+            str2 =
+                `${num} \cdot (${Math.pow(base, i).toFixed(2)}` +
+                (str2.length > 0 ? " + " : "") +
+                str2;
         }
 
-        if (str2.length > 1) {
-            str2 = "= " + str2;
-        }
+        if (str2.length > 1) str2 = "= " + str2;
 
         return _`${str1} ${str2} ${suffix}`;
     }
@@ -52,13 +45,19 @@
     sub="Recreational Math #002"
     desc="Bases other than positive integers"
     date="29 May 2025"
-    ignores="A, F"
 ></Meta>
 
-<define key="n" type="text" content="Variable. Usually positive integer" />
-<define key="r" type="text" content="Remainder. Usually < divisor base" />
-<define key="b" type="text" content="Base of number system" />
-<define key="ω" type="wikipedia" content="Root_of_unity" />
+<Definations
+    generics={{
+        C: ["z"],
+        Hex: ["A", "F"],
+    }}
+    list={[
+        define("n", "Variable. Usually positive integer"),
+        define("r", "Remainder. Usually < divisor base"),
+        define("b", "Base of number system"),
+    ]}
+/>
 
 Numbers are usually represented in base 10, but they can be represented in any
 base. The most common being are binary (base 2), decimal (base 10), and
@@ -66,7 +65,7 @@ hexadecimal (base 16). Binary, Hexadecimal, and Octal all being formats
 computers just cannot get enough of. As a short introduction to bases, this is
 how we read the number 420 in base 10:
 
-<Bars top={[4, 2, 0]}></Bars>
+<Bars top={[4, 2, 0]} base={10}></Bars>
 
 or very simply {@html expand_str([4, 2, 0], 10, "")}. The same number in base 2
 is {@html expand_str([1, 1, 0, 1, 0, 0, 1, 0, 0], 2, "")}. Which is written as:
@@ -150,7 +149,7 @@ numbers around the decimal point.
 
     To obtain the same result, follow the same process with the base {_`\frac1n`}.
     We can see efficiently, all that needs to be done is to rotate everything
-    around the decimal point
+    around the first digit before the decimal point.
 
     <Bars top={[1, 0, 0, 1, ".", 1, 1, 1]} base={1 / 2} base_str={"½"}></Bars>
 
@@ -185,7 +184,7 @@ around the decimal point, i.e. 6.6346, which one can trivially verify.
 Th, however, also means that we will be using the same digits 0 to 6 for {_`\frac37`}
 also, which is natural considering that for fractions &lt;1, we don't have any digits,
 so for a number with a base less than 1, we can just use the same digits as it's
-inverse and then rotates around the decimal point.
+inverse and then rotates around the first digit.
 
 <h3>Irrational and Transcendental Bases</h3>
 The easiest to start with is an 'nth' root base, such as {_`\sqrt[4]{5}`}. This

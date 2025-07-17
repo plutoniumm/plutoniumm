@@ -1,23 +1,28 @@
 <script lang="ts">
-    import Accordion from "$cpt/accord.svelte";
+    import { Accordion, Link, Meta, Definations, define } from "$cpt";
     import { _, __ } from "$lib";
-    import Link from "$cpt/link.svelte";
-    import Meta from "$cpt/meta.svelte";
 </script>
 
 <Meta
-    title="Fractional Complex Derivatives"
+    title="Fractional, complex, and fractional complex derivatives"
     sub="Recreational Math #003"
     desc="Non-integer and other continuous derivatives."
     date="29 June 2025"
-    ignores="d, f, x, z, n"
 ></Meta>
 
-<define key="Γ" type="wikipedia" content="Gamma_function" />
-
-<define key="k" type="text" content="Variable positive integer" />
-<define key="α" type="text" content="Variable real" />
-<define key="D" type="text" content="Derivative operator" />
+<Definations
+    generics={{
+        N: ["n"],
+        R: ["x", "y", "z"],
+        fXX: ["f"],
+    }}
+    list={[
+        define("D", "Derivative operator"),
+        define("k", "Variable positive integer"),
+        define("α", "Variable real"),
+        define("Γ", "Gamma function", "wikipedia"),
+    ]}
+/>
 
 We usually find derivatives of functions at integer orders, such as 1st, 2nd,
 etc. But what if we want to find the derivative in a non-integer order, like
@@ -66,15 +71,11 @@ back. So then what happens if we feed in {_`k=2, \alpha=i`}
 `}
 
 So, we can see taking the imaginary derivative of a real function gives us a
-complex coefficient.
-<xxx />
-We can now even try to find {_`D^i e^{ix}`} which would be {_`i^i e^{ix}`} or {_`e^{-\frac{\pi}{2}} e^{ix}`}.
-Now that we took the imaginary derivative of a complex function, we got a real
-coefficient. In general, we can safely say that non-integer derivatives may give
-us a real or complex result.
-<xxx />
-
-Now if we want a the derivative of say {_`\cos x`}, we can represent {_`\cos x = \frac{e^{ix} + e^{-ix}}{2}`}
+complex coefficient. We can now even try to find {_`D^i e^{ix}`} which would be {_`i^i e^{ix}`}
+or {_`e^{-\frac{\pi}{2}} e^{ix}`}. Now that we took the imaginary derivative of
+a complex function, we got a real coefficient. In general, we can safely say
+that non-integer derivatives may give us a real or complex result. Now if we
+want a the derivative of say {_`\cos x`}, we can represent {_`\cos x = \frac{e^{ix} + e^{-ix}}{2}`}
 and then proceed from there. One can verify that {_`D^{\alpha} \cos x = \cos x + \frac{\pi}2 \alpha`}.
 So, the differential operator is simply a shifting operator for the sinusoidal
 function. But now that we've asked the question of an imaginary derivative, we
@@ -82,7 +83,6 @@ are forced to ask. What is {_`D^i x`}?
 
 <h3>{_`D^i x`}</h3>
 Simple application of the definition gives us {_`D^i x = \frac{1}{\Gamma(2-i)} x^{1 - i}`}
-<xxx />
 
 Here {_`\frac{1}{\Gamma(2-i)} = \frac{i-1}{2\pi}\Gamma(i)`}, and {_`x^{1 - i} = x \cos (\ln x) + i x \sin(\ln x)`}.
 Giving us

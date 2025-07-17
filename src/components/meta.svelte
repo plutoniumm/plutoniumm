@@ -3,8 +3,7 @@
         title,
         sub,
         desc,
-        date,
-        ignores = "";
+        date;
 </script>
 
 <svelte:head>
@@ -15,10 +14,6 @@
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={desc} />
     <meta name="twitter:card" content="summary" />
-
-    {#if ignores.length}
-        <meta name="ignore_list" content={ignores} />
-    {/if}
 </svelte:head>
 
 <h1>{title}</h1>

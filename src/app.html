@@ -1,39 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" href="/assets/meta.png" />
+        <link rel="apple-touch-icon" href="/assets/meta.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-	<meta charset="utf-8" />
-	<link rel="icon" href="/assets/meta.png" />
-	<link rel="apple-touch-icon" href="/assets/meta.png" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="/atomic.css" />
+        <link rel="stylesheet" href="/css/global.css" />
 
-	<link rel="stylesheet" href="/atomic.css">
-	<link rel="stylesheet" href="/css/global.css">
+        <title>Plutoniumm</title>
+        <meta name="title" content="Plutoniumm" />
+        <meta name="description" content="Don't worry, I'm a programmer" />
 
-	<title>Plutoniumm</title>
-	<meta name="title" content="Plutoniumm">
-	<meta name="description" content="Don't worry I'm a programmer">
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://manav.ch/" />
+        <meta property="og:title" content="Plutoniumm" />
+        <meta
+            property="og:description"
+            content="Don't worry, I'm a programmer"
+        />
+        <meta property="og:image" content="/assets/meta.png" />
 
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://manav.ch/">
-	<meta property="og:title" content="Plutoniumm">
-	<meta property="og:description" content="Don't worry I'm a programmer">
-	<meta property="og:image" content="/assets/meta.png">
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://manav.ch/" />
+        <meta property="twitter:title" content="Plutoniumm" />
+        <meta
+            property="twitter:description"
+            content="Don't worry, I'm a programmer"
+        />
+        <meta property="twitter:image" content="/assets/meta.png" />
 
-	<meta property="twitter:card" content="summary_large_image">
-	<meta property="twitter:url" content="https://manav.ch/">
-	<meta property="twitter:title" content="Plutoniumm">
-	<meta property="twitter:description" content="Don't worry I'm a programmer">
-	<meta property="twitter:image" content="/assets/meta.png">
+        %sveltekit.head%
+    </head>
 
-
-	%sveltekit.head%
-</head>
-
-<body class="noise" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<div style="display: contents;">
-		%sveltekit.body%
-	</div>
-</body>
-
+    <body
+        class="noise"
+        xmlns:svg="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+        <div style="display: contents">%sveltekit.body%</div>
+    </body>
 </html>

@@ -1,20 +1,8 @@
 <script>
     import { onMount } from "svelte";
-    import { walk, Defs } from "$lib/define";
 
     onMount(() => {
         document.body.classList.add("light");
-
-        Array.from(document.querySelectorAll(".katex-html")).map(walk);
-
-        let undef = [];
-        setTimeout(() => {
-            Object.entries(Defs).forEach(([key, value]) => {
-                if (value === 0) undef.push(key);
-            });
-
-            console.log("Undefined definitions:", undef);
-        }, 2000);
     });
 </script>
 

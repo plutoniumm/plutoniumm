@@ -1,0 +1,50 @@
+[
+    {
+        "key": "N",
+        "tex": "\\mathbb{N}",
+        "type": "text",
+        "content": "The set of natural numbers, with a lot of controversy over if it is including zero or not."
+    },
+    {
+        "key": "Z",
+        "tex": "\\mathbb{Z}",
+        "type": "text",
+        "content": "The set of integers, which includes all positive and negative whole numbers, as well as zero."
+    },
+    {
+        "key": "Q",
+        "tex": "\\mathbb{Q}",
+        "type": "text",
+        "content": "The set of rational numbers, which can be expressed as a fraction of two integers."
+    },
+    {
+        "key": "R",
+        "tex": "\\mathbb{R}",
+        "type": "text",
+        "content": "The set of real numbers, which includes all rational and irrational numbers."
+    },
+    {
+        "key": "C",
+        "tex": "\\mathbb{C}",
+        "type": "text",
+        "content": "The set of complex numbers, which includes all numbers of the form a + bi, where a and b are real numbers and i is the imaginary unit."
+    },
+    {
+        "key": "H",
+        "tex": "\\mathbb{H}",
+        "type": "text",
+        "content": "The set of quaternions, which extends complex numbers to four dimensions."
+    },
+    {
+        "key": "X",
+        "tex": "\\mathbb{X}",
+        "type": "text",
+        "content": "Any 'space'."
+    },
+    {
+        "key": "ω",
+        "tex": "\\omega",
+        "type": "wikipedia",
+        "content": "Root_of_unity"
+    }
+]

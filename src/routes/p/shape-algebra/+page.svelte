@@ -1,11 +1,10 @@
 <script>
-    import Cartesian from "$cpt/scatter.svelte";
+    import { Image, Link, Meta, Scatter, Definations, define } from "$cpt";
     import { _, __, Dataset } from "$lib";
-    import Link from "$cpt/link.svelte";
-    import Meta from "$cpt/meta.svelte";
     import LR from "$cpt/LR.svelte";
     import M from "$lib/math";
     const { Map, Rng, Cplx } = M;
+    import Frame from "./frame.svelte";
 
     let prec = 50;
     let off = 0.2 * (prec / 50);
@@ -19,23 +18,17 @@
     sub="Recreational Math #001"
     desc="Algebra and 'Arithmetic' on Shapes"
     date="18 April 2025"
-    ignores="z, bi, ⌋)"
 ></Meta>
 
-<define key="f" type="text" content="Abstract function" />
-<define key="X" type="text" content="X coordinate" />
-<define key="x" type="text" content="X coordinate" />
-<define key="Y" type="text" content="Y coordinate" />
-<define key="y" type="text" content="Y coordinate" />
-<define key="k" type="text" content="Variable positive integer" />
-<define key="α" type="text" content="Variable real" />
-<define key="a" type="text" content="Variable real" />
-<define key="b" type="text" content="Variable real" />
-<define key="r" type="text" content="Variable real. Usually 0 &lt; r &lt; 1" />
-<define
-    key="θ"
-    type="text"
-    content="variable real. Usually 0 &lt; θ &lt; 2π or -π &lt; θ &lt; π"
+<Definations
+    generics={{
+        C: ["z", "ib"],
+        fXX: ["f"],
+        R: ["a", "b", "x", "y", "X", "Y"],
+        Circle: ["α", "θ"],
+        Unit: ["r"],
+    }}
+    list={[define("k", "Temporary Variable, positive integer")]}
 />
 
 I had some time one evening, so I decided to play around with the idea of doing
@@ -78,12 +71,12 @@ and divided.
 </svg>
 
 <p>
-    Each number is of the form {_`z = a + bi = |z| e^{i\ \text{arg}(z)} = r e^{i\theta}`},
+    Each number is of the form {_`z = a + ib = |z| e^{i\ \text{arg}(z)} = r e^{i\theta}`},
     where {_`i = \sqrt{-1}`}. Then just use a bunch of points for each shape.
     For example, a a circle can just be a 100 complex points
 </p>
 
-<Cartesian data={Dataset("circle", Circ.map(Map.ucirc))}></Cartesian>
+<Scatter data={Dataset("circle", Circ.map(Map.ucirc))}></Scatter>
 
 <p>
     So, if a shape is just a collection of points, and each point is just a
@@ -97,7 +90,7 @@ and divided.
 </p>
 
 <div class="f j-bw">
-    <Cartesian
+    <Scatter
         data={[
             Dataset("circle", Circ.map(Map.ucirc)),
             Dataset(
@@ -109,9 +102,9 @@ and divided.
                 Circ.map((x) => Cplx.sum(Map.ucirc(x), Map.ucirc(x + off))),
             ),
         ]}
-    ></Cartesian>
+    ></Scatter>
 
-    <Cartesian
+    <Scatter
         data={[
             Dataset("square", Circ.map(Map.usq)),
             Dataset(
@@ -123,7 +116,7 @@ and divided.
                 Circ.map((x) => Cplx.sum(Map.usq(x), Map.usq(x + off))),
             ),
         ]}
-    ></Cartesian>
+    ></Scatter>
 </div>
 
 <p>
@@ -142,7 +135,7 @@ and divided.
 </p>
 
 <LR>
-    <Cartesian
+    <Scatter
         slot="l"
         data={[
             Dataset("circle", Circ.map(Map.ucirc)),
@@ -154,7 +147,7 @@ and divided.
                 ),
             ),
         ]}
-    ></Cartesian>
+    ></Scatter>
 
     <div class="f-col j-ar h-100" slot="r">
         {__`r_1 e^{i \theta} + r_2 e^{i \theta}
@@ -190,21 +183,16 @@ and divided.
         </p>
     </div>
 
-    <a
+    <Image
         href="https://en.wikipedia.org/wiki/Cayan_Tower"
-        target="_blank"
-        rel="noreferrer"
-    >
-        <img
-            src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8a/Cayan_Tower.jpg/330px-Cayan_Tower.jpg"
-            alt="Cayan Tower China"
-            style="max-height: min(100vh, 300px);max-width: 100vw"
-        />
-    </a>
+        src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8a/Cayan_Tower.jpg/330px-Cayan_Tower.jpg"
+        alt="Wikipedia: Cayan Tower, China"
+        scale="2"
+    ></Image>
 </div>
 
 <LR>
-    <Cartesian
+    <Scatter
         slot="l"
         data={[
             Dataset("circle", Circ.map(Map.ucirc)),
@@ -228,7 +216,7 @@ and divided.
             />
             31.41
         </div>
-    </Cartesian>
+    </Scatter>
 
     <div class="f-col j-ar h-100" slot="r">
         {__`r_1 e^{i \theta} * r_2 e^{i \theta} \newline\quad\quad
@@ -274,7 +262,7 @@ We can also raise a circle to the power of a circle, or anything to a circle's p
 or a circle to anything's power.
 
 <LR>
-    <Cartesian
+    <Scatter
         slot="l"
         data={[
             Dataset("circle", Circ.map(Map.ucirc)),
@@ -292,7 +280,7 @@ or a circle to anything's power.
                 ),
             ),
         ]}
-    ></Cartesian>
+    ></Scatter>
     <div class="f-col j-ar h-100" slot="r" style="margin: 0 2rem;">
         {__`r_1 e^{i \theta_1 r_2 e^{i \theta_2}}
       \newline\quad\quad
@@ -330,7 +318,7 @@ is a damping term, and the first term {_`e^{i[(\theta + k_1)\cos\theta + k_2]}`}
 is a rotation term. Now, what happens if I take a square and raise it to a circle
 
 <LR>
-    <Cartesian
+    <Scatter
         slot="l"
         data={[
             ...(flags[0]
@@ -349,7 +337,7 @@ is a rotation term. Now, what happens if I take a square and raise it to a circl
                 ),
             ),
         ]}
-    ></Cartesian>
+    ></Scatter>
 
     <div class="f-col j-ar h-100" slot="r" style="margin: 0 2rem;">
         <label class="f al-ct" for="show-base">
@@ -386,7 +374,7 @@ is a rotation term. Now, what happens if I take a square and raise it to a circl
 Now that we can add and multiply shapes, we can also mix them with numbers. So we
 can take the square root of a square
 
-<Cartesian
+<Scatter
     data={[
         Dataset("square", M.lin(0, M["2Pi"], 2 * prec).map(Map.usq)),
         Dataset(
@@ -396,13 +384,20 @@ can take the square root of a square
             ),
         ),
     ]}
-></Cartesian>
+></Scatter>
 
 Now that is certainly cool. The square root of a square is a half-octagon with
 curved edges. With some effort, it is, in fact, possible to raise a matrix to
 the power of a matrix or even a matrix to a shape. There is no reason we should
 limit ourselves to the conventional patterns that happen to be useful to
 physicists and engineers.
+
+<h4>Try it</h4>
+Try to see what happens when you take your own image (requires webcam), and apply
+some transformations to it. Any equation in the standard functions in a closed form
+should work. As an example, I've shown {_`z^2 + 2`}, try something like {_`\sin(z)`}.
+
+<Frame />
 
 <h4>References</h4>
 <ul>
