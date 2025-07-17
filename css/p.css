@@ -9,12 +9,6 @@ a {
     vertical-align: middle;
 }
 
-define {
-    display: none;
-    pointer-events: none;
-    visibility: hidden;
-}
-
 hr {
     margin: 1em auto;
     width: 33%;
@@ -39,8 +33,36 @@ ul {
     right: 10px;
     width: 250px;
     height: 250px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     z-index: 1000;
     overflow: scroll;
     resize: both;
+    border-radius: 5px 30px 5px 5px;
+    transition: all 0.4s ease-in-out;
+}
+
+.sticky:hover {
+    border-radius: 5px 75px 5px 5px !important;
+}
+
+.close {
+    font-size: 12px;
+    top: 0;
+    right: 0;
+    height: 30px;
+    width: 30px;
+    background: #fff;
+    line-height: 30px;
+    vertical-align: middle;
+
+    color: #0000;
+    border-radius: 0 0 0 5px;
+    border-width: 30px;
+    border-color: #fff #fff transparent transparent;
+    transition: all 0.4s ease-in-out;
+}
+
+.sticky:hover .close {
+    border-color: #fff #fff #fff transparent;
+    height: 60px;
+    width: 60px;
 }

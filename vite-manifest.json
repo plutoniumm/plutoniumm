@@ -1,7 +1,11 @@
 {
-  "meta.css": {
-    "file": "_app/immutable/assets/meta-8fff0ce5.css",
-    "src": "meta.css"
+  "src/routes/p/shape-algebra/+page.css": {
+    "file": "_app/immutable/assets/_page-c411beca.css",
+    "src": "src/routes/p/shape-algebra/+page.css"
+  },
+  "index.css": {
+    "file": "_app/immutable/assets/index-160da1f0.css",
+    "src": "index.css"
   },
   "src/routes/p/+layout.css": {
     "file": "_app/immutable/assets/_layout-e1660e29.css",
@@ -11,60 +15,24 @@
     "file": "_app/immutable/assets/_page-6765c65b.css",
     "src": "src/routes/+page.css"
   },
-  "image.css": {
-    "file": "_app/immutable/assets/image-a61c5bc7.css",
-    "src": "image.css"
-  },
-  "accord.css": {
-    "file": "_app/immutable/assets/accord-32de507e.css",
-    "src": "accord.css"
-  },
-  "src/routes/p/shape-algebra/+page.css": {
-    "file": "_app/immutable/assets/_page-340b6294.css",
-    "src": "src/routes/p/shape-algebra/+page.css"
-  },
-  ".svelte-kit/generated/nodes/7.js": {
-    "file": "_app/immutable/chunks/7-ff968501.js",
-    "src": ".svelte-kit/generated/nodes/7.js",
-    "isDynamicEntry": true,
-    "imports": [
-      "src/routes/p/fractional-derivatives/+page.svelte"
-    ]
-  },
-  ".svelte-kit/generated/nodes/1.js": {
-    "file": "_app/immutable/chunks/1-257e74b2.js",
-    "src": ".svelte-kit/generated/nodes/1.js",
-    "isDynamicEntry": true,
-    "imports": [
-      "node_modules/.pnpm/@sveltejs+kit@1.2.2_svelte@3.55.1_vite@4.0.4_sass@1.35.1_terser@5.39.0_/node_modules/@sveltejs/kit/src/runtime/components/error.svelte"
-    ]
-  },
-  ".svelte-kit/generated/nodes/3.js": {
-    "file": "_app/immutable/chunks/3-0d236cd8.js",
-    "src": ".svelte-kit/generated/nodes/3.js",
-    "isDynamicEntry": true,
-    "imports": [
-      "src/routes/+page.svelte"
-    ]
-  },
   ".svelte-kit/generated/nodes/5.js": {
-    "file": "_app/immutable/chunks/5-8c62146e.js",
+    "file": "_app/immutable/chunks/5-bfc7d92a.js",
     "src": ".svelte-kit/generated/nodes/5.js",
     "isDynamicEntry": true,
     "imports": [
       "src/routes/p/covering-bases/+page.svelte"
     ]
   },
-  ".svelte-kit/generated/nodes/6.js": {
-    "file": "_app/immutable/chunks/6-24e95d8c.js",
-    "src": ".svelte-kit/generated/nodes/6.js",
+  ".svelte-kit/generated/nodes/3.js": {
+    "file": "_app/immutable/chunks/3-abf3023e.js",
+    "src": ".svelte-kit/generated/nodes/3.js",
     "isDynamicEntry": true,
     "imports": [
-      "src/routes/p/epsilon-delta/+page.svelte"
+      "src/routes/+page.svelte"
     ]
   },
   ".svelte-kit/generated/nodes/0.js": {
-    "file": "_app/immutable/chunks/0-5f2bc373.js",
+    "file": "_app/immutable/chunks/0-2a0acd43.js",
     "src": ".svelte-kit/generated/nodes/0.js",
     "isDynamicEntry": true,
     "imports": [
@@ -72,16 +40,24 @@
       "node_modules/.pnpm/@sveltejs+kit@1.2.2_svelte@3.55.1_vite@4.0.4_sass@1.35.1_terser@5.39.0_/node_modules/@sveltejs/kit/src/runtime/components/layout.svelte"
     ]
   },
-  ".svelte-kit/generated/nodes/2.js": {
-    "file": "_app/immutable/chunks/2-e122cc28.js",
-    "src": ".svelte-kit/generated/nodes/2.js",
+  ".svelte-kit/generated/nodes/1.js": {
+    "file": "_app/immutable/chunks/1-b0f37a02.js",
+    "src": ".svelte-kit/generated/nodes/1.js",
     "isDynamicEntry": true,
     "imports": [
-      "src/routes/p/+layout.svelte"
+      "node_modules/.pnpm/@sveltejs+kit@1.2.2_svelte@3.55.1_vite@4.0.4_sass@1.35.1_terser@5.39.0_/node_modules/@sveltejs/kit/src/runtime/components/error.svelte"
+    ]
+  },
+  ".svelte-kit/generated/nodes/9.js": {
+    "file": "_app/immutable/chunks/9-433224f6.js",
+    "src": ".svelte-kit/generated/nodes/9.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/routes/p/test/+page.svelte"
     ]
   },
   ".svelte-kit/generated/nodes/4.js": {
-    "file": "_app/immutable/chunks/4-d7e70e55.js",
+    "file": "_app/immutable/chunks/4-6e5bbf93.js",
     "src": ".svelte-kit/generated/nodes/4.js",
     "isDynamicEntry": true,
     "imports": [
@@ -89,62 +65,89 @@
       "src/routes/p/+page.svelte"
     ]
   },
+  ".svelte-kit/generated/nodes/2.js": {
+    "file": "_app/immutable/chunks/2-965c253c.js",
+    "src": ".svelte-kit/generated/nodes/2.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/routes/p/+layout.svelte"
+    ]
+  },
+  ".svelte-kit/generated/nodes/7.js": {
+    "file": "_app/immutable/chunks/7-d03e01b6.js",
+    "src": ".svelte-kit/generated/nodes/7.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/routes/p/fractional-derivatives/+page.svelte"
+    ]
+  },
+  ".svelte-kit/generated/nodes/6.js": {
+    "file": "_app/immutable/chunks/6-c364f3c1.js",
+    "src": ".svelte-kit/generated/nodes/6.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/routes/p/epsilon-delta/+page.svelte"
+    ]
+  },
+  "__page-88ba1078.js": {
+    "file": "_app/immutable/chunks/_page-88ba1078.js"
+  },
+  "__layout-8b3d678d.js": {
+    "file": "_app/immutable/chunks/_layout-8b3d678d.js"
+  },
   ".svelte-kit/generated/nodes/8.js": {
-    "file": "_app/immutable/chunks/8-9f1a4b35.js",
+    "file": "_app/immutable/chunks/8-f24d15c7.js",
     "src": ".svelte-kit/generated/nodes/8.js",
     "isDynamicEntry": true,
     "imports": [
       "src/routes/p/shape-algebra/+page.svelte"
     ]
   },
-  ".svelte-kit/generated/nodes/9.js": {
-    "file": "_app/immutable/chunks/9-a8b40e42.js",
-    "src": ".svelte-kit/generated/nodes/9.js",
-    "isDynamicEntry": true,
-    "imports": [
-      "src/routes/p/test/+page.svelte"
-    ]
-  },
-  "__layout-8b3d678d.js": {
-    "file": "_app/immutable/chunks/_layout-8b3d678d.js"
-  },
-  "__page-88ba1078.js": {
-    "file": "_app/immutable/chunks/_page-88ba1078.js"
-  },
-  "src/routes/p/test/+page.svelte": {
-    "file": "_app/immutable/components/pages/p/test/_page.svelte-98e7d839.js",
-    "src": "src/routes/p/test/+page.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-74fbc9f8.js",
-      "_meta-846f439e.js"
-    ],
-    "css": [
-      "_app/immutable/assets/accord-32de507e.css"
-    ]
-  },
-  "_link-f469bc16.js": {
-    "file": "_app/immutable/chunks/link-f469bc16.js",
-    "imports": [
-      "_index-74fbc9f8.js",
-      "_meta-846f439e.js"
-    ]
-  },
   "node_modules/.pnpm/@sveltejs+kit@1.2.2_svelte@3.55.1_vite@4.0.4_sass@1.35.1_terser@5.39.0_/node_modules/@sveltejs/kit/src/runtime/components/layout.svelte": {
-    "file": "_app/immutable/components/layout.svelte-b0459953.js",
+    "file": "_app/immutable/components/layout.svelte-03b6937f.js",
     "src": "node_modules/.pnpm/@sveltejs+kit@1.2.2_svelte@3.55.1_vite@4.0.4_sass@1.35.1_terser@5.39.0_/node_modules/@sveltejs/kit/src/runtime/components/layout.svelte",
     "isEntry": true,
     "imports": [
-      "_index-74fbc9f8.js"
+      "_index-fd6faf80.js"
+    ]
+  },
+  "src/routes/p/test/+page.svelte": {
+    "file": "_app/immutable/components/pages/p/test/_page.svelte-dfd43729.js",
+    "src": "src/routes/p/test/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-fd6faf80.js",
+      "_index-b4de6977.js"
     ]
   },
   "node_modules/.pnpm/@sveltejs+kit@1.2.2_svelte@3.55.1_vite@4.0.4_sass@1.35.1_terser@5.39.0_/node_modules/@sveltejs/kit/src/runtime/components/error.svelte": {
-    "file": "_app/immutable/components/error.svelte-ee6b62ec.js",
+    "file": "_app/immutable/components/error.svelte-e7fc601d.js",
     "src": "node_modules/.pnpm/@sveltejs+kit@1.2.2_svelte@3.55.1_vite@4.0.4_sass@1.35.1_terser@5.39.0_/node_modules/@sveltejs/kit/src/runtime/components/error.svelte",
     "isEntry": true,
     "imports": [
-      "_index-74fbc9f8.js",
-      "_singletons-b3cf1784.js"
+      "_index-fd6faf80.js",
+      "_singletons-13365e54.js"
+    ]
+  },
+  "_accord-0e7ebe72.js": {
+    "file": "_app/immutable/chunks/accord-0e7ebe72.js",
+    "imports": [
+      "_index-fd6faf80.js",
+      "_index-b4de6977.js"
+    ]
+  },
+  "_image-9b4dc476.js": {
+    "file": "_app/immutable/chunks/image-9b4dc476.js",
+    "imports": [
+      "_index-fd6faf80.js",
+      "_index-b4de6977.js"
+    ]
+  },
+  "_link-d240c9a0.js": {
+    "file": "_app/immutable/chunks/link-d240c9a0.js",
+    "imports": [
+      "_index-fd6faf80.js",
+      "_index-b4de6977.js"
     ]
   },
   "src/routes/+layout.js": {
@@ -155,15 +158,6 @@
       "__layout-8b3d678d.js"
     ]
   },
-  "_accord-5b8d583e.js": {
-    "file": "_app/immutable/chunks/accord-5b8d583e.js",
-    "imports": [
-      "_index-74fbc9f8.js"
-    ],
-    "css": [
-      "_app/immutable/assets/accord-32de507e.css"
-    ]
-  },
   "src/routes/p/+page.ts": {
     "file": "_app/immutable/modules/pages/p/_page.ts-2d614142.js",
     "src": "src/routes/p/+page.ts",
@@ -172,93 +166,84 @@
       "__page-88ba1078.js"
     ]
   },
-  "_singletons-b3cf1784.js": {
-    "file": "_app/immutable/chunks/singletons-b3cf1784.js",
-    "imports": [
-      "_index-74fbc9f8.js"
-    ]
-  },
   "src/routes/p/+page.svelte": {
-    "file": "_app/immutable/components/pages/p/_page.svelte-96a02929.js",
+    "file": "_app/immutable/components/pages/p/_page.svelte-fd67571d.js",
     "src": "src/routes/p/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_index-74fbc9f8.js"
+      "_index-fd6faf80.js"
     ]
   },
-  "src/routes/+page.svelte": {
-    "file": "_app/immutable/components/pages/_page.svelte-7ed2240d.js",
-    "src": "src/routes/+page.svelte",
-    "isEntry": true,
+  "_singletons-13365e54.js": {
+    "file": "_app/immutable/chunks/singletons-13365e54.js",
     "imports": [
-      "_index-74fbc9f8.js"
-    ],
-    "css": [
-      "_app/immutable/assets/_page-6765c65b.css"
+      "_index-fd6faf80.js"
     ]
   },
   "src/routes/p/epsilon-delta/+page.svelte": {
-    "file": "_app/immutable/components/pages/p/epsilon-delta/_page.svelte-14711d10.js",
+    "file": "_app/immutable/components/pages/p/epsilon-delta/_page.svelte-57ed0822.js",
     "src": "src/routes/p/epsilon-delta/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_index-74fbc9f8.js",
-      "_meta-846f439e.js",
-      "_image-9f22780b.js"
-    ]
-  },
-  "src/routes/p/fractional-derivatives/+page.svelte": {
-    "file": "_app/immutable/components/pages/p/fractional-derivatives/_page.svelte-78304123.js",
-    "src": "src/routes/p/fractional-derivatives/+page.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-74fbc9f8.js",
-      "_accord-5b8d583e.js",
-      "_meta-846f439e.js",
-      "_link-f469bc16.js"
+      "_index-fd6faf80.js",
+      "_index-b4de6977.js",
+      "_image-9b4dc476.js"
     ]
   },
   "src/routes/p/+layout.svelte": {
-    "file": "_app/immutable/components/pages/p/_layout.svelte-610965ef.js",
+    "file": "_app/immutable/components/pages/p/_layout.svelte-049ea46e.js",
     "src": "src/routes/p/+layout.svelte",
     "isEntry": true,
     "imports": [
-      "_index-74fbc9f8.js"
+      "_index-fd6faf80.js"
     ],
     "css": [
       "_app/immutable/assets/_layout-e1660e29.css"
     ]
   },
-  "_image-9f22780b.js": {
-    "file": "_app/immutable/chunks/image-9f22780b.js",
+  "_index-fd6faf80.js": {
+    "file": "_app/immutable/chunks/index-fd6faf80.js"
+  },
+  "src/routes/p/fractional-derivatives/+page.svelte": {
+    "file": "_app/immutable/components/pages/p/fractional-derivatives/_page.svelte-0a82cb7b.js",
+    "src": "src/routes/p/fractional-derivatives/+page.svelte",
+    "isEntry": true,
     "imports": [
-      "_index-74fbc9f8.js"
-    ],
-    "css": [
-      "_app/immutable/assets/image-a61c5bc7.css"
+      "_index-fd6faf80.js",
+      "_index-b4de6977.js",
+      "_accord-0e7ebe72.js",
+      "_link-d240c9a0.js"
     ]
   },
-  "_index-74fbc9f8.js": {
-    "file": "_app/immutable/chunks/index-74fbc9f8.js"
+  "src/routes/+page.svelte": {
+    "file": "_app/immutable/components/pages/_page.svelte-38f54cb9.js",
+    "src": "src/routes/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-fd6faf80.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page-6765c65b.css"
+    ]
   },
   "src/routes/p/covering-bases/+page.svelte": {
-    "file": "_app/immutable/components/pages/p/covering-bases/_page.svelte-b20eb457.js",
+    "file": "_app/immutable/components/pages/p/covering-bases/_page.svelte-786bd35b.js",
     "src": "src/routes/p/covering-bases/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_index-74fbc9f8.js",
-      "_accord-5b8d583e.js",
-      "_meta-846f439e.js",
-      "_link-f469bc16.js"
+      "_index-fd6faf80.js",
+      "_index-b4de6977.js",
+      "_accord-0e7ebe72.js",
+      "_link-d240c9a0.js"
     ]
   },
   "node_modules/.pnpm/@sveltejs+kit@1.2.2_svelte@3.55.1_vite@4.0.4_sass@1.35.1_terser@5.39.0_/node_modules/@sveltejs/kit/src/runtime/client/start.js": {
-    "file": "_app/immutable/start-a9c3141e.js",
+    "file": "_app/immutable/start-e6dd73cb.js",
     "src": "node_modules/.pnpm/@sveltejs+kit@1.2.2_svelte@3.55.1_vite@4.0.4_sass@1.35.1_terser@5.39.0_/node_modules/@sveltejs/kit/src/runtime/client/start.js",
     "isEntry": true,
     "imports": [
-      "_index-74fbc9f8.js",
-      "_singletons-b3cf1784.js"
+      "_index-fd6faf80.js",
+      "_singletons-13365e54.js"
     ],
     "dynamicImports": [
       ".svelte-kit/generated/nodes/0.js",
@@ -273,27 +258,27 @@
       ".svelte-kit/generated/nodes/9.js"
     ]
   },
-  "_meta-846f439e.js": {
-    "file": "_app/immutable/chunks/meta-846f439e.js",
+  "_index-b4de6977.js": {
+    "file": "_app/immutable/chunks/index-b4de6977.js",
     "imports": [
-      "_index-74fbc9f8.js"
+      "_index-fd6faf80.js"
     ],
     "css": [
-      "_app/immutable/assets/meta-8fff0ce5.css"
+      "_app/immutable/assets/index-160da1f0.css"
     ]
   },
   "src/routes/p/shape-algebra/+page.svelte": {
-    "file": "_app/immutable/components/pages/p/shape-algebra/_page.svelte-6c25d0ff.js",
+    "file": "_app/immutable/components/pages/p/shape-algebra/_page.svelte-5175fd27.js",
     "src": "src/routes/p/shape-algebra/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_index-74fbc9f8.js",
-      "_meta-846f439e.js",
-      "_image-9f22780b.js",
-      "_link-f469bc16.js"
+      "_index-fd6faf80.js",
+      "_index-b4de6977.js",
+      "_image-9b4dc476.js",
+      "_link-d240c9a0.js"
     ],
     "css": [
-      "_app/immutable/assets/_page-340b6294.css"
+      "_app/immutable/assets/_page-c411beca.css"
     ]
   }
 }

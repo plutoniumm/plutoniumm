@@ -33,19 +33,18 @@
 
         <meta http-equiv="content-security-policy" content="">
 		<link href="../_app/immutable/assets/_layout-e1660e29.css" rel="stylesheet">
-		<link href="../_app/immutable/assets/accord-32de507e.css" rel="stylesheet">
-		<link href="../_app/immutable/assets/meta-8fff0ce5.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/start-a9c3141e.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/index-74fbc9f8.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/singletons-b3cf1784.js">
-		<link rel="modulepreload" href="../_app/immutable/components/layout.svelte-b0459953.js">
+		<link href="../_app/immutable/assets/index-160da1f0.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/start-e6dd73cb.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index-fd6faf80.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/singletons-13365e54.js">
+		<link rel="modulepreload" href="../_app/immutable/components/layout.svelte-03b6937f.js">
 		<link rel="modulepreload" href="../_app/immutable/modules/pages/_layout.js-2bb958f9.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/_layout-8b3d678d.js">
-		<link rel="modulepreload" href="../_app/immutable/components/pages/p/_layout.svelte-610965ef.js">
-		<link rel="modulepreload" href="../_app/immutable/components/pages/p/covering-bases/_page.svelte-b20eb457.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/accord-5b8d583e.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/meta-846f439e.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/link-f469bc16.js"><title>Going to 3.14th base | manav.ch</title><!-- HEAD_svelte-16d6g3l_START --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" crossorigin="anonymous"><link rel="stylesheet" href="/css/p.css"><!-- HEAD_svelte-16d6g3l_END --><!-- HEAD_svelte-141208e_START --><meta name="description" content="Bases other than positive integers"><meta property="og:title" content="Going to 3.14th base"><meta property="og:description" content="Bases other than positive integers"><meta name="twitter:title" content="Going to 3.14th base"><meta name="twitter:description" content="Bases other than positive integers"><meta name="twitter:card" content="summary"><meta name="ignore_list" content="A, F"><!-- HEAD_svelte-141208e_END -->
+		<link rel="modulepreload" href="../_app/immutable/components/pages/p/_layout.svelte-049ea46e.js">
+		<link rel="modulepreload" href="../_app/immutable/components/pages/p/covering-bases/_page.svelte-786bd35b.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index-b4de6977.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/accord-0e7ebe72.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/link-d240c9a0.js"><title>Going to 3.14th base | manav.ch</title><!-- HEAD_svelte-16d6g3l_START --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" crossorigin="anonymous"><link rel="stylesheet" href="/css/p.css"><!-- HEAD_svelte-16d6g3l_END --><!-- HEAD_svelte-18br643_START --><meta name="description" content="Bases other than positive integers"><meta property="og:title" content="Going to 3.14th base"><meta property="og:description" content="Bases other than positive integers"><meta name="twitter:title" content="Going to 3.14th base"><meta name="twitter:description" content="Bases other than positive integers"><meta name="twitter:card" content="summary"><!-- HEAD_svelte-18br643_END -->
     </head>
 
     <body
@@ -64,10 +63,16 @@
 <div class="sub svelte-q0y3ce">Recreational Math #002 • 29 May 2025
 </div>
 
-<define key="n" type="text" content="Variable. Usually positive integer"></define>
-<define key="r" type="text" content="Remainder. Usually < divisor base"></define>
-<define key="b" type="text" content="Base of number system"></define>
-<define key="ω" type="wikipedia" content="Root_of_unity"></define>
+<div class="generics p10 svelte-nyxtaq">Generic Variables: &#39;commonly used&#39; notation in context. For the other
+        ones click on any coloured variable to define it.
+        <br>
+        <ul>
+                <li><!-- HTML_TAG_START --><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>∈</mo><mi mathvariant="double-struck">C</mi></mrow><annotation encoding="application/x-tex">z \in \mathbb{C}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6889em;"></span><span class="mord mathbb">C</span></span></span></span><!-- HTML_TAG_END -->
+                </li>
+                <li><!-- HTML_TAG_START --><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo separator="true">,</mo><mi>F</mi><mo>∈</mo><mo stretchy="false">[</mo><mn>0</mn><mo>−</mo><mi>F</mi><msub><mo stretchy="false">]</mo><mn>16</mn></msub><mo>=</mo><mo stretchy="false">[</mo><mn>0</mn><mo>−</mo><mn>15</mn><msub><mo stretchy="false">]</mo><mn>10</mn></msub></mrow><annotation encoding="application/x-tex">A, F \in [0-F]_{16} = [0-15]_{10}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">A</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">16</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">15</span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">10</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><!-- HTML_TAG_END -->
+                </li></ul>
+    
+</div>
 
 Numbers are usually represented in base 10, but they can be represented in any
 base. The most common being are binary (base 2), decimal (base 10), and
@@ -75,60 +80,36 @@ hexadecimal (base 16). Binary, Hexadecimal, and Octal all being formats
 computers just cannot get enough of. As a short introduction to bases, this is
 how we read the number 420 in base 10:
 
-<p class="w-100 tc"><svg width="105" height="80" font-family="sans-serif" font-weight="300" font-size="24"><text x="10" y="20">
-        <tspan x="15" y="25">4</tspan>
-        <tspan x="45" y="25">2</tspan>
-        <tspan x="75" y="25">0</tspan></text><text x="10" y="45">
-        <tspan x="10" y="45">―</tspan>
-        <tspan x="40" y="45">―</tspan>
-        <tspan x="70" y="45">―</tspan></text><text x="10" y="70" font-size="12"><tspan x="10" y="65">
-          (<!-- HTML_TAG_START -->10<!-- HTML_TAG_END -->)<sup>3</sup></tspan>
-        <tspan x="30" y="60">2</tspan><tspan x="40" y="65">
-          (<!-- HTML_TAG_START -->10<!-- HTML_TAG_END -->)<sup>2</sup></tspan>
-        <tspan x="60" y="60">1</tspan><tspan x="70" y="65">
-          (<!-- HTML_TAG_START -->10<!-- HTML_TAG_END -->)<sup>1</sup></tspan>
-        <tspan x="90" y="60">0</tspan></text></svg></p>
+<p class="w-100 tc"><svg width="105" height="80" font-family="sans-serif" font-weight="300" font-size="24" transform="scale(1.25)"><text x="10" y="20"><tspan id="digit" x="15" y="25">4</tspan><tspan id="digit" x="45" y="25">2</tspan><tspan id="digit" x="75" y="25">0</tspan></text><text x="10" y="45"><tspan id="bar" x="10" y="45">―</tspan><tspan id="bar" x="40" y="45">―</tspan><tspan id="bar" x="70" y="45">―</tspan></text><text x="10" y="70" font-size="12"><tspan id="base" x="10" y="65">(10)
+                    <sup>3</sup></tspan>
+                <tspan id="power" x="30" y="60">2</tspan><tspan id="base" x="40" y="65">(10)
+                    <sup>2</sup></tspan>
+                <tspan id="power" x="60" y="60">1</tspan><tspan id="base" x="70" y="65">(10)
+                    <sup>1</sup></tspan>
+                <tspan id="power" x="90" y="60">0</tspan></text></svg></p>
 
 or very simply <!-- HTML_TAG_START --><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow></mrow><annotation encoding="application/x-tex">  </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"></span></span><!-- HTML_TAG_END -->. The same number in base 2
 is <!-- HTML_TAG_START --><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow></mrow><annotation encoding="application/x-tex">  </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"></span></span><!-- HTML_TAG_END -->. Which is written as:
 
-<p class="w-100 tc"><svg width="285" height="80" font-family="sans-serif" font-weight="300" font-size="24"><text x="10" y="20">
-        <tspan x="15" y="25">1</tspan>
-        <tspan x="45" y="25">1</tspan>
-        <tspan x="75" y="25">0</tspan>
-        <tspan x="105" y="25">1</tspan>
-        <tspan x="135" y="25">0</tspan>
-        <tspan x="165" y="25">0</tspan>
-        <tspan x="195" y="25">1</tspan>
-        <tspan x="225" y="25">0</tspan>
-        <tspan x="255" y="25">0</tspan></text><text x="10" y="45">
-        <tspan x="10" y="45">―</tspan>
-        <tspan x="40" y="45">―</tspan>
-        <tspan x="70" y="45">―</tspan>
-        <tspan x="100" y="45">―</tspan>
-        <tspan x="130" y="45">―</tspan>
-        <tspan x="160" y="45">―</tspan>
-        <tspan x="190" y="45">―</tspan>
-        <tspan x="220" y="45">―</tspan>
-        <tspan x="250" y="45">―</tspan></text><text x="10" y="70" font-size="12"><tspan x="10" y="65">
-          (<!-- HTML_TAG_START -->2<!-- HTML_TAG_END -->)<sup>9</sup></tspan>
-        <tspan x="24" y="60">8</tspan><tspan x="40" y="65">
-          (<!-- HTML_TAG_START -->2<!-- HTML_TAG_END -->)<sup>8</sup></tspan>
-        <tspan x="54" y="60">7</tspan><tspan x="70" y="65">
-          (<!-- HTML_TAG_START -->2<!-- HTML_TAG_END -->)<sup>7</sup></tspan>
-        <tspan x="84" y="60">6</tspan><tspan x="100" y="65">
-          (<!-- HTML_TAG_START -->2<!-- HTML_TAG_END -->)<sup>6</sup></tspan>
-        <tspan x="114" y="60">5</tspan><tspan x="130" y="65">
-          (<!-- HTML_TAG_START -->2<!-- HTML_TAG_END -->)<sup>5</sup></tspan>
-        <tspan x="144" y="60">4</tspan><tspan x="160" y="65">
-          (<!-- HTML_TAG_START -->2<!-- HTML_TAG_END -->)<sup>4</sup></tspan>
-        <tspan x="174" y="60">3</tspan><tspan x="190" y="65">
-          (<!-- HTML_TAG_START -->2<!-- HTML_TAG_END -->)<sup>3</sup></tspan>
-        <tspan x="204" y="60">2</tspan><tspan x="220" y="65">
-          (<!-- HTML_TAG_START -->2<!-- HTML_TAG_END -->)<sup>2</sup></tspan>
-        <tspan x="234" y="60">1</tspan><tspan x="250" y="65">
-          (<!-- HTML_TAG_START -->2<!-- HTML_TAG_END -->)<sup>1</sup></tspan>
-        <tspan x="264" y="60">0</tspan></text></svg></p>
+<p class="w-100 tc"><svg width="285" height="80" font-family="sans-serif" font-weight="300" font-size="24" transform="scale(1.25)"><text x="10" y="20"><tspan id="digit" x="15" y="25">1</tspan><tspan id="digit" x="45" y="25">1</tspan><tspan id="digit" x="75" y="25">0</tspan><tspan id="digit" x="105" y="25">1</tspan><tspan id="digit" x="135" y="25">0</tspan><tspan id="digit" x="165" y="25">0</tspan><tspan id="digit" x="195" y="25">1</tspan><tspan id="digit" x="225" y="25">0</tspan><tspan id="digit" x="255" y="25">0</tspan></text><text x="10" y="45"><tspan id="bar" x="10" y="45">―</tspan><tspan id="bar" x="40" y="45">―</tspan><tspan id="bar" x="70" y="45">―</tspan><tspan id="bar" x="100" y="45">―</tspan><tspan id="bar" x="130" y="45">―</tspan><tspan id="bar" x="160" y="45">―</tspan><tspan id="bar" x="190" y="45">―</tspan><tspan id="bar" x="220" y="45">―</tspan><tspan id="bar" x="250" y="45">―</tspan></text><text x="10" y="70" font-size="12"><tspan id="base" x="10" y="65">(2)
+                    <sup>9</sup></tspan>
+                <tspan id="power" x="30" y="60">8</tspan><tspan id="base" x="40" y="65">(2)
+                    <sup>8</sup></tspan>
+                <tspan id="power" x="60" y="60">7</tspan><tspan id="base" x="70" y="65">(2)
+                    <sup>7</sup></tspan>
+                <tspan id="power" x="90" y="60">6</tspan><tspan id="base" x="100" y="65">(2)
+                    <sup>6</sup></tspan>
+                <tspan id="power" x="120" y="60">5</tspan><tspan id="base" x="130" y="65">(2)
+                    <sup>5</sup></tspan>
+                <tspan id="power" x="150" y="60">4</tspan><tspan id="base" x="160" y="65">(2)
+                    <sup>4</sup></tspan>
+                <tspan id="power" x="180" y="60">3</tspan><tspan id="base" x="190" y="65">(2)
+                    <sup>3</sup></tspan>
+                <tspan id="power" x="210" y="60">2</tspan><tspan id="base" x="220" y="65">(2)
+                    <sup>2</sup></tspan>
+                <tspan id="power" x="240" y="60">1</tspan><tspan id="base" x="250" y="65">(2)
+                    <sup>1</sup></tspan>
+                <tspan id="power" x="270" y="60">0</tspan></text></svg></p>
 
 <h3>Base Conversion</h3>
 To convert from base 10 to base 2, divide by 2 repeatedly and record the remainder.
@@ -163,23 +144,15 @@ from bottom to top. We can also go in the other direction, from base 2 to base
 which again, including the last quotient, gives us the base 7 number
 <!-- HTML_TAG_START -->1140<!-- HTML_TAG_END -->.
 
-<p class="w-100 tc"><svg width="135" height="80" font-family="sans-serif" font-weight="300" font-size="24"><text x="10" y="20">
-        <tspan x="15" y="25">1</tspan>
-        <tspan x="45" y="25">1</tspan>
-        <tspan x="75" y="25">4</tspan>
-        <tspan x="105" y="25">0</tspan></text><text x="10" y="45">
-        <tspan x="10" y="45">―</tspan>
-        <tspan x="40" y="45">―</tspan>
-        <tspan x="70" y="45">―</tspan>
-        <tspan x="100" y="45">―</tspan></text><text x="10" y="70" font-size="12"><tspan x="10" y="65">
-          (<!-- HTML_TAG_START -->7<!-- HTML_TAG_END -->)<sup>4</sup></tspan>
-        <tspan x="24" y="60">3</tspan><tspan x="40" y="65">
-          (<!-- HTML_TAG_START -->7<!-- HTML_TAG_END -->)<sup>3</sup></tspan>
-        <tspan x="54" y="60">2</tspan><tspan x="70" y="65">
-          (<!-- HTML_TAG_START -->7<!-- HTML_TAG_END -->)<sup>2</sup></tspan>
-        <tspan x="84" y="60">1</tspan><tspan x="100" y="65">
-          (<!-- HTML_TAG_START -->7<!-- HTML_TAG_END -->)<sup>1</sup></tspan>
-        <tspan x="114" y="60">0</tspan></text></svg></p>
+<p class="w-100 tc"><svg width="135" height="80" font-family="sans-serif" font-weight="300" font-size="24" transform="scale(1.25)"><text x="10" y="20"><tspan id="digit" x="15" y="25">1</tspan><tspan id="digit" x="45" y="25">1</tspan><tspan id="digit" x="75" y="25">4</tspan><tspan id="digit" x="105" y="25">0</tspan></text><text x="10" y="45"><tspan id="bar" x="10" y="45">―</tspan><tspan id="bar" x="40" y="45">―</tspan><tspan id="bar" x="70" y="45">―</tspan><tspan id="bar" x="100" y="45">―</tspan></text><text x="10" y="70" font-size="12"><tspan id="base" x="10" y="65">(7)
+                    <sup>4</sup></tspan>
+                <tspan id="power" x="30" y="60">3</tspan><tspan id="base" x="40" y="65">(7)
+                    <sup>3</sup></tspan>
+                <tspan id="power" x="60" y="60">2</tspan><tspan id="base" x="70" y="65">(7)
+                    <sup>2</sup></tspan>
+                <tspan id="power" x="90" y="60">1</tspan><tspan id="base" x="100" y="65">(7)
+                    <sup>1</sup></tspan>
+                <tspan id="power" x="120" y="60">0</tspan></text></svg></p>
 
 With that out of the way, we can now look at some more interesting bases. In
 general as long as we have some base <!-- HTML_TAG_START --><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">b</span></span></span></span><!-- HTML_TAG_END -->, we use the digits 0 to
@@ -191,23 +164,15 @@ slightly modify this to say we&#39;ll use the digits 0 to <!-- HTML_TAG_START --
 <!-- HTML_TAG_START --><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">b</span></span></span></span><!-- HTML_TAG_END -->, this would let us allow for negative bases with just a small change in
 how the numbers are read.
 
-<p class="w-100 tc"><svg width="135" height="80" font-family="sans-serif" font-weight="300" font-size="24"><text x="10" y="20">
-        <tspan x="15" y="25">1</tspan>
-        <tspan x="45" y="25">1</tspan>
-        <tspan x="75" y="25">1</tspan>
-        <tspan x="105" y="25">0</tspan></text><text x="10" y="45">
-        <tspan x="10" y="45">―</tspan>
-        <tspan x="40" y="45">―</tspan>
-        <tspan x="70" y="45">―</tspan>
-        <tspan x="100" y="45">―</tspan></text><text x="10" y="70" font-size="12"><tspan x="10" y="65">
-          (<!-- HTML_TAG_START -->-2<!-- HTML_TAG_END -->)<sup>4</sup></tspan>
-        <tspan x="30" y="60">3</tspan><tspan x="40" y="65">
-          (<!-- HTML_TAG_START -->-2<!-- HTML_TAG_END -->)<sup>3</sup></tspan>
-        <tspan x="60" y="60">2</tspan><tspan x="70" y="65">
-          (<!-- HTML_TAG_START -->-2<!-- HTML_TAG_END -->)<sup>2</sup></tspan>
-        <tspan x="90" y="60">1</tspan><tspan x="100" y="65">
-          (<!-- HTML_TAG_START -->-2<!-- HTML_TAG_END -->)<sup>1</sup></tspan>
-        <tspan x="120" y="60">0</tspan></text></svg></p>
+<p class="w-100 tc"><svg width="135" height="80" font-family="sans-serif" font-weight="300" font-size="24" transform="scale(1.25)"><text x="10" y="20"><tspan id="digit" x="15" y="25">1</tspan><tspan id="digit" x="45" y="25">1</tspan><tspan id="digit" x="75" y="25">1</tspan><tspan id="digit" x="105" y="25">0</tspan></text><text x="10" y="45"><tspan id="bar" x="10" y="45">―</tspan><tspan id="bar" x="40" y="45">―</tspan><tspan id="bar" x="70" y="45">―</tspan><tspan id="bar" x="100" y="45">―</tspan></text><text x="10" y="70" font-size="12"><tspan id="base" x="10" y="65">(-2)
+                    <sup>4</sup></tspan>
+                <tspan id="power" x="30" y="60">3</tspan><tspan id="base" x="40" y="65">(-2)
+                    <sup>3</sup></tspan>
+                <tspan id="power" x="60" y="60">2</tspan><tspan id="base" x="70" y="65">(-2)
+                    <sup>2</sup></tspan>
+                <tspan id="power" x="90" y="60">1</tspan><tspan id="base" x="100" y="65">(-2)
+                    <sup>1</sup></tspan>
+                <tspan id="power" x="120" y="60">0</tspan></text></svg></p>
 The above number is read as <!-- HTML_TAG_START --><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow></mrow><annotation encoding="application/x-tex">  </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"></span></span><!-- HTML_TAG_END -->. This
 time, we can see we&#39;re not only allowed addition but also subtraction depending
 upon which order-of-magnitude place we&#39;re in. Negative numbers can be taken one
@@ -236,77 +201,45 @@ numbers around the decimal point.
 
     Or,
 
-    <p class="w-100 tc"><svg width="255" height="80" font-family="sans-serif" font-weight="300" font-size="24"><text x="10" y="20">
-        <tspan x="15" y="25">1</tspan>
-        <tspan x="45" y="25">1</tspan>
-        <tspan x="75" y="25">1</tspan>
-        <tspan x="105" y="25">1</tspan>
-        <tspan x="135" y="25">.</tspan>
-        <tspan x="165" y="25">0</tspan>
-        <tspan x="195" y="25">0</tspan>
-        <tspan x="225" y="25">1</tspan></text><text x="10" y="45">
-        <tspan x="10" y="45">―</tspan>
-        <tspan x="40" y="45">―</tspan>
-        <tspan x="70" y="45">―</tspan>
-        <tspan x="100" y="45">―</tspan>
-        <tspan x="130" y="45">―</tspan>
-        <tspan x="160" y="45">―</tspan>
-        <tspan x="190" y="45">―</tspan>
-        <tspan x="220" y="45">―</tspan></text><text x="10" y="70" font-size="12"><tspan x="10" y="65">
-          (<!-- HTML_TAG_START -->2<!-- HTML_TAG_END -->)<sup>8</sup></tspan>
-        <tspan x="24" y="60">4</tspan><tspan x="40" y="65">
-          (<!-- HTML_TAG_START -->2<!-- HTML_TAG_END -->)<sup>7</sup></tspan>
-        <tspan x="54" y="60">3</tspan><tspan x="70" y="65">
-          (<!-- HTML_TAG_START -->2<!-- HTML_TAG_END -->)<sup>6</sup></tspan>
-        <tspan x="84" y="60">2</tspan><tspan x="100" y="65">
-          (<!-- HTML_TAG_START -->2<!-- HTML_TAG_END -->)<sup>5</sup></tspan>
-        <tspan x="114" y="60">1</tspan><tspan x="130" y="65">
-          (<!-- HTML_TAG_START -->2<!-- HTML_TAG_END -->)<sup>4</sup></tspan>
-        <tspan x="144" y="60">0</tspan><tspan x="160" y="65">
-          (<!-- HTML_TAG_START -->2<!-- HTML_TAG_END -->)<sup>3</sup></tspan>
-        <tspan x="174" y="60">-1</tspan><tspan x="190" y="65">
-          (<!-- HTML_TAG_START -->2<!-- HTML_TAG_END -->)<sup>2</sup></tspan>
-        <tspan x="204" y="60">-2</tspan><tspan x="220" y="65">
-          (<!-- HTML_TAG_START -->2<!-- HTML_TAG_END -->)<sup>1</sup></tspan>
-        <tspan x="234" y="60">-3</tspan></text></svg></p>
+    <p class="w-100 tc"><svg width="255" height="80" font-family="sans-serif" font-weight="300" font-size="24" transform="scale(1.25)"><text x="10" y="20"><tspan id="digit" x="15" y="25">1</tspan><tspan id="digit" x="45" y="25">1</tspan><tspan id="digit" x="75" y="25">1</tspan><tspan id="digit" x="105" y="25">1</tspan><tspan id="digit" x="135" y="25">.</tspan><tspan id="digit" x="165" y="25">0</tspan><tspan id="digit" x="195" y="25">0</tspan><tspan id="digit" x="225" y="25">1</tspan></text><text x="10" y="45"><tspan id="bar" x="10" y="45">―</tspan><tspan id="bar" x="40" y="45">―</tspan><tspan id="bar" x="70" y="45">―</tspan><tspan id="bar" x="100" y="45">―</tspan><tspan id="bar" x="130" y="45">―</tspan><tspan id="bar" x="160" y="45">―</tspan><tspan id="bar" x="190" y="45">―</tspan><tspan id="bar" x="220" y="45">―</tspan></text><text x="10" y="70" font-size="12"><tspan id="base" x="10" y="65">(2)
+                    <sup>8</sup></tspan>
+                <tspan id="power" x="30" y="60">7</tspan><tspan id="base" x="40" y="65">(2)
+                    <sup>7</sup></tspan>
+                <tspan id="power" x="60" y="60">6</tspan><tspan id="base" x="70" y="65">(2)
+                    <sup>6</sup></tspan>
+                <tspan id="power" x="90" y="60">5</tspan><tspan id="base" x="100" y="65">(2)
+                    <sup>5</sup></tspan>
+                <tspan id="power" x="120" y="60">4</tspan><tspan id="base" x="130" y="65">(2)
+                    <sup>4</sup></tspan>
+                <tspan id="power" x="150" y="60">3</tspan><tspan id="base" x="160" y="65">(2)
+                    <sup>3</sup></tspan>
+                <tspan id="power" x="180" y="60">2</tspan><tspan id="base" x="190" y="65">(2)
+                    <sup>2</sup></tspan>
+                <tspan id="power" x="210" y="60">1</tspan><tspan id="base" x="220" y="65">(2)
+                    <sup>1</sup></tspan>
+                <tspan id="power" x="240" y="60">0</tspan></text></svg></p>
 
     To obtain the same result, follow the same process with the base <!-- HTML_TAG_START --><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mi>n</mi></mfrac></mrow><annotation encoding="application/x-tex">\frac1n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1901em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8451em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span><!-- HTML_TAG_END -->.
     We can see efficiently, all that needs to be done is to rotate everything
-    around the decimal point
+    around the first digit before the decimal point.
 
-    <p class="w-100 tc"><svg width="255" height="80" font-family="sans-serif" font-weight="300" font-size="24"><text x="10" y="20">
-        <tspan x="15" y="25">1</tspan>
-        <tspan x="45" y="25">0</tspan>
-        <tspan x="75" y="25">0</tspan>
-        <tspan x="105" y="25">1</tspan>
-        <tspan x="135" y="25">.</tspan>
-        <tspan x="165" y="25">1</tspan>
-        <tspan x="195" y="25">1</tspan>
-        <tspan x="225" y="25">1</tspan></text><text x="10" y="45">
-        <tspan x="10" y="45">―</tspan>
-        <tspan x="40" y="45">―</tspan>
-        <tspan x="70" y="45">―</tspan>
-        <tspan x="100" y="45">―</tspan>
-        <tspan x="130" y="45">―</tspan>
-        <tspan x="160" y="45">―</tspan>
-        <tspan x="190" y="45">―</tspan>
-        <tspan x="220" y="45">―</tspan></text><text x="10" y="70" font-size="12"><tspan x="10" y="65">
-          (<!-- HTML_TAG_START -->½<!-- HTML_TAG_END -->)<sup>8</sup></tspan>
-        <tspan x="30" y="60">4</tspan><tspan x="40" y="65">
-          (<!-- HTML_TAG_START -->½<!-- HTML_TAG_END -->)<sup>7</sup></tspan>
-        <tspan x="60" y="60">3</tspan><tspan x="70" y="65">
-          (<!-- HTML_TAG_START -->½<!-- HTML_TAG_END -->)<sup>6</sup></tspan>
-        <tspan x="90" y="60">2</tspan><tspan x="100" y="65">
-          (<!-- HTML_TAG_START -->½<!-- HTML_TAG_END -->)<sup>5</sup></tspan>
-        <tspan x="120" y="60">1</tspan><tspan x="130" y="65">
-          (<!-- HTML_TAG_START -->½<!-- HTML_TAG_END -->)<sup>4</sup></tspan>
-        <tspan x="150" y="60">0</tspan><tspan x="160" y="65">
-          (<!-- HTML_TAG_START -->½<!-- HTML_TAG_END -->)<sup>3</sup></tspan>
-        <tspan x="180" y="60">-1</tspan><tspan x="190" y="65">
-          (<!-- HTML_TAG_START -->½<!-- HTML_TAG_END -->)<sup>2</sup></tspan>
-        <tspan x="210" y="60">-2</tspan><tspan x="220" y="65">
-          (<!-- HTML_TAG_START -->½<!-- HTML_TAG_END -->)<sup>1</sup></tspan>
-        <tspan x="240" y="60">-3</tspan></text></svg></p>
+    <p class="w-100 tc"><svg width="255" height="80" font-family="sans-serif" font-weight="300" font-size="24" transform="scale(1.25)"><text x="10" y="20"><tspan id="digit" x="15" y="25">1</tspan><tspan id="digit" x="45" y="25">0</tspan><tspan id="digit" x="75" y="25">0</tspan><tspan id="digit" x="105" y="25">1</tspan><tspan id="digit" x="135" y="25">.</tspan><tspan id="digit" x="165" y="25">1</tspan><tspan id="digit" x="195" y="25">1</tspan><tspan id="digit" x="225" y="25">1</tspan></text><text x="10" y="45"><tspan id="bar" x="10" y="45">―</tspan><tspan id="bar" x="40" y="45">―</tspan><tspan id="bar" x="70" y="45">―</tspan><tspan id="bar" x="100" y="45">―</tspan><tspan id="bar" x="130" y="45">―</tspan><tspan id="bar" x="160" y="45">―</tspan><tspan id="bar" x="190" y="45">―</tspan><tspan id="bar" x="220" y="45">―</tspan></text><text x="10" y="70" font-size="12"><tspan id="base" x="10" y="65">(½)
+                    <sup>8</sup></tspan>
+                <tspan id="power" x="30" y="60">7</tspan><tspan id="base" x="40" y="65">(½)
+                    <sup>7</sup></tspan>
+                <tspan id="power" x="60" y="60">6</tspan><tspan id="base" x="70" y="65">(½)
+                    <sup>6</sup></tspan>
+                <tspan id="power" x="90" y="60">5</tspan><tspan id="base" x="100" y="65">(½)
+                    <sup>5</sup></tspan>
+                <tspan id="power" x="120" y="60">4</tspan><tspan id="base" x="130" y="65">(½)
+                    <sup>4</sup></tspan>
+                <tspan id="power" x="150" y="60">3</tspan><tspan id="base" x="160" y="65">(½)
+                    <sup>3</sup></tspan>
+                <tspan id="power" x="180" y="60">2</tspan><tspan id="base" x="190" y="65">(½)
+                    <sup>2</sup></tspan>
+                <tspan id="power" x="210" y="60">1</tspan><tspan id="base" x="220" y="65">(½)
+                    <sup>1</sup></tspan>
+                <tspan id="power" x="240" y="60">0</tspan></text></svg></p>
 
     Just as before, the way for base <!-- HTML_TAG_START --><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">b</span></span></span></span><!-- HTML_TAG_END --> we used digits 0 to <!-- HTML_TAG_START --><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∣</mi><mi>b</mi><mi mathvariant="normal">∣</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|b|-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord mathnormal">b</span><span class="mord">∣</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span><!-- HTML_TAG_END -->. For
     base <!-- HTML_TAG_START --><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mi>b</mi></mfrac></mrow><annotation encoding="application/x-tex">\frac1b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1901em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8451em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">b</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span><!-- HTML_TAG_END --> also we can do the same.
@@ -335,7 +268,7 @@ around the decimal point, i.e. 6.6346, which one can trivially verify.
 Th, however, also means that we will be using the same digits 0 to 6 for <!-- HTML_TAG_START --><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>3</mn><mn>7</mn></mfrac></mrow><annotation encoding="application/x-tex">\frac37</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1901em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8451em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">7</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span><!-- HTML_TAG_END -->
 also, which is natural considering that for fractions &lt;1, we don&#39;t have any digits,
 so for a number with a base less than 1, we can just use the same digits as it&#39;s
-inverse and then rotates around the decimal point.
+inverse and then rotates around the first digit.
 
 <h3>Irrational and Transcendental Bases</h3>
 The easiest to start with is an &#39;nth&#39; root base, such as <!-- HTML_TAG_START --><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mroot><mn>5</mn><mn>4</mn></mroot></mrow><annotation encoding="application/x-tex">\sqrt[4]{5}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.04em;vertical-align:-0.1328em;"></span><span class="mord sqrt"><span class="root"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7869em;"><span style="top:-2.9647em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size6 size1 mtight"><span class="mord mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9072em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord">5</span></span></span><span style="top:-2.8672em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.08em" viewBox="0 0 400000 1080" preserveAspectRatio="xMinYMin slice"><path d="M95,702
@@ -352,53 +285,31 @@ c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
 M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1328em;"><span></span></span></span></span></span></span></span></span><!-- HTML_TAG_END -->. This
 should be related to being in base 5. So consider 42 in base 5, or 22 in base 10. We can very easily first write
 
-<p class="w-100 tc"><svg width="285" height="80" font-family="sans-serif" font-weight="300" font-size="24"><text x="10" y="20">
-        <tspan x="15" y="25">4</tspan>
-        <tspan x="45" y="25">0</tspan>
-        <tspan x="75" y="25">0</tspan>
-        <tspan x="105" y="25">0</tspan>
-        <tspan x="135" y="25">2</tspan>
-        <tspan x="165" y="25">0</tspan>
-        <tspan x="195" y="25">0</tspan>
-        <tspan x="225" y="25">0</tspan>
-        <tspan x="255" y="25">0</tspan></text><text x="10" y="45">
-        <tspan x="10" y="45">―</tspan>
-        <tspan x="40" y="45">―</tspan>
-        <tspan x="70" y="45">―</tspan>
-        <tspan x="100" y="45">―</tspan>
-        <tspan x="130" y="45">―</tspan>
-        <tspan x="160" y="45">―</tspan>
-        <tspan x="190" y="45">―</tspan>
-        <tspan x="220" y="45">―</tspan>
-        <tspan x="250" y="45">―</tspan></text><text x="10" y="70" font-size="12"><tspan x="10" y="65">
-          (<!-- HTML_TAG_START -->∜5<!-- HTML_TAG_END -->)<sup>9</sup></tspan>
-        <tspan x="30" y="60">8</tspan><tspan x="40" y="65">
-          (<!-- HTML_TAG_START -->∜5<!-- HTML_TAG_END -->)<sup>8</sup></tspan>
-        <tspan x="60" y="60">7</tspan><tspan x="70" y="65">
-          (<!-- HTML_TAG_START -->∜5<!-- HTML_TAG_END -->)<sup>7</sup></tspan>
-        <tspan x="90" y="60">6</tspan><tspan x="100" y="65">
-          (<!-- HTML_TAG_START -->∜5<!-- HTML_TAG_END -->)<sup>6</sup></tspan>
-        <tspan x="120" y="60">5</tspan><tspan x="130" y="65">
-          (<!-- HTML_TAG_START -->∜5<!-- HTML_TAG_END -->)<sup>5</sup></tspan>
-        <tspan x="150" y="60">4</tspan><tspan x="160" y="65">
-          (<!-- HTML_TAG_START -->∜5<!-- HTML_TAG_END -->)<sup>4</sup></tspan>
-        <tspan x="180" y="60">3</tspan><tspan x="190" y="65">
-          (<!-- HTML_TAG_START -->∜5<!-- HTML_TAG_END -->)<sup>3</sup></tspan>
-        <tspan x="210" y="60">2</tspan><tspan x="220" y="65">
-          (<!-- HTML_TAG_START -->∜5<!-- HTML_TAG_END -->)<sup>2</sup></tspan>
-        <tspan x="240" y="60">1</tspan><tspan x="250" y="65">
-          (<!-- HTML_TAG_START -->∜5<!-- HTML_TAG_END -->)<sup>1</sup></tspan>
-        <tspan x="270" y="60">0</tspan></text></svg></p>
+<p class="w-100 tc"><svg width="285" height="80" font-family="sans-serif" font-weight="300" font-size="24" transform="scale(1.25)"><text x="10" y="20"><tspan id="digit" x="15" y="25">4</tspan><tspan id="digit" x="45" y="25">0</tspan><tspan id="digit" x="75" y="25">0</tspan><tspan id="digit" x="105" y="25">0</tspan><tspan id="digit" x="135" y="25">2</tspan><tspan id="digit" x="165" y="25">0</tspan><tspan id="digit" x="195" y="25">0</tspan><tspan id="digit" x="225" y="25">0</tspan><tspan id="digit" x="255" y="25">0</tspan></text><text x="10" y="45"><tspan id="bar" x="10" y="45">―</tspan><tspan id="bar" x="40" y="45">―</tspan><tspan id="bar" x="70" y="45">―</tspan><tspan id="bar" x="100" y="45">―</tspan><tspan id="bar" x="130" y="45">―</tspan><tspan id="bar" x="160" y="45">―</tspan><tspan id="bar" x="190" y="45">―</tspan><tspan id="bar" x="220" y="45">―</tspan><tspan id="bar" x="250" y="45">―</tspan></text><text x="10" y="70" font-size="12"><tspan id="base" x="10" y="65">(∜5)
+                    <sup>9</sup></tspan>
+                <tspan id="power" x="30" y="60">8</tspan><tspan id="base" x="40" y="65">(∜5)
+                    <sup>8</sup></tspan>
+                <tspan id="power" x="60" y="60">7</tspan><tspan id="base" x="70" y="65">(∜5)
+                    <sup>7</sup></tspan>
+                <tspan id="power" x="90" y="60">6</tspan><tspan id="base" x="100" y="65">(∜5)
+                    <sup>6</sup></tspan>
+                <tspan id="power" x="120" y="60">5</tspan><tspan id="base" x="130" y="65">(∜5)
+                    <sup>5</sup></tspan>
+                <tspan id="power" x="150" y="60">4</tspan><tspan id="base" x="160" y="65">(∜5)
+                    <sup>4</sup></tspan>
+                <tspan id="power" x="180" y="60">3</tspan><tspan id="base" x="190" y="65">(∜5)
+                    <sup>3</sup></tspan>
+                <tspan id="power" x="210" y="60">2</tspan><tspan id="base" x="220" y="65">(∜5)
+                    <sup>2</sup></tspan>
+                <tspan id="power" x="240" y="60">1</tspan><tspan id="base" x="250" y="65">(∜5)
+                    <sup>1</sup></tspan>
+                <tspan id="power" x="270" y="60">0</tspan></text></svg></p>
 
-<p class="w-100 tc"><svg width="75" height="80" font-family="sans-serif" font-weight="300" font-size="24"><text x="10" y="20">
-        <tspan x="15" y="25">4</tspan>
-        <tspan x="45" y="25">2</tspan></text><text x="10" y="45">
-        <tspan x="10" y="45">―</tspan>
-        <tspan x="40" y="45">―</tspan></text><text x="10" y="70" font-size="12"><tspan x="10" y="65">
-          (<!-- HTML_TAG_START -->5<!-- HTML_TAG_END -->)<sup>2</sup></tspan>
-        <tspan x="24" y="60">1</tspan><tspan x="40" y="65">
-          (<!-- HTML_TAG_START -->5<!-- HTML_TAG_END -->)<sup>1</sup></tspan>
-        <tspan x="54" y="60">0</tspan></text></svg></p>
+<p class="w-100 tc"><svg width="75" height="80" font-family="sans-serif" font-weight="300" font-size="24" transform="scale(1.25)"><text x="10" y="20"><tspan id="digit" x="15" y="25">4</tspan><tspan id="digit" x="45" y="25">2</tspan></text><text x="10" y="45"><tspan id="bar" x="10" y="45">―</tspan><tspan id="bar" x="40" y="45">―</tspan></text><text x="10" y="70" font-size="12"><tspan id="base" x="10" y="65">(5)
+                    <sup>2</sup></tspan>
+                <tspan id="power" x="30" y="60">1</tspan><tspan id="base" x="40" y="65">(5)
+                    <sup>1</sup></tspan>
+                <tspan id="power" x="60" y="60">0</tspan></text></svg></p>
 
 We can see both the above representations are functionally equivalent , with
 extra place values added in the &#39;gaps&#39; between the integer place values. It
@@ -491,23 +402,15 @@ c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
 M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1272em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span><!-- HTML_TAG_END -->. So a simple
 number like 1234 would be
 
-<p class="w-100 tc"><svg width="135" height="80" font-family="sans-serif" font-weight="300" font-size="24"><text x="10" y="20">
-        <tspan x="15" y="25">1</tspan>
-        <tspan x="45" y="25">2</tspan>
-        <tspan x="75" y="25">3</tspan>
-        <tspan x="105" y="25">4</tspan></text><text x="10" y="45">
-        <tspan x="10" y="45">―</tspan>
-        <tspan x="40" y="45">―</tspan>
-        <tspan x="70" y="45">―</tspan>
-        <tspan x="100" y="45">―</tspan></text><text x="10" y="70" font-size="12"><tspan x="10" y="65">
-          (<!-- HTML_TAG_START -->ω<!-- HTML_TAG_END -->)<sup>4</sup></tspan>
-        <tspan x="24" y="60">3</tspan><tspan x="40" y="65">
-          (<!-- HTML_TAG_START -->ω<!-- HTML_TAG_END -->)<sup>3</sup></tspan>
-        <tspan x="54" y="60">2</tspan><tspan x="70" y="65">
-          (<!-- HTML_TAG_START -->ω<!-- HTML_TAG_END -->)<sup>2</sup></tspan>
-        <tspan x="84" y="60">1</tspan><tspan x="100" y="65">
-          (<!-- HTML_TAG_START -->ω<!-- HTML_TAG_END -->)<sup>1</sup></tspan>
-        <tspan x="114" y="60">0</tspan></text></svg></p>
+<p class="w-100 tc"><svg width="135" height="80" font-family="sans-serif" font-weight="300" font-size="24" transform="scale(1.25)"><text x="10" y="20"><tspan id="digit" x="15" y="25">1</tspan><tspan id="digit" x="45" y="25">2</tspan><tspan id="digit" x="75" y="25">3</tspan><tspan id="digit" x="105" y="25">4</tspan></text><text x="10" y="45"><tspan id="bar" x="10" y="45">―</tspan><tspan id="bar" x="40" y="45">―</tspan><tspan id="bar" x="70" y="45">―</tspan><tspan id="bar" x="100" y="45">―</tspan></text><text x="10" y="70" font-size="12"><tspan id="base" x="10" y="65">(ω)
+                    <sup>4</sup></tspan>
+                <tspan id="power" x="30" y="60">3</tspan><tspan id="base" x="40" y="65">(ω)
+                    <sup>3</sup></tspan>
+                <tspan id="power" x="60" y="60">2</tspan><tspan id="base" x="70" y="65">(ω)
+                    <sup>2</sup></tspan>
+                <tspan id="power" x="90" y="60">1</tspan><tspan id="base" x="100" y="65">(ω)
+                    <sup>1</sup></tspan>
+                <tspan id="power" x="120" y="60">0</tspan></text></svg></p>
 
 <!-- HTML_TAG_START --><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow></mrow><annotation encoding="application/x-tex">  </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"></span></span><!-- HTML_TAG_END -->
 
@@ -526,14 +429,14 @@ number like 1234 would be
 </button>
 
 
-		<script type="module" data-sveltekit-hydrate="17oi3py">
-			import { start } from "../_app/immutable/start-a9c3141e.js";
+		<script type="module" data-sveltekit-hydrate="5lyimj">
+			import { start } from "../_app/immutable/start-e6dd73cb.js";
 
 			start({
 				env: {},
 				paths: {"assets":"","base":""},
-				target: document.querySelector('[data-sveltekit-hydrate="17oi3py"]').parentNode,
-				version: "1752596648675",
+				target: document.querySelector('[data-sveltekit-hydrate="5lyimj"]').parentNode,
+				version: "1752715263773",
 				hydrate: {
 					node_ids: [0, 2, 5],
 					data: [null,null,null],
