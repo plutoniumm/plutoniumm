@@ -1,4 +1,4 @@
-import{S as Ga,i as Wa,s as Sa,x as In,r as Tn,d as t,H as o,e as F,y as Hn,v as qn,j as r,z as s,f as I,h as T,k as e,A as zn,m as i,n as Bn,t as En,b as Ln,B as Nn,q as Yn,o as Fa}from"../../../../chunks/index-0660b8b2.js";import{_ as $,a as l,M as Ia,D as Ta,d as Vn}from"../../../../chunks/index-c1fdaaf7.js";import{A as Ha}from"../../../../chunks/accord-cbeada10.js";import{L as Cn}from"../../../../chunks/link-1839ff98.js";function qa(y){let f,c,d,u,h,k=$`
+import{S as Ga,i as Wa,s as Sa,x as In,r as Tn,d as t,H as o,e as F,y as Hn,v as qn,j as r,z as s,f as I,h as T,k as e,A as zn,m as i,n as Bn,t as En,b as Ln,B as Nn,q as Yn,o as Fa}from"../../../../chunks/index-8848d1b6.js";import{_ as $,a as l,M as Ia,D as Ta,d as Vn}from"../../../../chunks/index-b763b419.js";import{A as Ha}from"../../../../chunks/accord-3aaf9cf0.js";import{L as Cn}from"../../../../chunks/link-05add979.js";function qa(y){let f,c,d,u,h,k=$`
         f(x) = \\sum_{n=0}^{\\infty} \\frac{f^{(n)}(a)}{n!} (x-a)^n
     `+"",b=$`
         f(x) = \\int_0^{\\infty} \\frac{D^t f(a)}{\\Gamma(t+1)} (x-a)^t dt

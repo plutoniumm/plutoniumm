@@ -1,4 +1,4 @@
-import{S,i as j,s as v,x as h,r as p,H as g,d as u,e as z,y as x,v as w,z as y,j as b,f as D,h as q,k as r,A,m as f,o as H,t as B,b as E,B as T}from"../../../../chunks/index-0660b8b2.js";import{_ as J,a as K,M as L,D as O,d as k}from"../../../../chunks/index-c1fdaaf7.js";function _(C){let e,$,n,d,s,o,m,i,c,l,M=J`
+import{S,i as j,s as v,x as h,r as p,H as g,d as u,e as z,y as x,v as w,z as y,j as b,f as D,h as q,k as r,A,m as f,o as H,t as B,b as E,B as T}from"../../../../chunks/index-8848d1b6.js";import{_ as J,a as K,M as L,D as O,d as k}from"../../../../chunks/index-b763b419.js";function _(C){let e,$,n,d,s,o,m,i,c,l,M=J`
 y = mx + c \\\\
 y = ax^2 + bx + c
 `+"",R=K`E = mc^2`+"";return e=new L({props:{title:"Test Slide",sub:"Recreational Math #00n",desc:"A test slide for math content",date:"21 June 2025"}}),n=new O({props:{generics:{C:["E"],R:["x","y"]},list:[k("c","speed of light","c"),k("m","mass or slope, depending on context")]}}),{c(){h(e.$$.fragment),$=p(),h(n.$$.fragment),d=p(),s=new g(!1),o=u(`
