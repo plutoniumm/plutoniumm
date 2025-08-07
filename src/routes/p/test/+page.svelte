@@ -1,12 +1,10 @@
 <script lang="ts">
     // nodeploy
-    import Accordion from "$cpt/accord.svelte";
+    import { Accordion, Link, Meta, Definations, define } from "$cpt";
     import { _, __ } from "$lib";
-    import Link from "$cpt/link.svelte";
-    import Meta from "$cpt/meta.svelte";
-    import * as MJS from "mathjs";
-    import M from "$lib/math";
-    const { Map, Rng, Cplx } = M;
+    // import * as MJS from "mathjs";
+    // import M from "$lib/math";
+    // const { Map, Rng, Cplx } = M;
 </script>
 
 <Meta
@@ -15,6 +13,17 @@
     desc="A test slide for math content"
     date="21 June 2025"
 ></Meta>
+
+<Definations
+    generics={{
+        C: ["E"],
+        R: ["x", "y"],
+    }}
+    list={[
+        define("c", "speed of light", "c"),
+        define("m", "mass or slope, depending on context"),
+    ]}
+/>
 
 {__`
 y = mx + c \\

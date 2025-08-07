@@ -4,10 +4,11 @@
 </script>
 
 <Meta
-    title="Fractional, complex, and fractional complex derivatives"
+    title="Fractional, complex, and complex fractional derivatives"
     sub="Recreational Math #003"
     desc="Non-integer and other continuous derivatives."
     date="29 June 2025"
+    wallpaper="aFrlaatvtx"
 ></Meta>
 
 <Definations

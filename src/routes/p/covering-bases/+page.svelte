@@ -45,6 +45,7 @@
     sub="Recreational Math #002"
     desc="Bases other than positive integers"
     date="29 May 2025"
+    wallpaper="naohoits4g"
 ></Meta>
 
 <Definations

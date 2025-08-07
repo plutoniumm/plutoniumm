@@ -27,7 +27,7 @@
         const w = offscreen.width,
             h = offscreen.height;
 
-        const octx = offscreen.getContext("2d");
+        const octx = offscreen.getContext("2d", { willReadFrequently: true });
         octx.drawImage(video, 0, 0, w, h);
         const frame = octx.getImageData(0, 0, w, h);
         const output = octx.createImageData(w, h);
@@ -61,7 +61,7 @@
     function run() {
         if (started) return;
         started = true;
-        ctx = canvasEl.getContext("2d");
+        ctx = canvasEl.getContext("2d", { willReadFrequently: true });
         offscreen = new OffscreenCanvas(640, 480);
         navigator.mediaDevices.getUserMedia({ video: true }).then((stream) => {
             message = "Start";
@@ -100,7 +100,8 @@
 </form>
 
 <canvas class="d-b rx10 w-100" bind:this={canvasEl}></canvas>
-<video class="d-n" bind:this={video} autoplay playsinline></video>
+<!-- svelte-ignore a11y-media-has-caption -->
+<video class="d-n" bind:this={video} autoplay></video>
 
 <style>
     .form {

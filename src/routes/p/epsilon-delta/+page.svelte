@@ -9,10 +9,14 @@
     sub="Recreational Math #004"
     desc="Different ways to redefine the derivative"
     date="13 July 2025"
-    ignores="x, y, df, f, a, b"
 ></Meta>
 
 <Definations
+    generics={{
+        C: ["E", "ih"],
+        R: ["x", "y", "a", "b"],
+        fXX: ["f"],
+    }}
     list={[
         define(
             "ℑ",
@@ -35,7 +39,7 @@
 We often define the fundamental derivative as:
 
 {__`
-    \frac{df}{dx} = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h}
+    \frac{d}{dx} f = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h}
 `}
 
 which is a limit of the difference quotient as the increment
@@ -73,7 +77,7 @@ for {_`h`}. We can then also give it an imaginary value, and replace {_`h`} with
 {_`ih`}, and get:
 
 {__`
-\frac{df}{dx} = \lim_{h \to 0} \frac{f(x + ih) - f(x)}{ih}
+\frac{d}{dx} f = \lim_{h \to 0} \frac{f(x + ih) - f(x)}{ih}
 `}
 
 which implies, applying the Taylor series expansion, that:

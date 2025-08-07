@@ -1,9 +1,4 @@
 <script>
-    import { onMount } from "svelte";
-
-    onMount(() => {
-        document.body.classList.add("light");
-    });
 </script>
 
 <svelte:head>
