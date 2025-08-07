@@ -12,16 +12,6 @@ body {
     z-index: -1;
 }
 
-body.light {
-    background: #eee !important;
-    color: #222 !important;
-}
-
-body.light::before {
-    filter: invert(1);
-    opacity: 0.2 !important;
-}
-
 .noise {
     position: relative;
 }
