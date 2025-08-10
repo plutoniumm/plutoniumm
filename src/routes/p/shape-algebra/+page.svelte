@@ -1,5 +1,5 @@
 <script>
-    import { Image, Link, Meta, Scatter, Definations, define } from "$cpt";
+    import { Image, Refs, Meta, Scatter, Definations, define } from "$cpt";
     import { _, __, Dataset } from "$lib";
     import LR from "$cpt/LR.svelte";
     import M from "$lib/math";
@@ -400,14 +400,14 @@ should work. As an example, I've shown {_`z^2 + 2`}, try something like {_`\sin(
 
 <Frame />
 
-<h4>References</h4>
-<ul>
-    <li>
-        <Link href="https://www.youtube.com/watch?v=iLkOBkWUDkM">
-            Using shapes as exponents (video)
-        </Link>
-    </li>
-</ul>
+<Refs
+    list={[
+        [
+            "Using shapes as exponents (video)",
+            "https://www.youtube.com/watch?v=iLkOBkWUDkM",
+        ],
+    ]}
+></Refs>
 
 <style>
     text {

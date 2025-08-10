@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { Accordion, Link, Meta, Definations, define } from "$cpt";
+    import { Accordion, Refs, Meta, Definations, define } from "$cpt";
     import { _, __ } from "$lib";
 </script>
 
@@ -21,7 +21,6 @@
         define("D", "Derivative operator"),
         define("k", "Variable positive integer"),
         define("α", "Variable real"),
-        define("Γ", "Gamma function", "wikipedia"),
     ]}
 />
 
@@ -109,18 +108,12 @@ Absolute insanity.
     `}
 </Accordion>
 
-<h4>References</h4>
-<ul>
-    <li>
-        <Link
-            href="https://www.youtube.com/playlist?list=PLJb1qAQIrmmB_ma3YrfuOXTPOQawokYV_"
-        >
-            Fractional Derivatives (playlist)
-        </Link>
-    </li>
-    <li>
-        <Link href="https://en.m.wikipedia.org/wiki/Gamma_function">
-            Gamma Function
-        </Link>
-    </li>
-</ul>
+<Refs
+    list={[
+        [
+            "Fractional Derivatives (playlist)",
+            "https://www.youtube.com/playlist?list=PLJb1qAQIrmmB_ma3YrfuOXTPOQawokYV_",
+        ],
+        ["Gamma Function", "https://en.m.wikipedia.org/wiki/Gamma_function"],
+    ]}
+></Refs>

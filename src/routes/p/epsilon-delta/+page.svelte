@@ -1,7 +1,7 @@
 <script>
     // nodeploy
     import { _, __, Dataset } from "$lib";
-    import { Image, Link, Meta, Definations, define } from "$cpt";
+    import { Image, Refs, Meta, Definations, define } from "$cpt";
 </script>
 
 <Meta
@@ -123,10 +123,7 @@ f'(x) = \frac{f(x + \varepsilon) - f(x)}{\varepsilon}
 
 Now isn't that neat. Automatic differentiation.
 
-<h4>References</h4>
-<ul>
-    <li></li>
-</ul>
+<Refs list={[]}></Refs>
 
 <style>
 </style>

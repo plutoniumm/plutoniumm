@@ -44,4 +44,13 @@ posts = posts.reduce((acc, post) => {
     return acc;
 }, {});
 
+try {
+    fs.writeFileSync(
+        "./static/data/posts.json",
+        JSON.stringify(Object.values(posts).flat(1)),
+    );
+} finally {
+    console.log("Posts data generated successfully.");
+}
+
 export const data = posts;

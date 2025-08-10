@@ -30,8 +30,3 @@
         {/if}
     {/each}
 </article>
-
-<style>
-    article {
-    }
-</style>

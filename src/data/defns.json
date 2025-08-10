@@ -46,5 +46,11 @@
         "tex": "\\omega",
         "type": "wikipedia",
         "content": "Root_of_unity"
+    },
+    {
+        "key": "Γ",
+        "tex": "\\Gamma",
+        "type": "wikipedia",
+        "content": "Gamma_function"
     }
 ]

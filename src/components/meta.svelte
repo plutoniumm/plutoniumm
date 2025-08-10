@@ -3,17 +3,26 @@
         title,
         sub,
         desc,
-        date;
+        date,
+        wallpaper;
 </script>
 
+<div class="tools"></div>
 <svelte:head>
     <title>{title} | manav.ch</title>
     <meta name="description" content={desc} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://manav.ch/" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={desc} />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={desc} />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content={wallpaper} />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://manav.ch/" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={desc} />
+    <meta property="twitter:image" content={wallpaper} />
 </svelte:head>
 
 <h1>{title}</h1>

@@ -1,4 +1,22 @@
 <script>
+    import { onMount } from "svelte";
+
+    let progress = 0;
+    let plen = 575;
+    onMount(() => {
+        const proceed = () => {
+            const scrollH =
+                document.documentElement.scrollHeight - 2 * window.innerHeight;
+
+            progress = scrollH ? (window.scrollY / scrollH) * 100 : 0;
+            progress = Math.min(Math.max(progress, 0), 100);
+        };
+
+        window.addEventListener("scroll", proceed);
+        proceed();
+
+        return () => window.removeEventListener("scroll", proceed);
+    });
 </script>
 
 <svelte:head>
@@ -27,6 +45,10 @@
         <path
             d="
     m 90.68 12.56 c 46.464 -5.808 87.12 29.04 101.64 72.6 s -14.52 87.12 -58.08 101.64 s -71.148 1.452 -91.476 -10.164 C -10.96 108.392 3.56 41.6 61.64 19.82 c 14.52 -4.356 21.78 -5.808 29.04 -7.26 z"
+            stroke-width="10"
+            stroke-dasharray={plen}
+            stroke-dashoffset={plen - (progress / 100) * plen}
+            stroke-linecap="round"
         />
         <path
             d="M 59 75 Q 77 65 99 47 Q 123 61 139 75 M 99 47 Q 101 85 99 155"

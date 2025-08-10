@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { Accordion, Link, Meta, Definations, define } from "$cpt";
+    import { Accordion, Refs, Meta, Definations, define } from "$cpt";
     import Bars from "./bars.svelte";
     import { _, __ } from "$lib";
 
@@ -209,15 +209,15 @@ So now, if we were to create a new number 421 in base {_`\sqrt[4]{5}`}, it's
 value would be {@html expand_str(
     [1, 2, 4, 2, 1],
     Math.pow(5, 0.25),
-    "= 24.622 \Leftrightarrow [6 + 2 \times 5^{\frac34} + 4 \times 5^{\frac24} + 2 \times 5^{\frac14}]",
-    "\sqrt[4]{5}",
+    "= 24.622 Leftrightarrow [6 + 2 \times 5^{\frac34} + 4 \times 5^{\frac24} + 2 \times 5^{\frac14}]",
+    "sqrt[4]{5}",
 )}. Or as an exercise you can verify that converting {_`\sqrt{5}`} to ten for 1234,
 is {_`[1234]_{\sqrt5} = [14 + 8 \sqrt5]_{10}`}. Finally, we can use these ideas
 to use the base {_`\pi`}. Then 123 in base three would be {@html expand_str(
     [1, 2, 3],
     3.1415926535,
-    "\approx 19.15",
-    "\pi",
+    "approx 19.15",
+    "pi",
 )}.
 
 <h3>Removing Constraints</h3>
@@ -243,15 +243,15 @@ number like 1234 would be
 {@html expand_str(
     [1, 2, 3, 4],
     [-0.5, Math.sqrt(3) / 2],
-    "= 5 + 3 \omega + 2\omega^2.",
+    "= 5 + 3 omega + 2omega^2.",
     "ω",
 )}
 
-<h4>References</h4>
-<ul>
-    <li>
-        <Link href="https://www.youtube.com/watch?v=PQAhC1M93C8">
-            Can any Number be a Base? (video)
-        </Link>
-    </li>
-</ul>
+<Refs
+    list={[
+        [
+            "Can any Number be a Base? (video)",
+            "https://www.youtube.com/watch?v=PQAhC1M93C8",
+        ],
+    ]}
+></Refs>

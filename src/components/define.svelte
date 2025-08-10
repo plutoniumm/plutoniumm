@@ -66,10 +66,10 @@
     });
 </script>
 
-<div class="generics rx10 p10">
+<div class="generics p10">
     {#if Object.keys(generics).length}
-        Generic Variables: 'commonly used' notation in context. For the other
-        ones click on any coloured variable to define it.
+        Generic Variables: 'commonly used' notation which I will not otherwise
+        define. For the other ones click on any coloured variable to define it.
         <br />
         <ul>
             {#each Object.entries(generics) as [key, values]}
@@ -93,7 +93,9 @@
 
 <style>
     .generics {
-        background: #fff;
+        background: #fff0;
+        border-top: 2px dotted #8884;
+        border-bottom: 2px solid #8884;
         width: calc(100% - 20px);
         margin: 10px 0;
     }

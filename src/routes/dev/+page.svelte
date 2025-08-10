@@ -25,9 +25,7 @@
         const url = new URL(window.location.href);
         const index = parseInt(url.searchParams.get("index") || "0");
 
-        posts = await fetch("/p")
-            .then((r) => r.json())
-            .then((p) => Object.values(p).flat(1));
+        posts = await fetch("/data/posts.json").then((r) => r.json());
 
         text = posts[index].title;
 

@@ -1,28 +1,28 @@
 {
-  "type": "module",
-  "scripts": {
-    "dev": "vite dev",
-    "prebuild": "rm -rf build .svelte*",
-    "build": "vite build",
-    "deploy": "npx gh-pages -d build",
-    "direct": "npm run build && npm run deploy",
-    "postdeploy": "rm -rf build .svelte*"
-  },
-  "devDependencies": {
-    "sass": "1.35.1",
-    "svelte": "3.55.1",
-    "svelte-preprocess": "4.10.6"
-  },
-  "dependencies": {
-    "@rollup/plugin-terser": "^0.4.4",
-    "@sveltejs/adapter-static": "1.0.5",
-    "@sveltejs/kit": "1.2.2",
-    "chart.js": "^4.4.9",
-    "katex": "^0.16.22",
-    "mathjs": "^14.4.0",
-    "mdsvex": "^0.11.0",
-    "svelte-chartjs": "^3.1.5",
-    "typescript": "5.0.4",
-    "vite": "4.0.4"
-  }
+    "type": "module",
+    "scripts": {
+        "dev": "vite dev",
+        "prebuild": "rm -rf build .svelte*",
+        "build": "vite build",
+        "deploy": "npx gh-pages -d build",
+        "direct": "npm run build && npm run deploy",
+        "postdeploy": "rm -rf build .svelte*"
+    },
+    "devDependencies": {
+        "sass": "1.35.1",
+        "svelte": "3.55.1",
+        "svelte-preprocess": "4.10.6"
+    },
+    "dependencies": {
+        "@rollup/plugin-terser": "^0.4.4",
+        "@sveltejs/adapter-static": "1.0.5",
+        "@sveltejs/kit": "1.2.2",
+        "chart.js": "^4.4.9",
+        "katex": "^0.16.22",
+        "marked": "^16.1.2",
+        "mathjs": "^14.4.0",
+        "svelte-chartjs": "^3.1.5",
+        "typescript": "5.0.4",
+        "vite": "4.0.4"
+    }
 }
