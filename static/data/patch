@@ -1,42 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-LOGO_PATH="/app/client/public/logo.svg"
-STYLE_PATH="/app/client/public/style.css"
-INDEX_HTML="/app/client/index.html"
-STYLESHEET_SNIPPET='<link rel="stylesheet" href="/style.css">'
+STYLE_PATH="/app/client/assets/style.css";
+INDEX_HTML="/app/client/index.html";
+STYLESHEET_SNIPPET='<link rel="stylesheet" href="/style.css">';
 
-write_logo() {
-  local tmp
-  tmp=$(mktemp)
-  cat >"${tmp}" <<'EOF'
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -10 722 722"
-font-family="sans-serif" font-weight="100" text-anchor="middle" dominant-baseline="middle" font-size="125" fill="url(#x)">
-  <defs>
-    <linearGradient id="x" x1="0" y1="50%" x2="100%" y2="50%">
-      <stop offset="0" stop-color="#fb4"></stop>
-      <stop offset="0.5" stop-color="#f68"></stop>
-      <stop offset="1" stop-color="#64a"></stop>
-    </linearGradient>
-  </defs>
-  <path d="M359 10a47 46 0 0 0-18 5L97 131a47 46 0 0 0-26 32L11 425a47 46 0 0 0 7 36 47 46 0 0 0 2 3l169 211a47 46 0 0 0 37 17h271a47 46 0 0 0 37-18l169-210a47 46 0 0 0 9-39l-61-262a47 46 0 0 0-25-32L382 15a47 46 0 0 0-23-5z"/>
-  <path fill="#fff" stroke="#fff" stroke-width=".3" d="M368 274c8 0 14 7 14 16v4l-2 14c-1 11-2 19-1 27 0 4 3 5 5 7v7c46 4 90 25 121 58l6-4c2 1 6 1 9-1 6-4 12-10 19-17l10-11 3-2c7-6 17-5 22 1s4 16-3 22l-4 2-12 7c-9 6-16 10-22 16-2 3-2 5-2 8l-6 5a189 189 0 0131 131l6 2c1 1 3 5 6 6 8 3 16 4 26 5l14 1 5 1c8 2 14 10 12 18-2 7-10 12-19 10l-4-1-13-5c-10-3-18-6-26-7-4-1-6 1-8 3l-6-1c-14 44-44 82-84 106l2 6c-1 2-2 4-1 8 3 8 7 15 13 23l8 12 2 4c3 8 1 17-7 21-7 3-16 0-20-8l-2-4-4-14-10-24c-2-3-5-4-7-5l-4-5a189 189 0 01-135-1l-3 6-6 3c-5 7-8 17-11 27l-5 13-2 4c-3 8-12 12-20 8-7-3-10-13-6-21l2-4 8-11 13-24c1-3 0-6-1-8l2-7c-39-23-69-60-84-105l-6 1-9-3c-8 1-16 4-25 8l-13 5h-4v1h-1c-8 1-17-3-19-11-1-8 4-16 13-18l4-1 14-1 26-4c3-1 5-5 7-7l6-2c-7-47 4-94 30-131l-5-5c0-1-1-6-3-8l-22-15-12-7-3-3c-7-6-9-15-4-22 3-3 7-5 12-5 3 0 7 2 10 4l3 3 10 10 20 18c3 2 6 1 8 1l6 3a190 190 0 01122-58v-7c2-1 4-4 5-7l-2-27-2-14v-4c0-9 7-16 15-16Z" color="#000" font-family="Sans" font-weight="400" transform="translate(-6, -175)"/>
-  <g stroke-width="3" stroke="url(#x)" stroke-linejoin="round" transform="scale(2.2) translate(-197, -185)">
-    <text x="50%" y="50%">M</text>
-    <text transform="scale(1.11,1)" x="45.0%" y="50%">Λ</text>
-    <text x="50%" y="48.2%">-</text>
-  </g>
-</svg>
-EOF
-  if [[ ! -f "${LOGO_PATH}" ]] || ! diff -q "${tmp}" "${LOGO_PATH}" >/dev/null 2>&1; then
-    mkdir -p "$(dirname "${LOGO_PATH}")"
-    mv "${tmp}" "${LOGO_PATH}"
-    echo "Updated logo.svg"
-  else
-    rm -f "${tmp}"
-    echo "logo.svg unchanged"
-  fi
-}
+ls assets;
 
 write_style() {
   local tmp
@@ -74,7 +43,6 @@ ensure_link() {
 }
 
 main() {
-  write_logo
   write_style
   ensure_link
 }
