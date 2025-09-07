@@ -17,8 +17,7 @@ EOF
     mkdir -p "$(dirname "${STYLE_PATH}")"
     mv "${tmp}" "${STYLE_PATH}"
     echo "Updated style.css"
-  e
-  e
+  else
     rm -f "${tmp}"
     echo "style.css unchanged"
   fi
