@@ -25,10 +25,8 @@ EOF
 }
 
 ensure_link() {
-  # Insert stylesheet link before </head> if missing
   if [[ -f "${INDEX_HTML}" ]]; then
     if ! grep -Fq "${STYLESHEET_SNIPPET}" "${INDEX_HTML}"; then
-      # Use a temp file to avoid partial edits
       local tmp
       tmp=$(mktemp)
       awk -v snippet="  ${STYLESHEET_SNIPPET}" 'BEGIN{added=0} /<\/head>/{if(!added){print snippet; added=1} } {print}' "${INDEX_HTML}" >"${tmp}" && mv "${tmp}" "${INDEX_HTML}"
