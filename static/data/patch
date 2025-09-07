@@ -1,46 +1,16 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-STYLE_PATH="/app/client/assets/style.css";
-INDEX_HTML="/app/client/dist/index.html";
-STYLESHEET_SNIPPET='<link rel="stylesheet" href="/style.css">';
-
-write_style() {
-  local tmp
-  tmp=$(mktemp)
-  cat >"${tmp}" <<'EOF'
-* {
-  --surface-submit: linear-gradient(90deg, #fb4, #f68, #64a);
-}
-EOF
-  if [[ ! -f "${STYLE_PATH}" ]] || ! diff -q "${tmp}" "${STYLE_PATH}" >/dev/null 2>&1; then
-    mkdir -p "$(dirname "${STYLE_PATH}")"
-    mv "${tmp}" "${STYLE_PATH}"
-    echo "Updated style.css"
-  else
-    rm -f "${tmp}"
-    echo "style.css unchanged"
-  fi
-}
+INDEX_HTML="/app/client/dist/index.html"
+STYLESHEET_SNIPPET='<link rel="stylesheet" href="/assets/patch.css">'
 
 ensure_link() {
   if [[ -f "${INDEX_HTML}" ]]; then
-    if ! grep -Fq "${STYLESHEET_SNIPPET}" "${INDEX_HTML}"; then
-      local tmp
-      tmp=$(mktemp)
-      awk -v snippet="  ${STYLESHEET_SNIPPET}" 'BEGIN{added=0} /<\/head>/{if(!added){print snippet; added=1} } {print}' "${INDEX_HTML}" >"${tmp}" && mv "${tmp}" "${INDEX_HTML}"
-      echo "Inserted stylesheet link into index.html"
-    else
-      echo "Stylesheet link already present"
-    fi
+    sed -i'' -e "s#</head>#  ${STYLESHEET_SNIPPET}\n</head>#" "${INDEX_HTML}"
+    echo "Inserted stylesheet link into index.html"
   else
     echo "Warning: ${INDEX_HTML} not found"
   fi
 }
 
-main() {
-  write_style
-  ensure_link
-}
-
-main "$@"
+ensure_link
