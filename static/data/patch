@@ -5,7 +5,7 @@ STYLE_PATH="/app/client/assets/style.css";
 INDEX_HTML="/app/client/index.html";
 STYLESHEET_SNIPPET='<link rel="stylesheet" href="/style.css">';
 
-ls assets;
+ls /app/client;
 
 write_style() {
   local tmp
