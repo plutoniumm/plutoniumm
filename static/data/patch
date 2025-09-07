@@ -2,10 +2,11 @@
 set -euo pipefail
 
 STYLE_PATH="/app/client/assets/style.css";
-INDEX_HTML="/app/client/index.html";
+INDEX_HTML="/app/client/dist/index.html";
 STYLESHEET_SNIPPET='<link rel="stylesheet" href="/style.css">';
 
 ls /app/client;
+
 
 write_style() {
   local tmp
