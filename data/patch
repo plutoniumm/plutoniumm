@@ -1,6 +1,16 @@
 #!/usr/bin/env bash
+# Refactored into idempotent functions so partial execution (e.g., network/container interruption) is recoverable.
+set -euo pipefail
 
-cat > /app/client/public/logo.svg <<'EOF'
+LOGO_PATH="/app/client/public/logo.svg"
+STYLE_PATH="/app/client/public/style.css"
+INDEX_HTML="/app/client/index.html"
+STYLESHEET_SNIPPET='<link rel="stylesheet" href="/style.css">'
+
+write_logo() {
+  local tmp
+  tmp=$(mktemp)
+  cat >"${tmp}" <<'EOF'
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -10 722 722"
 font-family="sans-serif" font-weight="100" text-anchor="middle" dominant-baseline="middle" font-size="125" fill="url(#x)">
   <defs>
@@ -19,11 +29,55 @@ font-family="sans-serif" font-weight="100" text-anchor="middle" dominant-baselin
   </g>
 </svg>
 EOF
+  if [[ ! -f "${LOGO_PATH}" ]] || ! diff -q "${tmp}" "${LOGO_PATH}" >/dev/null 2>&1; then
+    mkdir -p "$(dirname "${LOGO_PATH}")"
+    mv "${tmp}" "${LOGO_PATH}"
+    echo "Updated logo.svg"
+  else
+    rm -f "${tmp}"
+    echo "logo.svg unchanged"
+  fi
+}
 
-cat > /app/client/public/style.css <<'EOF'
+write_style() {
+  local tmp
+  tmp=$(mktemp)
+  cat >"${tmp}" <<'EOF'
 * {
   --surface-submit: linear-gradient(90deg, #fb4, #f68, #64a);
 }
 EOF
+  if [[ ! -f "${STYLE_PATH}" ]] || ! diff -q "${tmp}" "${STYLE_PATH}" >/dev/null 2>&1; then
+    mkdir -p "$(dirname "${STYLE_PATH}")"
+    mv "${tmp}" "${STYLE_PATH}"
+    echo "Updated style.css"
+  else
+    rm -f "${tmp}"
+    echo "style.css unchanged"
+  fi
+}
 
-sed -i '/<\/head>/i \  <link rel="stylesheet" href="/style.css">' /app/client/index.html;
+ensure_link() {
+  # Insert stylesheet link before </head> if missing
+  if [[ -f "${INDEX_HTML}" ]]; then
+    if ! grep -Fq "${STYLESHEET_SNIPPET}" "${INDEX_HTML}"; then
+      # Use a temp file to avoid partial edits
+      local tmp
+      tmp=$(mktemp)
+      awk -v snippet="  ${STYLESHEET_SNIPPET}" 'BEGIN{added=0} /<\/head>/{if(!added){print snippet; added=1} } {print}' "${INDEX_HTML}" >"${tmp}" && mv "${tmp}" "${INDEX_HTML}"
+      echo "Inserted stylesheet link into index.html"
+    else
+      echo "Stylesheet link already present"
+    fi
+  else
+    echo "Warning: ${INDEX_HTML} not found"
+  fi
+}
+
+main() {
+  write_logo
+  write_style
+  ensure_link
+}
+
+main "$@"
