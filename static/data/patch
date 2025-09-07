@@ -5,9 +5,6 @@ STYLE_PATH="/app/client/assets/style.css";
 INDEX_HTML="/app/client/dist/index.html";
 STYLESHEET_SNIPPET='<link rel="stylesheet" href="/style.css">';
 
-ls /app/client;
-
-
 write_style() {
   local tmp
   tmp=$(mktemp)
@@ -20,7 +17,8 @@ EOF
     mkdir -p "$(dirname "${STYLE_PATH}")"
     mv "${tmp}" "${STYLE_PATH}"
     echo "Updated style.css"
-  else
+  e
+  e
     rm -f "${tmp}"
     echo "style.css unchanged"
   fi
