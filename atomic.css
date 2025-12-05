@@ -7,6 +7,18 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
+@property --P {
+  syntax: "<length> | <percentage>";
+  inherits: false;
+  initial-value: 0px;
+}
+
+@property --M {
+  syntax: "<length> | <percentage>";
+  inherits: false;
+  initial-value: 0px;
+}
+
 a,
 a:visited,
 a:hover {
@@ -47,13 +59,6 @@ textarea:focus {
   outline: none;
 }
 
-* .bg {
-  --bg: #fff;
-  --tx: inherit;
-  background: var(--bg) !important;
-  color: var(--tx) !important;
-}
-
 .blur {
   --bg: #222 8;
   --sz: 32px;
@@ -67,24 +72,32 @@ textarea:focus {
   margin: 0;
   padding: 0;
   border-radius: 0;
+  --P: 0px;
+  --M: 0px;
 }
 
 .rpm-5 {
   margin: 5px;
   padding: 5px;
   border-radius: 5px;
+  --P: 5px;
+  --M: 5px;
 }
 
 .rpm-10 {
   margin: 10px;
   padding: 10px;
   border-radius: 10px;
+  --P: 10px;
+  --M: 10px;
 }
 
 .rpm-20 {
   margin: 20px;
   padding: 20px;
   border-radius: 20px;
+  --P: 20px;
+  --M: 20px;
 }
 
 .o-0 {
@@ -121,43 +134,53 @@ textarea:focus {
 }
 
 .p0 {
-  padding: 0 !important;
+  padding: 0;
+  --P: 0px;
 }
 
 .p2 {
-  padding: 2px !important;
+  padding: 2px;
+  --P: 2px;
 }
 
 .p5 {
-  padding: 5px !important;
+  padding: 5px;
+  --P: 5px;
 }
 
 .p10 {
-  padding: 10px !important;
+  padding: 10px;
+  --P: 10px;
 }
 
 .p20 {
-  padding: 20px !important;
+  padding: 20px;
+  --P: 20px;
 }
 
 .m0 {
   margin: 0;
+  --M: 0px;
 }
 
 .m2 {
   margin: 2px;
+  --M: 2px;
 }
 
 .m5 {
   margin: 5px;
+  --M: 5px;
 }
 
 .m10 {
   margin: 10px;
+  --M: 10px;
 }
 
 .m20 {
   margin: 20px;
+  --M: 20px;
 }
 
 .mx-a {
@@ -251,10 +274,6 @@ textarea:focus {
   justify-content: space-around;
 }
 
-.w-auto {
-  width: auto;
-}
-
 .w-100 {
   width: 100%;
 }
@@ -271,16 +290,20 @@ textarea:focus {
   width: 25%;
 }
 
-.w-20 {
-  width: 20%;
+.sw-100 {
+  width: calc(100% - 2 * var(--M) - 2 * var(--P));
 }
 
-.w-0 {
-  width: 0;
+.sw-50 {
+  width: calc(50% - 2 * var(--M) - 2 * var(--P));
 }
 
-.h-auto {
-  height: auto;
+.sw-33 {
+  width: calc(33.33% - 2 * var(--M) - 2 * var(--P));
+}
+
+.sw-25 {
+  width: calc(25% - 2 * var(--M) - 2 * var(--P));
 }
 
 .h-100 {
@@ -299,12 +322,20 @@ textarea:focus {
   height: 25%;
 }
 
-.h-20 {
-  height: 20%;
+.sh-100 {
+  height: calc(100% - 2 * var(--M) - 2 * var(--P));
 }
 
-.h-0 {
-  height: 0;
+.sh-50 {
+  height: calc(50% - 2 * var(--M) - 2 * var(--P));
+}
+
+.sh-33 {
+  height: calc(33.33% - 2 * var(--M) - 2 * var(--P));
+}
+
+.sh-25 {
+  height: calc(25% - 2 * var(--M) - 2 * var(--P));
 }
 
 .f {
@@ -339,6 +370,10 @@ textarea:focus {
 
 .d-ib {
   display: inline-block;
+}
+
+.d-if {
+  display: inline-flex;
 }
 
 .d-i {
@@ -376,7 +411,6 @@ textarea:focus {
 .flow-h {
   overflow: hidden;
 }
-
 
 .ptr {
   cursor: pointer;

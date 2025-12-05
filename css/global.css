@@ -10,6 +10,13 @@ body {
     overflow-y: scroll !important;
     width: 100vw;
     z-index: -1;
+
+    transition: color 0.2s ease-in-out, background 0.2s ease-in-out;
+}
+
+body.light {
+    background: #eee;
+    color: #000;
 }
 
 .noise {
