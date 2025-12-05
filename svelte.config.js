@@ -3,8 +3,8 @@ import statix from "@sveltejs/adapter-static";
 
 /** @type {import('@sveltejs/kit').Config} */
 export default {
-    extensions: [".svelte"],
-    preprocess: [sveltePreprocess({})],
+    extensions: [ ".svelte" ],
+    preprocess: [ sveltePreprocess( {} ) ],
     kit: {
         adapter: statix(),
         prerender: {
@@ -13,6 +13,7 @@ export default {
         alias: {
             $data: "/src/data",
             $cpt: "/src/components",
+            $math: "/math/",
             "@": "/env.js",
         },
     },

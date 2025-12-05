@@ -1,6 +1,6 @@
 import fs from "fs";
 
-function parseText(text: string) {
+function parseText (text: string) {
     //   <Meta
     //   title="The square root of a Square"
     //   sub="Recreational Math #001"

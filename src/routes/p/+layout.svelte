@@ -3,19 +3,24 @@
 
     let progress = 0;
     let plen = 575;
+
+    const proceed = () => {
+        const scrollH =
+            document.documentElement.scrollHeight - 2 * window.innerHeight;
+
+        progress = scrollH ? (window.scrollY / scrollH) * 100 : 0;
+        progress = Math.min(Math.max(progress, 0), 100);
+    };
+
     onMount(() => {
-        const proceed = () => {
-            const scrollH =
-                document.documentElement.scrollHeight - 2 * window.innerHeight;
-
-            progress = scrollH ? (window.scrollY / scrollH) * 100 : 0;
-            progress = Math.min(Math.max(progress, 0), 100);
-        };
-
+        document.body.classList.add("light");
         window.addEventListener("scroll", proceed);
         proceed();
 
-        return () => window.removeEventListener("scroll", proceed);
+        return () => {
+            document.body.classList.remove("light");
+            window.removeEventListener("scroll", proceed);
+        };
     });
 </script>
 

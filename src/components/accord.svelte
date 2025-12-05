@@ -2,8 +2,8 @@
   export let title = "";
 </script>
 
-<details class="p20 rx10">
-  <summary class="p-rel ptr p10"> {title}</summary>
+<details class="p20 rx10 sw-100">
+  <summary class="p-rel ptr p10 sw-100"> {title}</summary>
 
   <div>
     <slot></slot>
@@ -14,7 +14,6 @@
   details {
     background: #fff;
     margin: 20px 0;
-    width: calc(100% - 40px);
     z-index: 5;
   }
 
@@ -37,7 +36,6 @@
     block-size: auto;
   }
   summary {
-    width: calc(100% - 20px);
     line-height: 1.3;
     margin-inline-start: 1rem;
     list-style-position: outside;

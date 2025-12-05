@@ -7,7 +7,6 @@
         wallpaper;
 </script>
 
-<div class="tools"></div>
 <svelte:head>
     <title>{title} | manav.ch</title>
     <meta name="description" content={desc} />

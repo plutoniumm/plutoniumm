@@ -4,8 +4,7 @@
     const i = (str) => `/assets/${str}.svg`;
     const links = [
         ["plutoniumm", "//github.com/plutoniumm", "github"],
-        ["pluto_niumm", "//twitter.com/pluto_niumm", "x"],
-        ["plutoniumm", "//youtu.be/dQw4w9WgXcQ", "youtube"],
+        ["plutoniumm", "//youtu.be/zL19uMsnpSU", "youtube"],
         ["Books", "//books.manav.ch", "bookmark"],
         [
             "Scholar",
@@ -14,8 +13,6 @@
         ],
         // ["Notes", "/p", "clip"],
     ];
-
-    onMount(() => document.body.classList.remove("light"));
 </script>
 
 <svelte:head>

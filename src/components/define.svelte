@@ -66,7 +66,7 @@
     });
 </script>
 
-<div class="generics p10">
+<div class="generics sw-100 p10">
     {#if Object.keys(generics).length}
         Generic Variables: 'commonly used' notation which I will not otherwise
         define. For the other ones click on any coloured variable to define it.
@@ -96,7 +96,6 @@
         background: #fff0;
         border-top: 2px dotted #8884;
         border-bottom: 2px solid #8884;
-        width: calc(100% - 20px);
         margin: 10px 0;
     }
 </style>
