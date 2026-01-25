@@ -207,6 +207,18 @@ textarea:focus {
   border-radius: 20px;
 }
 
+.g5 {
+  gap: 5px;
+}
+
+.g10 {
+  gap: 10px;
+}
+
+.g20 {
+  gap: 20px;
+}
+
 .rx2,
 .rx5,
 .rx10,
@@ -390,6 +402,10 @@ textarea:focus {
 
 .d-u {
   display: unset;
+}
+
+.d-g {
+  display: grid;
 }
 
 .flow-x-s {
