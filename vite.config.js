@@ -1,30 +1,19 @@
 import { sveltekit } from "@sveltejs/kit/vite";
 import terser from "@rollup/plugin-terser";
+import { defineConfig } from 'vite';
 
-function $$ () {
-    return {
-        name: "vite-plugin-svelte-$$",
-        enforce: "pre",
-        transform ( code, id ) {
-            if ( !id.endsWith( ".svelte" ) ) return;
-            if ( id.includes( "node_modules" ) ) return;
-            if ( !id.includes( "/p/" ) ) return;
+import Banner from './scripts/metaimg.js';
+import Tex from './scripts/tex.js';
 
-            let result = code
-                .replaceAll( "{_", "{@html _" )
-                .replace(
-                    /(["'`])((?:\\.|[^\\\1])*)\1/g,
-                    ( _, q, m ) => q + m.replace( /\\/g, "\\\\" ) + q,
-                )
-                .replaceAll( "<xxx />", `<div class="m20"><hr /></div>` );
-
-            return { code: result, map: null };
-        },
-    };
-}
-
-const config = {
-    plugins: [ $$(), sveltekit() ],
+const config = defineConfig( {
+    plugins: [
+        Banner( {
+            inDir: 'src/routes/p',
+            outDir: 'static/posts'
+        } ),
+        Tex(),
+        sveltekit()
+    ],
     server: {
         port: 3000,
         fs: { allow: [ ".", ".." ] },
@@ -45,6 +34,6 @@ const config = {
             ],
         },
     },
-};
+} );
 
 export default config;

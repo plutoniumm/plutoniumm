@@ -24,3 +24,5 @@ secrets/
 /Cargo.lock
 pkg/
 target/
+
+.vscode/

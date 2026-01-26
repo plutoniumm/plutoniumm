@@ -44,17 +44,21 @@ img {
 
 input,
 button,
+select,
 textarea {
   position: relative;
   border: 0;
   outline: 0;
   margin: 0;
   background: transparent;
-  font-size: 1em;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 input:focus,
 button:focus,
+select:focus,
 textarea:focus {
   outline: none;
 }
@@ -65,7 +69,6 @@ textarea:focus {
   background: var(--bg);
   backdrop-filter: blur(var(--sz));
   -webkit-backdrop-filter: blur(var(--sz));
-  -moz-backdrop-filter: blur(var(--sz));
 }
 
 .rpm-0 {
@@ -207,6 +210,18 @@ textarea:focus {
   border-radius: 20px;
 }
 
+.g5 {
+  gap: 5px;
+}
+
+.g10 {
+  gap: 10px;
+}
+
+.g20 {
+  gap: 20px;
+}
+
 .rx2,
 .rx5,
 .rx10,
@@ -220,10 +235,6 @@ textarea:focus {
 
 .fw1 {
   font-weight: 100;
-}
-
-.fw2 {
-  font-weight: 200;
 }
 
 .fw3 {
@@ -290,6 +301,11 @@ textarea:focus {
   width: 25%;
 }
 
+.sw {
+  --W: 100%;
+  width: calc(var(--W) - 2 * var(--M) - 2 * var(--P));
+}
+
 .sw-100 {
   width: calc(100% - 2 * var(--M) - 2 * var(--P));
 }
@@ -320,6 +336,11 @@ textarea:focus {
 
 .h-25 {
   height: 25%;
+}
+
+.sh {
+  --H: 100%;
+  height: calc(var(--H) - 2 * var(--M) - 2 * var(--P));
 }
 
 .sh-100 {
@@ -392,6 +413,10 @@ textarea:focus {
   display: unset;
 }
 
+.d-g {
+  display: grid;
+}
+
 .flow-x-s {
   overflow-x: scroll;
 }
@@ -416,10 +441,17 @@ textarea:focus {
   cursor: pointer;
 }
 
+.dead {
+  pointer-events: none;
+  user-select: none;
+}
+
 .al-ct {
   align-items: center;
 }
 
-.al-bl {
-  align-items: baseline;
+.cc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -6,7 +6,7 @@
         Defs,
         Undefs,
     } from "$lib/define";
-    import StdDefns from "$data/defns.json";
+    import StdDefns from "$lib/defns.json";
     import { onMount } from "svelte";
     import { _, __ } from "$lib";
 

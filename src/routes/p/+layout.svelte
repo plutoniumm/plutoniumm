@@ -1,5 +1,6 @@
 <script>
     import { onMount } from "svelte";
+    import "./p.css";
 
     let progress = 0;
     let plen = 575;
