@@ -18,7 +18,6 @@
     sub="Recreational Math #001"
     desc="Algebra and 'Arithmetic' on Shapes"
     date="18 April 2025"
-    wallpaper="aauqrqfoos"
 ></Meta>
 
 <Definations

@@ -1,6 +1,4 @@
 <script>
-    import { onMount } from "svelte";
-
     const i = (str) => `/assets/${str}.svg`;
     const links = [
         ["plutoniumm", "//github.com/plutoniumm", "github"],
@@ -53,11 +51,12 @@
         <br />
         {#each links as link}
             <a
+                class="p-rel d-b"
                 href={link[1]}
                 rel="external noreferrer noopener"
                 target="_blank"
             >
-                <img src={i(link[2])} alt={link[0]} />
+                <img class="p-rel" src={i(link[2])} alt={link[0]} />
                 {link[0]}
             </a>
         {/each}
@@ -74,18 +73,17 @@
         line-height: 1rem;
     }
     a[target="_blank"] {
-        display: block;
         margin: 4px 0;
         font-size: 18px;
         line-height: 1.5;
-        position: relative;
+
         img {
-            position: relative;
             top: 6px;
             left: -2px;
             height: 22px;
             width: 22px;
-            filter: grayscale(1);
+            object-fit: contain;
+            filter: invert(0.8);
         }
     }
     .left {

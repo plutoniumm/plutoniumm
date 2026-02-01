@@ -14,14 +14,10 @@
     };
 
     onMount(() => {
-        document.body.classList.add("light");
         window.addEventListener("scroll", proceed);
         proceed();
 
-        return () => {
-            document.body.classList.remove("light");
-            window.removeEventListener("scroll", proceed);
-        };
+        return () => window.removeEventListener("scroll", proceed);
     });
 </script>
 
@@ -31,7 +27,6 @@
         href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"
         crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/css/p.css" />
 </svelte:head>
 
 <article class="mx-a tl p10">

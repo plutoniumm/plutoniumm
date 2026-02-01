@@ -3,16 +3,18 @@ import terser from "@rollup/plugin-terser";
 import { defineConfig } from 'vite';
 
 import Banner from './scripts/metaimg.js';
+import Bundle from './scripts/bundle.js';
 import Tex from './scripts/tex.js';
 
-const config = defineConfig( {
+export default defineConfig( {
     plugins: [
         Banner( {
             inDir: 'src/routes/p',
             outDir: 'static/posts'
         } ),
         Tex(),
-        sveltekit()
+        sveltekit(),
+        Bundle( 'light' )
     ],
     server: {
         port: 3000,
@@ -35,5 +37,3 @@ const config = defineConfig( {
         },
     },
 } );
-
-export default config;

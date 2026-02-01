@@ -26,3 +26,9 @@ pkg/
 target/
 
 .vscode/
+pnpm-lock.yaml
+package-lock.json
+
+static/lt/
+static/posts/
+static/data/

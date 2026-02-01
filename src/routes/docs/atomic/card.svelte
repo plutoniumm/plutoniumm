@@ -8,11 +8,11 @@
     <slot name="header" />
   </div>
 
-  <p class="description m0 p20">
+  <div class="description m0 p20">
     <slot name="description">
       {@html description}
     </slot>
-  </p>
+  </div>
 
   <pre class="m0"><code class="language-xml">{code}</code></pre>
 

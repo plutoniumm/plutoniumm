@@ -8,7 +8,6 @@
     sub="Recreational Math #003"
     desc="Non-integer and other continuous derivatives."
     date="29 June 2025"
-    wallpaper="aFrlaatvtx"
 ></Meta>
 
 <Definations

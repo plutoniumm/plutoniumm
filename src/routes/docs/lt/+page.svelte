@@ -1,6 +1,6 @@
 <script>
   import { onMount } from "svelte";
-  import hljs from "highlight.js/lib/core";
+  import hljs from "highlight.js";
   import xml from "highlight.js/lib/languages/xml";
   import "highlight.js/styles/github.css";
 
@@ -8,16 +8,17 @@
 
   hljs.registerLanguage("xml", xml);
 
-  onMount(() => hljs.highlightAll());
-
   const usage = (name) => `<pre class="rx5"><code class="language-xml"
->&lt;script type="module" src="https://manav.ch/lt/${name}.js"&gt;&lt;/script&gt;</code
-></pre>`;
+    >&lt;script type="module" src="https://manav.ch/lt/${name}.js"&gt;&lt;/script&gt;</code
+    ></pre>`;
+
+  onMount(() => hljs.highlightAll());
 </script>
 
 <svelte:head>
   <script src="/lt/mermaid.js"></script>
   <script src="/lt/split.js"></script>
+  <script src="/lt/code.js"></script>
 </svelte:head>
 
 <div class="atomic mx-a">
@@ -111,6 +112,34 @@ graph TD;
       </lt-split>
     </div>
   </Card>
+
+  <Card
+    code={`<lt-code language="javascript" value="
+  const hello = 'Hello, World!';
+  console.log(hello);
+">
+</lt-code>`}
+  >
+    <div slot="header" class="f w-100 j-bw">
+      <code>&lt;lt-code&gt;</code>
+    </div>
+
+    <div slot="description">
+      Syntax highlighted code block using Highlight.js.
+      <br />
+      {@html usage("code")}
+      <br />
+      The 'language' attribute specifies the programming language for syntax highlighting.
+    </div>
+    <div class="box">
+      <lt-code
+        language="javascript"
+        value="const hello = 'Hello, World!';
+console.log(hello);"
+      >
+      </lt-code>
+    </div>
+  </Card>
 </div>
 
 <style lang="scss">
@@ -125,9 +154,8 @@ graph TD;
 
   .box {
     background: #f4f4f4;
-    border-radius: 4px;
+    border-radius: 5px;
     padding: 20px;
-    min-height: 60px;
   }
 
   .active {

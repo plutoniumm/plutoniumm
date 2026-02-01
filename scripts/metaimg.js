@@ -24,19 +24,29 @@ const escape = ( unsafe ) => unsafe.replace( /[<>&'"]/g, c => {
   }
 } );
 
-/**
- * @param {Object} options
- * @param {string} options.inDir
- * @param {string} options.outDir
- */
-export default function bannerer ( options = {} ) {
-  const { inDir, outDir } = options;
-  if ( !inDir || !outDir ) {
-    throw new Error( 'vite-plugin-og-generator: inDir and outDir are required.' );
+const BARRIER = 30;
+function SVG ( title ) {
+  const t = escape( title );
+  let fontSize = 80;
+  let lines = [ t ];
+
+  if ( t.length > BARRIER ) {
+    fontSize = 60;
+    const mid = Math.floor( t.length / 2 );
+
+    let breakIdx = t.lastIndexOf( ' ', mid );
+    if ( breakIdx === -1 )
+      breakIdx = t.indexOf( ' ', mid );
+    if ( breakIdx === -1 )
+      breakIdx = mid;
+
+    lines = [
+      t.slice( 0, breakIdx ).trim(),
+      t.slice( breakIdx ).trim()
+    ];
   }
 
-  function SVG ( title ) {
-    return `
+  return `
     <svg width="1200" height="630" viewBox="0 0 1200 630"  xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-weight="700">
 <defs>
 <filter id="noiseFilter">
@@ -76,10 +86,26 @@ export default function bannerer ( options = {} ) {
 ❮10|UV|01❯
 </text>
 <g fill="#000">
-<text x="50%" y="50%" text-anchor="middle" font-size="80px">${ escape( title ) }</text>
+${ lines.length === 1
+      ? `<text x="50%" y="50%" text-anchor="middle" font-size="${ fontSize }px">${ lines[ 0 ] }</text>`
+      : `<text x="50%" y="50%" text-anchor="middle" font-size="${ fontSize }px">
+      <tspan x="50%" dy="-0.6em">${ lines[ 0 ] }</tspan>
+      <tspan x="50%" dy="1.2em">${ lines[ 1 ] }</tspan>
+    </text>`}
 <text x="1180" y="610" text-anchor="end" font-size="36px">plutoniumm</text>
 </g>
 </svg>`;
+}
+
+/**
+ * @param {Object} options
+ * @param {string} options.inDir
+ * @param {string} options.outDir
+ */
+export default function bannerer ( options = {} ) {
+  const { inDir, outDir } = options;
+  if ( !inDir || !outDir ) {
+    throw new Error( 'vite-plugin-og-generator: inDir and outDir are required.' );
   }
 
   return {
@@ -106,7 +132,7 @@ export default function bannerer ( options = {} ) {
         }
         const title = titleMatch[ 0 ].split( '=' )[ 1 ].slice( 1, -1 );
         const fileHash = await hash( title );
-        console.log( title, fileHash );
+        console.log( `[${ fileHash.slice( 0, 8 ) }] ${ title }` );
 
         let output = `${ fileHash }.png`;
         output = path.join( routDir, output );
