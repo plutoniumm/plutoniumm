@@ -19,6 +19,10 @@ body {
   initial-value: 0px;
 }
 
+table {
+  border-collapse: collapse;
+}
+
 a,
 a:visited,
 a:hover {
@@ -44,17 +48,21 @@ img {
 
 input,
 button,
+select,
 textarea {
   position: relative;
   border: 0;
   outline: 0;
   margin: 0;
   background: transparent;
-  font-size: 1em;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 input:focus,
 button:focus,
+select:focus,
 textarea:focus {
   outline: none;
 }
@@ -65,7 +73,6 @@ textarea:focus {
   background: var(--bg);
   backdrop-filter: blur(var(--sz));
   -webkit-backdrop-filter: blur(var(--sz));
-  -moz-backdrop-filter: blur(var(--sz));
 }
 
 .rpm-0 {
@@ -207,6 +214,14 @@ textarea:focus {
   border-radius: 20px;
 }
 
+.g0 {
+  gap: 0px;
+}
+
+.g2 {
+  gap: 2px;
+}
+
 .g5 {
   gap: 5px;
 }
@@ -232,10 +247,6 @@ textarea:focus {
 
 .fw1 {
   font-weight: 100;
-}
-
-.fw2 {
-  font-weight: 200;
 }
 
 .fw3 {
@@ -290,6 +301,14 @@ textarea:focus {
   width: 100%;
 }
 
+.w-75 {
+  width: 75%;
+}
+
+.w-66 {
+  width: 66.66%;
+}
+
 .w-50 {
   width: 50%;
 }
@@ -302,8 +321,21 @@ textarea:focus {
   width: 25%;
 }
 
+.sw {
+  --W: 100%;
+  width: calc(var(--W) - 2 * var(--M) - 2 * var(--P));
+}
+
 .sw-100 {
   width: calc(100% - 2 * var(--M) - 2 * var(--P));
+}
+
+.sw-75 {
+  width: calc(75% - 2 * var(--M) - 2 * var(--P));
+}
+
+.sw-66 {
+  width: calc(66.66% - 2 * var(--M) - 2 * var(--P));
 }
 
 .sw-50 {
@@ -322,6 +354,14 @@ textarea:focus {
   height: 100%;
 }
 
+.h-75 {
+  height: 75%;
+}
+
+.h-66 {
+  height: 66.66%;
+}
+
 .h-50 {
   height: 50%;
 }
@@ -334,8 +374,21 @@ textarea:focus {
   height: 25%;
 }
 
+.sh {
+  --H: 100%;
+  height: calc(var(--H) - 2 * var(--M) - 2 * var(--P));
+}
+
 .sh-100 {
   height: calc(100% - 2 * var(--M) - 2 * var(--P));
+}
+
+.sh-75 {
+  height: calc(75% - 2 * var(--M) - 2 * var(--P));
+}
+
+.sh-66 {
+  height: calc(66.66% - 2 * var(--M) - 2 * var(--P));
 }
 
 .sh-50 {
@@ -432,10 +485,17 @@ textarea:focus {
   cursor: pointer;
 }
 
+.dead {
+  pointer-events: none;
+  user-select: none;
+}
+
 .al-ct {
   align-items: center;
 }
 
-.al-bl {
-  align-items: baseline;
+.cc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

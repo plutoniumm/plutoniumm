@@ -1,0 +1,1 @@
+import{e,b as l,u as f,q as o,S as b}from"./Ch0UZ__N.js";function i(r,t){return r===t||r?.[b]===t}function p(r={},t,a,c){return e(()=>{var u,n;return l(()=>{u=n,n=[],f(()=>{r!==a(...n)&&(t(r,...n),u&&i(a(...u),r)&&t(null,...u))})}),()=>{o(()=>{n&&i(a(...n),r)&&t(null,...n)})}}),r}export{p as b};
