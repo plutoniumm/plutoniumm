@@ -1,0 +1,1 @@
+import{e,b as f,u as i,q as o,S as b}from"./CZzIV55D.js";function l(r,t){return r===t||r?.[b]===t}function p(r={},t,a,c){return e(()=>{var u,n;return f(()=>{u=n,n=[],i(()=>{r!==a(...n)&&(t(r,...n),u&&l(a(...u),r)&&t(null,...u))})}),()=>{o(()=>{n&&l(a(...n),r)&&t(null,...n)})}}),r}export{p as b};

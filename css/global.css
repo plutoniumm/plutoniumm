@@ -55,6 +55,18 @@ article {
     font-size: 18px;
 }
 
+blockquote {
+    margin: 20px 0;
+    padding: 10px 20px;
+    border-left: 3px solid #555;
+    border-radius: 0 8px 8px 0;
+    background: #ffffff66;
+}
+
+blockquote p {
+    margin: 0;
+}
+
 block {
     display: block !important;
     position: relative;
@@ -71,7 +83,6 @@ block::after {
     right: 5%;
     width: 150px;
     height: 150px;
-    /* <a href="https://www.vecteezy.com/free-png/anime-cat">Anime Cat PNGs by Vecteezy</a> */
     background: url("/assets/cat.png") no-repeat center center;
     background-size: cover;
 }
