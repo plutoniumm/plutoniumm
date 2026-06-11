@@ -28,7 +28,10 @@
     const sub = (f, g) => f.map((v, i) => mod(v - g[i]));
 
     // keygen: secret stays nonzero even at eta 0, only the errors vanish
-    let a = [], s = [], e = [], b = [];
+    let a = [],
+        s = [],
+        e = [],
+        b = [];
     $: {
         kseed;
         eta;
@@ -39,7 +42,9 @@
     }
 
     // encrypt
-    let r = [], e1 = [], e2 = [];
+    let r = [],
+        e1 = [],
+        e2 = [];
     $: {
         eseed;
         b;
@@ -48,7 +53,10 @@
         e2 = small(+eta);
     }
     $: u = add(mul(a, r), e1);
-    $: v = add(add(mul(b, r), e2), bits.map((m) => m * half));
+    $: v = add(
+        add(mul(b, r), e2),
+        bits.map((m) => m * half),
+    );
 
     // decrypt
     $: d = sub(v, mul(u, s)).map(cent);
@@ -162,37 +170,36 @@
 
     <div class="verdict tc mt10" class:bad={flips > 0}>
         {#if flips === 0}
-            ✓ all {n} bits decoded correctly · largest noise |w| = {wmax} of
-            the {limit} allowed
+            ✓ all {n} bits decoded correctly · largest noise |w| = {wmax} of the
+            {limit} allowed
         {:else}
-            ✗ {flips} of {n} bits flipped · largest noise |w| = {wmax} blew
-            past the limit of {limit}
+            ✗ {flips} of {n} bits flipped · largest noise |w| = {wmax} blew past
+            the limit of {limit}
         {/if}
     </div>
 
     {#if +eta === 0}
         <div class="hint tc mt5">
-            no noise at all: decryption is perfect, but b = a·s exactly, so
-            Eve computes b·a<sup>−1</sup> and has the secret key
+            no noise at all: decryption is perfect, but b = a·s exactly, so Eve
+            computes b·a<sup>−1</sup> and has the secret key
         </div>
     {/if}
 
     <div class="note tc mt10">
         Eve only ever sees a, b, u, v. Each is indistinguishable from uniform
-        random numbers mod 97; the secret s and all the error polynomials
-        never leave home.
+        random numbers mod 97; the secret s and all the error polynomials never
+        leave home.
     </div>
 </div>
 
 <style>
     .pg {
         background: #fff;
-        border: 1px solid #ccc;
+
         max-width: 620px;
         color: #222;
     }
     label {
-        font-size: 0.9em;
     }
     input[type="range"] {
         vertical-align: middle;
@@ -200,7 +207,7 @@
     }
     button {
         padding: 4px 10px;
-        border: 1px solid #999;
+
         border-radius: 5px;
         background: #f6f6f6;
         cursor: pointer;
@@ -257,7 +264,7 @@
         width: 52px;
         text-align: center;
         border-radius: 4px;
-        font-size: 0.9em;
+
         margin-right: 6px;
         font-family: sans-serif;
     }
@@ -274,7 +281,6 @@
         color: #555;
     }
     .verdict {
-        font-size: 0.9em;
         color: #097;
     }
     .verdict.bad {

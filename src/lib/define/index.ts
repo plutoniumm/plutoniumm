@@ -1,10 +1,9 @@
-import { invalid } from "./utils";
+import { invalid } from "./core.js";
 
 export { update_ignores, update_definations } from "./utils";
 
 const KV: Record<string, string> = {};
 export const Defs = {};
-export const Undefs = [];
 
 function define(el: HTMLElement) {
     el = el.target;
@@ -43,11 +42,6 @@ export function run(colors, e) {
 
     if (!Object.hasOwn(KV, t)) {
         KV[t] = colors[Object.keys(KV).length % colors.length];
-    }
-    if (!Object.hasOwn(Defs, t)) {
-        if (!Undefs.includes(t)) {
-            Undefs.push(t);
-        }
     }
 
     let col = KV[t];

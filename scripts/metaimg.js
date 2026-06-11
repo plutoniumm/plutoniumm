@@ -1,17 +1,11 @@
+import { createHash } from 'node:crypto';
 import sharp from 'sharp';
 import path from 'path';
 import fs from 'fs';
 
-const isDir = ( p ) => fs.lstatSync( p ).isDirectory();
-
-export async function hash ( input ) {
-  const data = new TextEncoder().encode( input );
-  let hash = await crypto.subtle.digest( 'SHA-256', data );
-
-  hash = Array.from( new Uint8Array( hash ) );
-  hash = hash.map( b => b.toString( 16 ).padStart( 2, '0' ) ).join( '' );
-
-  return hash;
+// same hex as the crypto.subtle digest meta.svelte computes in the browser
+export function hash ( input ) {
+  return createHash( 'sha256' ).update( input ).digest( 'hex' );
 }
 
 const escape = ( unsafe ) => unsafe.replace( /[<>&'"]/g, c => {
@@ -118,32 +112,33 @@ export default function bannerer ( options = {} ) {
         fs.mkdirSync( routDir, { recursive: true } );
       }
 
-      const files = fs.readdirSync( rinDir )
-        .filter( file => isDir( path.join( rinDir, file ) ) );
-      console.log( `[OG-Gen] Scanning ${ files.length } files in ${ inDir }...` );
+      const files = fs.readdirSync( rinDir, { withFileTypes: true } );
+      console.log( `[OG-Gen] Scanning ${ inDir }...` );
 
-      const promises = files.map( async ( file ) => {
-        let page = path.join( rinDir, file, '+page.svelte' );
-        page = fs.readFileSync( page, 'utf-8' );
+      const promises = [];
+      for ( const entry of files ) {
+        if ( !entry.isDirectory() ) continue;
+        const file = entry.name;
 
+        const page = fs.readFileSync( path.join( rinDir, file, '+page.svelte' ), 'utf-8' );
         const titleMatch = page.match( /title=["'`](.*?)["'`]/ );
         if ( !titleMatch ) {
-          return console.warn( `[OG-Gen] No title found for ${ file }, skipping.` );
+          console.warn( `[OG-Gen] No title found for ${ file }, skipping.` );
+          continue;
         }
-        const title = titleMatch[ 0 ].split( '=' )[ 1 ].slice( 1, -1 );
-        const fileHash = await hash( title );
+
+        const title = titleMatch[ 1 ];
+        const fileHash = hash( title );
         console.log( `[${ fileHash.slice( 0, 8 ) }] ${ title }` );
 
-        let output = `${ fileHash }.png`;
-        output = path.join( routDir, output );
-
-        if ( fs.existsSync( output ) ) return;
+        const output = path.join( routDir, `${ fileHash }.png` );
+        if ( fs.existsSync( output ) ) continue;
         console.log( `[OG-Gen] Generating: ${ title }` );
 
-        await sharp( Buffer.from( SVG( title ) ) )
-          .png()
-          .toFile( output );
-      } );
+        promises.push(
+          sharp( Buffer.from( SVG( title ) ) ).png().toFile( output )
+        );
+      }
 
       await Promise.all( promises );
     }

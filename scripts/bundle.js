@@ -11,27 +11,23 @@ export default function Bundle () {
     async buildStart () {
       const dirPath = path.resolve( process.cwd(), inDir );
 
-      let entries = fs.readdirSync( dirPath )
-        .filter( ( f ) => f.endsWith( '.ts' ) )
-        .map( ( f ) => ( {
-          in: path.join( inDir, f ),
-          out: path.join( outDir, f.replace( /\.ts$/, '.js' ) )
-        } ) );
+      const builds = [];
+      for ( const f of fs.readdirSync( dirPath ) ) {
+        if ( !f.endsWith( '.ts' ) ) continue;
 
-
-      await Promise.all( entries.map( ( { in: input, out: output } ) => {
-
-        return esbuild.build( {
-          entryPoints: [ input ],
-          outfile: output,
+        builds.push( esbuild.build( {
+          entryPoints: [ path.join( inDir, f ) ],
+          outfile: path.join( outDir, f.replace( /\.ts$/, '.js' ) ),
           bundle: true,
           format: 'iife',
           sourcemap: false,
           minify: true,
           target: 'es2018',
           tsconfigRaw: '{}',
-        } );
-      } ) );
+        } ) );
+      }
+
+      await Promise.all( builds );
     }
   };
 }

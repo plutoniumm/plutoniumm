@@ -7,6 +7,8 @@ export default function Tex () {
       if ( id.includes( "node_modules" ) ) return;
       if ( !id.includes( "/wave/" ) && !id.includes( "/drafts/" ) ) return;
 
+      // the <xxx /> swap inserts quote chars, so it must stay after the
+      // quote-escape pass
       let result = code
         .replaceAll( "{_", "{@html _" )
         .replace(

@@ -53,7 +53,7 @@
     }
     .sub {
         margin-bottom: 12px;
-        font-size: 0.9em;
+
         color: #888;
     }
 </style>

@@ -38,7 +38,6 @@
         background: #eef;
         padding: 2px 4px;
         border-radius: 5px;
-        font-size: 0.9em;
       }
     }
 

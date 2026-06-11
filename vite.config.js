@@ -4,6 +4,7 @@ import { defineConfig } from 'vite';
 
 import Banner from './scripts/metaimg.js';
 import Bundle from './scripts/bundle.js';
+import Defcheck from './scripts/defcheck.js';
 import Drafts from './scripts/drafts.js';
 import Tex from './scripts/tex.js';
 
@@ -14,6 +15,7 @@ export default defineConfig( {
             outDir: 'static/posts'
         } ),
         Drafts(),
+        Defcheck(),
         Tex(),
         sveltekit(),
         Bundle( 'light' )

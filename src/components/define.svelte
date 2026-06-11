@@ -1,17 +1,10 @@
 <script lang="ts">
-    import {
-        update_ignores,
-        update_definations,
-        run,
-        Defs,
-        Undefs,
-    } from "$lib/define";
+    import { update_ignores, update_definations, run, Defs } from "$lib/define";
     import StdDefns from "$lib/defns.json";
     import { onMount } from "svelte";
-    import { _, __ } from "$lib";
+    import { _ } from "$lib";
 
     export let //
-        undefind = [],
         list: Defination[] = [],
         generics: Record<string, string[]> = {},
         ignores: string | string[] = [];
@@ -62,8 +55,6 @@
                 (e) => run(["025", "029", "015", "88f", "808"], e),
             );
         });
-
-        undefind = Undefs;
     });
 </script>
 
@@ -78,15 +69,6 @@
                 <li>
                     {@html _(`${vars} \\in ${gmap[key]}`)}
                 </li>
-            {/each}
-        </ul>
-    {/if}
-    {#if undefind.length}
-        <br />
-        Still Undefined: <br />
-        <ul>
-            {#each undefind as u}
-                <li>{@html _(`${u}`)}</li>
             {/each}
         </ul>
     {/if}

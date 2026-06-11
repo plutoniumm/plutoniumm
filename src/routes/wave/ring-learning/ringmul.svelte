@@ -133,7 +133,7 @@
 <style>
     .ringmul {
         background: #fff;
-        border: 1px solid #ccc;
+
         max-width: 560px;
         font-family: monospace;
         color: #222;
@@ -159,7 +159,7 @@
         text-align: center;
         font-family: monospace;
         color: #222;
-        border: 1px solid #999;
+
         border-radius: 4px;
         -moz-appearance: textfield;
         appearance: textfield;

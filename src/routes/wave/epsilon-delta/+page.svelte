@@ -121,7 +121,7 @@ i.e.
 f'(x) = \frac{f(x + \varepsilon) - f(x)}{\varepsilon}
 `}
 
-Now isn't that neat. Automatic differentiation.
+This is automatic differentiation.
 
 <Refs list={[]}></Refs>
 

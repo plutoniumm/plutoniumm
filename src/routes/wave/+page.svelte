@@ -46,7 +46,7 @@
     }
     .tagline {
         margin-bottom: 12px;
-        font-size: 0.9em;
+
         color: #888;
         font-style: italic;
     }

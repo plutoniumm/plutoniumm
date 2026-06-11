@@ -22,26 +22,18 @@ function parseText (text: string) {
     return JSON.parse(string2);
 }
 
-let posts = [];
-fs.readdirSync("src/routes/wave").forEach((f) => {
-    if (f.includes(".")) return f;
-    if (f.includes("test")) return f;
+const posts = {};
+for (const f of fs.readdirSync("src/routes/wave")) {
+    if (f.includes(".")) continue;
+    if (f.includes("test")) continue;
 
     const file = fs.readFileSync(`src/routes/wave/${f}/+page.svelte`, "utf-8");
-    if (file.includes("nodeploy")) return f;
+    if (file.includes("nodeploy")) continue;
     const stats = parseText(file);
-    stats["raw"] = f.replace(".svelte", "");
+    stats["raw"] = f;
 
-    posts.push(stats);
-});
-
-posts = posts.reduce((acc, post) => {
-    const year = post.date.split(" ")[2];
-    if (!acc[year]) {
-        acc[year] = [];
-    }
-    acc[year].push(post);
-    return acc;
-}, {});
+    const year = stats.date.split(" ")[2];
+    (posts[year] ??= []).push(stats);
+}
 
 export const data = posts;
