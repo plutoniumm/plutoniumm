@@ -23,6 +23,17 @@
     fw: 5,
     ta: "c",
     g: 10,
+    dir: "x",
+    sp: 10,
+  };
+
+  const dirMap = {
+    t: "top",
+    b: "bottom",
+    l: "left",
+    r: "right",
+    x: "left + right",
+    y: "top + bottom",
   };
 
   const displayMap = {
@@ -90,6 +101,35 @@
     <div class="box">
       <div class="rx{selected.rx} p{selected.rx} m{selected.rx} active">
         Target
+      </div>
+    </div>
+  </Card>
+
+  <Card
+    description="Directional padding and margin (<strong>{dirMap[
+      selected.dir
+    ]}</strong>). <code>t/b/l/r</code> target one side, <code>x/y</code> target an axis pair. Each updates a per-side tracker (<code>--PT/--PB/--PL/--PR</code>, <code>--MT/...</code>) which smart scales subtract. <code>.sw</code> accounts for left/right and <code>.sh</code> for top/bottom, so they compose with <code>sw/sh</code> just like <code>p*</code>/<code>m*</code>. Don't stack them with all-sides <code>p*</code>/<code>m*</code> on the same side, or the smart scale will reserve space twice."
+    code={`<div class="p${selected.dir}${selected.sp} m${selected.dir}${selected.sp}">...</div>`}
+  >
+    <div slot="header" class="f w-100 j-bw">
+      <code>.p{selected.dir}{selected.sp}, .m{selected.dir}{selected.sp}</code>
+      <div class="f g10">
+        <Select
+          items={["t", "b", "l", "r", "x", "y"]}
+          bind:value={selected.dir}
+        />
+        <Select items={presets} bind:value={selected.sp} />
+      </div>
+    </div>
+
+    <div class="box">
+      <div
+        class="m{selected.dir}{selected.sp}"
+        style="background: #ccd; border-radius: 4px;"
+      >
+        <div class="p{selected.dir}{selected.sp}" style="background: #99b;">
+          <div class="active">Target</div>
+        </div>
       </div>
     </div>
   </Card>
@@ -186,12 +226,49 @@
   >
     <div slot="header" class="f w-100 j-bw">
       <code>.d-{selected.d}</code>
-      <Select items={["n", "b", "i", "ib", "g"]} bind:value={selected.d} />
+      <Select
+        items={["n", "b", "i", "ib", "if", "g", "c", "u"]}
+        bind:value={selected.d}
+      />
     </div>
 
     <div class="box">
       <div class="active d-{selected.d}">Item 1</div>
       <div class="active d-{selected.d}" style="background: #88c;">Item 2</div>
+    </div>
+  </Card>
+
+  <Card
+    description="Position utilities, all <code>!important</code>. <code>.p-rel</code> turns an element into an anchor, <code>.p-abs</code> positions a child against the nearest anchor. <code>.p-fix</code> pins to the viewport instead (not demoed, it would escape this box)."
+    code={`<div class="p-rel">\n  <div class="p-abs">badge</div>\n</div>`}
+  >
+    <div slot="header" class="f w-100 j-bw">
+      <code>.p-rel .p-abs .p-fix</code>
+    </div>
+
+    <div class="box">
+      <div class="p-rel active h80 w-100">
+        anchor (.p-rel)
+        <div class="p-abs badge">.p-abs</div>
+      </div>
+    </div>
+  </Card>
+
+  <Card
+    description="<code>.ptr</code> sets <code>cursor: pointer</code>. <code>.dead</code> turns interaction off completely: <code>pointer-events: none</code> and <code>user-select: none</code>, so clicks pass through and the text can't even be highlighted. Try it on the boxes below."
+    code={`<div class="ptr">...</div>\n<div class="dead">...</div>`}
+  >
+    <div slot="header" class="f w-100 j-bw">
+      <code>.ptr .dead</code>
+    </div>
+
+    <div class="box bigbox f g10">
+      <div class="active ptr w-50">
+        .ptr: hover me, the cursor changes
+      </div>
+      <div class="active dead w-50">
+        .dead: try selecting or clicking this text
+      </div>
     </div>
   </Card>
 
@@ -252,6 +329,45 @@
       <div class="active d-b w-100">The quick brown fox</div>
     </div>
   </Card>
+
+  <h2 class="gd-title">Global defaults</h2>
+  <p>
+    Besides utilities, including the stylesheet also applies a couple of base
+    tweaks automatically — no class required.
+  </p>
+
+  <Card
+    description="atomic.css sets <code>interpolate-size: allow-keywords</code> on <code>:root</code>, which lets transitions animate to and from intrinsic size keywords like <code>auto</code>, <code>min-content</code>, and <code>fit-content</code> — something CSS normally can't do. Hover the box to see its height animate to <code>auto</code>."
+    code={`:root { interpolate-size: allow-keywords; }`}
+  >
+    <div slot="header" class="f w-100 j-bw">
+      <code>interpolate-size</code>
+    </div>
+
+    <div class="box">
+      <div class="interp">
+        <b>Hover me.</b> My height animates from a clamped value to
+        <code>auto</code>, revealing this text smoothly. Without
+        <code>interpolate-size</code>, transitioning to <code>auto</code>
+        wouldn't animate at all — it would just snap open.
+      </div>
+    </div>
+  </Card>
+
+  <Card
+    description="On <code>body</code>, atomic.css enables <code>-webkit-font-smoothing: antialiased</code> and <code>-moz-osx-font-smoothing: grayscale</code>, so text renders lighter and crisper on macOS/WebKit. Applied globally — no class needed."
+    code={`body {\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}`}
+  >
+    <div slot="header" class="f w-100 j-bw">
+      <code>font-smoothing</code>
+    </div>
+
+    <div class="box">
+      <div class="active d-b w-100 tc">
+        The quick brown fox jumps over the lazy dog
+      </div>
+    </div>
+  </Card>
 </div>
 
 <style lang="scss">
@@ -290,5 +406,48 @@
     justify-content: center;
     min-height: 40px;
     border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .badge {
+    top: 5px;
+    right: 5px;
+    min-height: 0;
+    padding: 2px 8px;
+    font-size: 13px;
+    background: #88c;
+    border-radius: 4px;
+  }
+
+  .bigbox {
+    min-height: 140px;
+  }
+
+  .bigbox > div {
+    text-align: center;
+    padding: 10px;
+  }
+
+  .gd-title {
+    margin-top: 40px;
+  }
+
+  .interp {
+    overflow: hidden;
+    height: 1.6em;
+    padding: 8px 12px;
+    background: #aaf;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: height 0.4s ease;
+  }
+
+  .interp:hover {
+    height: auto;
+  }
+
+  .interp code {
+    background: #eef;
+    padding: 1px 4px;
+    border-radius: 4px;
   }
 </style>

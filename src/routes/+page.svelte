@@ -1,15 +1,27 @@
 <script>
     const i = (str) => `/assets/${str}.svg`;
-    const links = [
-        ["plutoniumm", "//github.com/plutoniumm", "github"],
-        ["plutoniumm", "//youtu.be/zL19uMsnpSU", "youtube"],
-        ["Books", "//books.manav.ch", "bookmark"],
-        [
-            "Scholar",
-            "//scholar.google.com/citations?user=CkJTRyAAAAAJ",
-            "scholar",
-        ],
-        // ["Notes", "/p", "clip"],
+    const blocks = [
+        {
+            title: "me",
+            links: [
+                ["plutoniumm", "//github.com/plutoniumm", "github"],
+                ["plutoniumm", "//youtu.be/zL19uMsnpSU", "youtube"],
+                ["Books", "//books.manav.ch", "bookmark"],
+            ],
+        },
+        {
+            title: "work",
+            links: [
+                [
+                    "Scholar",
+                    "//scholar.google.com/citations?user=CkJTRyAAAAAJ",
+                    "scholar",
+                ],
+                ["Handwavium", "/wave", "clip"],
+                ["Simulators", "/sim", "comment"],
+                ["Docs", "/docs", "docs"],
+            ],
+        },
     ];
 </script>
 
@@ -49,17 +61,24 @@
     <div class="right fade p20">
         <div class="title fw5">Manav Seksaria</div>
         <br />
-        {#each links as link}
-            <a
-                class="p-rel d-b"
-                href={link[1]}
-                rel="external noreferrer noopener"
-                target="_blank"
-            >
-                <img class="p-rel" src={i(link[2])} alt={link[0]} />
-                {link[0]}
-            </a>
-        {/each}
+        <div class="f g20">
+            {#each blocks as block}
+                <div>
+                    <div class="block-title">{block.title}</div>
+                    {#each block.links as link}
+                        <a
+                            class="p-rel d-b"
+                            href={link[1]}
+                            rel="external noreferrer noopener"
+                            target="_blank"
+                        >
+                            <img class="p-rel" src={i(link[2])} alt={link[0]} />
+                            {link[0]}
+                        </a>
+                    {/each}
+                </div>
+            {/each}
+        </div>
     </div>
 </section>
 
@@ -71,6 +90,14 @@
     .title {
         font-size: 1.5rem;
         line-height: 1rem;
+    }
+    .block-title {
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        opacity: 0.45;
+        margin-bottom: 4px;
     }
     a[target="_blank"] {
         margin: 4px 0;
@@ -87,7 +114,7 @@
         }
     }
     .left {
-        transform: scale(1.33);
+        transform: translateY(-15px) scale(1.1);
         padding-bottom: 0;
     }
     @keyframes wave {
@@ -120,7 +147,7 @@
         font-size: 0.8em;
         animation: 2.5s wave infinite;
         transform-origin: 70% 70%;
-        bottom: 2px;
+        bottom: 17px;
         left: 2px;
         font-size: 52px;
     }

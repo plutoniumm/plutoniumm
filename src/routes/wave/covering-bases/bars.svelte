@@ -46,10 +46,11 @@
 
         <text x="10" y="70" font-size="12">
             {#each top as _, index}
-                <tspan id="base" x={10 + index * 30} y="65">
-                    ({base_str})
-                    <sup>{top.length - index}</sup>
-                </tspan>
+                <tspan id="base" x={10 + index * 30} y="65"
+                    >({base_str})<tspan baseline-shift="super" font-size="8"
+                        >{top.length - index}</tspan
+                    ></tspan
+                >
                 <tspan id="power" x={shift + index * 30} y="60">
                     {top.length - index - powoff}
                 </tspan>

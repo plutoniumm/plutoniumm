@@ -23,11 +23,11 @@ function parseText (text: string) {
 }
 
 let posts = [];
-fs.readdirSync("src/routes/p").forEach((f) => {
+fs.readdirSync("src/routes/wave").forEach((f) => {
     if (f.includes(".")) return f;
     if (f.includes("test")) return f;
 
-    const file = fs.readFileSync(`src/routes/p/${f}/+page.svelte`, "utf-8");
+    const file = fs.readFileSync(`src/routes/wave/${f}/+page.svelte`, "utf-8");
     if (file.includes("nodeploy")) return f;
     const stats = parseText(file);
     stats["raw"] = f.replace(".svelte", "");

@@ -23,12 +23,6 @@
       desc: "A lightweight component library built with web components and TypeScript.",
     },
     {
-      name: "SQLUI",
-      icon: "https://github.com/plutoniumm/sqlui/raw/main/static/icon.svg",
-      href: "https://plutoniumm.github.io/sqlui",
-      desc: "mini ui for sqlite for small edits and browsing.",
-    },
-    {
       name: "Orb",
       icon: "https://plutoniumm.github.io/orb/build/orb.svg",
       href: "https://plutoniumm.github.io/orb",
@@ -45,6 +39,12 @@
       icon: "https://github.com/plutoniumm/xoxo/raw/main/public/icon.svg",
       href: "https://plutoniumm.github.io/xoxo",
       desc: "3D Quantum Tic-Tac-Toe game demonstrating superposition and entanglement.",
+    },
+    {
+      name: "Eastwood",
+      icon: "https://github.com/plutoniumm.png",
+      href: "/docs/eastwood",
+      desc: "Single-binary multi-language linter for Python, LaTeX, Go, JS, TS, and Rust.",
     },
   ];
 </script>
