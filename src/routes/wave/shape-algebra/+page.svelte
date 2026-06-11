@@ -150,9 +150,10 @@ and divided.
     ></Scatter>
 
     <div class="f-col j-ar h-100" slot="r">
-        {__`r_1 e^{i \theta} + r_2 e^{i \theta}
-        \newline\quad\quad
-        \rightarrow (z_1 + z_2 e^{${mut[0]}})  e^{i \theta}`}
+        {__`\begin{gathered}
+        r_1 e^{i \theta} + r_2 e^{i \theta} \\
+        \quad\quad \rightarrow (z_1 + z_2 e^{${mut[0]}})  e^{i \theta}
+        \end{gathered}`}
 
         <p style="margin: 0 2rem;">
             Offset: 0
@@ -219,8 +220,10 @@ and divided.
     </Scatter>
 
     <div class="f-col j-ar h-100" slot="r">
-        {__`r_1 e^{i \theta} * r_2 e^{i \theta} \newline\quad\quad
-        \rightarrow (r_1 * r_2) e^{i 2\theta+${mut[0]}}`}
+        {__`\begin{gathered}
+        r_1 e^{i \theta} * r_2 e^{i \theta} \\
+        \quad\quad \rightarrow (r_1 * r_2) e^{i 2\theta+${mut[0]}}
+        \end{gathered}`}
 
         <p style="margin: 0 2rem;">
             Offset: 0
@@ -282,9 +285,10 @@ or a circle to anything's power.
         ]}
     ></Scatter>
     <div class="f-col j-ar h-100" slot="r" style="margin: 0 2rem;">
-        {__`r_1 e^{i \theta_1 r_2 e^{i \theta_2}}
-      \newline\quad\quad
-      e^{i[(\theta + ${mut[0]})\cos\theta + ${mut[1]}]} e^{ (\theta + ${mut[0]})\sin\theta}`}
+        {__`\begin{gathered}
+      r_1 e^{i \theta_1 r_2 e^{i \theta_2}} \\
+      \quad\quad e^{i[(\theta + ${mut[0]})\cos\theta + ${mut[1]}]} e^{ (\theta + ${mut[0]})\sin\theta}
+      \end{gathered}`}
 
         <div>
             Offset 1: 0

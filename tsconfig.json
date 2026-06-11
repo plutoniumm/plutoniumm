@@ -3,30 +3,6 @@
   "extends": "./.svelte-kit/tsconfig.json",
   "compilerOptions": {
     "target": "es2020",
-    "ignoreDeprecations": "5.0",
-    "baseUrl": ".",
-    "paths": {
-      "$lib/*": [
-        "src/lib/*",
-      ],
-      "$lib": [
-        "src/lib",
-      ],
-      "$data/*": [
-        "src/test/*",
-      ],
-      "$data": [
-        "src/test",
-      ],
-      "$cpt/*": [
-        "src/components/*",
-      ],
-      "$cpt": [
-        "src/components",
-      ],
-      "@": [
-        "env.js",
-      ]
-    }
+    "ignoreDeprecations": "5.0"
   }
 }

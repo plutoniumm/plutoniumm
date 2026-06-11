@@ -83,7 +83,7 @@ for {_`h`}. We can then also give it an imaginary value, and replace {_`h`} with
 which implies, applying the Taylor series expansion, that:
 
 {__`
-\frac{f(x + ih) - f(x)}{ih} = f'(x) + ih \frac{f''(x)}{2!} - h^2 \frac{f^{(3)}(x)}{3!} + \cdots \\
+\frac{f(x + ih) - f(x)}{ih} = f'(x) + ih \frac{f''(x)}{2!} - h^2 \frac{f^{(3)}(x)}{3!} + \cdots
 `}
 
 or taking just the real part of both sides, we get:

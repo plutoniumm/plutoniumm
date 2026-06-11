@@ -15,7 +15,10 @@ export default function Tex () {
         )
         .replaceAll( "<xxx />", `<div class="m20"><hr /></div>` );
 
-      return { code: result, map: null };
+      return {
+        code: result,
+        map: null
+      };
     },
   };
 }

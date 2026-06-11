@@ -40,6 +40,7 @@
 
 <button
     class="p-fix"
+    aria-label="scroll to top"
     on:click={() => window.scrollTo({ top: 0, behavior: "smooth" })}
 >
     <svg class="ptr" viewBox="0 0 200 200" height="48" width="48" fill="none">

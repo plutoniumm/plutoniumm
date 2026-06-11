@@ -29,6 +29,7 @@ export default function Bundle () {
           sourcemap: false,
           minify: true,
           target: 'es2018',
+          tsconfigRaw: '{}',
         } );
       } ) );
     }

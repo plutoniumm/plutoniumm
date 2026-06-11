@@ -112,10 +112,12 @@
 </svg>
 
 {__`
+\begin{gathered}
 y = mx + c \\
 y = ax^2 + bx + c
+\end{gathered}
 `}
 
 This is {_`E = mc^2`}.
 
-<block />
+<block></block>

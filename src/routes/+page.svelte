@@ -93,14 +93,6 @@
         font-size: 1.5rem;
         line-height: 1rem;
     }
-    .block-title {
-        font-size: 12px;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        opacity: 0.45;
-        margin-bottom: 4px;
-    }
     a[target="_blank"] {
         margin: 4px 0;
         font-size: 18px;

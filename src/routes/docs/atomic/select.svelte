@@ -67,12 +67,24 @@
     bind:this={cont}
     on:scroll={onscroll}
     style="min-width: {minW + 2}ch;"
+    role="listbox"
+    aria-label="options"
+    tabindex="0"
   >
     {#each items as item}
       <div
         class="item f cc ptr o-50"
         class:selected={value === item}
+        role="option"
+        aria-selected={value === item}
+        tabindex="-1"
         on:click={() => (value = item)}
+        on:keydown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            value = item;
+          }
+        }}
       >
         {item}
       </div>

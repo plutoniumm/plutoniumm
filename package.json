@@ -2,7 +2,7 @@
     "type": "module",
     "scripts": {
         "dev": "vite dev",
-        "prebuild": "rm -rf build .svelte*",
+        "prebuild": "rm -rf build .svelte* && svelte-kit sync",
         "build": "vite build",
         "deploy": "npx gh-pages -d build",
         "direct": "npm run build && npm run deploy",

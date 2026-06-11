@@ -29,8 +29,10 @@ etc. But what if we want to find the derivative in a non-integer order, like
 applied twice, it would be the same as the 1st derivative
 
 {__`
+\begin{gathered}
 \frac{d^2}{dx^2} f(x) = \frac{d}{dx} \left( \frac{d}{dx} f(x) \right) \\
-\frac{d}{dx} f(x) = \frac{d^{0.5}}{dx^{0.5}} \left( \frac{d^{0.5}}{dx^{0.5}} f(x) \right) \\
+\frac{d}{dx} f(x) = \frac{d^{0.5}}{dx^{0.5}} \left( \frac{d^{0.5}}{dx^{0.5}} f(x) \right)
+\end{gathered}
 `}
 
 First and foremost, we define {_`D^k = \frac{d^k}{dx^k}`} as the kth derivative operator.

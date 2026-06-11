@@ -23,7 +23,7 @@ export default defineConfig( {
         fs: { allow: [ ".", ".." ] },
     },
     build: {
-        chunkSizeWarningLimit: 1.5,
+        chunkSizeWarningLimit: 1500,
         minify: "esbuild",
         cssMinify: true,
         sourcemap: false,
