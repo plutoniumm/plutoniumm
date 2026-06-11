@@ -4,14 +4,16 @@ import { defineConfig } from 'vite';
 
 import Banner from './scripts/metaimg.js';
 import Bundle from './scripts/bundle.js';
+import Drafts from './scripts/drafts.js';
 import Tex from './scripts/tex.js';
 
 export default defineConfig( {
     plugins: [
         Banner( {
-            inDir: 'src/routes/p',
+            inDir: 'src/routes/wave',
             outDir: 'static/posts'
         } ),
+        Drafts(),
         Tex(),
         sveltekit(),
         Bundle( 'light' )

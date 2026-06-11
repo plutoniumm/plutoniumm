@@ -19,7 +19,7 @@ function clean(str: string): string {
 
 type TSA = TemplateStringsArray;
 
-export function _(strings: TSA, ...values: any[]): string {
+export function _(strings: TSA | string, ...values: any[]): string {
     let string = "";
     try {
         if (typeof strings === "string") {
@@ -37,7 +37,7 @@ export function _(strings: TSA, ...values: any[]): string {
     return string;
 }
 
-export function __(strings: TSA, ...values: any[]): string {
+export function __(strings: TSA | string, ...values: any[]): string {
     let string = "";
     try {
         if (typeof strings === "string") {

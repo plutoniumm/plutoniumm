@@ -25,7 +25,7 @@
 
             if (typeof base === "object") continue;
             str2 =
-                `${num} \cdot (${Math.pow(base, i).toFixed(2)}` +
+                `${num} \cdot (${Math.pow(base, i).toFixed(2)})` +
                 (str2.length > 0 ? " + " : "") +
                 str2;
         }
@@ -60,7 +60,7 @@
 />
 
 Numbers are usually represented in base 10, but they can be represented in any
-base. The most common being are binary (base 2), decimal (base 10), and
+base. The most common are binary (base 2), decimal (base 10), and
 hexadecimal (base 16). Binary, Hexadecimal, and Octal all being formats
 computers just cannot get enough of. As a short introduction to bases, this is
 how we read the number 420 in base 10:
@@ -181,10 +181,10 @@ that we can get the number 265 in base {_`\frac37`} also for free by just rotati
 around the decimal point, i.e. 6.6346, which one can trivially verify.
 <br />
 <br />
-Th, however, also means that we will be using the same digits 0 to 6 for {_`\frac37`}
+This, however, also means that we will be using the same digits 0 to 6 for {_`\frac37`}
 also, which is natural considering that for fractions &lt;1, we don't have any digits,
-so for a number with a base less than 1, we can just use the same digits as it's
-inverse and then rotates around the first digit.
+so for a number with a base less than 1, we can just use the same digits as its
+inverse and then rotate around the first digit.
 
 <h3>Irrational and Transcendental Bases</h3>
 The easiest to start with is an 'nth' root base, such as {_`\sqrt[4]{5}`}. This
@@ -193,18 +193,17 @@ should be related to being in base 5. So consider 42 in base 5, or {parseInt(
     5,
 )} in base 10. We can very easily first write
 
-<Bars top={[4, 0, 0, 0, 2, 0, 0, 0, 0]} base={Math.pow(5, 0.25)} base_str={"∜5"}
-></Bars>
+<Bars top={[4, 0, 0, 0, 2]} base={Math.pow(5, 0.25)} base_str={"∜5"}></Bars>
 
 <Bars top={[4, 2]} base={5}></Bars>
 
-We can see both the above representations are functionally equivalent , with
+We can see both the above representations are functionally equivalent, with
 extra place values added in the 'gaps' between the integer place values. It
-should be trivial to see that {_`(\sqrt[4]5)^{2n}`} are the standard place values
+should be trivial to see that {_`(\sqrt[4]5)^{4n}`} are the standard place values
 when we use five as our base.
 <br />
 <br />
-So now, if we were to create a new number 421 in base {_`\sqrt[4]{5}`}, it's
+So now, if we were to create a new number 12421 in base {_`\sqrt[4]{5}`}, its
 value would be {@html expand_str(
     [1, 2, 4, 2, 1],
     Math.pow(5, 0.25),
@@ -212,7 +211,7 @@ value would be {@html expand_str(
     "sqrt[4]{5}",
 )}. Or as an exercise you can verify that converting {_`\sqrt{5}`} to ten for 1234,
 is {_`[1234]_{\sqrt5} = [14 + 8 \sqrt5]_{10}`}. Finally, we can use these ideas
-to use the base {_`\pi`}. Then 123 in base three would be {@html expand_str(
+to use the base {_`\pi`}. Then 123 in base {_`\pi`} would be {@html expand_str(
     [1, 2, 3],
     3.1415926535,
     "approx 19.15",

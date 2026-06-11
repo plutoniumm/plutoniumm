@@ -61,8 +61,8 @@
     const X = (i) => 48 + i * 46;
 </script>
 
-<div class="pg">
-    <div class="controls">
+<div class="pg mx-a my20 p10 rx10">
+    <div class="f al-ct j-ct fw g10 mb10">
         <label>
             error size η = <b>{eta}</b>
             <input type="range" min="0" max="6" bind:value={eta} />
@@ -71,7 +71,7 @@
         <button on:click={() => (eseed += 1)}>re-encrypt</button>
     </div>
 
-    <div class="msg">
+    <div class="tc my5">
         <span class="cap">message (click bits to flip):</span>
         {#each bits as bv, i}
             <button
@@ -83,11 +83,15 @@
     </div>
 
     <div class="polys">
-        <div><span class="tag pub">public</span> a = [{a.join(", ")}]</div>
-        <div><span class="tag pub">public</span> b = [{b.join(", ")}]</div>
-        <div><span class="tag sec">secret</span> s = [{s.join(", ")}]</div>
-        <div><span class="tag ct">sent</span> u = [{u.join(", ")}]</div>
-        <div><span class="tag ct">sent</span> v = [{v.join(", ")}]</div>
+        {#each [["pub", "public", "a", a], ["pub", "public", "b", b], ["sec", "secret", "s", s], ["ct", "sent", "u", u], ["ct", "sent", "v", v]] as [cls, tag, name, vec]}
+            <div class="prow">
+                <span class="tag {cls}">{tag}</span>
+                <span class="pname">{name} =</span>
+                {#each vec as pv}
+                    <span class="pcell">{pv}</span>
+                {/each}
+            </div>
+        {/each}
     </div>
 
     <div class="tc">
@@ -156,7 +160,7 @@
         </div>
     </div>
 
-    <div class="verdict" class:bad={flips > 0}>
+    <div class="verdict tc mt10" class:bad={flips > 0}>
         {#if flips === 0}
             ✓ all {n} bits decoded correctly · largest noise |w| = {wmax} of
             the {limit} allowed
@@ -167,13 +171,13 @@
     </div>
 
     {#if +eta === 0}
-        <div class="hint">
+        <div class="hint tc mt5">
             no noise at all: decryption is perfect, but b = a·s exactly, so
             Eve computes b·a<sup>−1</sup> and has the secret key
         </div>
     {/if}
 
-    <div class="note">
+    <div class="note tc mt10">
         Eve only ever sees a, b, u, v. Each is indistinguishable from uniform
         random numbers mod 97; the secret s and all the error polynomials
         never leave home.
@@ -182,41 +186,29 @@
 
 <style>
     .pg {
-        margin: 24px auto;
-        padding: 14px 12px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
+        background: #fff;
+        border: 1px solid #ccc;
         max-width: 620px;
+        color: #222;
     }
-    .controls {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 14px;
-        flex-wrap: wrap;
-        margin-bottom: 10px;
-    }
-    .controls label {
+    label {
         font-size: 0.9em;
     }
-    .controls input[type="range"] {
+    input[type="range"] {
         vertical-align: middle;
         width: 130px;
     }
     button {
         padding: 4px 10px;
-        border: 1px solid #bbb;
+        border: 1px solid #999;
         border-radius: 5px;
-        background: #fafafa;
+        background: #f6f6f6;
         cursor: pointer;
         font-size: 0.85em;
+        color: #222;
     }
     button:hover {
-        background: #f0f0f0;
-    }
-    .msg {
-        text-align: center;
-        margin: 8px 0;
+        background: #ececec;
     }
     .bit {
         width: 30px;
@@ -233,18 +225,32 @@
     }
     .cap {
         font-size: 0.78em;
-        color: #999;
+        color: #777;
     }
     .polys {
         font-family: monospace;
         font-size: 0.78em;
         margin: 12px auto;
-        max-width: 480px;
+        width: fit-content;
+        max-width: 100%;
         overflow-x: auto;
+    }
+    .prow {
+        display: flex;
+        align-items: center;
+        margin: 2px 0;
         white-space: nowrap;
     }
-    .polys div {
-        margin: 2px 0;
+    .pname {
+        width: 32px;
+        text-align: right;
+        margin-right: 6px;
+        color: #555;
+    }
+    .pcell {
+        width: 3ch;
+        text-align: right;
+        flex: none;
     }
     .tag {
         display: inline-block;
@@ -268,25 +274,19 @@
         color: #555;
     }
     .verdict {
-        text-align: center;
         font-size: 0.9em;
-        margin-top: 8px;
-        color: #1a9;
+        color: #097;
     }
     .verdict.bad {
-        color: #e44;
+        color: #d22;
     }
     .hint {
-        text-align: center;
         font-size: 0.82em;
-        color: #e0731d;
-        margin-top: 6px;
+        color: #c75200;
     }
     .note {
-        margin-top: 12px;
         font-size: 0.78em;
-        color: #999;
-        text-align: center;
+        color: #777;
     }
     svg {
         max-width: 100%;

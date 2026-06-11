@@ -44,7 +44,10 @@ class Mermaid extends LitElement {
 
     const API = mermaid.mermaidAPI;
     API.initialize({ securityLevel: "loose", theme });
-    API.render("graphDiv", text).then(({ svg }: any) => {
+    // unique id per instance: multiple <lt-mmd> on one page must not share
+    // a render id, or mermaid's d3 a11y pass selects the wrong/removed node.
+    const id = "mmd-" + Math.random().toString(36).slice(2, 9);
+    API.render(id, text).then(({ svg }: any) => {
       element.innerHTML = svg;
     });
   }

@@ -14,7 +14,7 @@
         undefind = [],
         list: Defination[] = [],
         generics: Record<string, string[]> = {},
-        ignores: string = "";
+        ignores: string | string[] = [];
 
     const gmap = {
         R: "\\mathbb{R}",
@@ -34,8 +34,9 @@
     };
 
     const skip = Object.values(generics).flat();
-    for (let i = 0; i < ignores.length; i++) {
-        const ignore = ignores[i].trim();
+    const extra = Array.isArray(ignores) ? ignores : ignores.split(",");
+    for (const e of extra) {
+        const ignore = e.trim();
         if (ignore.length > 0 && !skip.includes(ignore)) {
             skip.push(ignore);
         }

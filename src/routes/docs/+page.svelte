@@ -29,18 +29,6 @@
       desc: "Newtonian solar system simulation with variable coordinates systems",
     },
     {
-      name: "Ahana",
-      icon: "https://github.com/plutoniumm/ahana/raw/main/icons/pf.svg",
-      href: "https://plutoniumm.github.io/ahana",
-      desc: "Diffractive ray optics simulation with prisms, lenses, and blocks.",
-    },
-    {
-      name: "XOXO",
-      icon: "https://github.com/plutoniumm/xoxo/raw/main/public/icon.svg",
-      href: "https://plutoniumm.github.io/xoxo",
-      desc: "3D Quantum Tic-Tac-Toe game demonstrating superposition and entanglement.",
-    },
-    {
       name: "Eastwood",
       icon: "https://github.com/plutoniumm.png",
       href: "/docs/eastwood",

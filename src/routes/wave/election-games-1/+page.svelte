@@ -439,7 +439,7 @@
     >.
 </p>
 
-<p>So far now, we need 3 things to make a better system</p>
+<p>So far now, we need 4 things to make a better system</p>
 <ul>
     <li>We should be able to vote for who we want</li>
     <li>No Gerrymandering</li>

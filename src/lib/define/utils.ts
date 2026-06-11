@@ -1,11 +1,11 @@
 import { source } from "./sources";
 
 const ignores = (
-    "sin,cos,ln,log,sinh,cosh,tanh,arg,sec,lim" +
+    "sin,cos,ln,log,sinh,cosh,tanh,arg,sec,lim,mod" +
     "," +
     "d, O" +
     "," +
-    "+,−,-,∪,∩,e,i,∅,∈,∧,∨,¬,⇒,⇔,→,↔,⊆,⊂,⊇,⊃,∃,∀,∄,∃!,∀!,{,},!,)!,.,⌊,⌋,⌈,⌉,∣,∥,∝,≠,=,≈,≡,≅,≤,≥,≪,≫,⊥,∠,⊤,⊥⊤,⊢,⊣,⊨,⊩,⊪,⊫,′,′′,′′′" +
+    "±,/,+,−,-,∪,∩,e,i,∅,∈,∧,∨,¬,⇒,⇔,→,↔,⊆,⊂,⊇,⊃,∃,∀,∄,∃!,∀!,{,},!,)!,.,⌊,⌋,⌈,⌉,∣,∥,∝,≠,=,≈,≡,≅,≤,≥,≪,≫,⊥,∠,⊤,⊥⊤,⊢,⊣,⊨,⊩,⊪,⊫,′,′′,′′′" +
     "," +
     "(((,((,(,),)),))), [[[,[[,[,],]],]]], [(,)], ([,]), ⌈), ⌉), ⌊), ⌋), ⌊, ⌋, ⌈, ⌉"
 )
@@ -17,9 +17,11 @@ const powderkeg = "π".split(",");
 
 export function invalid(t: string): boolean {
     if (!t.length) return true;
-    if (t.includes("\n") || t.includes(" ")) return true;
+    if (/\s/.test(t)) return true;
     if (ignores.includes(t)) return true;
-    if (!isNaN(Number(t)) && !isNaN(parseFloat(t))) return true;
+    // a variable looks like a variable: letters only. This drops operators,
+    // slashes, digits and fraction debris (±, /, /2, 17, ⌊ ...) structurally
+    if (!/^\p{L}+$/u.test(t)) return true;
     if (powderkeg.some((g) => t.includes(g))) return true;
 
     return false;
@@ -39,7 +41,7 @@ export function update_definations(definitions, Defs) {
         definitions.map((def) => {
             const { type, content, key } = def;
             return source(type, content).then((d) => {
-                Defs[key] = d || 0;
+                Defs[key] = d || "";
                 return d;
             });
         }),

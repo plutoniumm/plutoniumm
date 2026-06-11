@@ -1,5 +1,7 @@
+type DefSource = "text" | "wikipedia";
+
 interface Defination {
     key: string;
-    type: string;
+    type: DefSource;
     content: string;
 }

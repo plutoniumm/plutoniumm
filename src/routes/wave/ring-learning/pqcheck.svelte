@@ -63,7 +63,7 @@
             </p>
         {/if}
         {#if info.length}
-            <div class="trace">
+            <div class="trace my10 py5 px10 rx5">
                 {#each info as kv}
                     <div><span class="k">{kv[0]}</span>{kv[1]}</div>
                 {/each}
@@ -94,10 +94,7 @@
         font-size: 0.92em;
     }
     .trace {
-        margin: 10px 0;
-        padding: 8px 12px;
         background: rgba(255, 255, 255, 0.55);
-        border-radius: 6px;
         font-family: monospace;
         font-size: 0.85em;
     }

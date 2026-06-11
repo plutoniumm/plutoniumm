@@ -2,21 +2,21 @@
     const i = (str) => `/assets/${str}.svg`;
     const blocks = [
         {
-            title: "me",
+            title: "",
             links: [
                 ["plutoniumm", "//github.com/plutoniumm", "github"],
-                ["plutoniumm", "//youtu.be/zL19uMsnpSU", "youtube"],
-                ["Books", "//books.manav.ch", "bookmark"],
-            ],
-        },
-        {
-            title: "work",
-            links: [
+                // ["plutoniumm", "//youtu.be/zL19uMsnpSU", "youtube"],
                 [
                     "Scholar",
                     "//scholar.google.com/citations?user=CkJTRyAAAAAJ",
                     "scholar",
                 ],
+                ["Books", "//books.manav.ch", "bookmark"],
+            ],
+        },
+        {
+            title: ".",
+            links: [
                 ["Handwavium", "/wave", "clip"],
                 ["Simulators", "/sim", "comment"],
                 ["Docs", "/docs", "docs"],
@@ -61,10 +61,12 @@
     <div class="right fade p20">
         <div class="title fw5">Manav Seksaria</div>
         <br />
-        <div class="f g20">
-            {#each blocks as block}
+        <div class="f-col g10">
+            {#each blocks as block, idx}
                 <div>
-                    <div class="block-title">{block.title}</div>
+                    {#if idx !== 0}
+                        <hr class="rpm-0 o-25 w-50 mx-a" />
+                    {/if}
                     {#each block.links as link}
                         <a
                             class="p-rel d-b"

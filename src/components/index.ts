@@ -7,7 +7,16 @@ export { default as Scatter } from "./scatter.svelte";
 export { default as Meta } from "./meta.svelte";
 export { default as Definations } from "./define.svelte";
 
-export function define(key, content, type = "text"): Defination {
+export const T: Record<DefSource, DefSource> = {
+    text: "text",
+    wikipedia: "wikipedia",
+};
+
+export function define(
+    key: string,
+    content: string,
+    type: DefSource = T.text,
+): Defination {
     return {
         key,
         type,

@@ -73,7 +73,7 @@ and divided.
 <p>
     Each number is of the form {_`z = a + ib = |z| e^{i\ \text{arg}(z)} = r e^{i\theta}`},
     where {_`i = \sqrt{-1}`}. Then just use a bunch of points for each shape.
-    For example, a a circle can just be a 100 complex points
+    For example, a circle can just be 100 complex points
 </p>
 
 <Scatter data={Dataset("circle", Circ.map(Map.ucirc))}></Scatter>
@@ -127,9 +127,9 @@ and divided.
 </p>
 
 <p>
-    Since {_`z = r e^{i \theta}`}, {_`z_1 + z_2 = r_1 e^{i \theta} + r_2 e^{i \theta} = (r_1 + r_2) e^{i 2\theta+k}`},
+    Since {_`z = r e^{i \theta}`}, {_`z_1 + z_2 = r_1 e^{i \theta} + r_2 e^{i (\theta + k)} = (r_1 + r_2 e^{ik}) e^{i \theta}`},
     with an offset parameter {_`k`}, since we can choose which angle we want the
-    two squares to meet at (this will be important later). And, a square added
+    two shapes to meet at (this will be important later). And, a square added
     to a square should give a square of side 2 (the edges look choppy because
     computers are finite precision).
 </p>
@@ -172,7 +172,7 @@ and divided.
         <p>
             We get a twisting squircle. Sweep the offset from 0 to 8 and watch
             the squircle twist around 45&deg;. This can be imagined as a ring
-            that twists around the cylinder as it goes down in 3d. just like
+            that twists around the cylinder as it goes down in 3d, just like
             this building. With the additional change of also getting slimmer in
             its waist as it goes.
         </p>
@@ -186,7 +186,7 @@ and divided.
     <Image
         href="https://en.wikipedia.org/wiki/Cayan_Tower"
         src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8a/Cayan_Tower.jpg/330px-Cayan_Tower.jpg"
-        alt="Wikipedia: Cayan Tower, China"
+        alt="Wikipedia: Cayan Tower, Dubai"
         scale="2"
     ></Image>
 </div>
@@ -241,7 +241,7 @@ and divided.
     and that of a circle is {_`z(\theta) = e^{i \theta}`}. So, the product of a
     circle and a square is
     {_`z(\theta+k) = \sec(\theta - \frac{\pi}{2} \lfloor \frac{4\theta + \pi}{2\pi} \rfloor) e^{i 2\theta + k}`}.
-    I have no idea what is going on here or why it's periodicity is 10&pi;.
+    I have no idea what is going on here or why its periodicity is 10&pi;.
 </p>
 
 <p>
@@ -311,7 +311,7 @@ or a circle to anything's power.
     </div>
 </LR>
 
-We're looking at the yellow lines as they vary, the blue and red is just a
+We're looking at the yellow lines as they vary, the blue and red are just a
 reference to our original circles. Even taking {_`r_1=r_2=1`}, it seems when a
 circle is raised to a circle, we still lose out on normalisation. The 2nd term {_`e^{ (\theta + k_1)\sin\theta}`}
 is a damping term, and the first term {_`e^{i[(\theta + k_1)\cos\theta + k_2]}`}

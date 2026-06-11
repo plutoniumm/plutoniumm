@@ -5,7 +5,7 @@ export default function Tex () {
     transform ( code, id ) {
       if ( !id.endsWith( ".svelte" ) ) return;
       if ( id.includes( "node_modules" ) ) return;
-      if ( !id.includes( "/p/" ) ) return;
+      if ( !id.includes( "/wave/" ) && !id.includes( "/drafts/" ) ) return;
 
       let result = code
         .replaceAll( "{_", "{@html _" )

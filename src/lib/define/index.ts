@@ -34,8 +34,12 @@ function define(el: HTMLElement) {
 
 export function run(colors, e) {
     if (e.children.length > 0) return;
+    // words inside \text{...} are prose labels, never variables
+    if (e.closest(".text")) return;
     const t = e.innerText;
-    if (invalid(t)) return;
+    // explicit definitions always win; otherwise structurally invalid
+    // tokens are skipped
+    if (invalid(t) && !Object.hasOwn(Defs, t)) return;
 
     if (!Object.hasOwn(KV, t)) {
         KV[t] = colors[Object.keys(KV).length % colors.length];

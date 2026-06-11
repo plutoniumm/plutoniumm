@@ -44,7 +44,7 @@ which, in general, is
 What if we were to convert the factorial to a gamma function and then use that
 to evaluate the derivative in a non-integer order? So then,
 
-{__`D^{0.5} = \frac{\Gamma(n+1)}{\Gamma(n-\frac12+1)} x^{n-\frac12}`}. We can
+{__`D^{0.5} x^n = \frac{\Gamma(n+1)}{\Gamma(n-\frac12+1)} x^{n-\frac12}`}. We can
 now apply this twice to get the 1st derivative:
 
 {__`D^{0.5} D^{0.5} x^n = \frac{\Gamma(n+1)}{\Gamma(n-\frac12+1)} \cdot \frac{\Gamma(n-\frac12+1)}{\Gamma(n-1+1)} x^{n-1} = \frac{\Gamma(n+1)}{\Gamma(n-1+1)} x^{n-1} = n x^{n-1} = D x^n.`}
@@ -74,8 +74,8 @@ complex coefficient. We can now even try to find {_`D^i e^{ix}`} which would be 
 or {_`e^{-\frac{\pi}{2}} e^{ix}`}. Now that we took the imaginary derivative of
 a complex function, we got a real coefficient. In general, we can safely say
 that non-integer derivatives may give us a real or complex result. Now if we
-want a the derivative of say {_`\cos x`}, we can represent {_`\cos x = \frac{e^{ix} + e^{-ix}}{2}`}
-and then proceed from there. One can verify that {_`D^{\alpha} \cos x = \cos x + \frac{\pi}2 \alpha`}.
+want the derivative of say {_`\cos x`}, we can represent {_`\cos x = \frac{e^{ix} + e^{-ix}}{2}`}
+and then proceed from there. One can verify that {_`D^{\alpha} \cos x = \cos(x + \frac{\pi}2 \alpha)`}.
 So, the differential operator is simply a shifting operator for the sinusoidal
 function. But now that we've asked the question of an imaginary derivative, we
 are forced to ask. What is {_`D^i x`}?
@@ -83,11 +83,11 @@ are forced to ask. What is {_`D^i x`}?
 <h3>{_`D^i x`}</h3>
 Simple application of the definition gives us {_`D^i x = \frac{1}{\Gamma(2-i)} x^{1 - i}`}
 
-Here {_`\frac{1}{\Gamma(2-i)} = \frac{i-1}{2\pi}\Gamma(i)`}, and {_`x^{1 - i} = x \cos (\ln x) + i x \sin(\ln x)`}.
+Here {_`\frac{1}{\Gamma(2-i)} = \frac{(i-1)\sinh(\pi)}{2\pi}\Gamma(i)`}, and {_`x^{1 - i} = x \cos (\ln x) - i x \sin(\ln x)`}.
 Giving us
 
 {__`
-    D^i x = \frac{i-1}{2\pi} \Gamma(i) \left( x \cos (\ln x) + i x \sin(\ln x) \right)
+    D^i x = \frac{(i-1)\sinh(\pi)}{2\pi} \Gamma(i) \left( x \cos (\ln x) - i x \sin(\ln x) \right)
 `}
 
 Absolute insanity.

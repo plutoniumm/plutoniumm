@@ -4,6 +4,12 @@
 logs
 *.log
 env.js
+claude.md
+.claude/
+elections/
+
+sim/
+drafts/
 
 # NODE
 node_modules/
@@ -32,3 +38,5 @@ package-lock.json
 static/lt/
 static/posts/
 static/data/
+
+src/routes/drafts/*/
