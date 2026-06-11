@@ -1,3 +1,7 @@
+:root {
+  interpolate-size: allow-keywords;
+}
+
 body {
   margin: 0;
   width: 100%;
@@ -5,6 +9,8 @@ body {
   box-sizing: border-box;
   font: 300 16px helvetica;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @property --P {
@@ -14,6 +20,54 @@ body {
 }
 
 @property --M {
+  syntax: "<length> | <percentage>";
+  inherits: false;
+  initial-value: 0px;
+}
+
+@property --PT {
+  syntax: "<length> | <percentage>";
+  inherits: false;
+  initial-value: 0px;
+}
+
+@property --PB {
+  syntax: "<length> | <percentage>";
+  inherits: false;
+  initial-value: 0px;
+}
+
+@property --PL {
+  syntax: "<length> | <percentage>";
+  inherits: false;
+  initial-value: 0px;
+}
+
+@property --PR {
+  syntax: "<length> | <percentage>";
+  inherits: false;
+  initial-value: 0px;
+}
+
+@property --MT {
+  syntax: "<length> | <percentage>";
+  inherits: false;
+  initial-value: 0px;
+}
+
+@property --MB {
+  syntax: "<length> | <percentage>";
+  inherits: false;
+  initial-value: 0px;
+}
+
+@property --ML {
+  syntax: "<length> | <percentage>";
+  inherits: false;
+  initial-value: 0px;
+}
+
+@property --MR {
   syntax: "<length> | <percentage>";
   inherits: false;
   initial-value: 0px;
@@ -194,6 +248,78 @@ textarea:focus {
   margin: 0 auto;
 }
 
+.pt0 { padding-top: 0px; --PT: 0px; }
+.pt2 { padding-top: 2px; --PT: 2px; }
+.pt5 { padding-top: 5px; --PT: 5px; }
+.pt10 { padding-top: 10px; --PT: 10px; }
+.pt20 { padding-top: 20px; --PT: 20px; }
+
+.pb0 { padding-bottom: 0px; --PB: 0px; }
+.pb2 { padding-bottom: 2px; --PB: 2px; }
+.pb5 { padding-bottom: 5px; --PB: 5px; }
+.pb10 { padding-bottom: 10px; --PB: 10px; }
+.pb20 { padding-bottom: 20px; --PB: 20px; }
+
+.pl0 { padding-left: 0px; --PL: 0px; }
+.pl2 { padding-left: 2px; --PL: 2px; }
+.pl5 { padding-left: 5px; --PL: 5px; }
+.pl10 { padding-left: 10px; --PL: 10px; }
+.pl20 { padding-left: 20px; --PL: 20px; }
+
+.pr0 { padding-right: 0px; --PR: 0px; }
+.pr2 { padding-right: 2px; --PR: 2px; }
+.pr5 { padding-right: 5px; --PR: 5px; }
+.pr10 { padding-right: 10px; --PR: 10px; }
+.pr20 { padding-right: 20px; --PR: 20px; }
+
+.px0 { padding-left: 0px; padding-right: 0px; --PL: 0px; --PR: 0px; }
+.px2 { padding-left: 2px; padding-right: 2px; --PL: 2px; --PR: 2px; }
+.px5 { padding-left: 5px; padding-right: 5px; --PL: 5px; --PR: 5px; }
+.px10 { padding-left: 10px; padding-right: 10px; --PL: 10px; --PR: 10px; }
+.px20 { padding-left: 20px; padding-right: 20px; --PL: 20px; --PR: 20px; }
+
+.py0 { padding-top: 0px; padding-bottom: 0px; --PT: 0px; --PB: 0px; }
+.py2 { padding-top: 2px; padding-bottom: 2px; --PT: 2px; --PB: 2px; }
+.py5 { padding-top: 5px; padding-bottom: 5px; --PT: 5px; --PB: 5px; }
+.py10 { padding-top: 10px; padding-bottom: 10px; --PT: 10px; --PB: 10px; }
+.py20 { padding-top: 20px; padding-bottom: 20px; --PT: 20px; --PB: 20px; }
+
+.mt0 { margin-top: 0px; --MT: 0px; }
+.mt2 { margin-top: 2px; --MT: 2px; }
+.mt5 { margin-top: 5px; --MT: 5px; }
+.mt10 { margin-top: 10px; --MT: 10px; }
+.mt20 { margin-top: 20px; --MT: 20px; }
+
+.mb0 { margin-bottom: 0px; --MB: 0px; }
+.mb2 { margin-bottom: 2px; --MB: 2px; }
+.mb5 { margin-bottom: 5px; --MB: 5px; }
+.mb10 { margin-bottom: 10px; --MB: 10px; }
+.mb20 { margin-bottom: 20px; --MB: 20px; }
+
+.ml0 { margin-left: 0px; --ML: 0px; }
+.ml2 { margin-left: 2px; --ML: 2px; }
+.ml5 { margin-left: 5px; --ML: 5px; }
+.ml10 { margin-left: 10px; --ML: 10px; }
+.ml20 { margin-left: 20px; --ML: 20px; }
+
+.mr0 { margin-right: 0px; --MR: 0px; }
+.mr2 { margin-right: 2px; --MR: 2px; }
+.mr5 { margin-right: 5px; --MR: 5px; }
+.mr10 { margin-right: 10px; --MR: 10px; }
+.mr20 { margin-right: 20px; --MR: 20px; }
+
+.mx0 { margin-left: 0px; margin-right: 0px; --ML: 0px; --MR: 0px; }
+.mx2 { margin-left: 2px; margin-right: 2px; --ML: 2px; --MR: 2px; }
+.mx5 { margin-left: 5px; margin-right: 5px; --ML: 5px; --MR: 5px; }
+.mx10 { margin-left: 10px; margin-right: 10px; --ML: 10px; --MR: 10px; }
+.mx20 { margin-left: 20px; margin-right: 20px; --ML: 20px; --MR: 20px; }
+
+.my0 { margin-top: 0px; margin-bottom: 0px; --MT: 0px; --MB: 0px; }
+.my2 { margin-top: 2px; margin-bottom: 2px; --MT: 2px; --MB: 2px; }
+.my5 { margin-top: 5px; margin-bottom: 5px; --MT: 5px; --MB: 5px; }
+.my10 { margin-top: 10px; margin-bottom: 10px; --MT: 10px; --MB: 10px; }
+.my20 { margin-top: 20px; margin-bottom: 20px; --MT: 20px; --MB: 20px; }
+
 .rx0 {
   border-radius: 0px;
 }
@@ -323,31 +449,31 @@ textarea:focus {
 
 .sw {
   --W: 100%;
-  width: calc(var(--W) - 2 * var(--M) - 2 * var(--P));
+  width: calc(var(--W) - 2 * var(--M) - 2 * var(--P) - var(--ML) - var(--MR) - var(--PL) - var(--PR));
 }
 
 .sw-100 {
-  width: calc(100% - 2 * var(--M) - 2 * var(--P));
+  width: calc(100% - 2 * var(--M) - 2 * var(--P) - var(--ML) - var(--MR) - var(--PL) - var(--PR));
 }
 
 .sw-75 {
-  width: calc(75% - 2 * var(--M) - 2 * var(--P));
+  width: calc(75% - 2 * var(--M) - 2 * var(--P) - var(--ML) - var(--MR) - var(--PL) - var(--PR));
 }
 
 .sw-66 {
-  width: calc(66.66% - 2 * var(--M) - 2 * var(--P));
+  width: calc(66.66% - 2 * var(--M) - 2 * var(--P) - var(--ML) - var(--MR) - var(--PL) - var(--PR));
 }
 
 .sw-50 {
-  width: calc(50% - 2 * var(--M) - 2 * var(--P));
+  width: calc(50% - 2 * var(--M) - 2 * var(--P) - var(--ML) - var(--MR) - var(--PL) - var(--PR));
 }
 
 .sw-33 {
-  width: calc(33.33% - 2 * var(--M) - 2 * var(--P));
+  width: calc(33.33% - 2 * var(--M) - 2 * var(--P) - var(--ML) - var(--MR) - var(--PL) - var(--PR));
 }
 
 .sw-25 {
-  width: calc(25% - 2 * var(--M) - 2 * var(--P));
+  width: calc(25% - 2 * var(--M) - 2 * var(--P) - var(--ML) - var(--MR) - var(--PL) - var(--PR));
 }
 
 .h-100 {
@@ -376,31 +502,31 @@ textarea:focus {
 
 .sh {
   --H: 100%;
-  height: calc(var(--H) - 2 * var(--M) - 2 * var(--P));
+  height: calc(var(--H) - 2 * var(--M) - 2 * var(--P) - var(--MT) - var(--MB) - var(--PT) - var(--PB));
 }
 
 .sh-100 {
-  height: calc(100% - 2 * var(--M) - 2 * var(--P));
+  height: calc(100% - 2 * var(--M) - 2 * var(--P) - var(--MT) - var(--MB) - var(--PT) - var(--PB));
 }
 
 .sh-75 {
-  height: calc(75% - 2 * var(--M) - 2 * var(--P));
+  height: calc(75% - 2 * var(--M) - 2 * var(--P) - var(--MT) - var(--MB) - var(--PT) - var(--PB));
 }
 
 .sh-66 {
-  height: calc(66.66% - 2 * var(--M) - 2 * var(--P));
+  height: calc(66.66% - 2 * var(--M) - 2 * var(--P) - var(--MT) - var(--MB) - var(--PT) - var(--PB));
 }
 
 .sh-50 {
-  height: calc(50% - 2 * var(--M) - 2 * var(--P));
+  height: calc(50% - 2 * var(--M) - 2 * var(--P) - var(--MT) - var(--MB) - var(--PT) - var(--PB));
 }
 
 .sh-33 {
-  height: calc(33.33% - 2 * var(--M) - 2 * var(--P));
+  height: calc(33.33% - 2 * var(--M) - 2 * var(--P) - var(--MT) - var(--MB) - var(--PT) - var(--PB));
 }
 
 .sh-25 {
-  height: calc(25% - 2 * var(--M) - 2 * var(--P));
+  height: calc(25% - 2 * var(--M) - 2 * var(--P) - var(--MT) - var(--MB) - var(--PT) - var(--PB));
 }
 
 .f {
