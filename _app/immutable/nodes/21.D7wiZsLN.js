@@ -1,51 +1,4 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="/assets/meta.png" />
-    <link rel="apple-touch-icon" href="/assets/meta.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <link rel="stylesheet" href="/atomic.css" />
-    <link rel="stylesheet" href="/css/global.css" />
-
-    <title>Plutoniumm</title>
-    
-		<link href="../_app/immutable/assets/3.DYhGSUZr.css" rel="stylesheet">
-		<link href="../_app/immutable/assets/define.lPNZuyRA.css" rel="stylesheet">
-		<link href="../_app/immutable/assets/21.CBfvV277.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/entry/start.DPSKdtHH.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/D4W_AEPi.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/CZzIV55D.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/zImHEY6i.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/DY9qbGRG.js">
-		<link rel="modulepreload" href="../_app/immutable/entry/app.CSj8rhsx.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/3qRHltW6.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/BWhIhoIv.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/UcDFViGA.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/DsnmJJEf.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/BJjYSnFD.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/M5XUtYFt.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/WfC6pmwF.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/CRk32S8W.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/0._m8bpvOr.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/3.v8pcMOVf.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/sDYslN56.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/Bh7UC30R.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/DT8WyqO5.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/DXlEpTQd.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/Cip6YPdY.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/21.D7wiZsLN.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/DvReYul2.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/BtH6GhOB.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/BkkycDmh.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/CTa6ybkt.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/D-VbVIMD.js"><!--3lsmcx--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" crossorigin="anonymous"/><!----><!--1dwxwmi--><script src="/lt/mermaid.js"></script><!----><!----><!--1e9xhbz--><meta name="description" content="A look at some mathematics of elections and how they can be gamed"/> <meta property="og:type" content="website"/> <meta property="og:url" content="https://manav.ch/"/> <meta property="og:title" content="Elections, Games &amp; Gaming Elections"/> <meta property="og:description" content="A look at some mathematics of elections and how they can be gamed"/> <meta property="twitter:card" content="summary_large_image"/> <meta property="twitter:url" content="https://manav.ch/"/> <meta property="twitter:title" content="Elections, Games &amp; Gaming Elections"/> <meta property="twitter:description" content="A look at some mathematics of elections and how they can be gamed"/> <!--[--><!--]--><!----><title>Elections, Games &amp; Gaming Elections | manav.ch</title>
-</head>
-
-<body class="noise" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <div style="display: contents"><!--[--><!--[--><!----><!--[--><!----><article class="mx-a tl p10"><!--[--><!----><h1 class="svelte-1e9xhbz">Elections, Games &amp; Gaming Elections</h1> <div class="sub svelte-1e9xhbz">The Mathematics of Voting • 5 June 2023</div><!----> <blockquote class="svelte-1dwxwmi"><b>Dramatis personae (all fictional):</b> Reasongrad, Analyticaland, Logicia,
+import"../chunks/DsnmJJEf.js";import"../chunks/sDYslN56.js";import{f as d,s as e}from"../chunks/CZzIV55D.js";import{a as r,f as w,w as v}from"../chunks/UcDFViGA.js";import{h as p}from"../chunks/DT8WyqO5.js";import{s as i}from"../chunks/DvReYul2.js";import{M as f}from"../chunks/BtH6GhOB.js";import{R as x}from"../chunks/BkkycDmh.js";var u=v(w('<script src="/lt/mermaid.js"><\/script><!>',1)),g=w(`<!> <blockquote class="svelte-1dwxwmi"><b>Dramatis personae (all fictional):</b> Reasongrad, Analyticaland, Logicia,
     Hawking, Einstein, Newton, Archimedes.</blockquote> <p>Let us consider the fictitious city of <a href="https://neildegrassetyson.com/commentary/2016-08-07-reflections-on-rationalia/" target="_blank" rel="noopener noreferrer" class="svelte-1dwxwmi">Rationalia</a>, whose sitting president is Dr Neil deGrasse Tyson. Let us then see how to
     hack elections, hack the hacks, and so on. We will also look for better
     election systems altogether. Let us divide this largely into two sections:
@@ -89,7 +42,7 @@
     the smaller states (for the same reason, since large numbers move
     faster, the larger states also lose seats faster).</p> <p>Webster's method is again the same as Adam's &amp; Jefferson's, except rather
     than force round up or down, we round to the nearest integer like a normal
-    human. This is called the <a href="https://en.wikipedia.org/wiki/Webster%27s_method" target="_blank" rel="noopener noreferrer" class="svelte-1dwxwmi">Webster's Method</a>.</p> <h3>Violating Rules</h3> <p>Consider the following data, graciously generated by Mr Matt Parker.</p> <p class="tc o-50" style="font-size: 0.85em">43 seats • D = 931.9767 • Jefferson divisor = 880 • Adams
+    human. This is called the <a href="https://en.wikipedia.org/wiki/Webster%27s_method" target="_blank" rel="noopener noreferrer" class="svelte-1dwxwmi">Webster's Method</a>.</p> <h3>Violating Rules</h3> <p>Consider the following data, graciously generated by Mr Matt Parker.</p> <p class="tc o-50" style="font-size: 0.85em">43 seats &bullet; D = 931.9767 &bullet; Jefferson divisor = 880 &bullet; Adams
     divisor = 1000</p> <table class="svelte-1dwxwmi"><thead><tr><th class="svelte-1dwxwmi">state</th><th class="svelte-1dwxwmi">population</th><th class="svelte-1dwxwmi">quota (=pop/D)</th><th class="svelte-1dwxwmi">Jefferson (=pop/880)</th><th class="svelte-1dwxwmi">seats</th><th class="svelte-1dwxwmi">Adams (=pop/1000)</th><th class="svelte-1dwxwmi">seats</th></tr></thead><tbody><tr><td class="svelte-1dwxwmi">New Triangle</td><td class="svelte-1dwxwmi">21,878</td><td class="svelte-1dwxwmi">23.47483</td><td class="svelte-1dwxwmi">24.8614</td><td class="svelte-1dwxwmi">24</td><td class="svelte-1dwxwmi">21.878</td><td class="svelte-1dwxwmi">22</td></tr><tr><td class="svelte-1dwxwmi">Circula</td><td class="svelte-1dwxwmi">9,713</td><td class="svelte-1dwxwmi">10.42193</td><td class="svelte-1dwxwmi">11.0375</td><td class="svelte-1dwxwmi">11</td><td class="svelte-1dwxwmi">9.713</td><td class="svelte-1dwxwmi">10</td></tr><tr><td class="svelte-1dwxwmi">Squaryland</td><td class="svelte-1dwxwmi">4,167</td><td class="svelte-1dwxwmi">4.471142</td><td class="svelte-1dwxwmi">4.73523</td><td class="svelte-1dwxwmi">4</td><td class="svelte-1dwxwmi">4.167</td><td class="svelte-1dwxwmi">5</td></tr><tr><td class="svelte-1dwxwmi">Octiana</td><td class="svelte-1dwxwmi">3,252</td><td class="svelte-1dwxwmi">3.489357</td><td class="svelte-1dwxwmi">3.69545</td><td class="svelte-1dwxwmi">3</td><td class="svelte-1dwxwmi">3.252</td><td class="svelte-1dwxwmi">4</td></tr><tr><td class="svelte-1dwxwmi">Rhombus Island</td><td class="svelte-1dwxwmi">1,065</td><td class="svelte-1dwxwmi">1.142732</td><td class="svelte-1dwxwmi">1.21023</td><td class="svelte-1dwxwmi">1</td><td class="svelte-1dwxwmi">1.065</td><td class="svelte-1dwxwmi">2</td></tr><tr><td class="svelte-1dwxwmi"><b>Total</b></td><td class="svelte-1dwxwmi"><b>40,075</b></td><td class="svelte-1dwxwmi"></td><td class="svelte-1dwxwmi"></td><td class="svelte-1dwxwmi"><b>43</b></td><td class="svelte-1dwxwmi"></td><td class="svelte-1dwxwmi"><b>43</b></td></tr></tbody></table> <p>Notice how, in the data above, New Triangle jumped from 23.47 down to 22,
     skipping 23 entirely, which should technically not be allowed, since
     rounding can happen only up or down to the next or previous number. Jumping numbers is not allowed in the <a href="https://en.wikipedia.org/wiki/Quota_rule" target="_blank" rel="noopener noreferrer" class="svelte-1dwxwmi">Quota Rule</a>. This was a common occurrence in both Jefferson's and Adam's methods. The
@@ -161,7 +114,7 @@
     we have multiple rounds of voting. So we have the first round, we vote again
     with three candidates, then with two candidates. Or we can have a system
     similar to Brazil where we have two rounds of voting (assuming there is no
-    clear >50% in one shot); the first round is similar to the Instant Runoff
+    clear &gt;50% in one shot); the first round is similar to the Instant Runoff
     Voting system. The second round is a Winner Takes All system. This is called
     the <a href="https://en.wikipedia.org/wiki/Two-round_system" target="_blank" rel="noopener noreferrer" class="svelte-1dwxwmi">Multiple Runoff</a> system.</p> <p>Consider a multiple-run system where Hawking wants to skew the results even
     though they know they cannot win themselves. Hawking would rather Archimedes
@@ -181,26 +134,10 @@
     since A has the highest percentage in 3 of the 6 matchups. So we can say that
     A is the winner. This is called the <a href="https://en.wikipedia.org/wiki/Condorcet_method" target="_blank" rel="noopener noreferrer" class="svelte-1dwxwmi">Condorcet Method</a>. There is, however, one BIG problem with this method. WHAT IF, let us say,
     we had 3 candidates and the results came out like a game of
-    stone-paper-scissors, such that</p> <lt-mmd class="svelte-1dwxwmi">graph LR
-  A --> B
-  B --> C
-  C --> A</lt-mmd> <p>In such a case, A is preferred over B, B is preferred over C, and C is
+    stone-paper-scissors, such that</p> <lt-mmd></lt-mmd> <p>In such a case, A is preferred over B, B is preferred over C, and C is
     preferred over A, so there is no clear winner. This is called a <a href="https://en.wikipedia.org/wiki/Condorcet_paradox" target="_blank" rel="noopener noreferrer" class="svelte-1dwxwmi">Condorcet Paradox</a>. This situation may occur for any number of candidates, and candidates may
     even game the system to form loops. So, for example, both of the following
-    cases are a problem</p> <lt-mmd class="svelte-1dwxwmi">graph LR
-  X["Loop"]
-  A --- B
-  A --- C
-  C --> D["..."]
-  B --- D</lt-mmd> <lt-mmd class="svelte-1dwxwmi">graph LR
-  X --> Y
-  Y --> A
-  subgraph Loop
-    direction TB
-    A --> B
-    B --> C
-    C --> A
-  end</lt-mmd> <h3>Single Transferable Vote</h3> <p>Also called "The Single Greatest Voting System To Have Ever Existed" (by at
+    cases are a problem</p> <lt-mmd></lt-mmd> <lt-mmd></lt-mmd> <h3>Single Transferable Vote</h3> <p>Also called "The Single Greatest Voting System To Have Ever Existed" (by at
     least 1 person). This is a system where you rank candidates in order of
     preference. Our objectives here are</p> <ul><li>Majority Happiness</li> <li>Local Elections (not just one national)</li> <li>Allow multiple representatives</li></ul> <p>There is no way I can explain this without an animation, so just follow this
     video below.</p> <p><a href="https://www.youtube.com/watch?v=M91jraoo6t8" target="_blank" rel="noopener noreferrer" class="svelte-1dwxwmi">Watch the Single Transferable Vote explainer video</a></p> <div class="m20"><hr/></div> <h2>Conclusions &amp; Caveats</h2> <h3>Possibilities</h3> <p>It is, in theory, mathematically possible to show that for any system, there
@@ -232,31 +169,20 @@
     much detail since they can be deduced as a particular case of the systems we
     have already seen.</p> <p>There has also been no mention of strategies political parties use to target
     certain demographics; the fact that this is done is implicit in the ways to
-    game any system.</p> <!--[--><h3>Table of Contents</h3> <ul class="toc"><!--[--><!--]--></ul><!--]--> <h3>References</h3> <ul><!--[--><li><a href="https://www.youtube.com/watch?v=M91jraoo6t8" class="svelte-c12nnw"><!--[--><!---->Single Transferable Vote: explainer video<!--]--> <svg class="p-rel svelte-c12nnw" viewBox="0 0 32 32" fill="none"><path d="M14 9 L3 9 3 29 23 29 23 18 M18 4 L28 4 28 14 M28 4 L14 18"></path></svg></a><!----></li><!--]--></ul><!----><!----><!--]--> <footer class="tc m-a" style="margin-top: 10vw;font-family:'Comic Sans MS'"><hr class="w-33 o-50"/> <a href="/">powered by plutoniumm</a></footer></article> <button class="p-fix svelte-3lsmcx" aria-label="scroll to top"><svg class="ptr" viewBox="0 0 200 200" height="48" width="48" fill="none"><path d="
-    m 90.68 12.56 c 46.464 -5.808 87.12 29.04 101.64 72.6 s -14.52 87.12 -58.08 101.64 s -71.148 1.452 -91.476 -10.164 C -10.96 108.392 3.56 41.6 61.64 19.82 c 14.52 -4.356 21.78 -5.808 29.04 -7.26 z" stroke-width="10" stroke-dasharray="575" stroke-dashoffset="575" stroke-linecap="round" class="svelte-3lsmcx"></path><path d="M 59 75 Q 77 65 99 47 Q 123 61 139 75 M 99 47 Q 101 85 99 155" class="svelte-3lsmcx"></path></svg></button><!----><!--]--><!----><!----><!--]--> <!--[!--><!--]--><!--]-->
-			
-			<script>
-				{
-					__sveltekit_18yk88k = {
-						base: new URL("..", location).pathname.slice(0, -1)
-					};
-
-					const element = document.currentScript.parentElement;
-
-					Promise.all([
-						import("../_app/immutable/entry/start.DPSKdtHH.js"),
-						import("../_app/immutable/entry/app.CSj8rhsx.js")
-					]).then(([kit, app]) => {
-						kit.start(app, element, {
-							node_ids: [0, 3, 21],
-							data: [null,null,null],
-							form: null,
-							error: null
-						});
-					});
-				}
-			</script>
-		</div>
-</body>
-
-</html>
+    game any system.</p> <!>`,3);function E(h){var o=g();p("1dwxwmi",m=>{var n=u();e(d(n)),r(m,n)});var l=d(o);f(l,{title:"Elections, Games & Gaming Elections",sub:"The Mathematics of Voting",desc:"A look at some mathematics of elections and how they can be gamed",date:"5 June 2023"});var t=e(l,160);i(t,1,"svelte-1dwxwmi"),t.textContent=`graph LR
+  A --> B
+  B --> C
+  C --> A`;var s=e(t,4);i(s,1,"svelte-1dwxwmi"),s.textContent=`graph LR
+  X["Loop"]
+  A --- B
+  A --- C
+  C --> D["..."]
+  B --- D`;var a=e(s,2);i(a,1,"svelte-1dwxwmi"),a.textContent=`graph LR
+  X --> Y
+  Y --> A
+  subgraph Loop
+    direction TB
+    A --> B
+    B --> C
+    C --> A
+  end`;var c=e(a,46);x(c,{list:[["Single Transferable Vote: explainer video","https://www.youtube.com/watch?v=M91jraoo6t8"]]}),r(h,o)}export{E as component};

@@ -1,0 +1,10 @@
+import"../chunks/DsnmJJEf.js";import"../chunks/sDYslN56.js";import{p as u,f as m,a as p,g as d,d as h,s as e,n as g}from"../chunks/CZzIV55D.js";import{a as v,f as x}from"../chunks/UcDFViGA.js";import{h as s}from"../chunks/D-VbVIMD.js";import{i as b}from"../chunks/Cip6YPdY.js";import{D as y,d as l}from"../chunks/CpJ4BgJm.js";import{M as w,_ as k,a as M}from"../chunks/BtH6GhOB.js";var T=x(`<!> <!> <svg viewBox="0 0 200 200" width="300" height="300" xmlns="http://www.w3.org/2000/svg"><defs><filter id="wave_LOW"><feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="3" seed="8" result="noise"></feTurbulence><feDisplacementMap in="SourceGraphic" in2="noise" scale="6" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap></filter><filter id="wave_HIGH"><feTurbulence type="fractalNoise" baseFrequency="0.033" numOctaves="3" seed="5" result="noise"></feTurbulence><feDisplacementMap in="SourceGraphic" in2="noise" scale="6" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap></filter><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3" result="fuzz"></feTurbulence><feColorMatrix type="matrix" values="
+        1 0 0 0 0
+        0 1 0 0 0
+        0 0 1 0 0
+        0 0 0 4 -1" result="highContrast"></feColorMatrix></filter><mask id="grainMask"><rect width="100%" height="100%" fill="url(#noiseTex)" filter="url(#grain)"></rect><circle cx="100" cy="100" r="70" fill="#888"></circle></mask></defs><g filter="url(#wave_HIGH)"><circle cx="100" cy="100" r="70" filter="url(#wave_LOW)" fill="none" stroke="#000" stroke-width="2" mask="url(#grainMask)"></circle></g></svg> <!> This is <!>. <block></block>`,1);function q(n,c){u(c,!1),b();var r=T(),a=m(r);w(a,{title:"Test Slide",sub:"Recreational Math #00n",desc:"A test slide for math content",date:"21 June 2025"});var t=e(a,2);{let f=h(()=>[l("c","speed of light","c"),l("m","mass or slope, depending on context")]);y(t,{generics:{C:["E"],R:["x","y"]},get list(){return d(f)}})}var i=e(t,4);s(i,()=>k`
+\\begin{gathered}
+y = mx + c \\\\
+y = ax^2 + bx + c
+\\end{gathered}
+`);var o=e(i,2);s(o,()=>M`E = mc^2`),g(2),v(n,r),p()}export{q as component};
