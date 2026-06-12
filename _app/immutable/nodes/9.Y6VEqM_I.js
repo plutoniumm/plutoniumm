@@ -1,1 +1,0 @@
-import"../chunks/DsnmJJEf.js";import"../chunks/sDYslN56.js";const r=Object.freeze(Object.defineProperty({__proto__:null,load:async({data:e})=>({posts:e.posts}),prerender:!0},Symbol.toStringTag,{value:"Module"}));function n(e){}export{n as component,r as universal};
