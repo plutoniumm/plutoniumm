@@ -1,1 +1,0 @@
-import{Y as o,O as u,ao as _,v as t,C as g,B as i,U as l,E as d,A as p,F as v}from"./Cc-U2CFn.js";function m(n,r){let s=null,f=t;var a;if(t){s=p;for(var e=v(document.head);e!==null&&(e.nodeType!==g||e.data!==n);)e=i(e);if(e===null)l(!1);else{var y=i(e);e.remove(),d(y)}}t||(a=document.head.appendChild(o()));try{u(()=>r(a),_)}finally{f&&(l(!0),d(s))}}export{m as h};
