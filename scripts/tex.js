@@ -15,7 +15,7 @@ export default function Tex () {
           /(["'`])((?:\\.|[^\\\1])*)\1/g,
           ( _, q, m ) => q + m.replace( /\\/g, "\\\\" ) + q,
         )
-        .replaceAll( "<xxx />", `<div class="m20"><hr /></div>` );
+        .replaceAll( "<xxx />", '<div class="m20"><hr /></div>' );
 
       return {
         code: result,

@@ -3,6 +3,7 @@
 
     function fmt(date) {
         const d = new Date(date);
+
         return d.toLocaleDateString("en-US", {
             month: "short",
             day: "2-digit",
@@ -19,16 +20,16 @@
 </svelte:head>
 
 <article class="mx-a">
-    <h1>Handwavium</h1>
+    <h1 class="mb5">Handwavium</h1>
     <div class="tagline">
         Abstract nonsense that is dimensionally correct. At least by inspection.
     </div>
 
-    {#each [...data.posts].sort((a, b) => +b[0] - +a[0]) as [year, posts]}
+    {#each [...data.posts].sort((a, b) => +b[0] - +a[0]) as [year, posts], i (i)}
         {#if posts}
             <h4>{year}</h4>
             <ul>
-                {#each posts.sort((a, b) => +new Date(b.date) - +new Date(a.date)) as post}
+                {#each posts.sort((a, b) => +new Date(b.date) - +new Date(a.date)) as post, i (i)}
                     <li>
                         <a href="/wave/{post.raw}">
                             {fmt(post.date)} - {post.title}
@@ -41,9 +42,6 @@
 </article>
 
 <style>
-    h1 {
-        margin-bottom: 5px;
-    }
     .tagline {
         margin-bottom: 12px;
 

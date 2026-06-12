@@ -3,7 +3,9 @@
         title,
         sub,
         desc,
-        date;
+        date,
+        prev = "",
+        next = "";
 
     async function hash(input) {
         const data = new TextEncoder().encode(input);
@@ -38,22 +40,31 @@
     {/await}
 </svelte:head>
 
-<h1>{title}</h1>
+<h1 class="mb5">{title}</h1>
 <div class="sub">
+    {#if prev}
+        <a href={prev}>&larr; prev</a> &bullet;
+    {/if}
     {sub} &bullet; {new Date(date).toLocaleDateString("en-GB", {
         year: "numeric",
         month: "long",
         day: "numeric",
     })}
+    {#if next}
+        &bullet; <a href={next}>next &rarr;</a>
+    {/if}
 </div>
 
 <style>
-    h1 {
-        margin-bottom: 5px;
-    }
     .sub {
         margin-bottom: 12px;
 
         color: #888;
+    }
+    .sub a {
+        color: #666;
+    }
+    .sub a:hover {
+        text-decoration: underline;
     }
 </style>

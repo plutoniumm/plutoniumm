@@ -6,6 +6,7 @@
     function f(x, y) {
         const wr = 1 + 2 * x + y;
         const wi = 2 * y - x;
+
         return (wr * wr + wi * wi) / (6 * (1 + x * x + y * y));
     }
 
@@ -15,6 +16,7 @@
         const wi = 2 * y - x;
         const num = wr * wr + wi * wi;
         const den = 6 * (1 + x * x + y * y);
+
         return [
             ((4 * wr - 2 * wi) * den - num * 12 * x) / (den * den),
             ((2 * wr + 4 * wi) * den - num * 12 * y) / (den * den),
@@ -34,6 +36,7 @@
     // only picks a step along it, so no control can leave stale state behind
     function trace(x, y, d, eta) {
         const out = [];
+
         for (let s = 0; s <= CAP; s++) {
             const base = f(x, y);
             const gx = (f(x + d, y) - base) / d;
@@ -47,15 +50,18 @@
                 S: Math.hypot(gx, gy),
                 th: (Math.atan2(gy, gx) * 180) / Math.PI,
             });
+
             if (
                 s > 0 &&
                 Math.abs(base - out[s - 1].f) <
                     TOL * Math.max(out[s - 1].f, 1e-12)
             )
                 break;
+
             x += eta * gx;
             y += eta * gy;
         }
+
         return out;
     }
 
@@ -69,6 +75,7 @@
 
     // changing the start, delta or lr stops playback and rewinds to step 0
     $: rewind(ax0, ay0, delta, lr);
+
     function rewind() {
         stopRun();
         k = 0;
@@ -76,11 +83,13 @@
 
     let playing = false;
     let timer = null;
+
     function stopRun() {
         playing = false;
         if (timer) clearInterval(timer);
         timer = null;
     }
+
     function run() {
         if (playing) return stopRun();
         if (k >= last) k = 0;
@@ -90,12 +99,14 @@
             k += 1;
         }, 200);
     }
+
     function home() {
         stopRun();
         ax0 = 0;
         ay0 = 0;
         k = 0;
     }
+
     onDestroy(stopRun);
 
     // plot geometry; the field is static since f never changes
@@ -107,11 +118,16 @@
 
     const cells = [];
     const cw = (HI - LO) / NC;
+
     for (let r = 0; r < NC; r++) {
         for (let c = 0; c < NC; c++) {
             const x = LO + (c + 0.5) * cw;
             const y = LO + (r + 0.5) * cw;
-            cells.push({ c, r, v: f(x, y) });
+            cells.push({
+                c,
+                r,
+                v: f(x, y),
+            });
         }
     }
 
@@ -123,8 +139,10 @@
     const shade = (v) => {
         const a = Math.min(1, Math.max(0, v * 0.85));
         const ch = (c) => Math.round(255 + (c - 255) * a);
+
         return `rgb(${ch(0)}, ${ch(153)}, ${ch(119)})`;
     };
+
     const ARR = 0.55; // visual scale of the probe arrows
 
     // the angle theta drawn as an arc from the real axis to the red arrow
@@ -137,10 +155,12 @@
         const ex2 = cx + ARCR * Math.cos(rad);
         const ey2 = cy - ARCR * Math.sin(rad);
         const sweep = cur.th > 0 ? 0 : 1;
+
         return `M ${cx + ARCR} ${cy} A ${ARCR} ${ARCR} 0 0 ${sweep} ${ex2} ${ey2}`;
     })();
     $: arcLabel = (() => {
         const rad = ((cur.th / 2) * Math.PI) / 180;
+
         return [
             sx(cur.x) + (ARCR + 13) * Math.cos(rad),
             sy(cur.y) - (ARCR + 13) * Math.sin(rad),
@@ -148,6 +168,7 @@
     })();
 
     let dragging = false;
+
     function setStart(e) {
         const r = e.currentTarget.getBoundingClientRect();
         const scale = (W + 2 * M) / r.width;
@@ -158,27 +179,33 @@
         ax0 = Math.min(HI, Math.max(LO, x));
         ay0 = Math.min(HI, Math.max(LO, y));
     }
+
     function down(e) {
         dragging = true;
         setStart(e);
         e.preventDefault();
     }
+
     function move(e) {
         if (dragging) setStart(e);
     }
+
     function up() {
         dragging = false;
     }
 
     const fmt = (v) => (v >= 0 ? "+" : "") + v.toFixed(3);
+
     const fa = (x, y) =>
         x.toFixed(3) + (y >= 0 ? " + " : " − ") + Math.abs(y).toFixed(3) + "i";
 </script>
 
 <div class="box tc mx-a my20 p10 rx10">
     <div class="f al-ct j-ct fw g10 mb5">
-        <button on:click={run}>{playing ? "pause" : "climb"}</button>
-        <button on:click={home}>reset</button>
+        <button type="button" class="ptr rx5" on:click={run}
+            >{playing ? "pause" : "climb"}</button
+        >
+        <button type="button" class="ptr rx5" on:click={home}>reset</button>
         <label>
             step <b>{k}</b> / {last}
             <input
@@ -259,7 +286,7 @@
             </marker>
         </defs>
 
-        {#each cells as cell}
+        {#each cells as cell, ix (ix)}
             <rect
                 x={M + cell.c * (W / NC)}
                 y={M + W - (cell.r + 1) * (W / NC)}
@@ -275,8 +302,20 @@
         <text x={sx(0) + 6} y={sy(HI) + 12} class="ax">y</text>
 
         <!-- the peak -->
-        <line x1={sx(2) - 5} x2={sx(2) + 5} y1={sy(1)} y2={sy(1)} stroke="#fff" />
-        <line x1={sx(2)} x2={sx(2)} y1={sy(1) - 5} y2={sy(1) + 5} stroke="#fff" />
+        <line
+            x1={sx(2) - 5}
+            x2={sx(2) + 5}
+            y1={sy(1)}
+            y2={sy(1)}
+            stroke="#fff"
+        />
+        <line
+            x1={sx(2)}
+            x2={sx(2)}
+            y1={sy(1) - 5}
+            y2={sy(1) + 5}
+            stroke="#fff"
+        />
         <text x={sx(2) + 8} y={sy(1) - 6} class="axw">f = 1</text>
 
         <!-- the climb -->
@@ -360,7 +399,9 @@
     <div class="read mt5">
         <span class="cx">∂f/∂x = {fmt(cur.gx)}</span>
         <span class="cy">∂f/∂y = {fmt(cur.gy)}</span>
-        <span class="cs">→ S = {cur.S.toFixed(3)} at θ = {cur.th.toFixed(1)}°</span>
+        <span class="cs"
+            >→ S = {cur.S.toFixed(3)} at θ = {cur.th.toFixed(1)}°</span
+        >
     </div>
     {#if biased}
         <div class="warn mt5">
@@ -370,12 +411,11 @@
     {/if}
 
     <div class="note mt10">
-        drag anywhere to move the start (white square); brighter green is
-        higher f, the white cross is the peak at a = 2 + i. the
+        drag anywhere to move the start (white square); brighter green is higher
+        f, the white cross is the peak at a = 2 + i. the
         <span class="cx">orange</span> and <span class="cy">blue</span> arrows
-        are the two δ probes, <span class="cs">red</span> is the steepest
-        direction assembled from them. the climb runs until f improves by
-        under 0.1% a step.
+        are the two δ probes, <span class="cs">red</span> is the steepest direction
+        assembled from them. the climb runs until f improves by under 0.1% a step.
     </div>
 </div>
 
@@ -409,9 +449,7 @@
     }
     button {
         padding: 4px 10px;
-        border-radius: 5px;
         background: #f6f6f6;
-        cursor: pointer;
         font-size: 0.85em;
         color: #222;
     }

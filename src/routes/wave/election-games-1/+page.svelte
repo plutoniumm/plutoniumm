@@ -94,11 +94,27 @@
     </thead>
     <tbody>
         <tr><td colspan="4"><b>Case 1</b></td></tr>
-        <tr><td>Reasongrad</td><td>2200</td><td>44%</td><td>2 (round down 2.2 seats)</td></tr>
-        <tr><td>Analyticaland</td><td>2800</td><td>56%</td><td>3 (round up 2.8 seats)</td></tr>
+        <tr
+            ><td>Reasongrad</td><td>2200</td><td>44%</td><td
+                >2 (round down 2.2 seats)</td
+            ></tr
+        >
+        <tr
+            ><td>Analyticaland</td><td>2800</td><td>56%</td><td
+                >3 (round up 2.8 seats)</td
+            ></tr
+        >
         <tr><td colspan="4"><b>Case 2</b></td></tr>
-        <tr><td>Reasongrad</td><td>2510</td><td>51%</td><td>3 (round up 2.51 seats)</td></tr>
-        <tr><td>Analyticaland</td><td>2390</td><td>49%</td><td>2 (round down 2.39 seats)</td></tr>
+        <tr
+            ><td>Reasongrad</td><td>2510</td><td>51%</td><td
+                >3 (round up 2.51 seats)</td
+            ></tr
+        >
+        <tr
+            ><td>Analyticaland</td><td>2390</td><td>49%</td><td
+                >2 (round down 2.39 seats)</td
+            ></tr
+        >
     </tbody>
 </table>
 
@@ -113,9 +129,21 @@
         <tr><th>state</th><th>population</th><th>share</th><th>seats</th></tr>
     </thead>
     <tbody>
-        <tr><td>Reasongrad</td><td>1650</td><td>33%</td><td>2 (round up 1.65 seats)</td></tr>
-        <tr><td>Analyticaland</td><td>1600</td><td>32%</td><td>2 (round up 1.6 seats)</td></tr>
-        <tr><td>Logicia</td><td>1750</td><td>35%</td><td>2 (round up 1.75 seats)</td></tr>
+        <tr
+            ><td>Reasongrad</td><td>1650</td><td>33%</td><td
+                >2 (round up 1.65 seats)</td
+            ></tr
+        >
+        <tr
+            ><td>Analyticaland</td><td>1600</td><td>32%</td><td
+                >2 (round up 1.6 seats)</td
+            ></tr
+        >
+        <tr
+            ><td>Logicia</td><td>1750</td><td>35%</td><td
+                >2 (round up 1.75 seats)</td
+            ></tr
+        >
     </tbody>
 </table>
 
@@ -132,9 +160,9 @@
         href="https://en.wikipedia.org/wiki/Largest_remainder_method"
         target="_blank"
         rel="noopener noreferrer">Hamilton's Method</a
-    >. So, in this case, we would round up Reasongrad and Analyticaland and round
-    down Logicia. So we get two seats for Reasongrad and Analyticaland and one
-    for Logicia. This method is precisely what was also first proposed for
+    >. So, in this case, we would round up Reasongrad and Analyticaland and
+    round down Logicia. So we get two seats for Reasongrad and Analyticaland and
+    one for Logicia. This method is precisely what was also first proposed for
     Alabama in 1792.
 </p>
 
@@ -151,7 +179,11 @@
 <p><b>43 seats</b></p>
 <table>
     <thead>
-        <tr><th>state</th><th>population</th><th>share</th><th>remaining fraction</th></tr>
+        <tr
+            ><th>state</th><th>population</th><th>share</th><th
+                >remaining fraction</th
+            ></tr
+        >
     </thead>
     <tbody>
         <tr><td>A</td><td>3,252</td><td>3.49</td><td>0.49</td></tr>
@@ -165,7 +197,11 @@
 <p><b>vs 44 seats</b></p>
 <table>
     <thead>
-        <tr><th>state</th><th>population</th><th>share</th><th>remaining fraction</th></tr>
+        <tr
+            ><th>state</th><th>population</th><th>share</th><th
+                >remaining fraction</th
+            ></tr
+        >
     </thead>
     <tbody>
         <tr><td>D</td><td>9,731</td><td>10.66</td><td>0.66</td></tr>
@@ -180,8 +216,8 @@
     Notice how with these numbers, with just one more seat, while first A and B
     were getting extra seats, now D and C are getting extra seats, and A lost a
     seat. This is a problem because the number of seats is not a continuous
-    function of the population. It is a discrete function. So the number of seats
-    jumps around semi-randomly. This is called the <a
+    function of the population. It is a discrete function. So the number of
+    seats jumps around semi-randomly. This is called the <a
         href="https://en.wikipedia.org/wiki/Alabama_paradox"
         target="_blank"
         rel="noopener noreferrer">Alabama Paradox</a
@@ -202,19 +238,34 @@
 
 <p>
     Jefferson proposed that the 'divisors' for all states are set to the SAME
-    value, such that they all get rounded down first, and the seats are added up.
-    The same divisor is then gradually decreased until we reach the required
+    value, such that they all get rounded down first, and the seats are added
+    up. The same divisor is then gradually decreased until we reach the required
     number of seats.
 </p>
 
 <table>
     <thead>
-        <tr><th>state</th><th>population</th><th>portion</th><th>force round down</th><th>reduce to 850</th><th>reduce to 820</th></tr>
+        <tr
+            ><th>state</th><th>population</th><th>portion</th><th
+                >force round down</th
+            ><th>reduce to 850</th><th>reduce to 820</th></tr
+        >
     </thead>
     <tbody>
-        <tr><td>Reasongrad</td><td>1650</td><td>1650/1000 = 1.65</td><td>1</td><td>1</td><td>2</td></tr>
-        <tr><td>Analyticaland</td><td>1600</td><td>1600/1000 = 1.60</td><td>1</td><td>1</td><td>1</td></tr>
-        <tr><td>Logicia</td><td>1750</td><td>1750/1000 = 1.75</td><td>1</td><td>2</td><td>2</td></tr>
+        <tr
+            ><td>Reasongrad</td><td>1650</td><td>1650/1000 = 1.65</td><td>1</td
+            ><td>1</td><td>2</td></tr
+        >
+        <tr
+            ><td>Analyticaland</td><td>1600</td><td>1600/1000 = 1.60</td><td
+                >1</td
+            ><td>1</td><td>1</td></tr
+        >
+        <tr
+            ><td>Logicia</td><td>1750</td><td>1750/1000 = 1.75</td><td>1</td><td
+                >2</td
+            ><td>2</td></tr
+        >
     </tbody>
 </table>
 
@@ -241,14 +292,14 @@
         target="_blank"
         rel="noopener noreferrer">Adam's Method</a
     >. The Jefferson method favours the larger states, and Adam's method favours
-    the smaller states (for the same reason, since large numbers move
-    faster, the larger states also lose seats faster).
+    the smaller states (for the same reason, since large numbers move faster,
+    the larger states also lose seats faster).
 </p>
 
 <p>
-    Webster's method is again the same as Adam's &amp; Jefferson's, except rather
-    than force round up or down, we round to the nearest integer like a normal
-    human. This is called the <a
+    Webster's method is again the same as Adam's &amp; Jefferson's, except
+    rather than force round up or down, we round to the nearest integer like a
+    normal human. This is called the <a
         href="https://en.wikipedia.org/wiki/Webster%27s_method"
         target="_blank"
         rel="noopener noreferrer">Webster's Method</a
@@ -256,13 +307,11 @@
 </p>
 
 <h3>Violating Rules</h3>
-<p>
-    Consider the following data, graciously generated by Mr Matt Parker.
-</p>
+<p>Consider the following data, graciously generated by Mr Matt Parker.</p>
 
 <p class="tc o-50" style="font-size: 0.85em">
-    43 seats &bullet; D = 931.9767 &bullet; Jefferson divisor = 880 &bullet; Adams
-    divisor = 1000
+    43 seats &bullet; D = 931.9767 &bullet; Jefferson divisor = 880 &bullet;
+    Adams divisor = 1000
 </p>
 
 <table>
@@ -278,19 +327,43 @@
         </tr>
     </thead>
     <tbody>
-        <tr><td>New Triangle</td><td>21,878</td><td>23.47483</td><td>24.8614</td><td>24</td><td>21.878</td><td>22</td></tr>
-        <tr><td>Circula</td><td>9,713</td><td>10.42193</td><td>11.0375</td><td>11</td><td>9.713</td><td>10</td></tr>
-        <tr><td>Squaryland</td><td>4,167</td><td>4.471142</td><td>4.73523</td><td>4</td><td>4.167</td><td>5</td></tr>
-        <tr><td>Octiana</td><td>3,252</td><td>3.489357</td><td>3.69545</td><td>3</td><td>3.252</td><td>4</td></tr>
-        <tr><td>Rhombus Island</td><td>1,065</td><td>1.142732</td><td>1.21023</td><td>1</td><td>1.065</td><td>2</td></tr>
-        <tr><td><b>Total</b></td><td><b>40,075</b></td><td></td><td></td><td><b>43</b></td><td></td><td><b>43</b></td></tr>
+        <tr
+            ><td>New Triangle</td><td>21,878</td><td>23.47483</td><td
+                >24.8614</td
+            ><td>24</td><td>21.878</td><td>22</td></tr
+        >
+        <tr
+            ><td>Circula</td><td>9,713</td><td>10.42193</td><td>11.0375</td><td
+                >11</td
+            ><td>9.713</td><td>10</td></tr
+        >
+        <tr
+            ><td>Squaryland</td><td>4,167</td><td>4.471142</td><td>4.73523</td
+            ><td>4</td><td>4.167</td><td>5</td></tr
+        >
+        <tr
+            ><td>Octiana</td><td>3,252</td><td>3.489357</td><td>3.69545</td><td
+                >3</td
+            ><td>3.252</td><td>4</td></tr
+        >
+        <tr
+            ><td>Rhombus Island</td><td>1,065</td><td>1.142732</td><td
+                >1.21023</td
+            ><td>1</td><td>1.065</td><td>2</td></tr
+        >
+        <tr
+            ><td><b>Total</b></td><td><b>40,075</b></td><td></td><td></td><td
+                ><b>43</b></td
+            ><td></td><td><b>43</b></td></tr
+        >
     </tbody>
 </table>
 
 <p>
     Notice how, in the data above, New Triangle jumped from 23.47 down to 22,
     skipping 23 entirely, which should technically not be allowed, since
-    rounding can happen only up or down to the next or previous number. Jumping numbers is not allowed in the <a
+    rounding can happen only up or down to the next or previous number. Jumping
+    numbers is not allowed in the <a
         href="https://en.wikipedia.org/wiki/Quota_rule"
         target="_blank"
         rel="noopener noreferrer">Quota Rule</a
@@ -310,10 +383,10 @@
 <h3>Huntington-Hill Method</h3>
 <p>
     This is too complex to explain. It is just one big clusterfuck. There is a
-    geometric mean, a square root, and an ambiguous definition involved somewhere.
-    The general idea is that this, too, has Quota Rule Violations. Hill also
-    stays because it technically, by default, favours the smaller states, which
-    is a political decision and not a mathematical one.
+    geometric mean, a square root, and an ambiguous definition involved
+    somewhere. The general idea is that this, too, has Quota Rule Violations.
+    Hill also stays because it technically, by default, favours the smaller
+    states, which is a political decision and not a mathematical one.
 </p>
 
 <xxx />
@@ -345,25 +418,26 @@
 
 <p>
     We can clearly see here how Reasongrad, with the most votes, won this
-    election, but they elected a leader whom, in fact, 78% of people did not want.
-    So this is technically a minority-rule system, since none of the cities has a
-    majority. So we have effectively been unfair to 78% of the population. We
-    can see how this system gets worse when there are more and more cities. If
-    there were 20 candidates, then someone with only 6% of the votes could win
-    simply because of the most votes despite being only favoured by 6% of the
-    population.
+    election, but they elected a leader whom, in fact, 78% of people did not
+    want. So this is technically a minority-rule system, since none of the
+    cities has a majority. So we have effectively been unfair to 78% of the
+    population. We can see how this system gets worse when there are more and
+    more cities. If there were 20 candidates, then someone with only 6% of the
+    votes could win simply because of the most votes despite being only favoured
+    by 6% of the population.
 </p>
 
 <p>
     This method, unfortunately, also forces a two-party system. In every
-    election, smaller parties see their abysmal results, and eventually the voters
-    decide to go with the candidate they LEAST DISAGREE with, in an endless cycle
-    that continues until there are only two candidates left. Given enough time,
-    all <a
+    election, smaller parties see their abysmal results, and eventually the
+    voters decide to go with the candidate they LEAST DISAGREE with, in an
+    endless cycle that continues until there are only two candidates left. Given
+    enough time, all <a
         href="https://en.wikipedia.org/wiki/First-past-the-post_voting"
         target="_blank"
         rel="noopener noreferrer">First Past the Post</a
-    > systems will eventually become two-party systems. This is often called the
+    >
+    systems will eventually become two-party systems. This is often called the
     <a
         href="https://en.wikipedia.org/wiki/Duverger%27s_law"
         target="_blank"
@@ -388,8 +462,8 @@
 
 <h4>Gerrymandering</h4>
 <p>
-    Gerrymandering is the process of redrawing the borders of a state to favour a
-    particular party. This is often done by the party in power to ensure they
+    Gerrymandering is the process of redrawing the borders of a state to favour
+    a particular party. This is often done by the party in power to ensure they
     stay in power. This is often done by splitting the opposition party's voter
     base into multiple districts so that they have a majority in all districts
     but not a majority in any one district. This is often called <a
@@ -407,9 +481,9 @@
 
 <p>
     Consider the following example. Let us say Newton, Einstein, and Hawking are
-    3 candidates, and there are 3 voters who want Newton, 3 who want Einstein, and
-    4 who want Hawking. Now if we split the district voters in the following 2
-    ways:
+    3 candidates, and there are 3 voters who want Newton, 3 who want Einstein,
+    and 4 who want Hawking. Now if we split the district voters in the following
+    2 ways:
 </p>
 
 <ul>
@@ -418,10 +492,10 @@
 </ul>
 
 <p>
-    We can now see how Newton and Einstein have a majority in both constituencies
-    despite each having fewer votes overall than Hawking; in the end, Hawking's
-    voters would have been eliminated completely. Gerrymandering gives whoever
-    draws the lines an unfair advantage.
+    We can now see how Newton and Einstein have a majority in both
+    constituencies despite each having fewer votes overall than Hawking; in the
+    end, Hawking's voters would have been eliminated completely. Gerrymandering
+    gives whoever draws the lines an unfair advantage.
 </p>
 
 <h4>The Spoiler Effect</h4>
@@ -489,8 +563,7 @@
 
 <p>
     Now we eliminate Einstein and see who they voted for next; let us say ALL of
-    those who voted for Einstein voted for Hawking next, making the new
-    results:
+    those who voted for Einstein voted for Hawking next, making the new results:
 </p>
 
 <table>
@@ -513,20 +586,20 @@
 
 <p>
     So far, this method solves one key issue for us: it is very open to new
-    parties, and the spoiler effect cannot affect the results as much. Since now,
-    if there are two candidates and a third party candidate comes in, the third
-    party candidate will still take some votes from whoever they're paid to take
-    it away from. But now that the third party candidate is eliminated, the votes
-    will go to whoever the voters wanted next. Now, the votes just go back to
-    whoever they were taken from in the first place.
+    parties, and the spoiler effect cannot affect the results as much. Since
+    now, if there are two candidates and a third party candidate comes in, the
+    third party candidate will still take some votes from whoever they're paid
+    to take it away from. But now that the third party candidate is eliminated,
+    the votes will go to whoever the voters wanted next. Now, the votes just go
+    back to whoever they were taken from in the first place.
 </p>
 
 <p>
     Despite solving one issue, this method still inherits problems from the
-    Winner Takes All system, such as gerrymandering. It also has an oddity of its
-    own: despite having started 3rd in the first round, Hawking still won the
-    election, and it doesn't seem fair for a 3rd-place candidate to win. So we
-    need a system that solves this issue.
+    Winner Takes All system, such as gerrymandering. It also has an oddity of
+    its own: despite having started 3rd in the first round, Hawking still won
+    the election, and it doesn't seem fair for a 3rd-place candidate to win. So
+    we need a system that solves this issue.
 </p>
 
 <h3>Multiple Runoff</h3>
@@ -548,8 +621,8 @@
 <p>
     Consider a multiple-run system where Hawking wants to skew the results even
     though they know they cannot win themselves. Hawking would rather Archimedes
-    win than Einstein, so they have all their voters back Archimedes in the first
-    round, leaving Einstein at the bottom. This gives us:
+    win than Einstein, so they have all their voters back Archimedes in the
+    first round, leaving Einstein at the bottom. This gives us:
 </p>
 
 <table>
@@ -609,28 +682,52 @@
 
 <table>
     <thead>
-        <tr><th colspan="2">A vs B</th><th colspan="2">C vs A</th><th colspan="2">A vs D</th></tr>
+        <tr
+            ><th colspan="2">A vs B</th><th colspan="2">C vs A</th><th
+                colspan="2">A vs D</th
+            ></tr
+        >
     </thead>
     <tbody>
-        <tr><td>A</td><td><code>███████░░░</code> 68%</td><td>C</td><td><code>████░░░░░░</code> 42%</td><td>A</td><td><code>███████░░░</code> 68%</td></tr>
-        <tr><td>B</td><td><code>███░░░░░░░</code> 32%</td><td>A</td><td><code>██████░░░░</code> 58%</td><td>D</td><td><code>███░░░░░░░</code> 32%</td></tr>
+        <tr
+            ><td>A</td><td><code>███████░░░</code> 68%</td><td>C</td><td
+                ><code>████░░░░░░</code> 42%</td
+            ><td>A</td><td><code>███████░░░</code> 68%</td></tr
+        >
+        <tr
+            ><td>B</td><td><code>███░░░░░░░</code> 32%</td><td>A</td><td
+                ><code>██████░░░░</code> 58%</td
+            ><td>D</td><td><code>███░░░░░░░</code> 32%</td></tr
+        >
     </tbody>
 </table>
 
 <table>
     <thead>
-        <tr><th colspan="2">C vs B</th><th colspan="2">C vs D</th><th colspan="2">B vs D</th></tr>
+        <tr
+            ><th colspan="2">C vs B</th><th colspan="2">C vs D</th><th
+                colspan="2">B vs D</th
+            ></tr
+        >
     </thead>
     <tbody>
-        <tr><td>C</td><td><code>████░░░░░░</code> 42%</td><td>C</td><td><code>████░░░░░░</code> 42%</td><td>B</td><td><code>██░░░░░░░░</code> 17%</td></tr>
-        <tr><td>B</td><td><code>██████░░░░</code> 58%</td><td>D</td><td><code>██████░░░░</code> 58%</td><td>D</td><td><code>████████░░</code> 83%</td></tr>
+        <tr
+            ><td>C</td><td><code>████░░░░░░</code> 42%</td><td>C</td><td
+                ><code>████░░░░░░</code> 42%</td
+            ><td>B</td><td><code>██░░░░░░░░</code> 17%</td></tr
+        >
+        <tr
+            ><td>B</td><td><code>██████░░░░</code> 58%</td><td>D</td><td
+                ><code>██████░░░░</code> 58%</td
+            ><td>D</td><td><code>████████░░</code> 83%</td></tr
+        >
     </tbody>
 </table>
 
 <p>
     Notice that in such a method, we see that A is the most preferred candidate
-    since A has the highest percentage in 3 of the 6 matchups. So we can say that
-    A is the winner. This is called the <a
+    since A has the highest percentage in 3 of the 6 matchups. So we can say
+    that A is the winner. This is called the <a
         href="https://en.wikipedia.org/wiki/Condorcet_method"
         target="_blank"
         rel="noopener noreferrer">Condorcet Method</a
@@ -639,10 +736,12 @@
     stone-paper-scissors, such that
 </p>
 
-<lt-mmd>{`graph LR
+<lt-mmd class="d-b tc"
+    >{`graph LR
   A --> B
   B --> C
-  C --> A`}</lt-mmd>
+  C --> A`}</lt-mmd
+>
 
 <p>
     In such a case, A is preferred over B, B is preferred over C, and C is
@@ -655,14 +754,17 @@
     cases are a problem
 </p>
 
-<lt-mmd>{`graph LR
+<lt-mmd class="d-b tc"
+    >{`graph LR
   X["Loop"]
   A --- B
   A --- C
   C --> D["..."]
-  B --- D`}</lt-mmd>
+  B --- D`}</lt-mmd
+>
 
-<lt-mmd>{`graph LR
+<lt-mmd class="d-b tc"
+    >{`graph LR
   X --> Y
   Y --> A
   subgraph Loop
@@ -670,7 +772,8 @@
     A --> B
     B --> C
     C --> A
-  end`}</lt-mmd>
+  end`}</lt-mmd
+>
 
 <h3>Single Transferable Vote</h3>
 <p>
@@ -694,7 +797,8 @@
     <a
         href="https://www.youtube.com/watch?v=M91jraoo6t8"
         target="_blank"
-        rel="noopener noreferrer">Watch the Single Transferable Vote explainer video</a
+        rel="noopener noreferrer"
+        >Watch the Single Transferable Vote explainer video</a
     >
 </p>
 
@@ -749,8 +853,8 @@
         >
     </li>
     <li>
-        And others; see the technical statement of Arrow's Impossibility
-        Theorem for more details.
+        And others; see the technical statement of Arrow's Impossibility Theorem
+        for more details.
     </li>
 </ul>
 
@@ -759,8 +863,8 @@
         href="https://en.wikipedia.org/wiki/Gibbard%27s_theorem"
         target="_blank"
         rel="noopener noreferrer">Gibbard's Theorem</a
-    > (which is a consequence of Arrow's Theorem), which states that for any
-    process of collective decision, one of the following MUST hold:
+    > (which is a consequence of Arrow's Theorem), which states that for any process
+    of collective decision, one of the following MUST hold:
 </p>
 
 <ul>
@@ -785,19 +889,16 @@
         target="_blank"
         rel="noopener noreferrer">Here</a
     > are some electoral systems countries use worldwide. You can see that no one
-    system is used by all countries. Some countries use multiple systems for
-    different elections. For example, in India, the Lok Sabha elections use First
-    Past The Post while the Rajya Sabha elections use Single Transferable Vote.
-    There are also some countries that use multiple systems for the same
-    election.
+    system is used by all countries. Some countries use multiple systems for different
+    elections. For example, in India, the Lok Sabha elections use First Past The
+    Post while the Rajya Sabha elections use Single Transferable Vote. There are
+    also some countries that use multiple systems for the same election.
 </p>
 
 <h3>Caveats</h3>
 <p>There is also SOME influence from how each system itself is implemented.</p>
 
-<p>
-    Take whether or not voting is compulsory. There are four types of system:
-</p>
+<p>Take whether or not voting is compulsory. There are four types of system:</p>
 <ul>
     <li>Enforced Compulsory Voting: Ex. Australia, Brazil etc</li>
     <li>Non-Enforced Compulsory Voting: Ex. Turkey, Belgium etc</li>
@@ -819,14 +920,17 @@
         href="https://en.wikipedia.org/wiki/Pseudo-secularism"
         target="_blank"
         rel="noopener noreferrer">'Minority Appeasement'</a
-    > where they try to appease a certain group of people to get their votes.
+    >
+    where they try to appease a certain group of people to get their votes.
     There are also other countries like Morocco where the reservations are not
-    only by caste or gender but also by age, they have 30 reserved seats for <a
+    only by caste or gender but also by age, they have 30 reserved seats for
+    <a
         href="https://en.wikipedia.org/wiki/Parliament_of_Morocco"
         target="_blank"
         rel="noopener noreferrer">people under 40</a
     >, and it is well known that younger people generally lean further left than
-    older people, and they <a
+    older people, and they
+    <a
         href="https://www.jstor.org/stable/1041104"
         target="_blank"
         rel="noopener noreferrer">gradually become more conservative</a
@@ -838,10 +942,9 @@
     the voting likelihood of a region or demographic: say, if voting is
     compulsory for men and a region favours you, then skew for that; or if women
     dislike your party, then split up regions where women tend to vote in high
-    numbers.
-    While these things generally make a difference, I decided not to go into too
-    much detail since they can be deduced as a particular case of the systems we
-    have already seen.
+    numbers. While these things generally make a difference, I decided not to go
+    into too much detail since they can be deduced as a particular case of the
+    systems we have already seen.
 </p>
 
 <p>
@@ -870,7 +973,6 @@
         background: #2af1;
     }
     table {
-        border-collapse: collapse;
         width: 100%;
         margin: 1.5em 0;
         font-size: 0.95em;
@@ -889,8 +991,6 @@
         letter-spacing: -1px;
     }
     lt-mmd {
-        display: block;
-        text-align: center;
         margin: 1.5em auto;
     }
 </style>

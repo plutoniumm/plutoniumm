@@ -6,6 +6,7 @@
     const num = (v, lo, hi) => {
         const x = Number(v);
         if (!Number.isFinite(x)) return lo;
+
         return Math.min(hi, Math.max(lo, x));
     };
 
@@ -25,12 +26,14 @@
     let curve = "";
     $: {
         const out = [];
+
         for (let i = 0; i <= 84; i++) {
             const x = 1 + (4 * i) / 84;
             const N = Math.pow(10, x);
             const y = clampY(lg(a / N + b));
             out.push(PX(x).toFixed(1) + "," + PY(y).toFixed(1));
         }
+
         curve = out.join(" ");
     }
 
@@ -78,7 +81,7 @@
     </div>
 
     <svg width="480" height="225" font-family="monospace" font-size="10">
-        {#each yticks as yt}
+        {#each yticks as yt, k (k)}
             <line
                 x1="50"
                 x2="470"
@@ -88,7 +91,7 @@
             />
             <text x="46" y={PY(yt[0]) + 3} text-anchor="end">{yt[1]}</text>
         {/each}
-        {#each xticks as xt}
+        {#each xticks as xt, k (k)}
             <line
                 x1={PX(xt[0])}
                 x2={PX(xt[0])}

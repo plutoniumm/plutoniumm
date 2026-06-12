@@ -129,8 +129,8 @@ and divided.
 <p>
     Since {_`z = r e^{i \theta}`}, {_`z_1 + z_2 = r_1 e^{i \theta} + r_2 e^{i (\theta + k)} = (r_1 + r_2 e^{ik}) e^{i \theta}`},
     with an offset parameter {_`k`}, since we can choose which angle we want the
-    two shapes to meet at (this will be important later). And, a square added
-    to a square should give a square of side 2 (the edges look choppy because
+    two shapes to meet at (this will be important later). And, a square added to
+    a square should give a square of side 2 (the edges look choppy because
     computers are finite precision).
 </p>
 
@@ -206,7 +206,7 @@ and divided.
             ),
         ]}
     >
-        <div slot="caption">
+        <div slot="caption" class="tc">
             Offset: 0
             <input
                 type="range"
@@ -418,11 +418,6 @@ should work. As an example, I've shown {_`z^2 + 2`}, try something like {_`\sin(
     }
 
     input[type="range"] {
-        position: relative;
         top: 2px;
-    }
-
-    [slot="caption"] {
-        text-align: center;
     }
 </style>

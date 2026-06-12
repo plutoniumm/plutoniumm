@@ -9,7 +9,8 @@
 
   function toDatasets(d) {
     if (Array.isArray(d)) return d;
-    if (d == null) return [];
+    if (d === null || d === undefined) return [];
+
     return [d];
   }
 

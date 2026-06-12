@@ -19,7 +19,7 @@ function clean(str: string): string {
 
 type TSA = TemplateStringsArray;
 
-export function _(strings: TSA | string, ...values: any[]): string {
+export function _(strings: TSA | string, ...values: unknown[]): string {
     let string = "";
     try {
         if (typeof strings === "string") {
@@ -29,28 +29,27 @@ export function _(strings: TSA | string, ...values: any[]): string {
         string = clean(strings.join(""));
         string = katex.renderToString(string, { throwOnError: false });
     } catch (e) {
-        console.error("Error rendering KaTeX:", e);
-        console.log(strings);
+        console.error("Error rendering KaTeX:", e, strings);
         string = "[[ERROR]]: " + strings[0];
     }
 
     return string;
 }
 
-export function __(strings: TSA | string, ...values: any[]): string {
+export function __(strings: TSA | string, ...values: unknown[]): string {
     let string = "";
     try {
         if (typeof strings === "string") {
             strings = [strings.trim()];
         }
+
         string = clean(strings.join(""));
         string = katex.renderToString(string, {
             throwOnError: false,
             displayMode: true,
         });
     } catch (e) {
-        console.error("Error rendering KaTeX:", e);
-        console.log(strings);
+        console.error("Error rendering KaTeX:", e, strings);
         string = "[[ERROR]]: " + strings[0];
     }
 
@@ -59,12 +58,12 @@ export function __(strings: TSA | string, ...values: any[]): string {
 
 interface Dataset {
     label: string;
-    data: any;
+    data: unknown;
     _mch: "dataset";
     pointRadius: number;
 }
 
-export function Dataset(name: string, data: any): Dataset {
+export function Dataset(name: string, data: unknown): Dataset {
     return {
         _mch: "dataset",
         label: name,

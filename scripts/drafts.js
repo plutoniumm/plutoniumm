@@ -1,5 +1,6 @@
 export default function Drafts () {
   let build = false;
+
   return {
     name: "vite-plugin-drafts-gate",
     enforce: "pre",

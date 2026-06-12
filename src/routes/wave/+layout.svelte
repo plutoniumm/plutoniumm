@@ -39,6 +39,7 @@
 </article>
 
 <button
+    type="button"
     class="p-fix"
     aria-label="scroll to top"
     on:click={() => window.scrollTo({ top: 0, behavior: "smooth" })}

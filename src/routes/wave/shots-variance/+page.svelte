@@ -133,8 +133,8 @@ N = 10\,000:\quad \sigma &= 0.005
     The spread shrinks as {_`1/\sqrt{N}`}, so each extra digit of precision
     costs a factor of 100 in shots, which is to say a factor of 100 in money.
     This square-root law is the reason shot estimation is worth doing carefully:
-    overshooting "to be safe" is expensive in the same regime where the
-    machine is already expensive.
+    overshooting "to be safe" is expensive in the same regime where the machine
+    is already expensive.
 </p>
 
 <h3>Noise that hides and noise that shifts</h3>
@@ -166,8 +166,8 @@ N = 10\,000:\quad \sigma &= 0.005
     of a fair coin cannot see symmetric readout noise at all, no matter how large
     it is. If the rates differ, the whole distribution slides to a new centre, 0.415
     in the worked case, and no number of shots brings it back. More shots only sharpen
-    the estimate of the wrong value. The symmetric cancellation holds
-    on two independent noisy simulators, IBM's and CERN's, both set to {_`p_{0\to1} = p_{1\to0} = 0.33`}.
+    the estimate of the wrong value. The symmetric cancellation holds on two independent
+    noisy simulators, IBM's and CERN's, both set to {_`p_{0\to1} = p_{1\to0} = 0.33`}.
 </p>
 
 <CoinToss></CoinToss>
@@ -555,24 +555,22 @@ N = \frac{A}{\sigma^2 - B} = \frac{56}{0.01 - 0.002} = 7000
 
 <p>
     The numbers 56 and 0.002 here are illustrative values consistent with the
-    Pittsburgh fit; the conclusion: for IBM Pittsburgh's noise
-    characteristics at that instant, 7000 shots of this circuit would have
-    achieved {_`\sigma^2 \approx 0.01`}. The widget below is this equation made
-    draggable.
+    Pittsburgh fit; the conclusion: for IBM Pittsburgh's noise characteristics
+    at that instant, 7000 shots of this circuit would have achieved {_`\sigma^2 \approx 0.01`}.
+    The widget below is this equation made draggable.
 </p>
 
 <Budget></Budget>
 
 <p>
-    The variance does carry its own price: {_`\langle O^2 \rangle`} means
-    measuring a squared Hamiltonian, which compiles to its own, longer list of
-    Pauli strings, each needing shots. The saving is that this overhead does
-    not have to match the size of the main run. The variance enters only
-    through the fitted {_`A`} and {_`B`}, and the curve, once fitted at small
-    shot counts, can be evaluated at any {_`N`}. So if the production run
-    spends 50,000 shots on one precise expectation value, learning its
-    variance does not take a second 50,000-shot campaign; the cheap fit
-    already prices it:
+    The variance does carry its own price: {_`\langle O^2 \rangle`} means measuring
+    a squared Hamiltonian, which compiles to its own, longer list of Pauli strings,
+    each needing shots. The saving is that this overhead does not have to match the
+    size of the main run. The variance enters only through the fitted {_`A`} and
+    {_`B`}, and the curve, once fitted at small shot counts, can be evaluated at
+    any {_`N`}. So if the production run spends 50,000 shots on one precise
+    expectation value, learning its variance does not take a second 50,000-shot
+    campaign; the cheap fit already prices it:
 </p>
 
 {__`

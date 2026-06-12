@@ -1,7 +1,8 @@
 <script>
     import { complex, parse } from "mathjs";
 
-    let ctx,
+    let //
+        ctx,
         video,
         canvasEl,
         offscreen,
@@ -16,6 +17,7 @@
         const [iw, ih] = [video.videoWidth, video.videoHeight];
         canvasEl.width = Math.max(640, iw);
         canvasEl.height = Math.max(480, ih);
+
         if (offscreen) {
             offscreen.width = canvasEl.width;
             offscreen.height = canvasEl.height;
@@ -24,27 +26,37 @@
 
     function draw() {
         let scale = 66;
-        const w = offscreen.width,
+        const //
+            w = offscreen.width,
             h = offscreen.height;
 
         const octx = offscreen.getContext("2d", { willReadFrequently: true });
         octx.drawImage(video, 0, 0, w, h);
         const frame = octx.getImageData(0, 0, w, h);
         const output = octx.createImageData(w, h);
-        const { data, out } = { data: frame.data, out: output.data };
-        const cx = w / 2,
+        const { data, out } = {
+            data: frame.data,
+            out: output.data,
+        };
+        const //
+            cx = w / 2,
             cy = h / 2;
 
         scale = 1 / scale;
+
         for (let y = 0; y < h; y++)
             for (let x = 0; x < w; x++) {
-                const zx = (x - cx) * scale,
+                const //
+                    zx = (x - cx) * scale,
                     zy = (y - cy) * scale;
                 const zMapped = expr.evaluate({ z: complex(zx, zy) });
-                const nx = Math.round(zMapped.re / scale + cx),
+                const //
+                    nx = Math.round(zMapped.re / scale + cx),
                     ny = Math.round(zMapped.im / scale + cy);
+
                 if (nx >= 0 && nx < w && ny >= 0 && ny < h) {
-                    const i = 4 * (y * w + x),
+                    const //
+                        i = 4 * (y * w + x),
                         ni = 4 * (ny * w + nx);
                     out[i] = data[ni];
                     out[i + 1] = data[ni + 1];

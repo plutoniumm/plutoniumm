@@ -38,7 +38,7 @@
 </script>
 
 <main class="mx-a p20 flow-y-s">
-  {#each items as item, i}
+  {#each items as item, i (i)}
     {@const isExt = item.href.startsWith("http")}
     <a
       href={item.href}
@@ -49,12 +49,12 @@
       <img class="m20" src={item.icon} alt={item.name} />
 
       <div class="f-col">
-        <h3>{item.name}</h3>
-        <p class="desc">{item.desc}</p>
+        <h3 class="mt0 mb10">{item.name}</h3>
+        <p class="desc m0">{item.desc}</p>
       </div>
     </a>
 
-    <hr class="w-50 mx-a o-25" />
+    <hr class="w-50 mx-a my20 o-25" />
   {/each}
 </main>
 
@@ -70,11 +70,6 @@
     max-height: 99vh;
   }
 
-  h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
-  }
-
   .item {
     text-decoration: none;
     padding: 8px 0;
@@ -86,13 +81,11 @@
   }
 
   .desc {
-    margin: 0;
     color: #555;
     font-size: 18px;
   }
 
   hr {
-    margin: 20px auto;
     border: 1px solid #000;
   }
 </style>

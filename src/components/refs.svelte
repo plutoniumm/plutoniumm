@@ -14,7 +14,10 @@
                 el.id || el.textContent.replace(/\s+/g, "-").toLowerCase();
             el.id = id;
 
-            return { id, text: el.innerHTML };
+            return {
+                id,
+                text: el.innerHTML,
+            };
         });
     });
 </script>
@@ -22,7 +25,7 @@
 {#if list.length}
     <h3>Table of Contents</h3>
     <ul class="toc">
-        {#each toc_list as item}
+        {#each toc_list as item, i (i)}
             <li>
                 <Link href={`#${item.id}`}>{@html item.text}</Link>
             </li>
@@ -32,7 +35,7 @@
 
 <h3>References</h3>
 <ul>
-    {#each list as re}
+    {#each list as re, i (i)}
         <li>
             <Link href={re[1]}>{re[0]}</Link>
         </li>

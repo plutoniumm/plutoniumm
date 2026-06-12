@@ -33,19 +33,19 @@
         transform="scale(1.25)"
     >
         <text x="10" y="20">
-            {#each top as item, index}
+            {#each top as item, index (index)}
                 <tspan id="digit" x={15 + index * 30} y="25">{item}</tspan>
             {/each}
         </text>
 
         <text x="10" y="45">
-            {#each top as _, index}
+            {#each top as _, index (index)}
                 <tspan id="bar" x={10 + index * 30} y="45">―</tspan>
             {/each}
         </text>
 
         <text x="10" y="70" font-size="12">
-            {#each top as _, index}
+            {#each top as _, index (index)}
                 <tspan id="base" x={10 + index * 30} y="65"
                     >({base_str})<tspan baseline-shift="super" font-size="8"
                         >{top.length - index}</tspan

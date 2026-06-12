@@ -44,8 +44,8 @@ graph TD;
       <code>&lt;lt-mmd&gt;</code>
     </div>
 
-    <div class="box">
-      <div class="rpm-10 active">
+    <div class="box p20">
+      <div class="rpm-10 active cc">
         <lt-mmd>
           {`
           graph TD;
@@ -79,33 +79,33 @@ graph TD;
       panes. Additional styles, classes, and attributes are passed on.
       Additionally, split takes two optional parameters
 
-      <table class="w-100">
+      <table class="w-100 mt10">
         <thead>
           <tr>
-            <th>Parameter</th>
-            <th>Type</th>
-            <th>Description</th>
+            <th class="p10">Parameter</th>
+            <th class="p10">Type</th>
+            <th class="p10">Description</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>vertical</td>
-            <td>boolean</td>
-            <td
+            <td class="p10">vertical</td>
+            <td class="p10">boolean</td>
+            <td class="p10"
               >If true, the split is vertical (top/bottom). Default is
               horizontal (left/right).</td
             >
           </tr>
           <tr>
-            <td>disabled</td>
-            <td>boolean</td>
-            <td>If true, disables the resizing functionality.</td>
+            <td class="p10">disabled</td>
+            <td class="p10">boolean</td>
+            <td class="p10">If true, disables the resizing functionality.</td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <div class="box" style="height: 200px;">
+    <div class="box p20" style="height: 200px;">
       <lt-split class="border rx 10 sw sh" ratio="1:4">
         <div class="border sw sh cc" slot="a">1</div>
         <div class="border sw sh cc" slot="b">4</div>
@@ -131,7 +131,7 @@ graph TD;
       <br />
       The 'language' attribute specifies the programming language for syntax highlighting.
     </div>
-    <div class="box">
+    <div class="box p20">
       <lt-code
         language="javascript"
         value="const hello = 'Hello, World!';
@@ -155,30 +155,17 @@ console.log(hello);"
   .box {
     background: #f4f4f4;
     border-radius: 5px;
-    padding: 20px;
   }
 
   .active {
     background: #aaf;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     min-height: 40px;
     border: 1px solid rgba(0, 0, 0, 0.1);
-  }
-
-  table {
-    margin-top: 10px;
   }
 
   thead th {
     background: #eee;
     color: #222;
-  }
-
-  thead th,
-  tbody td {
-    padding: 10px;
   }
 
   tbody tr:nth-child(even) {

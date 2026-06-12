@@ -10,12 +10,14 @@
         base_str: string = "",
     ): string {
         nums.reverse();
+
         if (base_str.length === 0) {
             base_str = base.toString();
         }
 
         let str1 = "";
         let str2 = "";
+
         for (let i = 0; i < nums.length; i++) {
             let num = nums[i];
             str1 =
@@ -60,10 +62,10 @@
 />
 
 Numbers are usually represented in base 10, but they can be represented in any
-base. The most common are binary (base 2), decimal (base 10), and
-hexadecimal (base 16). Binary, Hexadecimal, and Octal all being formats
-computers just cannot get enough of. As a short introduction to bases, this is
-how we read the number 420 in base 10:
+base. The most common are binary (base 2), decimal (base 10), and hexadecimal
+(base 16). Binary, Hexadecimal, and Octal all being formats computers just
+cannot get enough of. As a short introduction to bases, this is how we read the
+number 420 in base 10:
 
 <Bars top={[4, 2, 0]} base={10}></Bars>
 
@@ -183,8 +185,8 @@ around the decimal point, i.e. 6.6346, which one can trivially verify.
 <br />
 This, however, also means that we will be using the same digits 0 to 6 for {_`\frac37`}
 also, which is natural considering that for fractions &lt;1, we don't have any digits,
-so for a number with a base less than 1, we can just use the same digits as its
-inverse and then rotate around the first digit.
+so for a number with a base less than 1, we can just use the same digits as its inverse
+and then rotate around the first digit.
 
 <h3>Irrational and Transcendental Bases</h3>
 The easiest to start with is an 'nth' root base, such as {_`\sqrt[4]{5}`}. This

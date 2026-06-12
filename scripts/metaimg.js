@@ -19,6 +19,7 @@ const escape = ( unsafe ) => unsafe.replace( /[<>&'"]/g, c => {
 } );
 
 const BARRIER = 30;
+
 function SVG ( title ) {
   const t = escape( title );
   let fontSize = 80;
@@ -29,8 +30,10 @@ function SVG ( title ) {
     const mid = Math.floor( t.length / 2 );
 
     let breakIdx = t.lastIndexOf( ' ', mid );
+
     if ( breakIdx === -1 )
       breakIdx = t.indexOf( ' ', mid );
+
     if ( breakIdx === -1 )
       breakIdx = mid;
 
@@ -98,6 +101,7 @@ ${ lines.length === 1
  */
 export default function bannerer ( options = {} ) {
   const { inDir, outDir } = options;
+
   if ( !inDir || !outDir ) {
     throw new Error( 'vite-plugin-og-generator: inDir and outDir are required.' );
   }
@@ -108,6 +112,7 @@ export default function bannerer ( options = {} ) {
     async buildStart () {
       const rinDir = path.resolve( inDir );
       const routDir = path.resolve( outDir );
+
       if ( !fs.existsSync( routDir ) ) {
         fs.mkdirSync( routDir, { recursive: true } );
       }
@@ -116,12 +121,14 @@ export default function bannerer ( options = {} ) {
       console.log( `[OG-Gen] Scanning ${ inDir }...` );
 
       const promises = [];
+
       for ( const entry of files ) {
         if ( !entry.isDirectory() ) continue;
         const file = entry.name;
 
         const page = fs.readFileSync( path.join( rinDir, file, '+page.svelte' ), 'utf-8' );
         const titleMatch = page.match( /title=["'`](.*?)["'`]/ );
+
         if ( !titleMatch ) {
           console.warn( `[OG-Gen] No title found for ${ file }, skipping.` );
           continue;

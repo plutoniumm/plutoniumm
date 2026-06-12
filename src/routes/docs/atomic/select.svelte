@@ -37,6 +37,7 @@
 
   $: if (cont && value && !isScrolling) {
     const index = items.indexOf(value);
+
     if (index !== -1) {
       cont.scrollTo({
         top: index * ITEM_HEIGHT,
@@ -49,6 +50,7 @@
     if (value) {
       await tick();
       const index = items.indexOf(value);
+
       if (index !== -1 && cont) {
         cont.scrollTop = index * ITEM_HEIGHT;
       }
@@ -57,7 +59,7 @@
 </script>
 
 <div
-  class="picker p-rel d-if"
+  class="picker p-rel d-if flow-h"
   style="--size: {ITEM_HEIGHT}px;--height: {height}px;"
   class:btop={index === 0}
   class:bbot={index === items.length - 1}
@@ -71,7 +73,7 @@
     aria-label="options"
     tabindex="0"
   >
-    {#each items as item}
+    {#each items as item, i (i)}
       <div
         class="item f cc ptr o-50"
         class:selected={value === item}
@@ -96,7 +98,6 @@
   .picker {
     height: var(--height);
     background: transparent;
-    overflow: hidden;
     user-select: none;
     vertical-align: middle;
     top: -2px;
@@ -116,10 +117,6 @@
   .cont {
     scroll-snap-type: y mandatory;
     scrollbar-width: none;
-  }
-
-  .cont::-webkit-scrollbar {
-    display: none;
   }
 
   .item {

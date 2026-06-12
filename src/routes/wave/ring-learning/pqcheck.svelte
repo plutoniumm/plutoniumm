@@ -24,11 +24,13 @@
             info = (text.match(/[ -~]+/g) || [])
                 .map((l) => {
                     const j = l.indexOf("=");
+
                     return [l.slice(0, j), l.slice(j + 1)];
                 })
                 .filter((kv) => keep.includes(kv[0]));
             const m = text.match(/kex=([A-Za-z0-9_-]+)/);
             kex = m ? m[1] : "";
+
             if (!kex) state = "unknown";
             else if (kex.includes("MLKEM") || kex.includes("Kyber"))
                 state = "pq";
@@ -44,9 +46,9 @@
         {#if state === "pq"}
             <p>
                 Your browser just opened a fresh TLS connection to a test
-                server, and the key agreement used <b>{kex}</b>. That is
-                ML-KEM, the lattice scheme this article builds, hybridised with
-                the classical elliptic-curve exchange.
+                server, and the key agreement used <b>{kex}</b>. That is ML-KEM,
+                the lattice scheme this article builds, hybridised with the
+                classical elliptic-curve exchange.
             </p>
         {:else if state === "classical"}
             <p>
@@ -57,15 +59,15 @@
             </p>
         {:else if state === "unknown"}
             <p>
-                The request to the test server did not make it (an ad blocker,
-                a strict privacy mode, or being offline will do that), so there
-                is nothing to report.
+                The request to the test server did not make it (an ad blocker, a
+                strict privacy mode, or being offline will do that), so there is
+                nothing to report.
             </p>
         {/if}
         {#if info.length}
             <div class="trace my10 py5 px10 rx5">
-                {#each info as kv}
-                    <div><span class="k">{kv[0]}</span>{kv[1]}</div>
+                {#each info as kv, i (i)}
+                    <div><span class="k d-ib">{kv[0]}</span>{kv[1]}</div>
                 {/each}
             </div>
         {/if}
@@ -99,7 +101,6 @@
         font-size: 0.85em;
     }
     .trace .k {
-        display: inline-block;
         width: 60px;
         color: #888;
     }

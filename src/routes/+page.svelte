@@ -48,7 +48,7 @@
 <section class="p-rel al-ct j-ct f-col fw flow-x-h flow-y-h">
     <div class="p-rel">
         <img
-            class="left p10"
+            class="left p10 pb0"
             width="125px"
             height="125px"
             src="/assets/pic.png"
@@ -62,12 +62,12 @@
         <div class="title fw5">Manav Seksaria</div>
         <br />
         <div class="f-col g10">
-            {#each blocks as block, idx}
+            {#each blocks as block, idx (idx)}
                 <div>
                     {#if idx !== 0}
                         <hr class="rpm-0 o-25 w-50 mx-a" />
                     {/if}
-                    {#each block.links as link}
+                    {#each block.links as link, k (k)}
                         <a
                             class="p-rel d-b"
                             href={link[1]}
@@ -109,7 +109,6 @@
     }
     .left {
         transform: translateY(-15px) scale(1.1);
-        padding-bottom: 0;
     }
     @keyframes wave {
         0% {

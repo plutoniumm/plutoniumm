@@ -10,6 +10,7 @@
     sub="arXiv:2512.18061"
     desc="Fidelity is a black-box function of complex numbers, and the complex derivative refuses to exist; two probes per coefficient fix that"
     date="19 December 2025"
+    next="/wave/gradient-qec-2"
 ></Meta>
 
 <p>
@@ -154,9 +155,9 @@ P(\text{vote fails}) &= 3p^2(1-p) + p^3 &&= 0.027 + 0.001 &&= 0.028
 
 <p>
     A code for one logical qubit is two such lists, {_`|0_L\rangle`} and {_`|1_L\rangle`}:
-    64 complex coefficients, 128 real numbers, and that is almost all of
-    quantum error correction: the algebra of code design is a very complicated
-    way of choosing 128 numbers.
+    64 complex coefficients, 128 real numbers, and that is almost all of quantum
+    error correction: the algebra of code design is a very complicated way of
+    choosing 128 numbers.
 </p>
 
 <p>
@@ -171,11 +172,10 @@ P(\text{vote fails}) &= 3p^2(1-p) + p^3 &&= 0.027 + 0.001 &&= 0.028
 </p>
 
 <p>
-    So code design collapses to one sentence: find the 128 numbers that
-    maximise {_`\mathcal{F}`}. That is hill climbing in 128 dimensions, not
-    physics, and it needs one tool, the gradient, the direction of steepest
-    ascent. With no formula to differentiate, the gradient has to come from
-    probing.
+    So code design collapses to one sentence: find the 128 numbers that maximise {_`\mathcal{F}`}.
+    That is hill climbing in 128 dimensions, not physics, and it needs one tool,
+    the gradient, the direction of steepest ascent. With no formula to
+    differentiate, the gradient has to come from probing.
 </p>
 
 <xxx />
@@ -228,8 +228,8 @@ q(90^\circ) = \frac{f(1 + 0.01i) - f(1)}{0.01i} = \frac{0.0001}{0.01i} = -0.01i
 
 <p>
     Two directions, two answers, 2 versus 0, so no single number deserves the
-    name "the derivative at 1". Write {_`f = u + iv`} with {_`u`}, {_`v`} real:
-    the requirement that all directions agree is the Cauchy-Riemann conditions,
+    name "the derivative at 1". Write {_`f = u + iv`} with {_`u`}, {_`v`} real: the
+    requirement that all directions agree is the Cauchy-Riemann conditions,
 </p>
 
 {__`
@@ -248,8 +248,8 @@ q(90^\circ) = \frac{f(1 + 0.01i) - f(1)}{0.01i} = \frac{0.0001}{0.01i} = -0.01i
 <Quotient></Quotient>
 
 <p>
-    The widget runs the same {_`f(z) = |z|^2`}: sweep {_`\theta`} and the
-    quotient orbits a circle of diameter {_`2|z_0|`}. Switch to {_`f(z) = z^2`}
+    The widget runs the same {_`f(z) = |z|^2`}: sweep {_`\theta`} and the quotient
+    orbits a circle of diameter {_`2|z_0|`}. Switch to {_`f(z) = z^2`}
     and the dot freezes at {_`2 z_0`}: that stillness is a derivative, and
     fidelity does not have it.
 </p>
@@ -325,9 +325,9 @@ f(0 + i\delta) &= \frac{|1.01 + 0.02i|^2}{6 \times 1.0001}
 
 <p>
     A slope is only useful to move along, and a move is one direction in the
-    coefficient's plane. The probes report 0.67 per unit along the real axis
-    and 0.34 along the imaginary, but the axes are just the two directions that
-    got probed; the best direction mixes them. To first order, a step at angle
+    coefficient's plane. The probes report 0.67 per unit along the real axis and
+    0.34 along the imaginary, but the axes are just the two directions that got
+    probed; the best direction mixes them. To first order, a step at angle
     {_`\theta`} collects both rates in proportion,
 </p>
 
@@ -348,20 +348,20 @@ S = \sqrt{0.67^2 + 0.34^2} = 0.75,
 `}
 
 <p>
-    And {_`\tan 27^\circ \approx 0.5`} is two units real per one imaginary,
-    the direction of {_`2 + i`}: straight at a target neither probe looked at.
-    The widget below runs the same loop; at {_`a = 0`} it reproduces the
-    numbers above (unrounded, {_`S`} = 0.754 at {_`\theta = 26.8^\circ`}), and
-    the scrubber walks the climb.
+    And {_`\tan 27^\circ \approx 0.5`} is two units real per one imaginary, the direction
+    of {_`2 + i`}: straight at a target neither probe looked at. The widget
+    below runs the same loop; at {_`a = 0`} it reproduces the numbers above (unrounded,
+    {_`S`} = 0.754 at {_`\theta = 26.8^\circ`}), and the scrubber walks the
+    climb.
 </p>
 
 <Climb></Climb>
 
 <ul>
     <li>
-        Scrub to step 10: the trail runs dead straight up the {_`2 + i`} ray,
-        f reads 0.996, and the arrows have shrunk to almost nothing: the top of
-        a hill, as a gradient sees it.
+        Scrub to step 10: the trail runs dead straight up the {_`2 + i`} ray, f reads
+        0.996, and the arrows have shrunk to almost nothing: the top of a hill, as
+        a gradient sees it.
     </li>
     <li>
         Set {_`\delta = 0.2`}: the measured slope at {_`a = 0`} reads 0.769 against
@@ -370,10 +370,9 @@ S = \sqrt{0.67^2 + 0.34^2} = 0.75,
         test in miniature.
     </li>
     <li>
-        Drag the start to {_`a = -1 + i`}: the first step points straight up
-        ({_`\theta = 90°`}) and the trail arcs home, re-aimed at every step.
-        The gradient is local; the straight road from {_`a = 0`} belonged to
-        that start, not to the method.
+        Drag the start to {_`a = -1 + i`}: the first step points straight up ({_`\theta = 90°`})
+        and the trail arcs home, re-aimed at every step. The gradient is local;
+        the straight road from {_`a = 0`} belonged to that start, not to the method.
     </li>
 </ul>
 
@@ -396,15 +395,15 @@ S = \|\nabla f\| = \sqrt{\textstyle\sum_i \big(\partial_{\theta_i} f\big)^2}
         |111\rangle\}`} above, which fights bit flips, and its mirror image the XXX
         code
         {_`\{|{+}{+}{+}\rangle, |{-}{-}{-}\rangle\}`}, which fights phase flips.
-        Under {_`X`}-{_`Z`} symmetric noise they are one object seen from two
-        angles, so the gradient machinery, which knows nothing of that
-        symmetry, must report the same slope for both; and relabelling
+        Under {_`X`}-{_`Z`} symmetric noise they are one object seen from two angles,
+        so the gradient machinery, which knows nothing of that symmetry, must report
+        the same slope for both; and relabelling
         {_`0 \leftrightarrow 1`} maps each code to itself, so {_`\|\nabla f\|`}
         at {_`|0_L\rangle`} and {_`|1_L\rangle`} must match:
     </p>
 
     <div class="tc">
-        <table class="mx-a">
+        <table class="mx-a my10">
             <thead>
                 <tr
                     ><th>code</th><th>‖∇f‖ at |0<sub>L</sub>⟩</th><th
@@ -470,7 +469,7 @@ a_i \;\rightarrow\; a_i + \eta\left(
     and once they drift the computed "fidelity" can exceed 1, a fiction the
     optimiser will happily chase. The gradient is validated; the space it moves
     through is not. Keeping the walk on the set of valid codes is
-    <a href="../gradient-qec-2">part 2</a>.
+    <a href="/wave/gradient-qec-2">part 2</a>.
 </p>
 
 <Refs
@@ -495,10 +494,6 @@ a_i \;\rightarrow\; a_i + \eta\left(
 ></Refs>
 
 <style>
-    table {
-        border-collapse: collapse;
-        margin: 10px auto;
-    }
     th,
     td {
         border: 1px solid #8886;

@@ -46,8 +46,8 @@ which, in general, is
 What if we were to convert the factorial to a gamma function and then use that
 to evaluate the derivative in a non-integer order? So then,
 
-{__`D^{0.5} x^n = \frac{\Gamma(n+1)}{\Gamma(n-\frac12+1)} x^{n-\frac12}`}. We can
-now apply this twice to get the 1st derivative:
+{__`D^{0.5} x^n = \frac{\Gamma(n+1)}{\Gamma(n-\frac12+1)} x^{n-\frac12}`}. We
+can now apply this twice to get the 1st derivative:
 
 {__`D^{0.5} D^{0.5} x^n = \frac{\Gamma(n+1)}{\Gamma(n-\frac12+1)} \cdot \frac{\Gamma(n-\frac12+1)}{\Gamma(n-1+1)} x^{n-1} = \frac{\Gamma(n+1)}{\Gamma(n-1+1)} x^{n-1} = n x^{n-1} = D x^n.`}
 

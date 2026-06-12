@@ -10,12 +10,32 @@
   hljs.registerLanguage("shell", () => ({
     name: "shell",
     contains: [
-      { className: "comment", begin: /#/, end: /$/ },
-      { className: "string", begin: /https?:\/\/\S+/ },
-      { className: "string", begin: /"/, end: /"/ },
-      { className: "variable", begin: /\$\{?\w+\}?/ },
-      { className: "keyword", begin: /(?:^|\s)--?[A-Za-z][\w-]*/ },
-      { className: "built_in", begin: /\b(?:brew|curl|go|cat|bash|sh|eastwood)\b/ },
+      {
+        className: "comment",
+        begin: /#/,
+        end: /$/,
+      },
+      {
+        className: "string",
+        begin: /https?:\/\/\S+/,
+      },
+      {
+        className: "string",
+        begin: /"/,
+        end: /"/,
+      },
+      {
+        className: "variable",
+        begin: /\$\{?\w+\}?/,
+      },
+      {
+        className: "keyword",
+        begin: /(?:^|\s)--?[A-Za-z][\w-]*/,
+      },
+      {
+        className: "built_in",
+        begin: /\b(?:brew|curl|go|cat|bash|sh|eastwood)\b/,
+      },
     ],
   }));
 
@@ -29,31 +49,35 @@
 <div class="eastwood-docs mx-a">
   <h1>Eastwood</h1>
   <p>
-    A single-binary, multi-language linter. It lints <b>Python</b>, <b>LaTeX</b>,
+    A single-binary, multi-language linter. It lints <b>Python</b>,
+    <b>LaTeX</b>,
     <b>Go</b>, <b>JavaScript</b>, <b>TypeScript</b>, and <b>Rust</b> — 67 rules
     total. The binary is <code>eastwood</code>.
   </p>
 
   <h2>Install</h2>
   <p>Homebrew (macOS / Linux):</p>
-  <pre class="rx5"><code class="language-shell"
+  <pre class="rx5"><code class="language-shell d-b"
       >brew tap plutoniumm/eastwood https://github.com/plutoniumm/eastwood
 brew install eastwood</code
     ></pre>
 
-  <p>Or the one-line installer (drops <code>eastwood</code> in <code>/usr/local/bin</code>):</p>
-  <pre class="rx5"><code class="language-shell"
+  <p>
+    Or the one-line installer (drops <code>eastwood</code> in
+    <code>/usr/local/bin</code>):
+  </p>
+  <pre class="rx5"><code class="language-shell d-b"
       >curl -fsSL https://manav.ch/eastwood.sh | bash</code
     ></pre>
 
   <p>Or from source (needs Go 1.25+ and a C toolchain):</p>
-  <pre class="rx5"><code class="language-shell"
+  <pre class="rx5"><code class="language-shell d-b"
       >go install github.com/plutoniumm/eastwood/cmd/eastwood@latest</code
     ></pre>
 
   <h2>Usage</h2>
   <p>Point it at a file, a directory, or pipe in stdin:</p>
-  <pre class="rx5"><code class="language-shell"
+  <pre class="rx5"><code class="language-shell d-b"
       >eastwood path/to/file.py
 eastwood src/                    # walks a directory
 cat foo.tex | eastwood --lang latex
@@ -65,8 +89,8 @@ eastwood --list-rules            # every rule + default severity</code
     <code>eastwood --list-rules</code> prints every rule, and
     <code>eastwood --rule py/bare-except path/</code> runs just one. Project
     settings live in an <code>eastwood.toml</code> at the project root (it walks
-    up from the current directory) — set severities, per-rule options, and
-    opt-in style preferences there.
+    up from the current directory) — set severities, per-rule options, and opt-in
+    style preferences there.
   </p>
 
   <p>
@@ -96,7 +120,6 @@ eastwood --list-rules            # every rule + default severity</code
   }
 
   pre code {
-    display: block;
     padding: 12px;
     background: #fff;
     border-radius: 4px;

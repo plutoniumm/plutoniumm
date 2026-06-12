@@ -28,8 +28,10 @@
 
     const skip = Object.values(generics).flat();
     const extra = Array.isArray(ignores) ? ignores : ignores.split(",");
+
     for (const e of extra) {
         const ignore = e.trim();
+
         if (ignore.length > 0 && !skip.includes(ignore)) {
             skip.push(ignore);
         }
@@ -58,13 +60,13 @@
     });
 </script>
 
-<div class="generics sw-100 p10">
+<div class="generics sw-100 p10 my10 mx0">
     {#if Object.keys(generics).length}
         Generic Variables: 'commonly used' notation which I will not otherwise
         define. For the other ones click on any coloured variable to define it.
         <br />
         <ul>
-            {#each Object.entries(generics) as [key, values]}
+            {#each Object.entries(generics) as [key, values], i (i)}
                 {@const vars = values.map((v) => v.trim()).join(", ")}
                 <li>
                     {@html _(`${vars} \\in ${gmap[key]}`)}
@@ -78,6 +80,5 @@
     .generics {
         background: #fff0;
         border-top: 2px dotted #8884;
-        margin: 10px 0;
     }
 </style>

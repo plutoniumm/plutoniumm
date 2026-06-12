@@ -66,9 +66,9 @@ derivative, of the derivative, as:
 \end{align*}
 `}
 
-We often find this form of the derivative useful, since it allows us to calculate
-the second derivative without any first derivative terms. Numerically also, this
-lets us calculate the second derivative using only values of {_`f`}.
+We often find this form of the derivative useful, since it allows us to
+calculate the second derivative without any first derivative terms. Numerically
+also, this lets us calculate the second derivative using only values of {_`f`}.
 
 <h4>Imaginary Steps</h4>
 
@@ -95,8 +95,8 @@ f'(x) &= \Re\left[\frac{f(x + ih) - f(x)}{ih}\right] + h^2 \frac{f^{(3)}(x)}{3!}
 \end{align*}
 `}
 
-We notice now that the derivative after a complex step is much
-more accurate since the first error term is now {_`h^2`}, and not {_`h`}.
+We notice now that the derivative after a complex step is much more accurate
+since the first error term is now {_`h^2`}, and not {_`h`}.
 
 <h4>Automatic Differentiation</h4>
 
@@ -108,8 +108,8 @@ We can define a dual number as:
 {__`a + b\varepsilon`}
 
 This also implies we throw away anything involving {_`\varepsilon^2, \varepsilon^3, \cdots`},
-etc. It acts like an infinitesimal: nonzero, but its square is zero. Let’s take a
-small dual step from {_`x \to x + \varepsilon`}. We expand via Taylor:
+etc. It acts like an infinitesimal: nonzero, but its square is zero. Let’s take
+a small dual step from {_`x \to x + \varepsilon`}. We expand via Taylor:
 
 {__`f(x + \varepsilon) = f(x) + f'(x)\varepsilon + \frac{f''(x)}{2!}\varepsilon^2 + \cdots`}
 
@@ -124,6 +124,3 @@ f'(x) = \frac{f(x + \varepsilon) - f(x)}{\varepsilon}
 This is automatic differentiation.
 
 <Refs list={[]}></Refs>
-
-<style>
-</style>

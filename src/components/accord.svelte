@@ -2,7 +2,7 @@
   export let title = "";
 </script>
 
-<details class="p20 rx10 sw-100">
+<details class="p20 rx10 sw-100 my20 mx0">
   <summary class="p-rel ptr p10 sw-100"> {title}</summary>
 
   <div>
@@ -13,7 +13,6 @@
 <style>
   details {
     background: #fff;
-    margin: 20px 0;
     z-index: 5;
   }
 
@@ -21,9 +20,6 @@
     outline: none;
   }
 
-  :root {
-    interpolate-size: allow-keywords;
-  }
   details::details-content {
     block-size: 0;
     overflow: hidden;

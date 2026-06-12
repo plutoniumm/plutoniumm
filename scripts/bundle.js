@@ -12,6 +12,7 @@ export default function Bundle () {
       const dirPath = path.resolve( process.cwd(), inDir );
 
       const builds = [];
+
       for ( const f of fs.readdirSync( dirPath ) ) {
         if ( !f.endsWith( '.ts' ) ) continue;
 

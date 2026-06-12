@@ -27,6 +27,7 @@
 
             if (bit === 0 && Math.random() < a) bit = 1;
             else if (bit === 1 && Math.random() < b) bit = 0;
+
             bits[i] = bit;
         }
 
@@ -35,29 +36,39 @@
 
         for (const w of W) {
             const means = [];
+
             for (let i = 0; i < NW; i++) {
                 let s = 0;
+
                 for (let j = 0; j < w; j++) {
                     s += bits[i * w + j];
                 }
+
                 means.push(s / w);
             }
 
             const mu = means.reduce((x, y) => x + y, 0) / NW;
             let sg = 0;
+
             for (const m of means) {
                 sg += (m - mu) * (m - mu);
             }
+
             sg = Math.sqrt(sg / (NW - 1));
 
             if (sg > 0 && mu > 0) {
                 const x = Math.log(w);
                 const y = Math.log(sg / mu);
 
-                out.push({ x, y, w });
+                out.push({
+                    x,
+                    y,
+                    w,
+                });
                 acc += y + 0.5 * x;
             }
         }
+
         pts = out;
         cMeas = out.length ? acc / out.length : 0;
     }
@@ -98,17 +109,19 @@
             />
         </label>
 
-        <button on:click={() => (seed += 1)}> re-toss </button>
+        <button type="button" class="ptr rx5" on:click={() => (seed += 1)}>
+            re-toss
+        </button>
     </div>
 
     <svg width="480" height="240" font-family="monospace" font-size="10">
-        {#each [-1, -2, -3] as gy}
+        {#each [-1, -2, -3] as gy, k (k)}
             <line x1="50" x2="470" y1={PY(gy)} y2={PY(gy)} stroke="#eee" />
             <text x="46" y={PY(gy) + 3} text-anchor="end">
                 {gy}
             </text>
         {/each}
-        {#each W as w}
+        {#each W as w, k (k)}
             <text x={PX(Math.log(w))} y="228" text-anchor="middle">
                 {w}
             </text>
@@ -123,7 +136,7 @@
             stroke-dasharray="6 4"
             stroke-width="1.5"
         />
-        {#each pts as p}
+        {#each pts as p, k (k)}
             <circle cx={PX(p.x)} cy={PY(p.y)} r="4" fill="#097" />
         {/each}
 
@@ -167,9 +180,7 @@
     button {
         padding: 4px 10px;
 
-        border-radius: 5px;
         background: #f6f6f6;
-        cursor: pointer;
         font-size: 0.85em;
         color: #222;
     }

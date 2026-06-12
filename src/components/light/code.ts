@@ -5,7 +5,10 @@ export class Code extends LitElement {
   value!: string;
 
   static properties = {
-    language: { type: String, reflect: true },
+    language: {
+      type: String,
+      reflect: true
+    },
     value: { type: String }
   };
 
@@ -15,12 +18,17 @@ export class Code extends LitElement {
   }
 `;
 
-  hljs: any;
+  hljs: {
+    highlight (src: string, opts: { language: string; ignoreIllegals: boolean }): { value: string };
+    registerLanguage (name: string, lang: unknown): void;
+  } | null = null;
 
   async updated () {
     if (!this.language || !this.value) return;
 
-    const code = this.renderRoot.querySelector('code')!;
+    const code = this.renderRoot.querySelector('code');
+    if (!code) return;
+
     if (!this.hljs) {
       // @ts-ignore
       const core = await import('https://esm.sh/highlight.js@11/lib/core');
@@ -31,10 +39,9 @@ export class Code extends LitElement {
           `https://esm.sh/highlight.js@11/lib/languages/${this.language}`
         );
         this.hljs.registerLanguage(this.language, lang.default);
-      } catch (e) {
-        console.log('Language not found:', this.language, e);
-
+      } catch {
         code.textContent = `Language "${this.language}" not found.`;
+
         return;
       }
     }

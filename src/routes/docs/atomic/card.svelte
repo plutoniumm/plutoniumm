@@ -14,7 +14,7 @@
     </slot>
   </div>
 
-  <pre class="m0"><code class="language-xml">{code}</code></pre>
+  <pre class="m0 py0 px20"><code class="language-xml d-b">{code}</code></pre>
 
   <div class="stage p20">
     <slot />
@@ -42,13 +42,10 @@
     }
 
     pre {
-      padding: 0 20px;
-
       code {
         padding: 12px;
         background: #fff;
         border-radius: 4px;
-        display: block;
       }
     }
   }

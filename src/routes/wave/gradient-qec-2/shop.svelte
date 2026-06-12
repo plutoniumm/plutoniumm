@@ -33,25 +33,35 @@
             timer = null;
         }
     }
+
     onDestroy(stop);
 
     const honestF = (a, b) => {
         const g = orthonormalise(a, b);
+
         return fidelity(g[0], g[1], ch);
     };
+
     const leanOf = (a, b) => {
         const o = inner(a, b);
+
         return Math.max(
             Math.abs(norm(a) - 1),
             Math.abs(norm(b) - 1),
             Math.hypot(o[0], o[1]),
         );
     };
+
     function record() {
         const raw = fidelity(c0, c1, ch);
         hist = hist.concat([
-            { raw, hon: honestF(c0, c1), lean: leanOf(c0, c1) },
+            {
+                raw,
+                hon: honestF(c0, c1),
+                lean: leanOf(c0, c1),
+            },
         ]);
+
         if (!Number.isFinite(raw) || raw > 1e6) {
             blown = true;
             stop();
@@ -68,6 +78,7 @@
         hist = [];
         record();
     }
+
     $: {
         p;
         eps;
@@ -77,16 +88,20 @@
 
     function stepN(k) {
         if (blown) return;
+
         for (let s = 0; s < k && !blown; s++) {
             [c0, c1] = ascend(c0, c1, ch, mode, +eta);
             record();
         }
     }
+
     function run() {
         if (timer) {
             stop();
+
             return;
         }
+
         let left = 150;
         timer = setInterval(() => {
             stepN(Math.min(5, left));
@@ -94,6 +109,7 @@
             if (left <= 0) stop();
         }, 40);
     }
+
     const reroll = () => (seed = Math.trunc(Math.random() * 1e9));
 
     // ---- plot ----
@@ -110,8 +126,7 @@
             10,
     );
     const YMAX = 1.08;
-    $: Y = (v) =>
-        TOP + (1 - (Math.min(v, YMAX) - ymin) / (YMAX - ymin)) * PH;
+    $: Y = (v) => TOP + (1 - (Math.min(v, YMAX) - ymin) / (YMAX - ymin)) * PH;
     $: X = (i) => PM + (i / xmax) * PW;
     $: yticks = [0, 1, 2, 3].map((t) => ymin + ((1 - ymin) * t) / 3);
     $: rawPts = hist.map((h, i) => X(i) + "," + Y(h.raw)).join(" ");
@@ -123,9 +138,14 @@
         hist.map((h, i) => X(i) + "," + LY(h.lean)).join(" ") +
         ` ${X(hist.length - 1)},${LY0 + LH}`;
 
-    $: cur = hist[hist.length - 1] || { raw: 0, hon: 0, lean: 0 };
+    $: cur = hist[hist.length - 1] || {
+        raw: 0,
+        hon: 0,
+        lean: 0,
+    };
     $: n0 = c0 ? norm(c0) : 1;
     $: n1 = c1 ? norm(c1) : 1;
+
     const sci = (v) =>
         v > 10 || !Number.isFinite(v) ? v.toExponential(1) : v.toFixed(4);
 </script>
@@ -138,16 +158,34 @@
         </label>
         <label>
             damage ε = <b>{cl(eps, 0, 0.6).toFixed(2)}</b>
-            <input type="range" min="0" max="0.6" step="0.05" bind:value={eps} />
+            <input
+                type="range"
+                min="0"
+                max="0.6"
+                step="0.05"
+                bind:value={eps}
+            />
         </label>
-        <button on:click={reroll}>re-roll damage</button>
+        <button type="button" class="ptr rx5" on:click={reroll}
+            >re-roll damage</button
+        >
     </div>
     <div class="f al-ct j-ct fw g10 mb10">
         <span class="modes">
-            <button class:on={mode === "raw"} on:click={() => (mode = "raw")}>
+            <button
+                type="button"
+                class="ptr rx5"
+                class:on={mode === "raw"}
+                on:click={() => (mode = "raw")}
+            >
                 raw ascent
             </button>
-            <button class:on={mode === "mani"} on:click={() => (mode = "mani")}>
+            <button
+                type="button"
+                class="ptr rx5"
+                class:on={mode === "mani"}
+                on:click={() => (mode = "mani")}
+            >
                 project + retract
             </button>
         </span>
@@ -160,13 +198,18 @@
                 <option value={0.01}>0.01</option>
             </select>
         </label>
-        <button on:click={() => stepN(1)} disabled={!!timer || blown}>
+        <button
+            type="button"
+            class="ptr rx5"
+            on:click={() => stepN(1)}
+            disabled={!!timer || blown}
+        >
             1 step
         </button>
-        <button on:click={run} disabled={blown}>
+        <button type="button" class="ptr rx5" on:click={run} disabled={blown}>
             {timer ? "stop" : "run 150"}
         </button>
-        <button on:click={reset}>reset</button>
+        <button type="button" class="ptr rx5" on:click={reset}>reset</button>
     </div>
 
     <svg
@@ -199,7 +242,7 @@
         <text x={PM + PW} y={Y(baseF) + 12} text-anchor="end" fill="#555">
             clean code F = {baseF.toFixed(4)}
         </text>
-        {#each yticks as gv}
+        {#each yticks as gv, ix (ix)}
             <line x1={PM - 3} x2={PM} y1={Y(gv)} y2={Y(gv)} stroke="#999" />
             <text x={PM - 6} y={Y(gv) + 3} text-anchor="end" fill="#777">
                 {gv.toFixed(2)}
@@ -216,25 +259,24 @@
             stroke="#c75200"
             stroke-width="1.6"
         />
-        <polyline points={honPts} fill="none" stroke="#097" stroke-width="2.2" />
+        <polyline
+            points={honPts}
+            fill="none"
+            stroke="#097"
+            stroke-width="2.2"
+        />
 
         <!-- lean strip -->
         <text x={PM} y={LY0 - 5} text-anchor="start" fill="#777">
             distance from the manifold
         </text>
-        <line
-            x1={PM}
-            x2={PM + PW}
-            y1={LY0 + LH}
-            y2={LY0 + LH}
-            stroke="#999"
-        />
+        <line x1={PM} x2={PM + PW} y1={LY0 + LH} y2={LY0 + LH} stroke="#999" />
         <text x={PM - 6} y={LY0 + LH + 3} text-anchor="end" fill="#777">0</text>
         <polygon points={leanPts} fill="#c7520033" stroke="#c75200" />
     </svg>
     <div class="cap">
         <span class="craw">raw F, what the optimiser sees</span> ·
-        <span class="chon">honest F, after re-orthonormalising a copy</span>
+        <span class="chon fw7">honest F, after re-orthonormalising a copy</span>
     </div>
 
     <div class="read tc mt5">
@@ -242,7 +284,7 @@
         {cur.hon.toFixed(4)} · norms = ({n0.toFixed(2)}, {n1.toFixed(2)})
     </div>
     {#if blown}
-        <div class="warn mt5">
+        <div class="warn fw7 mt5">
             the raw score passed 10⁶ and the run was stopped: the number no
             longer measures anything. switch to project + retract and reset.
         </div>
@@ -250,11 +292,11 @@
 
     <div class="note tc mt10">
         ascent on fidelity for the three-qubit repetition code (32 real knobs)
-        against isotropic Pauli noise p, Petz recovery of the clean code
-        frozen, probes δ = 10⁻⁴. the damage slider shoves every coefficient by
-        ε and re-orthonormalises before descent starts. both modes use the
-        identical gradient; the only difference is project + retract. switching
-        modes mid-run keeps the curves.
+        against isotropic Pauli noise p, Petz recovery of the clean code frozen,
+        probes δ = 10⁻⁴. the damage slider shoves every coefficient by ε and
+        re-orthonormalises before descent starts. both modes use the identical
+        gradient; the only difference is project + retract. switching modes
+        mid-run keeps the curves.
     </div>
 </div>
 
@@ -277,9 +319,7 @@
     }
     button {
         padding: 4px 10px;
-        border-radius: 5px;
         background: #f6f6f6;
-        cursor: pointer;
         font-size: 0.85em;
         color: #222;
     }
@@ -308,7 +348,6 @@
     }
     .chon {
         color: #097;
-        font-weight: bold;
     }
     .read {
         font-family: monospace;
@@ -317,7 +356,6 @@
     .warn {
         color: #c75200;
         font-size: 0.82em;
-        font-weight: bold;
     }
     .note {
         font-size: 0.78em;

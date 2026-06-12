@@ -17,18 +17,22 @@
 
     function mul(f, g) {
         const c = new Array(n).fill(0);
+
         for (let i = 0; i < n; i++) {
             for (let j = 0; j < n; j++) {
                 c[(i + j) % n] += (i + j < n ? 1 : -1) * f[i] * g[j];
             }
         }
+
         return c.map(mod);
     }
+
     const add = (f, g) => f.map((v, i) => mod(v + g[i]));
     const sub = (f, g) => f.map((v, i) => mod(v - g[i]));
 
     // keygen: secret stays nonzero even at eta 0, only the errors vanish
-    let a = [],
+    let //
+        a = [],
         s = [],
         e = [],
         b = [];
@@ -42,7 +46,8 @@
     }
 
     // encrypt
-    let r = [],
+    let //
+        r = [],
         e1 = [],
         e2 = [];
     $: {
@@ -75,15 +80,20 @@
             error size η = <b>{eta}</b>
             <input type="range" min="0" max="6" bind:value={eta} />
         </label>
-        <button on:click={() => (kseed += 1)}>new keys</button>
-        <button on:click={() => (eseed += 1)}>re-encrypt</button>
+        <button type="button" class="ptr rx5" on:click={() => (kseed += 1)}
+            >new keys</button
+        >
+        <button type="button" class="ptr rx5" on:click={() => (eseed += 1)}
+            >re-encrypt</button
+        >
     </div>
 
     <div class="tc my5">
         <span class="cap">message (click bits to flip):</span>
-        {#each bits as bv, i}
+        {#each bits as bv, i (i)}
             <button
-                class="bit"
+                type="button"
+                class="bit ptr rx5 mx2"
                 class:on={bv === 1}
                 on:click={() => (bits[i] = 1 - bits[i])}>{bv}</button
             >
@@ -91,12 +101,12 @@
     </div>
 
     <div class="polys">
-        {#each [["pub", "public", "a", a], ["pub", "public", "b", b], ["sec", "secret", "s", s], ["ct", "sent", "u", u], ["ct", "sent", "v", v]] as [cls, tag, name, vec]}
-            <div class="prow">
-                <span class="tag {cls}">{tag}</span>
-                <span class="pname">{name} =</span>
-                {#each vec as pv}
-                    <span class="pcell">{pv}</span>
+        {#each [["pub", "public", "a", a], ["pub", "public", "b", b], ["sec", "secret", "s", s], ["ct", "sent", "u", u], ["ct", "sent", "v", v]] as [cls, tag, name, vec], k (k)}
+            <div class="prow f al-ct my2">
+                <span class="tag {cls} d-ib tc">{tag}</span>
+                <span class="pname tr">{name} =</span>
+                {#each vec as pv, k (k)}
+                    <span class="pcell tr">{pv}</span>
                 {/each}
             </div>
         {/each}
@@ -145,7 +155,7 @@
             >
             <text x="40" y={Y(-half) + 3} text-anchor="end">−48</text>
 
-            {#each d as dv, i}
+            {#each d as dv, i (i)}
                 <rect
                     x={X(i)}
                     width="26"
@@ -199,8 +209,6 @@
         max-width: 620px;
         color: #222;
     }
-    label {
-    }
     input[type="range"] {
         vertical-align: middle;
         width: 130px;
@@ -208,9 +216,7 @@
     button {
         padding: 4px 10px;
 
-        border-radius: 5px;
         background: #f6f6f6;
-        cursor: pointer;
         font-size: 0.85em;
         color: #222;
     }
@@ -220,7 +226,6 @@
     .bit {
         width: 30px;
         height: 30px;
-        margin: 0 2px;
         font-family: monospace;
         font-size: 1em;
         padding: 0;
@@ -243,26 +248,19 @@
         overflow-x: auto;
     }
     .prow {
-        display: flex;
-        align-items: center;
-        margin: 2px 0;
         white-space: nowrap;
     }
     .pname {
         width: 32px;
-        text-align: right;
         margin-right: 6px;
         color: #555;
     }
     .pcell {
         width: 3ch;
-        text-align: right;
         flex: none;
     }
     .tag {
-        display: inline-block;
         width: 52px;
-        text-align: center;
         border-radius: 4px;
 
         margin-right: 6px;

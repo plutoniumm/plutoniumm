@@ -14,8 +14,10 @@
 
     const f = (q) => q[0] + 2 * q[1];
     const rad = (q) => Math.hypot(q[0], q[1]);
+
     const honest = (q) => {
         const r = rad(q) || 1;
+
         return f([q[0] / r, q[1] / r]);
     };
 
@@ -25,35 +27,55 @@
         let q = q0;
         const out = [q];
         let prev = f(q);
+
         for (let s = 0; n ? s < n : s < CAP; s++) {
             let dir = [1, 2];
+
             if (md === "tan") {
                 const r = rad(q) || 1;
                 const qh = [q[0] / r, q[1] / r];
                 const dot = qh[0] + 2 * qh[1];
                 dir = [1 - dot * qh[0], 2 - dot * qh[1]];
             }
+
             let nq = [q[0] + h * dir[0], q[1] + h * dir[1]];
+
             if (md !== "raw") {
                 const nr = rad(nq) || 1;
                 nq = [nq[0] / nr, nq[1] / nr];
             }
+
             out.push(nq);
             q = nq;
+
             if (
                 !n &&
                 Math.abs(f(q) - prev) < TOL * Math.max(Math.abs(prev), 1e-12)
             )
                 break;
+
             prev = f(q);
         }
+
         return out;
     }
 
     const RULES = [
-        { id: "raw", name: "raw step", col: "#c75200" },
-        { id: "ret", name: "raw step, then retract", col: "#2456c9" },
-        { id: "tan", name: "tangent step, then retract", col: "#097" },
+        {
+            id: "raw",
+            name: "raw step",
+            col: "#c75200",
+        },
+        {
+            id: "ret",
+            name: "raw step, then retract",
+            col: "#2456c9",
+        },
+        {
+            id: "tan",
+            name: "tangent step, then retract",
+            col: "#097",
+        },
     ];
 
     let q0 = [1, 0];
@@ -70,6 +92,7 @@
     // gradient decomposition at the start point, drawn at step scale eta
     $: qh = (() => {
         const r = rad(q0) || 1;
+
         return [q0[0] / r, q0[1] / r];
     })();
     $: dot = qh[0] + 2 * qh[1];
@@ -78,24 +101,30 @@
     $: tan_tip = [q0[0] + eta * gtan[0], q0[1] + eta * gtan[1]];
 
     let timer = null;
+
     function stop() {
         if (timer) {
             clearInterval(timer);
             timer = null;
         }
     }
+
     onDestroy(stop);
+
     function play() {
         if (timer) {
             stop();
+
             return;
         }
+
         if (k >= last) k = 0;
         timer = setInterval(() => {
             if (k >= last) return stop();
             k += 1;
         }, 150);
     }
+
     function reset() {
         stop();
         q0 = [1, 0];
@@ -111,6 +140,7 @@
     const sy = (y) => M + W - ((y - lo) / (hi - lo)) * W;
 
     let dragging = false;
+
     function setQ(e) {
         const r = e.currentTarget.getBoundingClientRect();
         const s = (W + 2 * M) / r.width;
@@ -121,15 +151,18 @@
             Math.max(lo + 0.05, Math.min(hi - 0.05, y)),
         ];
     }
+
     function down(e) {
         stop();
         dragging = true;
         setQ(e);
         e.preventDefault();
     }
+
     function move(e) {
         if (dragging) setQ(e);
     }
+
     function up() {
         dragging = false;
     }
@@ -138,11 +171,17 @@
     const CONT = [-2, -1, 0, 1, 2].map((c) => {
         let x = 1.64;
         let y = (c - x) / 2;
+
         if (y < -1.55) {
             y = -1.55;
             x = c - 2 * y;
         }
-        return { c, x, y };
+
+        return {
+            c,
+            x,
+            y,
+        };
     });
 </script>
 
@@ -158,8 +197,10 @@
                 bind:value={eta}
             />
         </label>
-        <button on:click={play}>{timer ? "pause" : "race"}</button>
-        <button on:click={reset}>reset</button>
+        <button type="button" class="ptr rx5" on:click={play}
+            >{timer ? "pause" : "race"}</button
+        >
+        <button type="button" class="ptr rx5" on:click={reset}>reset</button>
         <label>
             step <b>{k}</b> / {last}
             <input
@@ -209,7 +250,7 @@
         </defs>
 
         <!-- contours of f = x + 2y -->
-        {#each CONT as c}
+        {#each CONT as c, ix (ix)}
             <line
                 x1={sx(lo - 2)}
                 y1={sy((c.c - (lo - 2)) / 2)}
@@ -265,7 +306,7 @@
         </text>
 
         <!-- trails up to step k -->
-        {#each RULES as r, i}
+        {#each RULES as r, i (i)}
             <polyline
                 points={trails[i]
                     .slice(0, k + 1)
@@ -328,16 +369,16 @@
     </svg>
 
     <div class="legend mx-a mt5">
-        {#each RULES as r, i}
-            <div class="row">
+        {#each RULES as r, i (i)}
+            <div class="row f al-ct">
                 <span class="chip" style="background:{r.col}"></span>
-                <span class="name">{r.name}</span>
-                <span class="val" class:bad={f(at[i]) > FS + 5e-4}>
+                <span class="name tl">{r.name}</span>
+                <span class="val tr" class:bad={f(at[i]) > FS + 5e-4}>
                     f = {f(at[i]).toFixed(3)}{f(at[i]) > FS + 5e-4
                         ? " (fiction)"
                         : ""}
                 </span>
-                <span class="hval">honest {honest(at[i]).toFixed(3)}</span>
+                <span class="hval tr">honest {honest(at[i]).toFixed(3)}</span>
             </div>
         {/each}
     </div>
@@ -347,7 +388,7 @@
         the start. at the start, <span class="cor">orange</span> is the raw step
         {_`η\nabla f`}, <span class="cgr">green</span> its tangent part, dashed
         grey the radial part the circle cannot use. "honest" is f at the nearest
-        valid point, {_`q/‖q‖`}. anything above f = 2.236 beats every valid
+        valid point, {_`q/\|q\|`}. anything above f = 2.236 beats every valid
         point: fiction.
     </div>
 </div>
@@ -368,9 +409,7 @@
     }
     button {
         padding: 4px 10px;
-        border-radius: 5px;
         background: #f6f6f6;
-        cursor: pointer;
         font-size: 0.85em;
         color: #222;
     }
@@ -393,8 +432,6 @@
         font-size: 0.8em;
     }
     .row {
-        display: flex;
-        align-items: center;
         gap: 8px;
         padding: 1px 0;
     }
@@ -406,12 +443,10 @@
     }
     .name {
         flex: 1;
-        text-align: left;
         white-space: nowrap;
     }
     .val {
         min-width: 12ch;
-        text-align: right;
     }
     .val.bad {
         color: #c75200;
@@ -419,7 +454,6 @@
     }
     .hval {
         min-width: 13ch;
-        text-align: right;
         color: #555;
     }
     .note {

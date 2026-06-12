@@ -12,17 +12,20 @@ function parseText (text: string) {
 
     for (let i = 0; i < string.length; i++) {
         let line = string[i].trim();
+
         if (line.length > 0) {
             const [key, value] = line.split("=");
             string2 += `"${key.trim()}": ${value.trim()},`;
         }
     }
+
     string2 = string2.slice(0, -1) + "}";
 
     return JSON.parse(string2);
 }
 
 const posts = {};
+
 for (const f of fs.readdirSync("src/routes/wave")) {
     if (f.includes(".")) continue;
     if (f.includes("test")) continue;

@@ -70,14 +70,15 @@ class Split extends LitElement {
     `;
 
   firstUpdated () {
-    this.left = this.renderRoot!.querySelector(".splitl");
-    this.right = this.renderRoot!.querySelector(".splitr");
+    this.left = this.renderRoot.querySelector(".splitl");
+    this.right = this.renderRoot.querySelector(".splitr");
+    if (!this.left || !this.right) return;
 
     const ratios = this.getAttribute("ratio") || "1:1";
     const [left, right, ...rest] = ratios.split(":").map(Number);
 
-    this.left!.style.flex = `${(left * 100) / (left + right)}`;
-    this.right!.style.flex = `${(right * 100) / (left + right)}`;
+    this.left.style.flex = `${(left * 100) / (left + right)}`;
+    this.right.style.flex = `${(right * 100) / (left + right)}`;
 
     if (this.hasAttribute("vertical")) this.vertical = true;
   }
@@ -96,7 +97,7 @@ class Split extends LitElement {
         `;
   }
 
-  startDrag (e: any) {
+  startDrag (e: MouseEvent) {
     if (!this.left || !this.right) return;
     if (this.hasAttribute("disabled")) return;
 
@@ -118,10 +119,12 @@ class Split extends LitElement {
     document.addEventListener("mouseup", this.stopDrag);
   }
 
-  drag = (e: any) => {
+  drag = (e: MouseEvent) => {
     if (!this.left || !this.right) return;
+
     if (this.dragging) {
       let newWidth;
+
       if (!this.vertical) {
         const offset = e.pageX - this.startX;
         newWidth =
@@ -131,6 +134,7 @@ class Split extends LitElement {
         newWidth =
           ((this.startWidth + offset) / this.offsetHeight) * 100;
       }
+
       newWidth = ((Math.max(Math.min(100, newWidth), 0) * 10) | 0) / 10;
       this.left.style.flex = `${newWidth}`;
       this.right.style.flex = `${100 - newWidth}`;
@@ -145,4 +149,4 @@ class Split extends LitElement {
 }
 
 if (!customElements.get("lt-split"))
-  customElements.define(`lt-split`, Split);
+  customElements.define("lt-split", Split);

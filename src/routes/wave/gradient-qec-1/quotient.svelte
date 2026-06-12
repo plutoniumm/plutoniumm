@@ -12,6 +12,7 @@
 
     function fval(x, y, m) {
         if (m === "abs") return [x * x + y * y, 0];
+
         return [x * x - y * y, 2 * x * y];
     }
 
@@ -24,31 +25,39 @@
         const nr = f1[0] - f0[0];
         const ni = f1[1] - f0[1];
         const dd = dx * dx + dy * dy;
+
         return [(nr * dx + ni * dy) / dd, (ni * dx - nr * dy) / dd];
     }
 
     const N = 90; // ring resolution, one point per 4 degrees
+
     function ringOf(x, y, m) {
         const pts = [];
+
         for (let t = 0; t <= N; t++) {
             pts.push(quot(x, y, (t * 4 * Math.PI) / 180, m));
         }
+
         return pts;
     }
 
     function ringSpread(r) {
         let mx = 0;
         let my = 0;
+
         for (const p of r) {
             mx += p[0];
             my += p[1];
         }
+
         mx /= r.length;
         my /= r.length;
         let d = 0;
+
         for (const p of r) {
             d = Math.max(d, Math.hypot(p[0] - mx, p[1] - my));
         }
+
         return 2 * d;
     }
 
@@ -79,6 +88,7 @@
         const px = lx(tip[0]);
         const py = ly(tip[1]);
         const w = 7;
+
         return [
             px,
             py,
@@ -92,11 +102,13 @@
     // sweep animation: toggles, and any manual slider input cancels it
     let sweeping = false;
     let timer = null;
+
     function stopSweep() {
         sweeping = false;
         if (timer) clearInterval(timer);
         timer = null;
     }
+
     function sweep() {
         if (sweeping) return stopSweep();
         sweeping = true;
@@ -104,10 +116,12 @@
             th = (th + 2) % 360;
         }, 30);
     }
+
     onDestroy(stopSweep);
 
     // drag z0 inside the left panel, clamped to |z0| <= 1.5
     let dragging = false;
+
     function setZ(e) {
         const r = e.currentTarget.getBoundingClientRect();
         const px = ((e.clientX - r.left) / r.width) * S;
@@ -115,26 +129,34 @@
         let x = ((px - C) / (C - PAD)) * RL;
         let y = ((C - py) / (C - PAD)) * RL;
         const d = Math.hypot(x, y);
+
         if (d > 1.5) {
             x *= 1.5 / d;
             y *= 1.5 / d;
         }
+
         zx = x;
         zy = y;
     }
+
     function down(e) {
         dragging = true;
         setZ(e);
     }
+
     function move(e) {
         if (dragging) setZ(e);
     }
+
     function up() {
         dragging = false;
     }
 
     const fc = (re, im) =>
-        re.toFixed(2) + (im >= 0 ? " + " : " − ") + Math.abs(im).toFixed(2) + "i";
+        re.toFixed(2) +
+        (im >= 0 ? " + " : " − ") +
+        Math.abs(im).toFixed(2) +
+        "i";
 </script>
 
 <div class="box tc mx-a my20 p10 rx10">
@@ -158,7 +180,9 @@
                 on:input={stopSweep}
             />
         </label>
-        <button on:click={sweep}>{sweeping ? "stop" : "sweep θ"}</button>
+        <button type="button" class="ptr rx5" on:click={sweep}
+            >{sweeping ? "stop" : "sweep θ"}</button
+        >
     </div>
 
     <div class="f al-ct j-ct fw g10">
@@ -219,7 +243,7 @@
                     2i
                 </text>
 
-                {#each ring.slice(0, -1) as p, t}
+                {#each ring.slice(0, -1) as p, t (t)}
                     <line
                         x1={qx(p[0])}
                         y1={qy(p[1])}
@@ -249,8 +273,8 @@
             every direction lands on the same point: f has a derivative at z₀ =
             {fc(zx, zy)}
         {:else}
-            q(θ) = {fc(q[0], q[1])} — the answers spread over a circle of
-            diameter {spread.toFixed(2)}: no single derivative exists at z₀ =
+            q(θ) = {fc(q[0], q[1])} — the answers spread over a circle of diameter
+            {spread.toFixed(2)}: no single derivative exists at z₀ =
             {fc(zx, zy)}
         {/if}
     </div>
@@ -258,8 +282,8 @@
     <div class="note mt10">
         the arrow's colour is the direction θ; the dot of the same colour is
         that direction's difference quotient. with f = |z|² at z₀ = 1, θ = 0°
-        reads 2.01 and θ = 90° reads −0.01i, the two answers worked in the
-        text. switch to z² and the whole rainbow collapses onto one point.
+        reads 2.01 and θ = 90° reads −0.01i, the two answers worked in the text.
+        switch to z² and the whole rainbow collapses onto one point.
     </div>
 </div>
 
@@ -292,9 +316,7 @@
     }
     button {
         padding: 4px 10px;
-        border-radius: 5px;
         background: #f6f6f6;
-        cursor: pointer;
         font-size: 0.85em;
         color: #222;
     }

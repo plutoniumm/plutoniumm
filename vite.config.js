@@ -1,5 +1,4 @@
 import { sveltekit } from "@sveltejs/kit/vite";
-import terser from "@rollup/plugin-terser";
 import { defineConfig } from 'vite';
 
 import Banner from './scripts/metaimg.js';
@@ -29,15 +28,5 @@ export default defineConfig( {
         minify: "esbuild",
         cssMinify: true,
         sourcemap: false,
-        rollupOptions: {
-            plugins: [
-                terser( {
-                    maxWorkers: 8,
-                    compress: true,
-                    mangle: true,
-                    format: { comments: false },
-                } ),
-            ],
-        },
     },
 } );

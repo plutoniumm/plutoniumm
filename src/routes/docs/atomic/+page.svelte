@@ -263,9 +263,7 @@
     </div>
 
     <div class="box bigbox f g10">
-      <div class="active ptr w-50">
-        .ptr: hover me, the cursor changes
-      </div>
+      <div class="active ptr w-50">.ptr: hover me, the cursor changes</div>
       <div class="active dead w-50">
         .dead: try selecting or clicking this text
       </div>

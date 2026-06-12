@@ -4,6 +4,7 @@
   function norm(ratio: string): [number, number] {
     const [l, r] = ratio.split(":").map(Number);
     const sum = l + r;
+
     return [l / sum, r / sum];
   }
 

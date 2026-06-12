@@ -10,14 +10,15 @@
     sub="arXiv:2512.18061"
     desc="Valid codewords live on a curved constraint surface; raw gradient steps keep leaving it, and the fix is to walk the surface itself"
     date="19 December 2025"
+    prev="/wave/gradient-qec-1"
 ></Meta>
 
 <p>
-    <a href="../gradient-qec-1">Part 1</a> built a gradient for quantum codes:
-    fidelity is a black box evaluated by running the encode → noise → recover →
-    decode pipeline, each complex coefficient {_`a_i = x_i + i y_i`} is two real
-    knobs, each knob gives a slope by finite differences. The update that falls out
-    steps every coefficient at once:
+    <a href="/wave/gradient-qec-1">Part 1</a> built a gradient for quantum
+    codes: fidelity is a black box evaluated by running the encode → noise →
+    recover → decode pipeline, each complex coefficient {_`a_i = x_i + i y_i`} is
+    two real knobs, each knob gives a slope by finite differences. The update that
+    falls out steps every coefficient at once:
 </p>
 
 {__`

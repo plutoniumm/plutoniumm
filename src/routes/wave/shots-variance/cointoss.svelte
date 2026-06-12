@@ -91,7 +91,9 @@
                 bind:value={p10}
             />
         </label>
-        <button on:click={() => (seed += 1)}>re-toss</button>
+        <button type="button" class="ptr rx5" on:click={() => (seed += 1)}
+            >re-toss</button
+        >
     </div>
 
     <svg width="480" height="186" font-family="monospace" font-size="10">
@@ -161,9 +163,7 @@
     button {
         padding: 4px 10px;
 
-        border-radius: 5px;
         background: #f6f6f6;
-        cursor: pointer;
         font-size: 0.85em;
         color: #222;
     }

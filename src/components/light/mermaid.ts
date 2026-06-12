@@ -43,15 +43,18 @@ class Mermaid extends LitElement {
       .replace(/&gt;/g, ">");
 
     const API = mermaid.mermaidAPI;
-    API.initialize({ securityLevel: "loose", theme });
+    API.initialize({
+      securityLevel: "loose",
+      theme
+    });
     // unique id per instance: multiple <lt-mmd> on one page must not share
     // a render id, or mermaid's d3 a11y pass selects the wrong/removed node.
     const id = "mmd-" + Math.random().toString(36).slice(2, 9);
-    API.render(id, text).then(({ svg }: any) => {
+    API.render(id, text).then(({ svg }: { svg: string }) => {
       element.innerHTML = svg;
     });
   }
-};
+}
 
 if (!customElements.get("lt-mmd"))
-  customElements.define(`lt-mmd`, Mermaid);
+  customElements.define("lt-mmd", Mermaid);
