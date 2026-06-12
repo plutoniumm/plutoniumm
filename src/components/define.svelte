@@ -78,7 +78,6 @@
     .generics {
         background: #fff0;
         border-top: 2px dotted #8884;
-        border-bottom: 2px solid #8884;
         margin: 10px 0;
     }
 </style>

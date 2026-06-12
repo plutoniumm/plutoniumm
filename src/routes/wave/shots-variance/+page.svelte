@@ -133,7 +133,7 @@ N = 10\,000:\quad \sigma &= 0.005
     The spread shrinks as {_`1/\sqrt{N}`}, so each extra digit of precision
     costs a factor of 100 in shots, which is to say a factor of 100 in money.
     This square-root law is the reason shot estimation is worth doing carefully:
-    overshooting "to be safe" is expensive in exactly the same regime where the
+    overshooting "to be safe" is expensive in the same regime where the
     machine is already expensive.
 </p>
 
@@ -166,7 +166,7 @@ N = 10\,000:\quad \sigma &= 0.005
     of a fair coin cannot see symmetric readout noise at all, no matter how large
     it is. If the rates differ, the whole distribution slides to a new centre, 0.415
     in the worked case, and no number of shots brings it back. More shots only sharpen
-    the estimate of the wrong value. The paper confirms the symmetric cancellation
+    the estimate of the wrong value. The symmetric cancellation holds
     on two independent noisy simulators, IBM's and CERN's, both set to {_`p_{0\to1} = p_{1\to0} = 0.33`}.
 </p>
 
@@ -555,7 +555,7 @@ N = \frac{A}{\sigma^2 - B} = \frac{56}{0.01 - 0.002} = 7000
 
 <p>
     The numbers 56 and 0.002 here are illustrative values consistent with the
-    Pittsburgh fit; the conclusion is the paper's: for IBM Pittsburgh's noise
+    Pittsburgh fit; the conclusion: for IBM Pittsburgh's noise
     characteristics at that instant, 7000 shots of this circuit would have
     achieved {_`\sigma^2 \approx 0.01`}. The widget below is this equation made
     draggable.
