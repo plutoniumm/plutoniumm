@@ -47,14 +47,34 @@
 
         MAP(document.querySelectorAll(".katex-html"), (node) => {
             MAP(node.querySelectorAll(sel("mord")), (e) =>
-                run(["f8f", "48f", "84f", "4a8", "f84", "f48"], e),
+                run(
+                    [
+                        "var(--c1)",
+                        "var(--c2)",
+                        "var(--c3)",
+                        "var(--c5)",
+                        "var(--ok)",
+                        "var(--c4)",
+                    ],
+                    e,
+                ),
             );
 
             MAP(
                 node.querySelectorAll(
                     [sel("mop"), sel("mopen"), sel("mclose")].join(", "),
                 ),
-                (e) => run(["025", "029", "015", "88f", "808"], e),
+                (e) =>
+                    run(
+                        [
+                            "var(--c3)",
+                            "var(--c5)",
+                            "var(--c1)",
+                            "var(--c2)",
+                            "var(--no)",
+                        ],
+                        e,
+                    ),
             );
         });
     });

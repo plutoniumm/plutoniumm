@@ -43,7 +43,7 @@
 </ul>
 
 <Definations
-    ignores="t,k,n,x,y,i,j,s,e,d,a,m,q,r,u,v,X,Y,Z,P,V,S,W,I,R,F,L,D"
+    ignores="ˉ,Var,Cov,SE,i,j,n,m,r,u,v,y,z,a,q,I,V,S,W,R,F,L,D"
     list={[
         define(
             "N",
@@ -82,12 +82,44 @@
             "decay clocks from the calibration sheet: T₁ for amplitude (a |1⟩ falling back to |0⟩), T₂ for phase",
         ),
         define(
+            "t",
+            "the wait inserted between the gate(s) and the measurement, of length $t$, that exposes the $T_1$ and $T_2$ decays",
+        ),
+        define(
+            "δ",
+            "in $\\delta t$, the machine's pulse time unit; the wait $t$ and the clocks are quoted in multiples of it",
+        ),
+        define(
             "H",
             "the Hadamard gate: sends |0⟩ to an equal split of |0⟩ and |1⟩, the quantum coin flip",
         ),
         define(
             "O",
             "the observable being estimated; here, the energy of the H₂ molecule",
+        ),
+        define(
+            "P",
+            "probability of a labelled outcome, e.g. $P(0)$ and $P(1)$; $P_k$ is the chance an error has appeared after $k$ gates",
+        ),
+        define(
+            "x",
+            "a readout error rate treated as a free variable; the sensitivity $dc/dx$ measures how fast one-directional noise inflates the spread",
+        ),
+        define(
+            "k",
+            "number of gates an axis error compounds over, $P_k = 1-(1-p)^k$; also the bit count when bits are combined into a number",
+        ),
+        define(
+            "X",
+            "the Pauli $X$ gate, a bit-flip; one of the unwanted gate errors, and a letter in the Hamiltonian's Pauli strings",
+        ),
+        define(
+            "Y",
+            "the Pauli $Y$ gate, a combined bit-and-phase flip; an unwanted gate error and a Pauli-string letter",
+        ),
+        define(
+            "Z",
+            "the Pauli $Z$ gate, a phase-flip; an unwanted gate error and a Pauli-string letter",
         ),
         define(
             "A",
@@ -99,7 +131,23 @@
         ),
         define(
             "E",
-            "error per layered gate (EPLG), a published benchmark of gate noise",
+            "the energy estimator: $E_i$ a per-run energy, $\\bar E_N$ its average over $N$ shots. Also the error per layered gate (EPLG), the published gate-noise benchmark split as $p_x=p_y=p_z=E/3$",
+        ),
+        define(
+            "s",
+            "sample standard deviation; $s^2$ is the sample variance, with $\\mathrm{SE}(s^2)=s^2\\sqrt{2/(N-1)}$",
+        ),
+        define(
+            "α",
+            "amplitude of |0⟩ in the qubit state α|0⟩ + β|1⟩; |α|² is the population that the $T_1$ decay erodes",
+        ),
+        define(
+            "β",
+            "amplitude of |1⟩ in the qubit state α|0⟩ + β|1⟩; the αβ* coherence is the off-diagonal term the $T_2$ decay erodes",
+        ),
+        define(
+            "ρ",
+            "the qubit density matrix; $\\rho_{T_1+T_2}$ is its state after a wait, populations on the diagonal and coherence off it",
         ),
     ]}
 />

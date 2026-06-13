@@ -47,7 +47,7 @@ a_i \;\rightarrow\; a_i - \eta\left(
 </p>
 
 <Definations
-    ignores="x,y,i,j,k,m,n,u,v,b,c,d,e,f,g,t,w,z,L,T,P,X,Y,Z,I,QR"
+    ignores="j,k,QR"
     list={[
         define(
             "F",
@@ -57,12 +57,41 @@ a_i \;\rightarrow\; a_i - \eta\left(
             "a",
             "one codeword coefficient, a complex number $a_i = x_i + i y_i$: two real knobs",
         ),
+        define(
+            "x",
+            "real part of a coefficient $a_i = x_i + i y_i$; in the 2-D toy the horizontal coordinate of the point $q = (x, y)$",
+        ),
+        define(
+            "y",
+            "imaginary part of a coefficient $a_i = x_i + i y_i$; in the 2-D toy the vertical coordinate of $q = (x, y)$",
+        ),
         define("η", "learning rate; 10⁻³ in the headline run"),
         define(
             "q",
             "the toy's variable: a point (x, y) in the plane, constrained to the unit circle x² + y² = 1",
         ),
         define("r", "distance from the origin, r = ‖q‖; the circle is r = 1"),
+        define(
+            "L",
+            "in $\\partial L/\\partial x$, the loss being minimised (1 − F); as the subscript in $|0_L\\rangle, |1_L\\rangle$ it marks the logical codewords",
+        ),
+        define(
+            "f",
+            "the toy score $f(x, y) = x + 2y$, a stand-in for fidelity; its gradient is the constant arrow (1, 2)",
+        ),
+        define(
+            "g",
+            "a gradient vector: $g_{tan}$ the tangent part on the circle, $g_w$ the slope vector for codeword $w$",
+        ),
+        define("w", "selects which codeword: $w \\in \\{0_L, 1_L\\}$"),
+        define(
+            "n",
+            "number of qudits; a pure state carries $\\mathcal{O}(d^n)$ coefficients",
+        ),
+        define(
+            "d",
+            "levels per qudit (qubit $d = 2$, qutrit $d = 3$)",
+        ),
         define(
             "p",
             "per-qubit error probability: an X, a Y and a Z flip each with probability p",

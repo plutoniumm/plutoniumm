@@ -4,24 +4,25 @@
    use each language's canonical color. Canvas / JS-driven color reads
    these same values via $lib/palette so this stays the single source. */
 :root {
-    /* theme (5) */
-    --c1: #c75200; /* burnt orange — primary  */
-    --c2: #009977; /* teal                     */
-    --c3: #2456c9; /* blue                     */
-    --c4: #dd2222; /* theme red                */
-    --c5: #8a5cc2; /* purple                   */
+    /* theme (5) — Apple HIG system colors, Default (Light) */
+    --c1: #ff9500; /* systemOrange — primary   */
+    --c2: #30b0c7; /* systemTeal               */
+    --c3: #007aff; /* systemBlue               */
+    --c4: #ff2d55; /* systemPink               */
+    --c5: #af52de; /* systemPurple             */
 
     /* semantic (2) — plain pass/fail, warnings, right/wrong */
-    --ok: #1f9d4f; /* green — pass / correct   */
-    --no: #d92d20; /* red   — fail / warning   */
+    --ok: #34c759; /* systemGreen — pass / correct */
+    --no: #ff3b30; /* systemRed   — fail / warning */
 
     /* white (1) */
     --w: #ffffff;
 
-    /* greys (3) */
-    --g1: #dddddd; /* light — backgrounds, borders */
-    --g2: #888888; /* mid   — muted text           */
-    --g3: #555555; /* dark  — secondary text       */
+    /* greys (4) — light → dark */
+    --g4: #eeeeee; /* near-white — subtle surfaces, header rows  */
+    --g1: #dddddd; /* light      — backgrounds, borders          */
+    --g2: #888888; /* mid        — muted text                    */
+    --g3: #555555; /* dark       — secondary text                */
 
     /* blacks (2) */
     --k1: #222222; /* headings */

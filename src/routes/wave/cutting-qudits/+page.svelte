@@ -54,7 +54,7 @@
 </p>
 
 <Definations
-    ignores={"H, R, I, Z, A, B, S, D, U, V, M, T, Q, a, b, j, k, l, m, q, x, y, i, e, t, z, Y, CX, Tr, TVD, min"}
+    ignores={"Tr, min, i, j, k, l, m, q, t, x, y, z"}
     list={[
         define(
             "d",
@@ -87,6 +87,54 @@
         define(
             "σ",
             "Singular values of the cut gate; the Schmidt route keeps only min(d₁, d₂) of them",
+        ),
+        define(
+            "I",
+            "The identity matrix: the do-nothing gate, 1s down the diagonal and 0s elsewhere",
+        ),
+        define(
+            "Z",
+            "Pauli Z, equivalently the d = 2 diagonal Gell-Mann matrix D₁ = diag(1, −1): leaves |0⟩ alone and flips the sign of |1⟩",
+        ),
+        define(
+            "Y",
+            "Pauli Y, the d = 2 antisymmetric Gell-Mann matrix A₀₁",
+        ),
+        define(
+            "S",
+            "Symmetric Gell-Mann matrices Sⱼₖ, one per level pair j < k (real off-diagonal pairs). For d = 2, S₀₁ = X",
+        ),
+        define(
+            "A",
+            "Antisymmetric Gell-Mann matrices Aⱼₖ, one per level pair j < k (imaginary off-diagonal pairs, A₀₁ = Y); also the dummy control-side basis element A in the expansion Pᵣ = Σ a_A A",
+        ),
+        define(
+            "D",
+            "Diagonal Gell-Mann matrices D₁, D₂; for d = 2, D₁ = Z",
+        ),
+        define(
+            "B",
+            "Dummy target-side basis element B in the expansion Xʳ = Σ b_B B",
+        ),
+        define(
+            "U",
+            "A gate being cut across the seam; in the SVD route, its left Schmidt factors Uᵢ acting on the control side",
+        ),
+        define(
+            "V",
+            "The right Schmidt factors Vᵢ from the gate's SVD, acting on the target side",
+        ),
+        define(
+            "CX",
+            "The controlled-shift gate (CSUM) being cut: CX = Σᵣ Pᵣ⊗Xʳ reads the control level r and shifts the target by r",
+        ),
+        define(
+            "a",
+            "Control-side expansion coefficient a_A^(r) = Tr(Pᵣ A) / Tr(A²), the weight of basis element A in the projector Pᵣ",
+        ),
+        define(
+            "b",
+            "Target-side expansion coefficient b_B^(r), the weight of basis element B in the shift Xʳ",
         ),
     ]}
 />

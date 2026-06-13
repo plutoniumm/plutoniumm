@@ -391,7 +391,7 @@
   }
 
   .box {
-    background: var(--w);
+    background: var(--g4);
     border-radius: 4px;
     padding: 20px;
     min-height: 60px;

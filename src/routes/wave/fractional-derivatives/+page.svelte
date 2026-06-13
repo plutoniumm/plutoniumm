@@ -5,7 +5,7 @@
 
 <Meta
     title="Fractional, complex, and complex fractional derivatives"
-    sub="Recreational Math var(--k2)"
+    sub="Recreational Math #003"
     desc="Non-integer and other continuous derivatives."
     date="29 June 2025"
 ></Meta>
@@ -20,6 +20,11 @@
         define("D", "Derivative operator"),
         define("k", "Variable positive integer"),
         define("α", "Variable real"),
+        define("a", "the point the Taylor series is expanded around"),
+        define(
+            "t",
+            "continuous derivative order, integrated over in the continuous Taylor series",
+        ),
     ]}
 />
 

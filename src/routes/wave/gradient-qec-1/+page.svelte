@@ -34,7 +34,7 @@
 </p>
 
 <Definations
-    ignores="x,y,z,i,j,k,n,c,u,v,q,f,g,A,B,I,L,P,Y,tan,ρ,σ,ϕ,ψ,Δ,ˉ"
+    ignores="n,tan,ˉ"
     list={[
         define(
             "p",
@@ -69,6 +69,71 @@
             "the steepest available slope, ‖∇f‖, the length of the gradient vector",
         ),
         define("η", "learning rate: how far one gradient update moves"),
+        define(
+            "f",
+            "the score being differentiated: fidelity as a function of the coefficients; in the toy $f(a) = |\\langle\\psi|\\phi(a)\\rangle|^2$",
+        ),
+        define(
+            "z",
+            "a complex coefficient seen as the variable; $z_0$ is the point a derivative is probed at",
+        ),
+        define(
+            "x",
+            "real part of a coefficient $a = x + iy$, one of the two real knobs",
+        ),
+        define(
+            "y",
+            "imaginary part of a coefficient $a = x + iy$, the second real knob",
+        ),
+        define(
+            "c",
+            "a qubit amplitude: $c_0, c_1$ in $c_0|0\\rangle + c_1|1\\rangle$, with $|c_0|^2 + |c_1|^2 = 1$",
+        ),
+        define(
+            "L",
+            "subscript marking the logical codewords $|0_L\\rangle$ (logical zero) and $|1_L\\rangle$ (logical one)",
+        ),
+        define(
+            "u",
+            "real part of a complex-valued $f = u + iv$ (Cauchy–Riemann)",
+        ),
+        define(
+            "v",
+            "imaginary part of a complex-valued $f = u + iv$ (Cauchy–Riemann)",
+        ),
+        define(
+            "Z",
+            "Pauli Z: a phase-flip error, sends $c_1$ to $-c_1$",
+        ),
+        define(
+            "X",
+            "Pauli X: a bit-flip error, swaps the two amplitudes",
+        ),
+        define("Y", "Pauli Y: a combined bit-and-phase flip"),
+        define("P", "probability of the labelled event, e.g. $P(\\text{no flip})$"),
+        define(
+            "q",
+            "the direction-dependent difference quotient $q(\\theta)$",
+        ),
+        define(
+            "A",
+            "the measured slope $\\partial f / \\partial x$, combined as $A\\cos\\theta + B\\sin\\theta$",
+        ),
+        define(
+            "B",
+            "the measured slope $\\partial f / \\partial y$, combined as $A\\cos\\theta + B\\sin\\theta$",
+        ),
+        define(
+            "Δ",
+            "the finite probe step in a difference quotient, the un-limited version of $\\delta$",
+        ),
+        define("ϕ", "the variable state $|\\phi(a)\\rangle$ being optimised"),
+        define("ψ", "the fixed target state $|\\psi\\rangle$"),
+        define(
+            "ρ",
+            "the state being protected: for a code, the average of the codeword states",
+        ),
+        define("σ", "the noisy evidence fed into the recovery map"),
     ]}
 />
 

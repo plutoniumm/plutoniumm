@@ -126,7 +126,7 @@
   .item {
     height: var(--size);
     scroll-snap-align: center;
-    color: var(--g1);
+    color: var(--g3);
     transition: all 0.2s ease-in-out;
     font-size: inherit;
     vertical-align: middle;

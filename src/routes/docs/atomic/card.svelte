@@ -27,7 +27,7 @@
     background: var(--w);
 
     .header {
-      background: var(--g1);
+      background: var(--g4);
       font-size: 1.1em;
     }
 

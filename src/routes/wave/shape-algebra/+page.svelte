@@ -28,6 +28,7 @@
         Circle: ["α", "θ"],
         Unit: ["r"],
     }}
+    ignores="ik"
     list={[define("k", "Temporary Variable, positive integer")]}
 />
 

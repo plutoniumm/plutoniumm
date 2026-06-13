@@ -45,7 +45,7 @@ export function run(colors, e) {
     }
 
     let col = KV[t];
-    e.style.color = "#" + col;
+    e.style.color = col;
     e.id = "dfn-" + t;
 
     e.addEventListener("click", define);

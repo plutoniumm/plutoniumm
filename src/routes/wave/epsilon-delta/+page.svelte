@@ -6,7 +6,7 @@
 
 <Meta
     title="Multiple first-principles"
-    sub="Recreational Math var(--k2)"
+    sub="Recreational Math #004"
     desc="Different ways to redefine the derivative"
     date="13 July 2025"
 ></Meta>
@@ -21,6 +21,10 @@
         define(
             "ℑ",
             "The imaginary part of a complex number, often also written as Im",
+        ),
+        define(
+            "ℜ",
+            "The real part of a complex number, often also written as Re",
         ),
         define(
             "ε",

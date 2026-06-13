@@ -76,6 +76,10 @@ Cast:
             "η",
             "Noise bound: 'small' always means coefficients in [−η, η]",
         ),
+        define(
+            "R",
+            "The polynomial ring itself; $R_q = \mathbb{Z}_q[x]/(x^n + 1)$, where all the arithmetic of the scheme takes place",
+        ),
     ]}
 />
 

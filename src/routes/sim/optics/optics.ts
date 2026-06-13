@@ -615,11 +615,11 @@ const wlCache = new Map<number, [number, number, number]>();
 // can't read CSS vars, so these rgb triples mirror --c5/--c3/--c2/--c1/--c4
 // in static/css/global.css. short -> long: violet, blue, teal, orange, red.
 const SPECTRUM: [number, number, number][] = [
-  [ 138, 92, 194 ], // --c5 purple
-  [ 36, 86, 201 ],  // --c3 blue
-  [ 0, 153, 119 ],  // --c2 teal
-  [ 199, 82, 0 ],   // --c1 orange
-  [ 221, 34, 34 ],  // --c4 red
+  [ 175, 82, 222 ], // --c5 purple
+  [ 0, 122, 255 ],  // --c3 blue
+  [ 48, 176, 199 ], // --c2 teal
+  [ 255, 149, 0 ],  // --c1 orange
+  [ 255, 45, 85 ],  // --c4 pink
 ];
 
 export function wlColor (wl: number): [number, number, number] {

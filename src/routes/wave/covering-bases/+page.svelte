@@ -46,7 +46,7 @@
 
 <Meta
     title="Going to 3.14th base"
-    sub="Recreational Math var(--k2)"
+    sub="Recreational Math #002"
     desc="Bases other than positive integers"
     date="29 May 2025"
 ></Meta>
