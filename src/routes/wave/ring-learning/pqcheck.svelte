@@ -84,12 +84,12 @@
 
 <style>
     .pqc.yellow :global(details) {
-        background: #fcf3d4;
-        border: 1px solid #e0c252;
+        background: color-mix(in srgb, var(--c1) 18%, var(--w));
+        border: 1px solid var(--c1);
     }
     .pqc.green :global(details) {
-        background: #e2f4e8;
-        border: 1px solid #4fb477;
+        background: color-mix(in srgb, var(--ok) 14%, var(--w));
+        border: 1px solid var(--ok);
     }
     .pqc :global(summary) {
         font-weight: 500;
@@ -99,16 +99,16 @@
         font-size: 0.92em;
     }
     .trace {
-        background: rgba(255, 255, 255, 0.55);
+        background: color-mix(in srgb, var(--w) 55%, transparent);
         font-family: monospace;
         font-size: 0.85em;
     }
     .trace .k {
         width: 60px;
-        color: #888;
+        color: var(--g2);
     }
     .note {
-        color: #888;
+        color: var(--g2);
         font-size: 0.8em !important;
     }
 </style>

@@ -87,7 +87,7 @@
                 x2="470"
                 y1={PY(yt[0])}
                 y2={PY(yt[0])}
-                stroke="#eee"
+                style="stroke:var(--g1)"
             />
             <text x="46" y={PY(yt[0]) + 3} text-anchor="end">{yt[1]}</text>
         {/each}
@@ -97,7 +97,7 @@
                 x2={PX(xt[0])}
                 y1="15"
                 y2="195"
-                stroke="#f3f3f3"
+                style="stroke:var(--g1)"
             />
             <text x={PX(xt[0])} y="208" text-anchor="middle">{xt[1]}</text>
         {/each}
@@ -108,14 +108,14 @@
                 x2="470"
                 y1={PY(clampY(lg(b)))}
                 y2={PY(clampY(lg(b)))}
-                stroke="#555"
+                style="stroke:var(--g3)"
                 stroke-dasharray="2 3"
             />
             <text
                 x="468"
                 y={PY(clampY(lg(b))) - 4}
                 text-anchor="end"
-                fill="#555">floor B</text
+                style="fill:var(--g3)">floor B</text
             >
         {/if}
         <line
@@ -123,12 +123,12 @@
             x2="470"
             y1={PY(clampY(lg(t)))}
             y2={PY(clampY(lg(t)))}
-            stroke="#d22"
+            style="stroke:var(--c4)"
             stroke-dasharray="6 4"
         />
-        <text x="54" y={PY(clampY(lg(t))) - 4} fill="#d22">target σ²</text>
+        <text x="54" y={PY(clampY(lg(t))) - 4} style="fill:var(--c4)">target σ²</text>
 
-        <polyline points={curve} fill="none" stroke="#097" stroke-width="1.8" />
+        <polyline points={curve} fill="none" style="stroke:var(--c2)" stroke-width="1.8" />
 
         {#if reachable && Nstar >= 10 && Nstar <= 100000}
             <line
@@ -136,18 +136,18 @@
                 x2={PX(lg(Nstar))}
                 y1="15"
                 y2="195"
-                stroke="#c75200"
+                style="stroke:var(--c1)"
                 stroke-dasharray="4 3"
             />
             <circle
                 cx={PX(lg(Nstar))}
                 cy={PY(clampY(lg(t)))}
                 r="4.5"
-                fill="#c75200"
+                style="fill:var(--c1)"
             />
         {/if}
 
-        <text x="260" y="222" text-anchor="middle" fill="#777"
+        <text x="260" y="222" text-anchor="middle" style="fill:var(--g2)"
             >shots N (log axis)</text
         >
         <text
@@ -155,7 +155,7 @@
             y="105"
             transform="rotate(-90 14 105)"
             text-anchor="middle"
-            fill="#777">Var (log axis)</text
+            style="fill:var(--g2)">Var (log axis)</text
         >
     </svg>
 
@@ -181,10 +181,10 @@
 
 <style>
     .box {
-        background: #fff;
+        background: var(--w);
 
         max-width: 560px;
-        color: #222;
+        color: var(--k1);
     }
     label {
         font-size: 0.88em;
@@ -196,14 +196,14 @@
     }
     .stat {
         font-size: 0.85em;
-        color: #097;
+        color: var(--c2);
     }
     .stat.bad {
-        color: #d22;
+        color: var(--no);
     }
     .note {
         font-size: 0.78em;
-        color: #777;
+        color: var(--g2);
     }
     svg {
         max-width: 100%;

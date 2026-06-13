@@ -28,13 +28,12 @@
 
     const fill = (c, mx) => {
         const mag = cabs(c);
-        if (mag < 1e-12 || mx === 0) return "#fff";
-        const a = (0.18 + (0.82 * mag) / mx).toFixed(2);
+        if (mag < 1e-12 || mx === 0) return "var(--w)";
+        const pct = Math.round((0.18 + (0.82 * mag) / mx) * 100);
+        // imaginary-dominant -> orange, real-dominant -> teal; alpha = magnitude
+        const v = Math.abs(c[1]) > Math.abs(c[0]) ? "--c1" : "--c2";
 
-        if (Math.abs(c[1]) > Math.abs(c[0]))
-            return "rgba(199, 82, 0, " + a + ")";
-
-        return "rgba(0, 153, 119, " + a + ")";
+        return `color-mix(in srgb, var(${v}) ${pct}%, transparent)`;
     };
 
     const fc = (c) => {
@@ -68,7 +67,7 @@
                     x={padL + b * cs + cs / 2}
                     y={padT - 7}
                     text-anchor="start"
-                    fill="#555"
+                    style="fill:var(--g3)"
                     transform="rotate(-55 {padL + b * cs + cs / 2} {padT - 7})"
                     >{nm}</text
                 >
@@ -78,7 +77,7 @@
                     x={padL - 5}
                     y={padT + a * cs + cs / 2 + 3}
                     text-anchor="end"
-                    fill="#555">{nm}</text
+                    style="fill:var(--g3)">{nm}</text
                 >
             {/each}
         {/if}
@@ -89,8 +88,7 @@
                     y={padT + a * cs}
                     width={cs - 1}
                     height={cs - 1}
-                    fill={fill(c, maxMag)}
-                    stroke="#ddd"
+                    style="fill:{fill(c, maxMag)};stroke:var(--g1)"
                     stroke-width="0.5"
                 />
             {/each}
@@ -137,10 +135,10 @@
 
 <style>
     .dx {
-        background: #fff;
+        background: var(--w);
 
         max-width: 640px;
-        color: #222;
+        color: var(--k1);
     }
     input[type="range"] {
         vertical-align: middle;
@@ -153,25 +151,25 @@
         font-size: 0.85em;
     }
     .ok {
-        color: #097;
+        color: var(--ok);
     }
     .chip {
         font-family: monospace;
         font-size: 0.8em;
 
         padding: 2px 7px;
-        color: #097;
+        color: var(--c2);
         white-space: nowrap;
     }
     .chip.imag {
-        color: #c75200;
+        color: var(--c1);
     }
     .hint {
         font-size: 0.82em;
-        color: #c75200;
+        color: var(--c1);
     }
     .note {
         font-size: 0.78em;
-        color: #777;
+        color: var(--g2);
     }
 </style>

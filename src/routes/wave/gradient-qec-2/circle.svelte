@@ -60,21 +60,22 @@
         return out;
     }
 
+    // col is rendered through inline style, so CSS vars resolve
     const RULES = [
         {
             id: "raw",
             name: "raw step",
-            col: "#c75200",
+            col: "var(--c1)",
         },
         {
             id: "ret",
             name: "raw step, then retract",
-            col: "#2456c9",
+            col: "var(--c3)",
         },
         {
             id: "tan",
             name: "tangent step, then retract",
-            col: "#097",
+            col: "var(--c2)",
         },
     ];
 
@@ -234,7 +235,7 @@
                 refY="3"
                 orient="auto"
             >
-                <path d="M0,0 L6,3 L0,6 z" fill="#c75200" />
+                <path d="M0,0 L6,3 L0,6 z" style="fill:var(--c1)" />
             </marker>
             <marker
                 id="cr-t"
@@ -244,7 +245,7 @@
                 refY="3"
                 orient="auto"
             >
-                <path d="M0,0 L6,3 L0,6 z" fill="#097" />
+                <path d="M0,0 L6,3 L0,6 z" style="fill:var(--c2)" />
             </marker>
         </defs>
 
@@ -255,9 +256,9 @@
                 y1={sy((c.c - (lo - 2)) / 2)}
                 x2={sx(hi + 2)}
                 y2={sy((c.c - (hi + 2)) / 2)}
-                stroke="#8883"
+                style="stroke:color-mix(in srgb, var(--g2) 20%, transparent)"
             />
-            <text x={sx(c.x)} y={sy(c.y) - 4} fill="#999" text-anchor="end">
+            <text x={sx(c.x)} y={sy(c.y) - 4} style="fill:var(--g2)" text-anchor="end">
                 f = {c.c}
             </text>
         {/each}
@@ -267,11 +268,11 @@
             y1={sy((FS - (lo - 2)) / 2)}
             x2={sx(hi + 2)}
             y2={sy((FS - (hi + 2)) / 2)}
-            stroke="#09794d"
+            style="stroke:var(--c2)"
             stroke-opacity="0.35"
             stroke-width="1.6"
         />
-        <text x={sx(FS - 2 * 1.5) + 4} y={sy(1.5)} fill="#097">f = 2.236</text>
+        <text x={sx(FS - 2 * 1.5) + 4} y={sy(1.5)} style="fill:var(--c2)">f = 2.236</text>
 
         <!-- the manifold -->
         <circle
@@ -279,7 +280,7 @@
             cy={sy(0)}
             r={(1 / (hi - lo)) * W}
             fill="none"
-            stroke="#222"
+            style="stroke:var(--k1)"
             stroke-width="1.6"
         />
 
@@ -289,7 +290,7 @@
             x2={sx(QS[0]) + 5}
             y1={sy(QS[1])}
             y2={sy(QS[1])}
-            stroke="#097"
+            style="stroke:var(--c2)"
             stroke-width="2"
         />
         <line
@@ -297,10 +298,10 @@
             x2={sx(QS[0])}
             y1={sy(QS[1]) - 5}
             y2={sy(QS[1]) + 5}
-            stroke="#097"
+            style="stroke:var(--c2)"
             stroke-width="2"
         />
-        <text x={sx(QS[0]) - 9} y={sy(QS[1]) - 8} text-anchor="end" fill="#097">
+        <text x={sx(QS[0]) - 9} y={sy(QS[1]) - 8} text-anchor="end" style="fill:var(--c2)">
             q*
         </text>
 
@@ -312,7 +313,7 @@
                     .map((p) => sx(p[0]) + "," + sy(p[1]))
                     .join(" ")}
                 fill="none"
-                stroke={r.col}
+                style="stroke:{r.col}"
                 stroke-width="1.6"
                 stroke-opacity="0.55"
             />
@@ -320,8 +321,7 @@
                 cx={sx(at[i][0])}
                 cy={sy(at[i][1])}
                 r="5"
-                fill={r.col}
-                stroke="#fff"
+                style="fill:{r.col};stroke:var(--w)"
                 stroke-width="1.5"
             />
         {/each}
@@ -332,7 +332,7 @@
             y1={sy(q0[1])}
             x2={sx(grad_tip[0])}
             y2={sy(grad_tip[1])}
-            stroke="#c75200"
+            style="stroke:var(--c1)"
             stroke-width="2.4"
             marker-end="url(#cr-g)"
         />
@@ -341,7 +341,7 @@
             y1={sy(q0[1])}
             x2={sx(tan_tip[0])}
             y2={sy(tan_tip[1])}
-            stroke="#097"
+            style="stroke:var(--c2)"
             stroke-width="2.4"
             marker-end="url(#cr-t)"
         />
@@ -350,7 +350,7 @@
             y1={sy(tan_tip[1])}
             x2={sx(grad_tip[0])}
             y2={sy(grad_tip[1])}
-            stroke="#888"
+            style="stroke:var(--g2)"
             stroke-width="1.8"
             stroke-dasharray="3 3"
         />
@@ -361,8 +361,7 @@
             y={sy(q0[1]) - 4}
             width="8"
             height="8"
-            fill="#fff"
-            stroke="#222"
+            style="fill:var(--w);stroke:var(--k1)"
             stroke-width="1.8"
         />
     </svg>
@@ -394,9 +393,9 @@
 
 <style>
     .box {
-        background: #fff;
+        background: var(--w);
         max-width: 520px;
-        color: #222;
+        color: var(--k1);
     }
     label {
         font-size: 0.85em;
@@ -408,12 +407,12 @@
     }
     button {
         padding: 4px 10px;
-        background: #f6f6f6;
+        background: var(--w);
         font-size: 0.85em;
-        color: #222;
+        color: var(--k1);
     }
     button:hover {
-        background: #ececec;
+        background: var(--g1);
     }
     svg {
         /* atomic.css strokes every svg with currentcolor; strokes here are
@@ -422,7 +421,7 @@
         max-width: 100%;
         height: auto;
         cursor: crosshair;
-        background: #fff;
+        background: var(--w);
         touch-action: none;
     }
     .legend {
@@ -448,21 +447,21 @@
         min-width: 12ch;
     }
     .val.bad {
-        color: #c75200;
+        color: var(--c1);
         font-weight: bold;
     }
     .hval {
         min-width: 13ch;
-        color: #555;
+        color: var(--g3);
     }
     .note {
         font-size: 0.78em;
-        color: #777;
+        color: var(--g2);
     }
     .cor {
-        color: #c75200;
+        color: var(--c1);
     }
     .cgr {
-        color: #097;
+        color: var(--c2);
     }
 </style>

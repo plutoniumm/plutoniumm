@@ -34,14 +34,14 @@
                 y={wy(ch.from) - GAP / 2 + 5}
                 width={T * STEP}
                 height={(ch.to - ch.from + 1) * GAP - 10}
-                fill={ch.col}
+                style="fill:{ch.col}"
                 fill-opacity="0.07"
                 rx="6"
             />
             <text
                 x={MX + labelW + 5}
                 y={wy(ch.from) - GAP / 2 + 17}
-                fill={ch.col}
+                style="fill:{ch.col}"
                 font-size="10"
             >
                 {ch.label}
@@ -54,7 +54,7 @@
                 x2={W - MX}
                 y1={wy(i)}
                 y2={wy(i)}
-                stroke="#222"
+                style="stroke:var(--k1)"
                 stroke-width="1.4"
             />
             {#if wl}
@@ -62,7 +62,7 @@
                     x={MX + labelW - 6}
                     y={wy(i) + 4}
                     text-anchor="end"
-                    fill="#555"
+                    style="fill:var(--g3)"
                     font-size="11"
                 >
                     {wl}
@@ -76,7 +76,7 @@
                 x2={W - MX}
                 y1={(wy(seam) + wy(seam + 1)) / 2}
                 y2={(wy(seam) + wy(seam + 1)) / 2}
-                stroke="#c75200"
+                style="stroke:var(--c1)"
                 stroke-width="1.4"
                 stroke-dasharray="6 5"
             />
@@ -84,7 +84,7 @@
                 x={W - MX}
                 y={(wy(seam) + wy(seam + 1)) / 2 - 5}
                 text-anchor="end"
-                fill="#c75200"
+                style="fill:var(--c1)"
                 font-size="10"
             >
                 cut
@@ -98,21 +98,20 @@
                     x2={gx(g.t)}
                     y1={wy(g.c)}
                     y2={wy(g.x)}
-                    stroke={g.col || "#222"}
+                    style="stroke:{g.col || 'var(--k1)'}"
                     stroke-width="1.8"
                 />
                 <circle
                     cx={gx(g.t)}
                     cy={wy(g.c)}
                     r="4.5"
-                    fill={g.col || "#222"}
+                    style="fill:{g.col || 'var(--k1)'}"
                 />
                 <circle
                     cx={gx(g.t)}
                     cy={wy(g.x)}
                     r="9"
-                    fill="#fff"
-                    stroke={g.col || "#222"}
+                    style="fill:var(--w);stroke:{g.col || 'var(--k1)'}"
                     stroke-width="1.8"
                 />
                 <line
@@ -120,7 +119,7 @@
                     x2={gx(g.t) + 6}
                     y1={wy(g.x)}
                     y2={wy(g.x)}
-                    stroke={g.col || "#222"}
+                    style="stroke:{g.col || 'var(--k1)'}"
                     stroke-width="1.8"
                 />
                 <line
@@ -128,7 +127,7 @@
                     x2={gx(g.t)}
                     y1={wy(g.x) - 6}
                     y2={wy(g.x) + 6}
-                    stroke={g.col || "#222"}
+                    style="stroke:{g.col || 'var(--k1)'}"
                     stroke-width="1.8"
                 />
             {:else}
@@ -137,8 +136,7 @@
                     y={wy(g.w) - 14}
                     width="28"
                     height="28"
-                    fill="#fff"
-                    stroke={g.col || "#222"}
+                    style="fill:var(--w);stroke:{g.col || 'var(--k1)'}"
                     stroke-width="1.6"
                     rx="4"
                 />
@@ -146,7 +144,7 @@
                     x={gx(g.t)}
                     y={wy(g.w) + 4}
                     text-anchor="middle"
-                    fill={g.col || "#222"}
+                    style="fill:{g.col || 'var(--k1)'}"
                 >
                     {g.label}
                 </text>
@@ -168,7 +166,7 @@
     }
     .note {
         font-size: 0.78em;
-        color: #777;
+        color: var(--g2);
         max-width: 420px;
         margin: 4px auto 0;
     }

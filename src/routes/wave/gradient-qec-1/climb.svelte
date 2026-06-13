@@ -137,10 +137,10 @@
     // solid colour per cell: cells overlap to kill seams, so translucent
     // fills would stack to a dark grid; blend with white here instead
     const shade = (v) => {
-        const a = Math.min(1, Math.max(0, v * 0.85));
-        const ch = (c) => Math.round(255 + (c - 255) * a);
+        // lightness ramp of the teal theme colour, blended toward white
+        const pct = Math.round(Math.min(1, Math.max(0, v * 0.85)) * 100);
 
-        return `rgb(${ch(0)}, ${ch(153)}, ${ch(119)})`;
+        return `color-mix(in srgb, var(--c2) ${pct}%, var(--w))`;
     };
 
     const ARR = 0.55; // visual scale of the probe arrows
@@ -262,7 +262,7 @@
                 refY="3"
                 orient="auto"
             >
-                <path d="M0,0 L6,3 L0,6 z" fill="#c75200" />
+                <path d="M0,0 L6,3 L0,6 z" style="fill:var(--c1)" />
             </marker>
             <marker
                 id="cl-y"
@@ -272,7 +272,7 @@
                 refY="3"
                 orient="auto"
             >
-                <path d="M0,0 L6,3 L0,6 z" fill="#2456c9" />
+                <path d="M0,0 L6,3 L0,6 z" style="fill:var(--c3)" />
             </marker>
             <marker
                 id="cl-s"
@@ -282,7 +282,7 @@
                 refY="3"
                 orient="auto"
             >
-                <path d="M0,0 L6,3 L0,6 z" fill="#d22" />
+                <path d="M0,0 L6,3 L0,6 z" style="fill:var(--c4)" />
             </marker>
         </defs>
 
@@ -292,12 +292,12 @@
                 y={M + W - (cell.r + 1) * (W / NC)}
                 width={W / NC + 0.6}
                 height={W / NC + 0.6}
-                fill={shade(cell.v)}
+                style="fill:{shade(cell.v)}"
             />
         {/each}
 
-        <line x1={sx(LO)} x2={sx(HI)} y1={sy(0)} y2={sy(0)} stroke="#8884" />
-        <line x1={sx(0)} x2={sx(0)} y1={sy(LO)} y2={sy(HI)} stroke="#8884" />
+        <line x1={sx(LO)} x2={sx(HI)} y1={sy(0)} y2={sy(0)} style="stroke:color-mix(in srgb, var(--g2) 27%, transparent)" />
+        <line x1={sx(0)} x2={sx(0)} y1={sy(LO)} y2={sy(HI)} style="stroke:color-mix(in srgb, var(--g2) 27%, transparent)" />
         <text x={sx(HI) - 4} y={sy(0) - 5} text-anchor="end" class="ax">x</text>
         <text x={sx(0) + 6} y={sy(HI) + 12} class="ax">y</text>
 
@@ -307,14 +307,14 @@
             x2={sx(2) + 5}
             y1={sy(1)}
             y2={sy(1)}
-            stroke="#fff"
+            style="stroke:var(--w)"
         />
         <line
             x1={sx(2)}
             x2={sx(2)}
             y1={sy(1) - 5}
             y2={sy(1) + 5}
-            stroke="#fff"
+            style="stroke:var(--w)"
         />
         <text x={sx(2) + 8} y={sy(1) - 6} class="axw">f = 1</text>
 
@@ -322,14 +322,14 @@
         <polyline
             points={traj.map((p) => sx(p.x) + "," + sy(p.y)).join(" ")}
             fill="none"
-            stroke="#2224"
+            style="stroke:color-mix(in srgb, var(--k1) 27%, transparent)"
             stroke-width="1.2"
             stroke-dasharray="2 4"
         />
         <polyline
             points={past.map((p) => sx(p.x) + "," + sy(p.y)).join(" ")}
             fill="none"
-            stroke="#222"
+            style="stroke:var(--k1)"
             stroke-width="1.6"
         />
         <rect
@@ -337,19 +337,18 @@
             y={sy(traj[0].y) - 3.5}
             width="7"
             height="7"
-            fill="#fff"
-            stroke="#222"
+            style="fill:var(--w);stroke:var(--k1)"
             stroke-width="1.5"
         />
 
         {#if showDir}
             <!-- theta, drawn as the angle it is -->
-            <path d={arc} fill="none" stroke="#d22" stroke-opacity="0.5" />
+            <path d={arc} fill="none" style="stroke:var(--c4)" stroke-opacity="0.5" />
             <text
                 x={arcLabel[0]}
                 y={arcLabel[1] + 3}
                 text-anchor="middle"
-                fill="#d22"
+                style="fill:var(--c4)"
             >
                 θ
             </text>
@@ -361,7 +360,7 @@
             y1={sy(cur.y)}
             x2={sx(cur.x + ARR * cur.gx)}
             y2={sy(cur.y)}
-            stroke="#c75200"
+            style="stroke:var(--c1)"
             stroke-width="2"
             marker-end="url(#cl-x)"
         />
@@ -370,7 +369,7 @@
             y1={sy(cur.y)}
             x2={sx(cur.x)}
             y2={sy(cur.y + ARR * cur.gy)}
-            stroke="#2456c9"
+            style="stroke:var(--c3)"
             stroke-width="2"
             marker-end="url(#cl-y)"
         />
@@ -379,7 +378,7 @@
             y1={sy(cur.y)}
             x2={sx(cur.x + ARR * cur.gx)}
             y2={sy(cur.y + ARR * cur.gy)}
-            stroke="#d22"
+            style="stroke:var(--c4)"
             stroke-width="2.4"
             marker-end="url(#cl-s)"
         />
@@ -387,8 +386,7 @@
             cx={sx(cur.x)}
             cy={sy(cur.y)}
             r="5"
-            fill="#fff"
-            stroke="#222"
+            style="fill:var(--w);stroke:var(--k1)"
             stroke-width="2"
         />
     </svg>
@@ -421,9 +419,9 @@
 
 <style>
     .box {
-        background: #fff;
+        background: var(--w);
         max-width: 470px;
-        color: #222;
+        color: var(--k1);
     }
     svg {
         /* atomic.css strokes every svg with currentcolor, which grids the
@@ -432,29 +430,29 @@
         max-width: 100%;
         height: auto;
         cursor: crosshair;
-        background: #fff;
+        background: var(--w);
         touch-action: none;
-        border: 1px solid #eee;
+        border: 1px solid var(--g1);
         border-radius: 6px;
     }
     .ax {
         font-size: 11px;
-        fill: #555;
+        fill: var(--g3);
         font-family: monospace;
     }
     .axw {
         font-size: 11px;
-        fill: #fff;
+        fill: var(--w);
         font-family: monospace;
     }
     button {
         padding: 4px 10px;
-        background: #f6f6f6;
+        background: var(--w);
         font-size: 0.85em;
-        color: #222;
+        color: var(--k1);
     }
     button:hover {
-        background: #ececec;
+        background: var(--g1);
     }
     input[type="range"] {
         vertical-align: middle;
@@ -474,21 +472,21 @@
         margin: 0 6px;
     }
     .cx {
-        color: #c75200;
+        color: var(--c1);
     }
     .cy {
-        color: #2456c9;
+        color: var(--c3);
     }
     .cs {
-        color: #d22;
+        color: var(--c4);
     }
     .warn {
-        color: #c75200;
+        color: var(--c1);
         font-size: 0.8em;
         font-family: monospace;
     }
     .note {
         font-size: 0.78em;
-        color: #777;
+        color: var(--g2);
     }
 </style>

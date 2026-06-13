@@ -106,7 +106,7 @@ eastwood --list-rules            # every rule + default severity</code
 <style>
   .eastwood-docs {
     max-width: 800px;
-    color: #333;
+    color: var(--k1);
   }
 
   h2 {
@@ -114,18 +114,18 @@ eastwood --list-rules            # every rule + default severity</code
   }
 
   pre {
-    background: #f4f4f4;
+    background: var(--w);
     border-radius: 5px;
     padding: 4px;
   }
 
   pre code {
     padding: 12px;
-    background: #fff;
+    background: var(--w);
     border-radius: 4px;
   }
 
   a {
-    color: #2af;
+    color: var(--c3);
   }
 </style>

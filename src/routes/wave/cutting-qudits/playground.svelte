@@ -76,48 +76,48 @@
                     x2={BX + (t[0] / LOGMAX) * BW}
                     y1="14"
                     y2="98"
-                    stroke="#eee"
+                    style="stroke:var(--g1)"
                 />
                 <text
                     x={BX + (t[0] / LOGMAX) * BW}
                     y="110"
                     text-anchor="middle"
-                    fill="#999">{t[1]}</text
+                    style="fill:var(--g2)">{t[1]}</text
                 >
             {/each}
 
-            <text x={BX - 8} y="37" text-anchor="end" fill="#555">uncut</text>
+            <text x={BX - 8} y="37" text-anchor="end" style="fill:var(--g3)">uncut</text>
             <rect
                 x={BX}
                 y="22"
                 height="24"
                 width={bw(memFull)}
-                fill="#c75200"
+                style="fill:var(--c1)"
             />
             {#if bw(memFull) > 240}
                 <text
                     x={BX + bw(memFull) - 6}
                     y="37"
                     text-anchor="end"
-                    fill="#fff">{fmtBytes(memFull)}</text
+                    style="fill:var(--w)">{fmtBytes(memFull)}</text
                 >
             {:else}
-                <text x={BX + bw(memFull) + 6} y="37" fill="#555"
+                <text x={BX + bw(memFull) + 6} y="37" style="fill:var(--g3)"
                     >{fmtBytes(memFull)}</text
                 >
             {/if}
 
-            <text x={BX - 8} y="79" text-anchor="end" fill="#555">cut</text>
-            <rect x={BX} y="64" height="24" width={bw(memCut)} fill="#097" />
+            <text x={BX - 8} y="79" text-anchor="end" style="fill:var(--g3)">cut</text>
+            <rect x={BX} y="64" height="24" width={bw(memCut)} style="fill:var(--c2)" />
             {#if bw(memCut) > 240}
                 <text
                     x={BX + bw(memCut) - 6}
                     y="79"
                     text-anchor="end"
-                    fill="#fff">{fmtBytes(memCut)}</text
+                    style="fill:var(--w)">{fmtBytes(memCut)}</text
                 >
             {:else}
-                <text x={BX + bw(memCut) + 6} y="79" fill="#555"
+                <text x={BX + bw(memCut) + 6} y="79" style="fill:var(--g3)"
                     >{fmtBytes(memCut)}</text
                 >
             {/if}
@@ -142,10 +142,10 @@
 
 <style>
     .pg {
-        background: #fff;
+        background: var(--w);
 
         max-width: 620px;
-        color: #222;
+        color: var(--k1);
     }
     label {
         white-space: nowrap;
@@ -159,13 +159,13 @@
     }
     .cap {
         font-size: 0.78em;
-        color: #777;
+        color: var(--g2);
     }
     .form {
         font-family: monospace;
         font-size: 0.85em;
     }
     .ok {
-        color: #097;
+        color: var(--ok);
     }
 </style>

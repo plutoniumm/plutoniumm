@@ -55,19 +55,19 @@ ul {
     right: 0;
     height: 30px;
     width: 30px;
-    background: #fff;
+    background: var(--w);
     line-height: 30px;
     vertical-align: middle;
 
-    color: #0000;
+    color: transparent;
     border-radius: 0 0 0 5px;
     border-width: 30px;
-    border-color: #fff #fff transparent transparent;
+    border-color: var(--w) var(--w) transparent transparent;
     transition: all 0.4s ease-in-out;
 }
 
 .sticky:hover .close {
-    border-color: #fff #fff #fff transparent;
+    border-color: var(--w) var(--w) var(--w) transparent;
     height: 60px;
     width: 60px;
 }

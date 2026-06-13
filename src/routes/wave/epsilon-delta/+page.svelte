@@ -6,7 +6,7 @@
 
 <Meta
     title="Multiple first-principles"
-    sub="Recreational Math #004"
+    sub="Recreational Math var(--k2)"
     desc="Different ways to redefine the derivative"
     date="13 July 2025"
 ></Meta>

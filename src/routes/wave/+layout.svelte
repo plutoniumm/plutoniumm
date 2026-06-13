@@ -64,7 +64,7 @@
         bottom: 5%;
         right: 5%;
         path {
-            stroke: #222a;
+            stroke: color-mix(in srgb, var(--k1) 67%, transparent);
             stroke-width: 5;
         }
     }

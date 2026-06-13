@@ -964,13 +964,13 @@
 
 <style>
     a {
-        color: #2af;
+        color: var(--c3);
     }
     blockquote {
         margin: 1em 0;
         padding: 0.5em 1em;
-        border-left: 3px solid #2af;
-        background: #2af1;
+        border-left: 3px solid var(--c3);
+        background: color-mix(in srgb, var(--c3) 7%, transparent);
     }
     table {
         width: 100%;
@@ -979,12 +979,12 @@
     }
     th,
     td {
-        border: 1px solid #aaa6;
+        border: 1px solid color-mix(in srgb, var(--g2) 40%, transparent);
         padding: 4px 10px;
         text-align: left;
     }
     th {
-        background: #0001;
+        background: color-mix(in srgb, var(--k2) 7%, transparent);
     }
     code {
         font-family: monospace;

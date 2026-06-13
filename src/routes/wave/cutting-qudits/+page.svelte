@@ -153,7 +153,7 @@
 <Circuit
     wires={["q₁", "q₂", "q₃", "q₄"]}
     seam={1}
-    chips={[chip(0, 1, "chip A", "#2456c9"), chip(2, 3, "chip B", "#097")]}
+    chips={[chip(0, 1, "chip A", "var(--c3)"), chip(2, 3, "chip B", "var(--c2)")]}
     gates={[
         box(0, 0, "H"),
         box(0, 1, "H"),
@@ -161,7 +161,7 @@
         box(0, 3, "H"),
         cx(1, 0, 1),
         cx(1, 3, 2),
-        cx(2, 1, 2, "#c75200"),
+        cx(2, 1, 2, "var(--c1)"),
         box(3, 0, "U"),
         box(3, 1, "U"),
         box(3, 2, "U"),
@@ -220,7 +220,7 @@ I \otimes X - Z \otimes X = \begin{pmatrix}0&0&0&0\\0&0&0&0\\0&0&0&2\\0&0&2&0\en
     <Circuit
         wires={["", ""]}
         seam={0}
-        gates={[cx(0, 0, 1, "#c75200")]}
+        gates={[cx(0, 0, 1, "var(--c1)")]}
     />
     <span>=</span>
     <span>+½</span>
@@ -586,7 +586,7 @@ U = \sum_{i=1}^{\min(d_1, d_2)} \sigma_i \; U_i^{(d_1)} \otimes V_i^{(d_2)}
     .eqrow {
         font-family: monospace;
         font-size: 1.05em;
-        color: #222;
+        color: var(--k1);
     }
     .eqrow :global(figure) {
         margin: 0;

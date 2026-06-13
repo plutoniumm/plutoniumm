@@ -119,21 +119,21 @@
                 y={Y(limit)}
                 width={n * 46 - 16}
                 height={Y(-limit) - Y(limit)}
-                fill="rgba(34, 170, 255, 0.10)"
+                style="fill:color-mix(in srgb, var(--c3) 10%, transparent)"
             />
             <line
                 x1="44"
                 x2={44 + n * 46 - 16}
                 y1={Y(0)}
                 y2={Y(0)}
-                stroke="#999"
+                style="stroke:var(--g2)"
             />
             <line
                 x1="44"
                 x2={44 + n * 46 - 16}
                 y1={Y(limit)}
                 y2={Y(limit)}
-                stroke="#e67"
+                style="stroke:var(--c4)"
                 stroke-dasharray="4 3"
             />
             <line
@@ -141,16 +141,16 @@
                 x2={44 + n * 46 - 16}
                 y1={Y(-limit)}
                 y2={Y(-limit)}
-                stroke="#e67"
+                style="stroke:var(--c4)"
                 stroke-dasharray="4 3"
             />
 
             <text x="40" y={Y(half) + 3} text-anchor="end">+48</text>
-            <text x="40" y={Y(limit) + 3} text-anchor="end" fill="#e67"
+            <text x="40" y={Y(limit) + 3} text-anchor="end" style="fill:var(--c4)"
                 >+q/4</text
             >
             <text x="40" y={Y(0) + 3} text-anchor="end">0</text>
-            <text x="40" y={Y(-limit) + 3} text-anchor="end" fill="#e67">
+            <text x="40" y={Y(-limit) + 3} text-anchor="end" style="fill:var(--c4)">
                 −q/4
             </text>
             <text x="40" y={Y(-half) + 3} text-anchor="end"> −48 </text>
@@ -161,13 +161,13 @@
                     width="26"
                     y={Math.min(Y(0), Y(dv))}
                     height={Math.abs(Y(dv) - Y(0)) || 1}
-                    fill={got[i] === bits[i] ? "#2af" : "#e44"}
+                    style="fill:{got[i] === bits[i] ? 'var(--ok)' : 'var(--no)'}"
                 />
                 <text
                     x={X(i) + 13}
                     y="206"
                     text-anchor="middle"
-                    fill={got[i] === bits[i] ? "#555" : "#e44"}
+                    style="fill:{got[i] === bits[i] ? 'var(--g3)' : 'var(--no)'}"
                     font-weight={got[i] === bits[i] ? "normal" : "bold"}
                 >
                     {got[i]}
@@ -205,10 +205,10 @@
 
 <style>
     .pg {
-        background: #fff;
+        background: var(--w);
 
         max-width: 620px;
-        color: #222;
+        color: var(--k1);
     }
     input[type="range"] {
         vertical-align: middle;
@@ -217,12 +217,12 @@
     button {
         padding: 4px 10px;
 
-        background: #f6f6f6;
+        background: var(--w);
         font-size: 0.85em;
-        color: #222;
+        color: var(--k1);
     }
     button:hover {
-        background: #ececec;
+        background: var(--g1);
     }
     .bit {
         width: 30px;
@@ -232,13 +232,13 @@
         padding: 0;
     }
     .bit.on {
-        background: #2af;
-        border-color: #2af;
-        color: #fff;
+        background: var(--c3);
+        border-color: var(--c3);
+        color: var(--w);
     }
     .cap {
         font-size: 0.78em;
-        color: #777;
+        color: var(--g2);
     }
     .polys {
         font-family: monospace;
@@ -254,7 +254,7 @@
     .pname {
         width: 32px;
         margin-right: 6px;
-        color: #555;
+        color: var(--g3);
     }
     .pcell {
         width: 3ch;
@@ -268,30 +268,30 @@
         font-family: sans-serif;
     }
     .pub {
-        background: #e3f4ff;
-        color: #17a;
+        background: color-mix(in srgb, var(--c3) 12%, var(--w));
+        color: var(--c3);
     }
     .sec {
-        background: #ffe9e9;
-        color: #c33;
+        background: color-mix(in srgb, var(--c4) 12%, var(--w));
+        color: var(--c4);
     }
     .ct {
-        background: #eee;
-        color: #555;
+        background: var(--g1);
+        color: var(--g3);
     }
     .verdict {
-        color: #097;
+        color: var(--ok);
     }
     .verdict.bad {
-        color: #d22;
+        color: var(--no);
     }
     .hint {
         font-size: 0.82em;
-        color: #c75200;
+        color: var(--c1);
     }
     .note {
         font-size: 0.78em;
-        color: #777;
+        color: var(--g2);
     }
     svg {
         max-width: 100%;

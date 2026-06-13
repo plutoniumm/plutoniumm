@@ -61,7 +61,9 @@
         return 2 * d;
     }
 
-    const hue = (deg) => `hsl(${Math.round(deg)}, 75%, 42%)`;
+    // phase angle -> 5-step wheel over the theme colours (rendered via style)
+    const WHEEL = ["var(--c1)", "var(--c2)", "var(--c3)", "var(--c5)", "var(--c4)"];
+    const hue = (deg) => WHEEL[((Math.floor(deg / 72) % 5) + 5) % 5];
 
     $: rad = (th * Math.PI) / 180;
     $: q = quot(zx, zy, rad, mode);
@@ -200,8 +202,8 @@
                 on:pointerup={up}
                 on:pointerleave={up}
             >
-                <line x1="0" x2={S} y1={ly(0)} y2={ly(0)} stroke="#8883" />
-                <line x1={lx(0)} x2={lx(0)} y1="0" y2={S} stroke="#8883" />
+                <line x1="0" x2={S} y1={ly(0)} y2={ly(0)} style="stroke:color-mix(in srgb, var(--g2) 20%, transparent)" />
+                <line x1={lx(0)} x2={lx(0)} y1="0" y2={S} style="stroke:color-mix(in srgb, var(--g2) 20%, transparent)" />
                 <text x={lx(1)} y={ly(0) + 13} text-anchor="middle" class="ax">
                     1
                 </text>
@@ -214,16 +216,15 @@
                     y1={ly(zy)}
                     x2={lx(tip[0])}
                     y2={ly(tip[1])}
-                    stroke={hue(th)}
+                    style="stroke:{hue(th)}"
                     stroke-width="2.5"
                 />
-                <polygon points={head} fill={hue(th)} />
+                <polygon points={head} style="fill:{hue(th)}" />
                 <circle
                     cx={lx(zx)}
                     cy={ly(zy)}
                     r="6"
-                    fill="#fff"
-                    stroke="#222"
+                    style="fill:var(--w);stroke:var(--k1)"
                     stroke-width="2"
                 />
                 <text x={lx(zx) + 9} y={ly(zy) - 8} class="ax">z₀</text>
@@ -234,8 +235,8 @@
         <div>
             <div class="cap mb5">the answer q(θ), same colour</div>
             <svg viewBox="0 0 {S} {S}" width={S} role="img">
-                <line x1="0" x2={S} y1={qy(0)} y2={qy(0)} stroke="#8883" />
-                <line x1={qx(0)} x2={qx(0)} y1="0" y2={S} stroke="#8883" />
+                <line x1="0" x2={S} y1={qy(0)} y2={qy(0)} style="stroke:color-mix(in srgb, var(--g2) 20%, transparent)" />
+                <line x1={qx(0)} x2={qx(0)} y1="0" y2={S} style="stroke:color-mix(in srgb, var(--g2) 20%, transparent)" />
                 <text x={qx(2)} y={qy(0) + 13} text-anchor="middle" class="ax">
                     2
                 </text>
@@ -249,7 +250,7 @@
                         y1={qy(p[1])}
                         x2={qx(ring[t + 1][0])}
                         y2={qy(ring[t + 1][1])}
-                        stroke={hue(t * 4)}
+                        style="stroke:{hue(t * 4)}"
                         stroke-width={still ? 5 : 2.5}
                         stroke-opacity="0.75"
                         stroke-linecap="round"
@@ -259,8 +260,7 @@
                     cx={qx(q[0])}
                     cy={qy(q[1])}
                     r="6"
-                    fill={hue(th)}
-                    stroke="#222"
+                    style="fill:{hue(th)};stroke:var(--k1)"
                     stroke-width="1.5"
                 />
             </svg>
@@ -289,16 +289,16 @@
 
 <style>
     .box {
-        background: #fff;
+        background: var(--w);
         max-width: 540px;
-        color: #222;
+        color: var(--k1);
     }
     svg {
         stroke: none; /* atomic.css strokes every svg with currentcolor */
         max-width: 100%;
         height: auto;
-        background: #fff;
-        border: 1px solid #eee;
+        background: var(--w);
+        border: 1px solid var(--g1);
         border-radius: 6px;
     }
     svg.drag {
@@ -307,21 +307,21 @@
     }
     .ax {
         font-size: 11px;
-        fill: #888;
+        fill: var(--g2);
         font-family: monospace;
     }
     .cap {
         font-size: 0.78em;
-        color: #777;
+        color: var(--g2);
     }
     button {
         padding: 4px 10px;
-        background: #f6f6f6;
+        background: var(--w);
         font-size: 0.85em;
-        color: #222;
+        color: var(--k1);
     }
     button:hover {
-        background: #ececec;
+        background: var(--g1);
     }
     input[type="range"] {
         vertical-align: middle;
@@ -332,14 +332,14 @@
     }
     .verdict {
         font-size: 0.85em;
-        color: #c75200;
+        color: var(--c1);
         font-family: monospace;
     }
     .verdict.ok {
-        color: #097;
+        color: var(--c2);
     }
     .note {
         font-size: 0.78em;
-        color: #777;
+        color: var(--g2);
     }
 </style>

@@ -12,7 +12,7 @@
 
 <style>
   details {
-    background: #fff;
+    background: var(--w);
     z-index: 5;
   }
 

@@ -5,7 +5,7 @@
 
 <Meta
     title="Fractional, complex, and complex fractional derivatives"
-    sub="Recreational Math #003"
+    sub="Recreational Math var(--k2)"
     desc="Non-integer and other continuous derivatives."
     date="29 June 2025"
 ></Meta>

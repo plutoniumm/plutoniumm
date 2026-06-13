@@ -19,22 +19,24 @@
   const R = 18;
   const MAXT = 400;
   const name = (i: number) => String.fromCharCode(65 + i);
+  // categorical state colors — the palette cycled through; all rendered via
+  // inline style so the CSS vars resolve
   const PALETTE = [
-    "#c75200",
-    "#097",
-    "#2456c9",
-    "#d22",
-    "#8a5cc2",
-    "#0a8888",
-    "#a07000",
-    "#555",
-    "#c2447e",
-    "#2e2e2e",
+    "var(--c1)",
+    "var(--c2)",
+    "var(--c3)",
+    "var(--c4)",
+    "var(--c5)",
+    "var(--ok)",
+    "var(--no)",
+    "var(--g3)",
+    "var(--g2)",
+    "var(--k1)",
   ];
   const TYPE_COLOR: Record<StateType, string> = {
-    transient: "#777",
-    recurrent: "#097",
-    absorbing: "#d22",
+    transient: "var(--g2)",
+    recurrent: "var(--c2)",
+    absorbing: "var(--c4)",
   };
 
   let nodes: Pt[] = [];
@@ -589,7 +591,7 @@
               r={R}
               class="body"
               fill-opacity={0.06 + 0.9 * (pi[i] ?? 0)}
-              stroke={TYPE_COLOR[analysis.type[i] ?? "transient"]}
+              style="stroke:{TYPE_COLOR[analysis.type[i] ?? 'transient']}"
             />
             {#if (piHat[i] ?? 0) > 0.002}
               <circle
@@ -609,8 +611,8 @@
     </div>
 
     <p class="dim m0">
-      outline marks the state type: <b style="color:#097">recurrent</b>,
-      <b style="color:#d22">absorbing</b>, <b style="color:#777">transient</b>.
+      outline marks the state type: <b style="color:var(--c2)">recurrent</b>,
+      <b style="color:var(--c4)">absorbing</b>, <b style="color:var(--g2)">transient</b>.
       orange fill = current probability, dashed green ring = stationary mass. a
       dashed loop is the implicit self-loop of a state with no outgoing edge.
     </p>
@@ -740,9 +742,9 @@
             class="cchip rx5 mono"
             style="border-color:{c.recurrent
               ? c.states.length === 1
-                ? '#d22'
-                : '#097'
-              : '#999'}"
+                ? 'var(--c4)'
+                : 'var(--c2)'
+              : 'var(--g2)'}"
           >
             {setStr(c.states)}
             {c.recurrent
@@ -811,7 +813,7 @@
       {#if analysis.ergodic && tvHist.length}
         <span class="spacer"></span>
         <span class="mono dim"
-          >tv(&pi;<sub>t</sub>, &pi;&#770;) = {tvHist[t].toFixed(4)}</span
+          >tv(&pi;<sub>t</sub>, &pi;&var(--c1);) = {tvHist[t].toFixed(4)}</span
         >
       {/if}
     </div>
@@ -837,7 +839,7 @@
         click a chip to restart the walk as a point mass on that state.
       </p>
       <div class="f fw g5 al-ct">
-        <span class="dim">&pi;&#770;</span>
+        <span class="dim">&pi;&var(--c1);</span>
         {#each piHat as v, i (i)}
           <span class="schip mono" style="color:{PALETTE[i]}"
             >{name(i)} {v.toFixed(3)}</span
@@ -858,7 +860,7 @@
             <polyline
               points={pl}
               fill="none"
-              stroke={PALETTE[i]}
+              style="stroke:{PALETTE[i]}"
               stroke-width="1.8"
             />
           {/if}
@@ -867,7 +869,7 @@
           <polyline
             points={tvLine}
             fill="none"
-            stroke="#222"
+            style="stroke:var(--k1)"
             stroke-width="1.4"
             stroke-dasharray="5 4"
           />
@@ -920,7 +922,7 @@
     </p>
     <p class="m0">
       Total-variation distance &frac12;&Sigma;|&pi;<sub>i</sub> &minus;
-      &pi;&#770;<sub>i</sub>| can never increase under a stochastic map, so the
+      &pi;&var(--c1);<sub>i</sub>| can never increase under a stochastic map, so the
       dashed curve only flattens or falls. When the chain is irreducible and
       aperiodic it falls geometrically to 0 from any start.
     </p>
@@ -948,17 +950,17 @@
 
   .intro {
     font-size: 17px;
-    color: #333;
+    color: var(--k1);
   }
 
   .panel {
-    background: #fff8;
-    border: 1px solid #bbb;
+    background: color-mix(in srgb, var(--w) 53%, transparent);
+    border: 1px solid var(--g1);
   }
 
   .hint {
     font-size: 14px;
-    color: #666;
+    color: var(--g3);
     min-height: 2.9em; /* the edge-mode hint wraps to two lines; do not shift the board */
   }
 
@@ -970,8 +972,8 @@
   .board {
     touch-action: none; /* node drags must not scroll the page */
     min-width: 540px;
-    background: #fcfbf8;
-    border: 1px solid #ddd;
+    background: var(--w);
+    border: 1px solid var(--g1);
   }
 
   .bg {
@@ -979,13 +981,13 @@
   }
 
   .node .body {
-    fill: #c75200;
+    fill: var(--c1);
     stroke-width: 2.5;
   }
 
   .node .ghost {
     fill: none;
-    stroke: #097;
+    stroke: var(--c2);
     stroke-width: 1.8;
     stroke-dasharray: 3 2.5;
     pointer-events: none;
@@ -993,7 +995,7 @@
 
   .node .selring {
     fill: none;
-    stroke: #222;
+    stroke: var(--k1);
     stroke-width: 1.5;
     stroke-dasharray: 4 3;
     pointer-events: none;
@@ -1005,9 +1007,9 @@
       "SF Mono",
       Menlo,
       monospace;
-    fill: #222;
+    fill: var(--k1);
     text-anchor: middle;
-    stroke: #fff;
+    stroke: var(--w);
     stroke-width: 3;
     paint-order: stroke;
     pointer-events: none;
@@ -1015,11 +1017,11 @@
 
   .edge .estroke {
     fill: none;
-    stroke: #555;
+    stroke: var(--g3);
   }
 
   .edge .ehead {
-    fill: #555;
+    fill: var(--g3);
     stroke: none;
   }
 
@@ -1029,9 +1031,9 @@
       "SF Mono",
       Menlo,
       monospace;
-    fill: #555;
+    fill: var(--g3);
     text-anchor: middle;
-    stroke: #fcfbf8;
+    stroke: var(--w);
     stroke-width: 3;
     paint-order: stroke;
     pointer-events: none;
@@ -1045,38 +1047,38 @@
 
   .edge.hl .estroke,
   .edge.on .estroke {
-    stroke: #2456c9;
+    stroke: var(--c3);
   }
 
   .edge.hl .ehead,
   .edge.on .ehead {
-    fill: #2456c9;
+    fill: var(--c3);
   }
 
   .edge.hl .elabel,
   .edge.on .elabel {
-    fill: #2456c9;
+    fill: var(--c3);
   }
 
   .edge.imp .estroke {
     stroke-dasharray: 4 3;
-    stroke: #999;
+    stroke: var(--g2);
   }
 
   .edge.imp .ehead {
-    fill: #999;
+    fill: var(--g2);
   }
 
   .edge.imp .elabel {
-    fill: #999;
+    fill: var(--g2);
   }
 
   .edge.imp.hl .estroke {
-    stroke: #2456c9;
+    stroke: var(--c3);
   }
 
   .ghostlink {
-    stroke: #999;
+    stroke: var(--g2);
     stroke-width: 1.5;
     stroke-dasharray: 4 4;
     pointer-events: none;
@@ -1095,36 +1097,36 @@
 
   .mcell {
     height: 30px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--g1);
     border-radius: 4px;
-    background: #fff;
+    background: var(--w);
     font-size: 12px;
   }
 
   .mcell.z {
-    color: #bbb;
+    color: var(--g1);
   }
 
   .mcell.imp {
-    color: #999;
+    color: var(--g2);
     font-style: italic;
     border-style: dashed;
   }
 
   .mcell.hl {
-    border-color: #2456c9;
-    background: #eef3fd;
-    color: #2456c9;
+    border-color: var(--c3);
+    background: color-mix(in srgb, var(--c3) 10%, var(--w));
+    color: var(--c3);
   }
 
   .medit {
-    border-color: #2456c9;
+    border-color: var(--c3);
     width: 48px;
   }
 
   .cchip {
-    border: 1.5px solid #999;
-    background: #fff;
+    border: 1.5px solid var(--g2);
+    background: var(--w);
     padding: 2px 8px;
     font-size: 12px;
   }
@@ -1134,27 +1136,27 @@
   }
 
   .callout.warn {
-    background: #fdf3e6;
-    border: 1px solid #c75200;
-    color: #7a3a00;
+    background: color-mix(in srgb, var(--c1) 10%, var(--w));
+    border: 1px solid var(--c1);
+    color: var(--c1);
   }
 
   .callout.info {
-    background: #eef3fd;
-    border: 1px solid #2456c9;
-    color: #1a3a85;
+    background: color-mix(in srgb, var(--c3) 10%, var(--w));
+    border: 1px solid var(--c3);
+    color: var(--c3);
   }
 
   /* ----- evolution */
   .chip {
-    border: 1.5px solid #ccc;
-    background: #fff;
+    border: 1.5px solid var(--g1);
+    background: var(--w);
     padding: 3px 9px;
     font-size: 13px;
   }
 
   .chip:hover {
-    background: #f4f4f4;
+    background: var(--w);
   }
 
   .schip {
@@ -1163,12 +1165,12 @@
   }
 
   .plot {
-    background: #fcfbf8;
-    border: 1px solid #ddd;
+    background: var(--w);
+    border: 1px solid var(--g1);
   }
 
   .plot .grid {
-    stroke: #e4e0d8;
+    stroke: var(--g1);
     stroke-width: 1;
   }
 
@@ -1178,16 +1180,16 @@
       "SF Mono",
       Menlo,
       monospace;
-    fill: #999;
+    fill: var(--g2);
   }
 
   /* ----- shared widgets */
   .mini,
   .preset {
     padding: 4px 10px;
-    border: 1px solid #777;
+    border: 1px solid var(--g2);
     border-radius: 4px;
-    background: #fff;
+    background: var(--w);
   }
 
   .preset {
@@ -1201,23 +1203,23 @@
 
   .mini:hover:enabled,
   .preset:hover {
-    background-color: #eef;
+    background-color: color-mix(in srgb, var(--c3) 12%, var(--w));
   }
 
   .winput {
     width: 64px;
     padding: 3px 6px;
-    border: 1px solid #999;
+    border: 1px solid var(--g2);
     border-radius: 4px;
   }
 
   .dslide {
     width: 160px;
-    accent-color: #333;
+    accent-color: var(--k1);
   }
 
   input[type="range"] {
-    accent-color: #333;
+    accent-color: var(--k1);
   }
 
   .mono {
@@ -1226,13 +1228,13 @@
   }
 
   .dim {
-    color: #777;
+    color: var(--g2);
     font-size: 14px;
   }
 
   .notes p {
     font-size: 14px;
-    color: #444;
+    color: var(--g3);
   }
 
   h3 {

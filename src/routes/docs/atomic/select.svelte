@@ -105,17 +105,17 @@
     user-select: none;
     vertical-align: middle;
     top: -2px;
-    border-left: 1px solid #444;
-    border-right: 1px solid #444;
+    border-left: 1px solid var(--g3);
+    border-right: 1px solid var(--g3);
     border-top: 1px solid transparent;
     border-bottom: 1px solid transparent;
   }
 
   .btop {
-    border-top: 1px solid #444;
+    border-top: 1px solid var(--g3);
   }
   .bbot {
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid var(--g3);
   }
 
   .cont {
@@ -126,14 +126,14 @@
   .item {
     height: var(--size);
     scroll-snap-align: center;
-    color: #ccc;
+    color: var(--g1);
     transition: all 0.2s ease-in-out;
     font-size: inherit;
     vertical-align: middle;
   }
 
   .item.selected {
-    color: #08f;
+    color: var(--c3);
     opacity: 1;
   }
 </style>

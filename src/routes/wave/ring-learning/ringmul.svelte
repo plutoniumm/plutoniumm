@@ -152,21 +152,21 @@
 
 <style>
     .ringmul {
-        background: #fff;
+        background: var(--w);
 
         max-width: 560px;
         font-family: monospace;
-        color: #222;
+        color: var(--k1);
     }
     .lbl {
         width: 72px;
         margin-right: 12px;
-        color: #555;
+        color: var(--g3);
         font-size: 0.85em;
         white-space: nowrap;
     }
     .plus {
-        color: #888;
+        color: var(--g2);
     }
     .cell {
         white-space: nowrap;
@@ -175,7 +175,7 @@
         width: 38px;
         padding: 3px 2px;
         font-family: monospace;
-        color: #222;
+        color: var(--k1);
 
         border-radius: 4px;
         -moz-appearance: textfield;
@@ -187,20 +187,20 @@
         margin: 0;
     }
     .pow {
-        color: #555;
+        color: var(--g3);
     }
     .term {
         white-space: nowrap;
     }
     .wrap {
-        color: #c75200;
+        color: var(--c1);
     }
     .final {
-        color: #097;
+        color: var(--c2);
     }
     .note {
         font-size: 0.78em;
-        color: #777;
+        color: var(--g2);
         font-family: sans-serif;
     }
 </style>

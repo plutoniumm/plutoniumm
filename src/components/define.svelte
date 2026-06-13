@@ -78,7 +78,7 @@
 
 <style>
     .generics {
-        background: #fff0;
-        border-top: 2px dotted #8884;
+        background: transparent;
+        border-top: 2px dotted color-mix(in srgb, var(--g2) 27%, transparent);
     }
 </style>

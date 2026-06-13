@@ -611,40 +611,34 @@ export function trace (els: El[], opts: TraceOpts): TraceResult {
 const wlCache = new Map<number, [number, number, number]>();
 
 /** approximate sRGB for a wavelength in nm (Bruton's piecewise fit) */
+// wavelength -> a 5-band spectrum drawn only from the theme palette. canvas
+// can't read CSS vars, so these rgb triples mirror --c5/--c3/--c2/--c1/--c4
+// in static/css/global.css. short -> long: violet, blue, teal, orange, red.
+const SPECTRUM: [number, number, number][] = [
+  [ 138, 92, 194 ], // --c5 purple
+  [ 36, 86, 201 ],  // --c3 blue
+  [ 0, 153, 119 ],  // --c2 teal
+  [ 199, 82, 0 ],   // --c1 orange
+  [ 221, 34, 34 ],  // --c4 red
+];
+
 export function wlColor (wl: number): [number, number, number] {
   const hit = wlCache.get(wl);
   if (hit) return hit;
-  let r = 0;
-  let g = 0;
-  let b = 0;
 
-  if (wl < 440) {
-    r = (440 - wl) / 60;
-    b = 1;
-  } else if (wl < 490) {
-    g = (wl - 440) / 50;
-    b = 1;
-  } else if (wl < 510) {
-    g = 1;
-    b = (510 - wl) / 20;
-  } else if (wl < 580) {
-    r = (wl - 510) / 70;
-    g = 1;
-  } else if (wl < 645) {
-    r = 1;
-    g = (645 - wl) / 65;
-  } else {
-    r = 1;
-  }
+  const t = Math.min(Math.max((wl - 380) / (780 - 380), 0), 1);
+  const [ r, g, b ] = SPECTRUM[Math.min(4, Math.floor(t * 5))];
 
+  // dim the deep-violet / deep-red extremes, as the spectral version did
   let fade = 1;
 
-  if (wl < 420) { fade = 0.3 + (0.7 * (wl - 380)) / 40; }
-  else if (wl > 700) { fade = 0.3 + (0.7 * (780 - wl)) / 80; }
+  if (wl < 420) { fade = 0.4 + (0.6 * (wl - 380)) / 40; }
+  else if (wl > 700) { fade = 0.4 + (0.6 * (780 - wl)) / 80; }
 
   fade = Math.min(Math.max(fade, 0), 1);
-  const gam = (v: number) => Math.round(255 * Math.pow(v * fade, 0.8));
-  const rgb: [number, number, number] = [gam(r), gam(g), gam(b)];
+  const rgb: [number, number, number] = [
+    Math.round(r * fade), Math.round(g * fade), Math.round(b * fade),
+  ];
   wlCache.set(wl, rgb);
 
   return rgb;

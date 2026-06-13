@@ -119,7 +119,7 @@
 
     <svg width="480" height="240" font-family="monospace" font-size="10">
         {#each [-1, -2, -3] as gy, k (k)}
-            <line x1="50" x2="470" y1={PY(gy)} y2={PY(gy)} stroke="#eee" />
+            <line x1="50" x2="470" y1={PY(gy)} y2={PY(gy)} style="stroke:var(--g1)" />
             <text x="46" y={PY(gy) + 3} text-anchor="end">
                 {gy}
             </text>
@@ -135,12 +135,12 @@
             y1={PY(cPred - 0.5 * x0)}
             x2={PX(x1)}
             y2={PY(cPred - 0.5 * x1)}
-            stroke="#c75200"
+            style="stroke:var(--c1)"
             stroke-dasharray="6 4"
             stroke-width="1.5"
         />
         {#each pts as p, k (k)}
-            <circle cx={PX(p.x)} cy={PY(p.y)} r="4" fill="#097" />
+            <circle cx={PX(p.x)} cy={PY(p.y)} r="4" style="fill:var(--c2)" />
         {/each}
 
         <text
@@ -148,11 +148,11 @@
             y="120"
             transform="rotate(-90 14 120)"
             text-anchor="middle"
-            fill="#777"
+            style="fill:var(--g2)"
         >
             ln RSD
         </text>
-        <text x="260" y="239" text-anchor="middle" fill="#777">
+        <text x="260" y="239" text-anchor="middle" style="fill:var(--g2)">
             window size w (log axis)
         </text>
     </svg>
@@ -169,9 +169,9 @@
 
 <style>
     .box {
-        background: #fff;
+        background: var(--w);
         max-width: 560px;
-        color: #222;
+        color: var(--k1);
     }
     label {
         white-space: nowrap;
@@ -183,20 +183,20 @@
     button {
         padding: 4px 10px;
 
-        background: #f6f6f6;
+        background: var(--w);
         font-size: 0.85em;
-        color: #222;
+        color: var(--k1);
     }
     button:hover {
-        background: #ececec;
+        background: var(--g1);
     }
     .stat {
         font-size: 0.85em;
-        color: #097;
+        color: var(--c2);
     }
     .note {
         font-size: 0.78em;
-        color: #777;
+        color: var(--g2);
     }
     svg {
         max-width: 100%;

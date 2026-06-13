@@ -30,12 +30,12 @@ class Split extends LitElement {
             width: 1px;
             padding: 10px 0;
             cursor: ew-resize;
-            background-color: #888;
+            background-color: var(--g2);
         }
         .split-bar:hover {
             width: 3px;
             padding: 10px 1px;
-            background-color: #2af;
+            background-color: var(--c3);
         }
         .hr {
             margin: 0;
@@ -43,10 +43,10 @@ class Split extends LitElement {
             padding: 0;
             border: 0;
             border-radius: 10px;
-            background-color: #888;
+            background-color: var(--g2);
         }
         .split-bar:hover .hr {
-            background-color: #fff;
+            background-color: var(--w);
         }
 
         :host([vertical]) {

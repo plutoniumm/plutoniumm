@@ -45,7 +45,7 @@
         bottom: -1.5em;
         right: 0;
         padding: 0.5em;
-        color: #888;
+        color: var(--g2);
         font-size: 0.8em;
     }
 </style>

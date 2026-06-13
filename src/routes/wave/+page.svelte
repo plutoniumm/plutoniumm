@@ -45,7 +45,7 @@
     .tagline {
         margin-bottom: 12px;
 
-        color: #888;
+        color: var(--g2);
         font-style: italic;
     }
 </style>

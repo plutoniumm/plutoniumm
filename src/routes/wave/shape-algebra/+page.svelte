@@ -52,7 +52,7 @@ and divided.
     width="350"
     height="350"
     viewBox="0 -12 160 160"
-    stroke="#000"
+    style="stroke:var(--k2)"
 >
     <path fill="none" d="m38.8 27.2-.5 85" transform="translate(-18 1.8)" />
     <path fill="none" d="M164.6 111.8H37.8" transform="translate(-18 1.8)" />

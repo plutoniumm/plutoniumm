@@ -125,9 +125,9 @@
     <div class="box">
       <div
         class="m{selected.dir}{selected.sp}"
-        style="background: #ccd; border-radius: 4px;"
+        style="background: var(--g1); border-radius: 4px;"
       >
-        <div class="p{selected.dir}{selected.sp}" style="background: #99b;">
+        <div class="p{selected.dir}{selected.sp}" style="background: var(--g2);">
           <div class="active">Target</div>
         </div>
       </div>
@@ -196,7 +196,7 @@
       <div class="active w40">1</div>
       <div class="active w40">2</div>
       <div class="active w40">3</div>
-      <div class="f-col p5 g5" style="background: #ccc; ">
+      <div class="f-col p5 g5" style="background: var(--g1); ">
         <div class="active w40 h40">Col</div>
         <div class="active w40 h40">Col</div>
       </div>
@@ -234,7 +234,7 @@
 
     <div class="box">
       <div class="active d-{selected.d}">Item 1</div>
-      <div class="active d-{selected.d}" style="background: #88c;">Item 2</div>
+      <div class="active d-{selected.d}" style="background: var(--c3);">Item 2</div>
     </div>
   </Card>
 
@@ -302,7 +302,7 @@
       <div class="active w40 h40">B</div>
       <div class="active w40 h40">C</div>
     </div>
-    <div class="cc box" style="margin-top: 10px; background: #ddd;">
+    <div class="cc box" style="margin-top: 10px; background: var(--g1);">
       <div class="active" style="width: auto; padding: 0 10px;">
         .cc (absolute center)
       </div>
@@ -387,23 +387,23 @@
 
   .atomic-docs {
     max-width: 800px;
-    color: #333;
+    color: var(--k1);
   }
 
   .box {
-    background: #f4f4f4;
+    background: var(--w);
     border-radius: 4px;
     padding: 20px;
     min-height: 60px;
   }
 
   .active {
-    background: #aaf;
+    background: color-mix(in srgb, var(--c3) 40%, var(--w));
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 40px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid color-mix(in srgb, var(--k2) 10%, transparent);
   }
 
   .badge {
@@ -412,7 +412,7 @@
     min-height: 0;
     padding: 2px 8px;
     font-size: 13px;
-    background: #88c;
+    background: var(--c3);
     border-radius: 4px;
   }
 
@@ -433,7 +433,7 @@
     overflow: hidden;
     height: 1.6em;
     padding: 8px 12px;
-    background: #aaf;
+    background: color-mix(in srgb, var(--c3) 40%, var(--w));
     border-radius: 4px;
     cursor: pointer;
     transition: height 0.4s ease;
@@ -444,7 +444,7 @@
   }
 
   .interp code {
-    background: #eef;
+    background: color-mix(in srgb, var(--c3) 12%, var(--w));
     padding: 1px 4px;
     border-radius: 4px;
   }

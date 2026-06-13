@@ -5,7 +5,6 @@
             title: "",
             links: [
                 ["plutoniumm", "//github.com/plutoniumm", "github"],
-                // ["plutoniumm", "//youtu.be/zL19uMsnpSU", "youtube"],
                 [
                     "Scholar",
                     "//scholar.google.com/citations?user=CkJTRyAAAAAJ",

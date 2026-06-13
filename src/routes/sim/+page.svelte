@@ -15,8 +15,8 @@
   const groups: Group[] = [
     {
       name: "Physics",
-      accent: "#c0392b",
-      bg: "#fdf0ee",
+      accent: "var(--c4)",
+      bg: "color-mix(in srgb, var(--c4) 8%, var(--w))",
       items: [
         {
           name: "Ray Optics",
@@ -27,8 +27,8 @@
     },
     {
       name: "Math",
-      accent: "#2456c9",
-      bg: "#eef3fd",
+      accent: "var(--c3)",
+      bg: "color-mix(in srgb, var(--c3) 10%, var(--w))",
       items: [
         {
           name: "Markov Chains",
@@ -39,8 +39,8 @@
     },
     {
       name: "Computer Science",
-      accent: "#1e8a4c",
-      bg: "#eefaf1",
+      accent: "var(--ok)",
+      bg: "color-mix(in srgb, var(--ok) 10%, var(--w))",
       items: [
         {
           name: "Clifford",
@@ -92,7 +92,7 @@
   }
 
   .sub {
-    color: #555;
+    color: var(--g3);
     margin-bottom: 30px;
   }
 
@@ -121,7 +121,7 @@
   .card:focus {
     text-decoration: none;
     transform: translateY(-2px);
-    box-shadow: 0 4px 14px #0002;
+    box-shadow: 0 4px 14px color-mix(in srgb, var(--k2) 13%, transparent);
   }
 
   h3 {
@@ -130,7 +130,7 @@
   }
 
   .desc {
-    color: #444;
+    color: var(--g3);
     font-size: 16px;
   }
 </style>

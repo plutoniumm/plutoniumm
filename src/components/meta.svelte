@@ -59,10 +59,10 @@
     .sub {
         margin-bottom: 12px;
 
-        color: #888;
+        color: var(--g2);
     }
     .sub a {
-        color: #666;
+        color: var(--g3);
     }
     .sub a:hover {
         text-decoration: underline;

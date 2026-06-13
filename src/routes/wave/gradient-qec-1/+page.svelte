@@ -496,7 +496,7 @@ a_i \;\rightarrow\; a_i + \eta\left(
 <style>
     th,
     td {
-        border: 1px solid #8886;
+        border: 1px solid color-mix(in srgb, var(--g2) 40%, transparent);
         padding: 4px 14px;
         text-align: center;
     }

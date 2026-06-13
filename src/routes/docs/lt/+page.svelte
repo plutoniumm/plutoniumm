@@ -144,35 +144,35 @@ console.log(hello);"
 
 <style lang="scss">
   .border {
-    border: 1px solid #0001;
+    border: 1px solid color-mix(in srgb, var(--k2) 7%, transparent);
   }
 
   .atomic {
     max-width: 800px;
-    color: #333;
+    color: var(--k1);
   }
 
   .box {
-    background: #f4f4f4;
+    background: var(--w);
     border-radius: 5px;
   }
 
   .active {
-    background: #aaf;
+    background: color-mix(in srgb, var(--c3) 40%, var(--w));
     min-height: 40px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid color-mix(in srgb, var(--k2) 10%, transparent);
   }
 
   thead th {
-    background: #eee;
-    color: #222;
+    background: var(--g1);
+    color: var(--k1);
   }
 
   tbody tr:nth-child(even) {
-    background: #eee8;
+    background: color-mix(in srgb, var(--g1) 53%, transparent);
   }
 
   tbody tr:hover {
-    background: #eef;
+    background: color-mix(in srgb, var(--c3) 12%, var(--w));
   }
 </style>

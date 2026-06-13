@@ -264,7 +264,7 @@
     Y: ["|i⟩", "|-i⟩"],
     Z: ["|0⟩", "|1⟩"],
   };
-  const CLUSTER = ["#e08e1b", "#2a9d8f", "#8a5cc2", "#d4566b"];
+  const CLUSTER = ["var(--c1)", "var(--c2)", "var(--c5)", "var(--c4)"];
 
   function runSim(cs: Column[], upto: number, n: number) {
     const sim = new Clifford(n);
@@ -1017,12 +1017,12 @@
 
   .intro {
     font-size: 17px;
-    color: #333;
+    color: var(--k1);
   }
 
   .panel {
-    background: #fff8;
-    border: 1px solid #bbb;
+    background: color-mix(in srgb, var(--w) 53%, transparent);
+    border: 1px solid var(--g1);
   }
 
   .spacer {
@@ -1035,57 +1035,57 @@
     padding: 0 8px;
 
     border-radius: 5px;
-    background: #fff;
+    background: var(--w);
   }
 
   .tool.on {
-    border-color: #111;
-    outline: 2px solid #111;
+    border-color: var(--k2);
+    outline: 2px solid var(--k2);
     outline-offset: -2px;
-    box-shadow: 0 1px 4px #0003;
+    box-shadow: 0 1px 4px color-mix(in srgb, var(--k2) 20%, transparent);
   }
 
   .tool.tH {
-    background: #ffd75e;
+    background: var(--c1);
   }
   .tool.tX {
-    background: #ff9c8f;
+    background: color-mix(in srgb, var(--c4) 45%, var(--w));
   }
   .tool.tY {
-    background: #84d98a;
+    background: color-mix(in srgb, var(--ok) 55%, var(--w));
   }
   .tool.tZ {
-    background: #8abaff;
+    background: color-mix(in srgb, var(--c3) 45%, var(--w));
   }
   .tool.tS {
-    background: #cfa3f7;
+    background: color-mix(in srgb, var(--c5) 40%, var(--w));
   }
   .tool.tM {
-    background: #e4e4e4;
+    background: var(--g1);
   }
   .tool.tXC,
   .tool.tZC {
     border-style: dashed;
   }
   .tool.tXC {
-    background: #ffd1ca;
+    background: color-mix(in srgb, var(--c4) 25%, var(--w));
   }
   .tool.tZC {
-    background: #c9ddff;
+    background: color-mix(in srgb, var(--c3) 25%, var(--w));
   }
 
   .t-no {
     border-style: dashed;
-    border-color: #b33;
-    color: #b33;
+    border-color: var(--c4);
+    color: var(--c4);
   }
 
   .mini,
   .preset {
     padding: 4px 10px;
-    border: 1px solid #777;
+    border: 1px solid var(--g2);
     border-radius: 4px;
-    background: #fff;
+    background: var(--w);
   }
 
   .preset {
@@ -1101,23 +1101,23 @@
   .mini:hover:enabled,
   .preset:hover:enabled,
   .tool:hover {
-    background-color: #eef;
+    background-color: color-mix(in srgb, var(--c3) 12%, var(--w));
   }
 
   .hint {
     font-size: 14px;
-    color: #666;
+    color: var(--g3);
   }
 
   .tantrum {
-    background: #fee;
-    border: 1px solid #b33;
+    background: color-mix(in srgb, var(--c4) 10%, var(--w));
+    border: 1px solid var(--c4);
     font-size: 15px;
   }
 
   /* circuit svg */
   .wire {
-    stroke: #999;
+    stroke: var(--g2);
     stroke-width: 1.5;
   }
 
@@ -1127,7 +1127,7 @@
       "SF Mono",
       Menlo,
       monospace;
-    fill: #555;
+    fill: var(--g3);
     stroke: none;
   }
 
@@ -1137,64 +1137,64 @@
   }
 
   .cell:hover {
-    fill: #00000009;
+    fill: color-mix(in srgb, var(--k2) 4%, transparent);
   }
 
   .gbox {
-    stroke: #4448;
+    stroke: color-mix(in srgb, var(--g3) 53%, transparent);
     stroke-width: 1;
   }
 
   .bH {
-    fill: #ffd75e;
+    fill: var(--c1);
   }
   .bX {
-    fill: #ff9c8f;
+    fill: color-mix(in srgb, var(--c4) 45%, var(--w));
   }
   .bY {
-    fill: #84d98a;
+    fill: color-mix(in srgb, var(--ok) 55%, var(--w));
   }
   .bZ {
-    fill: #8abaff;
+    fill: color-mix(in srgb, var(--c3) 45%, var(--w));
   }
   .bS {
-    fill: #cfa3f7;
+    fill: color-mix(in srgb, var(--c5) 40%, var(--w));
   }
   .bM {
-    fill: #e4e4e4;
+    fill: var(--g1);
   }
 
   .glabel {
     font: 600 15px sans-serif;
-    fill: #222;
+    fill: var(--k1);
     text-anchor: middle;
     stroke: none;
   }
 
   .link {
-    stroke: #333;
+    stroke: var(--k1);
     stroke-width: 2;
   }
 
   .dot {
-    fill: #333;
+    fill: var(--k1);
     stroke: none;
   }
 
   .oplus {
-    fill: #fff;
-    stroke: #333;
+    fill: var(--w);
+    stroke: var(--k1);
     stroke-width: 2;
   }
 
   .marc {
     fill: none;
-    stroke: #333;
+    stroke: var(--k1);
     stroke-width: 1.5;
   }
 
   .mneedle {
-    stroke: #333;
+    stroke: var(--k1);
     stroke-width: 1.5;
   }
 
@@ -1209,21 +1209,21 @@
   }
 
   .mout.rand {
-    fill: #d2820a;
+    fill: var(--c1);
   }
   .mout.det {
-    fill: #2c8c4b;
+    fill: var(--ok);
   }
 
   .cwire {
-    stroke: #777;
+    stroke: var(--g2);
     stroke-width: 1.2;
     fill: none;
   }
 
   .cring {
-    fill: #fff;
-    stroke: #555;
+    fill: var(--w);
+    stroke: var(--g3);
     stroke-width: 1.5;
   }
 
@@ -1242,7 +1242,7 @@
 
   .pendring {
     fill: none;
-    stroke: #333;
+    stroke: var(--k1);
     stroke-width: 1.5;
     stroke-dasharray: 3 3;
   }
@@ -1253,16 +1253,16 @@
   }
 
   .now {
-    stroke: #b33;
+    stroke: var(--c4);
     stroke-width: 1.5;
     stroke-dasharray: 4 4;
   }
 
   /* state panel */
   .chip {
-    border: 1.5px solid #ccc;
+    border: 1.5px solid var(--g1);
     padding: 3px 9px;
-    background: #fff;
+    background: var(--w);
     font:
       500 13px ui-monospace,
       "SF Mono",
@@ -1271,7 +1271,7 @@
   }
 
   .chip.mixed {
-    background: #f4f1fa;
+    background: color-mix(in srgb, var(--c5) 10%, var(--w));
   }
 
   .mono {
@@ -1280,7 +1280,7 @@
   }
 
   .stabs {
-    background: #16161d;
+    background: var(--k2);
     line-height: 1.7;
     letter-spacing: 2px;
     overflow-x: auto;
@@ -1289,40 +1289,40 @@
   }
 
   .sgn {
-    color: #aaa;
+    color: var(--g2);
     margin-right: 6px;
   }
 
   .PI {
-    color: #555;
+    color: var(--g3);
   }
   .PX {
-    color: #ff8f80;
+    color: color-mix(in srgb, var(--c4) 50%, var(--w));
   }
   .PY {
-    color: #84d98a;
+    color: color-mix(in srgb, var(--ok) 55%, var(--w));
   }
   .PZ {
-    color: #8abaff;
+    color: color-mix(in srgb, var(--c3) 45%, var(--w));
   }
 
   .det {
-    color: #2c8c4b;
+    color: var(--ok);
   }
   .rand {
-    color: #d2820a;
+    color: var(--c1);
   }
   .bad {
-    color: #b33;
+    color: var(--c4);
   }
 
   .dim {
-    color: #777;
+    color: var(--g2);
     font-size: 14px;
   }
 
   input[type="range"] {
-    accent-color: #333;
+    accent-color: var(--k1);
   }
 
   pre {

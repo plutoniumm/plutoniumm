@@ -24,10 +24,10 @@
 <style lang="scss">
   .utility {
     margin-bottom: 24px;
-    background: #fff;
+    background: var(--w);
 
     .header {
-      background: #eee;
+      background: var(--g1);
       font-size: 1.1em;
     }
 
@@ -35,7 +35,7 @@
       line-height: 1.5;
 
       :global(code) {
-        background: #eef;
+        background: color-mix(in srgb, var(--c3) 12%, var(--w));
         padding: 2px 4px;
         border-radius: 5px;
       }
@@ -44,7 +44,7 @@
     pre {
       code {
         padding: 12px;
-        background: #fff;
+        background: var(--w);
         border-radius: 4px;
       }
     }

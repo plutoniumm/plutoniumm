@@ -61,7 +61,7 @@
 <style>
   a:hover,
   a:focus {
-    background: #eef;
+    background: color-mix(in srgb, var(--c3) 12%, var(--w));
     text-decoration: none;
   }
 
@@ -81,11 +81,11 @@
   }
 
   .desc {
-    color: #555;
+    color: var(--g3);
     font-size: 18px;
   }
 
   hr {
-    border: 1px solid #000;
+    border: 1px solid var(--k2);
   }
 </style>

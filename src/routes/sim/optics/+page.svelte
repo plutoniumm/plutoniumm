@@ -12,6 +12,7 @@
     presets,
   } from "./optics";
   import type { El, Kind, Vec, Preset } from "./optics";
+  import { palette as pal, ck } from "$lib/palette";
 
   import beamIcon from "./beam.svg?raw";
   import pointIcon from "./point.svg?raw";
@@ -120,8 +121,8 @@
 
   function drawEl(c: CanvasRenderingContext2D, el: El) {
     if (isGlass(el.kind)) {
-      c.fillStyle = "rgba(150,190,255,0.08)";
-      c.strokeStyle = "rgba(150,190,255,0.5)";
+      c.fillStyle = ck("c3", 0.08);
+      c.strokeStyle = ck("c3", 0.5);
       c.lineWidth = 1.5;
       c.beginPath();
 
@@ -145,7 +146,7 @@
 
     if (el.kind === "mirror" || el.kind === "screen") {
       const { a, b } = segOf(el);
-      c.strokeStyle = el.kind === "mirror" ? "#d8dee8" : "#666";
+      c.strokeStyle = el.kind === "mirror" ? pal().g1 : pal().g3;
       c.lineWidth = el.kind === "mirror" ? 3 : 5;
       c.beginPath();
       c.moveTo(a.x, a.y);
@@ -161,7 +162,7 @@
         x: Math.cos(el.angle),
         y: Math.sin(el.angle),
       };
-      c.strokeStyle = "#8fc1ff";
+      c.strokeStyle = ck("c3", 0.6);
       c.lineWidth = 2;
       c.beginPath();
       c.moveTo(a.x, a.y);
@@ -197,7 +198,7 @@
 
     // sources
     const [r, g, bl] = wlColor(el.wl);
-    const col = el.white ? "#fff" : `rgb(${r},${g},${bl})`;
+    const col = el.white ? pal().w : `rgb(${r},${g},${bl})`;
 
     if (el.kind === "point") {
       c.fillStyle = col;
@@ -237,7 +238,7 @@
   }
 
   function drawSelection(c: CanvasRenderingContext2D, el: El) {
-    c.strokeStyle = "#ffd34d";
+    c.strokeStyle = pal().c1;
     c.lineWidth = 1.5;
     c.setLineDash([5, 4]);
     c.beginPath();
@@ -272,7 +273,7 @@
       c.lineTo(hx, hy);
       c.stroke();
       c.setLineDash([]);
-      c.fillStyle = "#ffd34d";
+      c.fillStyle = pal().c1;
       c.beginPath();
       c.arc(hx, hy, 6, 0, 2 * Math.PI);
       c.fill();
@@ -287,7 +288,7 @@
         y: Math.cos(el.angle),
       };
       const fd = Math.abs(el.f);
-      c.strokeStyle = "#ffd34d";
+      c.strokeStyle = pal().c1;
       c.lineWidth = 1.5;
 
       for (const s of [1, -1]) {
@@ -313,10 +314,10 @@
     truncated = out.truncated;
     const c = ctx;
 
-    c.fillStyle = "#0d0e12";
+    c.fillStyle = pal().k2;
     c.fillRect(0, 0, VIEW.w, VIEW.h);
 
-    c.strokeStyle = "#181a21";
+    c.strokeStyle = pal().k1;
     c.lineWidth = 1;
     c.beginPath();
 
@@ -831,17 +832,17 @@
 
   .intro {
     font-size: 18px;
-    color: #333;
+    color: var(--k1);
   }
 
   .panel {
-    background: #fff8;
-    border: 1px solid #bbb;
+    background: color-mix(in srgb, var(--w) 53%, transparent);
+    border: 1px solid var(--g1);
   }
 
   canvas {
-    background: #0d0e12;
-    border: 1px solid #bbb;
+    background: var(--k2);
+    border: 1px solid var(--g1);
     touch-action: none;
     cursor: crosshair;
     aspect-ratio: 900 / 560;
@@ -849,25 +850,25 @@
 
   label {
     font-size: 14px;
-    color: #555;
+    color: var(--g3);
   }
 
   input[type="range"] {
     vertical-align: middle;
     width: 120px;
-    accent-color: #555;
+    accent-color: var(--g3);
   }
 
   button {
     padding: 5px 12px;
-    border: 1px solid #555;
+    border: 1px solid var(--g3);
     border-radius: 4px;
-    background: #fff;
+    background: var(--w);
     font: inherit;
   }
 
   button:hover {
-    background: #eef;
+    background: color-mix(in srgb, var(--c3) 12%, var(--w));
   }
 
   .pal {
@@ -877,16 +878,16 @@
   .pal :global(svg) {
     display: block;
     flex: none;
-    color: #345;
+    color: var(--k1);
   }
 
   .warn {
-    border-color: #b33;
-    color: #b33;
+    border-color: var(--c4);
+    color: var(--c4);
   }
 
   .dim {
-    color: #777;
+    color: var(--g2);
     font-size: 14px;
   }
 

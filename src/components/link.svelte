@@ -12,7 +12,7 @@
 
 <style>
   a {
-    color: #2af;
+    color: var(--c3);
   }
   svg {
     stroke-width: 2.5;

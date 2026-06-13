@@ -100,9 +100,9 @@
     </div>
 
     <svg width="480" height="186" font-family="monospace" font-size="10">
-        <line x1="42" x2="468" y1={Y(0.5)} y2={Y(0.5)} stroke="#ddd" />
-        <line x1="42" x2="468" y1={Y(0)} y2={Y(0)} stroke="#999" />
-        <line x1="42" x2="468" y1={Y(1)} y2={Y(1)} stroke="#eee" />
+        <line x1="42" x2="468" y1={Y(0.5)} y2={Y(0.5)} style="stroke:var(--g1)" />
+        <line x1="42" x2="468" y1={Y(0)} y2={Y(0)} style="stroke:var(--g2)" />
+        <line x1="42" x2="468" y1={Y(1)} y2={Y(1)} style="stroke:var(--g1)" />
         <text x="38" y={Y(1) + 3} text-anchor="end">1.0</text>
         <text x="38" y={Y(0.5) + 3} text-anchor="end">0.5</text>
         <text x="38" y={Y(0) + 3} text-anchor="end">0.0</text>
@@ -110,13 +110,13 @@
         <polyline
             points={upper}
             fill="none"
-            stroke="#bbb"
+            style="stroke:var(--g1)"
             stroke-dasharray="3 3"
         />
         <polyline
             points={lower}
             fill="none"
-            stroke="#bbb"
+            style="stroke:var(--g1)"
             stroke-dasharray="3 3"
         />
         <line
@@ -124,14 +124,14 @@
             x2="468"
             y1={Y(mu)}
             y2={Y(mu)}
-            stroke="#c75200"
+            style="stroke:var(--c1)"
             stroke-dasharray="5 4"
         />
-        <text x="468" y={Y(mu) - 4} text-anchor="end" fill="#c75200">
+        <text x="468" y={Y(mu) - 4} text-anchor="end" style="fill:var(--c1)">
             μ′ = {mu.toFixed(3)}
         </text>
-        <polyline points={trace} fill="none" stroke="#097" stroke-width="1.5" />
-        <text x="255" y="182" text-anchor="middle" fill="#777">
+        <polyline points={trace} fill="none" style="stroke:var(--c2)" stroke-width="1.5" />
+        <text x="255" y="182" text-anchor="middle" style="fill:var(--g2)">
             shot number (1 … {S})
         </text>
     </svg>
@@ -151,10 +151,10 @@
 
 <style>
     .box {
-        background: #fff;
+        background: var(--w);
 
         max-width: 560px;
-        color: #222;
+        color: var(--k1);
     }
     label {
         white-space: nowrap;
@@ -166,20 +166,20 @@
     button {
         padding: 4px 10px;
 
-        background: #f6f6f6;
+        background: var(--w);
         font-size: 0.85em;
-        color: #222;
+        color: var(--k1);
     }
     button:hover {
-        background: #ececec;
+        background: var(--g1);
     }
     .stat {
         font-size: 0.85em;
-        color: #097;
+        color: var(--c2);
     }
     .note {
         font-size: 0.78em;
-        color: #777;
+        color: var(--g2);
     }
     svg {
         max-width: 100%;

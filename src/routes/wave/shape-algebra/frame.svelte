@@ -111,7 +111,7 @@
     <span>z &rarr;&nbsp;</span>
     <input
         bind:value={equation}
-        style="font:inherit;border-right:1px solid #0008;"
+        style="font:inherit;border-right:1px solid color-mix(in srgb, var(--k2) 53%, transparent);"
     />
     <button type="submit" style="font:inherit;">{message}</button>
 </form>
@@ -122,15 +122,15 @@
 
 <style>
     .form {
-        background: #fff;
+        background: var(--w);
         font: 300 1em monospace;
         margin: 10px 0;
     }
     canvas {
-        background: #888;
+        background: var(--g2);
         aspect-ratio: 16/9;
     }
     .danger {
-        background: #f88;
+        background: color-mix(in srgb, var(--c4) 47%, var(--w));
     }
 </style>
