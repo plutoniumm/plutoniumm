@@ -11,35 +11,25 @@
     <link rel="stylesheet" href="/css/global.css" />
 
     <title>Plutoniumm</title>
-    
-		<link href="../_app/immutable/assets/github.CDab0zVI.css" rel="stylesheet">
-		<link href="../_app/immutable/assets/8.BwZjC586.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/entry/start.D-YR-k9K.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/m0lkVaXk.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/B2m1v2r5.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/DIeogL5L.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/Dg3jdXm7.js">
-		<link rel="modulepreload" href="../_app/immutable/entry/app.NbrCH8aR.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/U_RTbSeY.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/BhLmv89i.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/jMVSJ8sL.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/DsnmJJEf.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/DazIb_FU.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/BrJ3dg77.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/CllBcQQT.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/CLlFx2vb.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/0.TbdVaNmn.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/8.DI2T4ug5.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/69_IOA4Y.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/CUtVODnY.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/DfRH6yYd.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/BJothEBX.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/DaWZu8wl.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/Bfy7zrzx.js"><!--1cytd7n--><!----><title>Eastwood | manav.ch</title>
+    <link href="../_app/immutable/entry/start.BCVugMDq.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/CeZ30hBT.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/b3L32Ng1.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/CCKxRCvr.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/Rl5PQ8XL.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/CMng6q0u.js" rel="modulepreload">
+		<link href="../_app/immutable/entry/app.eHjg8OaD.js" rel="modulepreload">
+		<link href="../_app/immutable/nodes/0.DQCSuvEG.js" rel="modulepreload">
+		<link href="../_app/immutable/nodes/8.CKlKGV0n.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/C75NAlTe.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/BM3Zqwz2.js" rel="modulepreload">
+		<link href="../_app/immutable/chunks/D3BS_AkK.js" rel="modulepreload">
+		<!--1cytd7n--><!----><title>Eastwood | manav.ch</title>
+		<link href="../_app/immutable/assets/github.DdKuH37F.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/8.ByGQT76v.css" rel="stylesheet">
 </head>
 
 <body class="noise" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <div style="display: contents"><!--[--><!--[--><!----><!--[!--><!----><div class="eastwood-docs mx-a svelte-1cytd7n"><h1>Eastwood</h1> <p>A single-binary, multi-language linter. It lints <b>Python</b>, <b>LaTeX</b>, <b>Go</b>, <b>JavaScript</b>, <b>TypeScript</b>, and <b>Rust</b> — 67 rules
+    <div style="display: contents"><!--[--><!--[0--><!--[--><!--[-1--><!--[--><div class="eastwood-docs mx-a svelte-1cytd7n"><h1>Eastwood</h1> <p>A single-binary, multi-language linter. It lints <b>Python</b>, <b>LaTeX</b>, <b>Go</b>, <b>JavaScript</b>, <b>TypeScript</b>, and <b>Rust</b> — 67 rules
     total. The binary is <code>eastwood</code>.</p> <h2 class="svelte-1cytd7n">Install</h2> <p>Homebrew (macOS / Linux):</p> <pre class="rx5 svelte-1cytd7n"><code class="language-shell d-b svelte-1cytd7n">brew tap plutoniumm/eastwood https://github.com/plutoniumm/eastwood
 brew install eastwood</code></pre> <p>Or the one-line installer (drops <code>eastwood</code> in <code>/usr/local/bin</code>):</p> <pre class="rx5 svelte-1cytd7n"><code class="language-shell d-b svelte-1cytd7n">curl -fsSL https://manav.ch/eastwood.sh | bash</code></pre> <p>Or from source (needs Go 1.25+ and a C toolchain):</p> <pre class="rx5 svelte-1cytd7n"><code class="language-shell d-b svelte-1cytd7n">go install github.com/plutoniumm/eastwood/cmd/eastwood@latest</code></pre> <h2 class="svelte-1cytd7n">Usage</h2> <p>Point it at a file, a directory, or pipe in stdin:</p> <pre class="rx5 svelte-1cytd7n"><code class="language-shell d-b svelte-1cytd7n">eastwood path/to/file.py
 eastwood src/                    # walks a directory
@@ -47,19 +37,20 @@ cat foo.tex | eastwood --lang latex
 eastwood --list-rules            # every rule + default severity</code></pre> <h2 class="svelte-1cytd7n">Rules &amp; config</h2> <p><code>eastwood --list-rules</code> prints every rule, and <code>eastwood --rule py/bare-except path/</code> runs just one. Project
     settings live in an <code>eastwood.toml</code> at the project root (it walks
     up from the current directory) — set severities, per-rule options, and opt-in
-    style preferences there.</p> <p>Full docs and the rule list are on <a href="https://github.com/plutoniumm/eastwood" target="_blank" rel="noopener noreferrer" class="svelte-1cytd7n">GitHub</a>.</p></div><!----><!--]--><!----><!----><!--]--> <!--[!--><!--]--><!--]-->
+    style preferences there.</p> <p>Full docs and the rule list are on <a href="https://github.com/plutoniumm/eastwood" target="_blank" rel="noopener noreferrer" class="svelte-1cytd7n">GitHub</a>.</p></div><!--]--><!--]--><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
 			
 			<script>
 				{
-					__sveltekit_lykyut = {
+					
+					__sveltekit_1tlzkse = {
 						base: new URL("..", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("../_app/immutable/entry/start.D-YR-k9K.js"),
-						import("../_app/immutable/entry/app.NbrCH8aR.js")
+						import("../_app/immutable/entry/start.BCVugMDq.js"),
+						import("../_app/immutable/entry/app.eHjg8OaD.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 8],
