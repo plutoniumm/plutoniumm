@@ -52,7 +52,7 @@ and see how far it forces us in the other direction ({_`y`}).
     alt={"Wikipedia: Limit of a function"}
 ></Image>
 
-As in the image above, when standing at {`(x=a,y=b)`}, we take a small step {_`\delta`}
+As in the image above, when standing at {"(x=a,y=b)"}, we take a small step {_`\delta`}
 in {_`x`}, and end up at {_`(x=a+\delta,y=b+\epsilon)`}. We see we also get a
 small step {_`\epsilon`}, at the corresponding {_`y=b`}. Taking the same idea
 forward, if {_`f'(x) = \frac{f(x + h) - f(x)}{h}`}, we can also define the

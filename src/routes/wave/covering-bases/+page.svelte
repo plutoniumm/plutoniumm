@@ -25,7 +25,9 @@
                 (str1.length > 0 ? " + " : "") +
                 str1;
 
-            if (typeof base === "object") continue;
+            if (typeof base === "object")
+            continue;
+
             str2 =
                 `${num} \cdot (${Math.pow(base, i).toFixed(2)})` +
                 (str2.length > 0 ? " + " : "") +

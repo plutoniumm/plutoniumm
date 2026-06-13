@@ -921,9 +921,9 @@
         target="_blank"
         rel="noopener noreferrer">'Minority Appeasement'</a
     >
-    where they try to appease a certain group of people to get their votes.
-    There are also other countries like Morocco where the reservations are not
-    only by caste or gender but also by age, they have 30 reserved seats for
+    where they try to appease a certain group of people to get their votes. There
+    are also other countries like Morocco where the reservations are not only by
+    caste or gender but also by age, they have 30 reserved seats for
     <a
         href="https://en.wikipedia.org/wiki/Parliament_of_Morocco"
         target="_blank"

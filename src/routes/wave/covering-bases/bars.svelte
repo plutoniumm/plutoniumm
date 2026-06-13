@@ -17,7 +17,11 @@
             powoff = top.length - top.indexOf(".");
         }
 
-        if (base <= 9 && base >= 2 && base % 1 === 0) {
+        if (
+            base <= 9 && // force newline
+            base >= 2 &&
+            base % 1 === 0
+        ) {
             shift = 24;
         }
     });

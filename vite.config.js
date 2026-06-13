@@ -11,7 +11,7 @@ export default defineConfig( {
     plugins: [
         Banner( {
             inDir: 'src/routes/wave',
-            outDir: 'static/posts'
+            outDir: 'static/posts',
         } ),
         Drafts(),
         Defcheck(),

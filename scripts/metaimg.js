@@ -123,7 +123,9 @@ export default function bannerer ( options = {} ) {
       const promises = [];
 
       for ( const entry of files ) {
-        if ( !entry.isDirectory() ) continue;
+        if ( !entry.isDirectory() )
+          continue;
+
         const file = entry.name;
 
         const page = fs.readFileSync( path.join( rinDir, file, '+page.svelte' ), 'utf-8' );
@@ -139,7 +141,10 @@ export default function bannerer ( options = {} ) {
         console.log( `[${ fileHash.slice( 0, 8 ) }] ${ title }` );
 
         const output = path.join( routDir, `${ fileHash }.png` );
-        if ( fs.existsSync( output ) ) continue;
+
+        if ( fs.existsSync( output ) )
+          continue;
+
         console.log( `[OG-Gen] Generating: ${ title }` );
 
         promises.push(
@@ -148,6 +153,6 @@ export default function bannerer ( options = {} ) {
       }
 
       await Promise.all( promises );
-    }
+    },
   };
 }

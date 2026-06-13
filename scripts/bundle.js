@@ -14,7 +14,8 @@ export default function Bundle () {
       const builds = [];
 
       for ( const f of fs.readdirSync( dirPath ) ) {
-        if ( !f.endsWith( '.ts' ) ) continue;
+        if ( !f.endsWith( '.ts' ) )
+          continue;
 
         builds.push( esbuild.build( {
           entryPoints: [ path.join( inDir, f ) ],
@@ -29,6 +30,6 @@ export default function Bundle () {
       }
 
       await Promise.all( builds );
-    }
+    },
   };
 }

@@ -43,10 +43,15 @@ const countLoc = () => {
 
   for (const f of files) {
     const base = f.split("/").pop() ?? f;
-    if (SKIP_FILE.has(base)) continue;
+
+    if (SKIP_FILE.has(base))
+      continue;
+
     const dot = base.lastIndexOf(".");
     const ext = dot > 0 ? base.slice(dot + 1).toLowerCase() : "";
-    if (SKIP_EXT.has(ext)) continue;
+
+    if (SKIP_EXT.has(ext))
+      continue;
 
     let text: string;
     try {
@@ -54,10 +59,15 @@ const countLoc = () => {
     } catch {
       continue;
     }
-    if (text.includes("\0")) continue; // binary safety net
+
+    if (text.includes("\0"))
+      continue; // binary safety net
 
     let lines = 0;
-    for (let i = 0; i < text.length; i++) if (text[i] === "\n") lines++;
+
+    for (let i = 0; i < text.length; i++)
+      if (text[i] === "\n") lines++;
+
     if (text.length && !text.endsWith("\n")) lines++;
 
     const lang = LANG[ext] ?? "other";
@@ -68,13 +78,13 @@ const countLoc = () => {
   const loc = Object.entries(byLang)
     .map(([lang, lines]) => ({
       lang,
-      lines
+      lines,
     }))
     .sort((a, b) => b.lines - a.lines);
 
   return {
     loc,
-    files: counted
+    files: counted,
   };
 };
 
@@ -97,6 +107,6 @@ export const load: PageServerLoad = async () => {
     deployed,
     untracked,
     commit,
-    ...countLoc()
+    ...countLoc(),
   };
 };

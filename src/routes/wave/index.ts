@@ -27,11 +27,17 @@ function parseText (text: string) {
 const posts = {};
 
 for (const f of fs.readdirSync("src/routes/wave")) {
-    if (f.includes(".")) continue;
-    if (f.includes("test")) continue;
+    if (f.includes("."))
+        continue;
+
+    if (f.includes("test"))
+        continue;
 
     const file = fs.readFileSync(`src/routes/wave/${f}/+page.svelte`, "utf-8");
-    if (file.includes("nodeploy")) continue;
+
+    if (file.includes("nodeploy"))
+        continue;
+
     const stats = parseText(file);
     stats["raw"] = f;
 

@@ -10,7 +10,6 @@
         damagedCode,
     } from "./repcode.js";
 
-    // ---- UI state ----
     let p = 0.05;
     let eps = 0.3;
     let eta = 0.005;
@@ -112,7 +111,6 @@
 
     const reroll = () => (seed = Math.trunc(Math.random() * 1e9));
 
-    // ---- plot ----
     const PW = 380;
     const PH = 160;
     const LH = 34; // lean strip height

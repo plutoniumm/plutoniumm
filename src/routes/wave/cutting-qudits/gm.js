@@ -22,7 +22,7 @@ export function basis ( d ) {
   const out = [ {
     name: "I",
     M: eye( d ),
-    norm: d
+    norm: d,
   } ];
 
   for ( let j = 0;j < d;j++ ) {
@@ -33,7 +33,7 @@ export function basis ( d ) {
       out.push( {
         name: "S" + j + k,
         M: S,
-        norm: 2
+        norm: 2,
       } );
       const A = zeros( d, d );
       A[ j ][ k ] = C( 0, -1 );
@@ -41,7 +41,7 @@ export function basis ( d ) {
       out.push( {
         name: "A" + j + k,
         M: A,
-        norm: 2
+        norm: 2,
       } );
     }
   }
@@ -54,7 +54,7 @@ export function basis ( d ) {
     out.push( {
       name: "D" + l,
       M: D,
-      norm: 2
+      norm: 2,
     } );
   }
 
@@ -125,7 +125,8 @@ export function decompose ( d1, d2, verify ) {
     } );
 
     for ( let a = 0;a < B1.length;a++ ) {
-      if ( cabs( aco[ a ] ) < 1e-13 ) continue;
+      if ( cabs( aco[ a ] ) < 1e-13 )
+        continue;
 
       for ( let b = 0;b < B2.length;b++ )
         grid[ a ][ b ] = cadd( grid[ a ][ b ], cmul( aco[ a ], bco[ b ] ) );
@@ -142,7 +143,7 @@ export function decompose ( d1, d2, verify ) {
           b,
           an: B1[ a ].name,
           bn: B2[ b ].name,
-          c: grid[ a ][ b ]
+          c: grid[ a ][ b ],
         } );
 
   let err = null;
@@ -182,7 +183,7 @@ export function decompose ( d1, d2, verify ) {
     names2: B2.map( ( x ) => x.name ),
     grid,
     terms,
-    err
+    err,
   };
 }
 

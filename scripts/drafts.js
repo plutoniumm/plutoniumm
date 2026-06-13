@@ -16,7 +16,7 @@ export default function Drafts () {
 
       return {
         code: stub,
-        map: null
+        map: null,
       };
     },
   };

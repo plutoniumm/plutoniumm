@@ -7,9 +7,9 @@ export class Code extends LitElement {
   static properties = {
     language: {
       type: String,
-      reflect: true
+      reflect: true,
     },
-    value: { type: String }
+    value: { type: String },
   };
 
   static styles = css`
@@ -48,7 +48,7 @@ export class Code extends LitElement {
 
     const result = this.hljs.highlight(this.value.trim(), {
       language: this.language,
-      ignoreIllegals: true
+      ignoreIllegals: true,
     });
 
     code.innerHTML = result.value;

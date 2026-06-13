@@ -4,6 +4,28 @@
     import Decompose from "./decompose.svelte";
     import Playground from "./playground.svelte";
     import Circuit from "./circuit.svelte";
+
+    const box = (t, w, label) => ({
+        t,
+        kind: "box",
+        w,
+        label,
+    });
+
+    const cx = (t, c, x, col) => ({
+        t,
+        kind: "cx",
+        c,
+        x,
+        col,
+    });
+
+    const chip = (from, to, label, col) => ({
+        from,
+        to,
+        label,
+        col,
+    });
 </script>
 
 <Meta
@@ -131,22 +153,19 @@
 <Circuit
     wires={["q₁", "q₂", "q₃", "q₄"]}
     seam={1}
-    chips={[
-        { from: 0, to: 1, label: "chip A", col: "#2456c9" },
-        { from: 2, to: 3, label: "chip B", col: "#097" },
-    ]}
+    chips={[chip(0, 1, "chip A", "#2456c9"), chip(2, 3, "chip B", "#097")]}
     gates={[
-        { t: 0, kind: "box", w: 0, label: "H" },
-        { t: 0, kind: "box", w: 1, label: "H" },
-        { t: 0, kind: "box", w: 2, label: "H" },
-        { t: 0, kind: "box", w: 3, label: "H" },
-        { t: 1, kind: "cx", c: 0, x: 1 },
-        { t: 1, kind: "cx", c: 3, x: 2 },
-        { t: 2, kind: "cx", c: 1, x: 2, col: "#c75200" },
-        { t: 3, kind: "box", w: 0, label: "U" },
-        { t: 3, kind: "box", w: 1, label: "U" },
-        { t: 3, kind: "box", w: 2, label: "U" },
-        { t: 3, kind: "box", w: 3, label: "U" },
+        box(0, 0, "H"),
+        box(0, 1, "H"),
+        box(0, 2, "H"),
+        box(0, 3, "H"),
+        cx(1, 0, 1),
+        cx(1, 3, 2),
+        cx(2, 1, 2, "#c75200"),
+        box(3, 0, "U"),
+        box(3, 1, "U"),
+        box(3, 2, "U"),
+        box(3, 3, "U"),
     ]}
     note="every gate sits on one chip except the orange CX: its control is on chip A, its target on chip B."
 />
@@ -201,44 +220,32 @@ I \otimes X - Z \otimes X = \begin{pmatrix}0&0&0&0\\0&0&0&0\\0&0&0&2\\0&0&2&0\en
     <Circuit
         wires={["", ""]}
         seam={0}
-        gates={[{ t: 0, kind: "cx", c: 0, x: 1, col: "#c75200" }]}
+        gates={[cx(0, 0, 1, "#c75200")]}
     />
     <span>=</span>
     <span>+½</span>
     <Circuit
         wires={["", ""]}
         seam={0}
-        gates={[
-            { t: 0, kind: "box", w: 0, label: "I" },
-            { t: 0, kind: "box", w: 1, label: "I" },
-        ]}
+        gates={[box(0, 0, "I"), box(0, 1, "I")]}
     />
     <span>+½</span>
     <Circuit
         wires={["", ""]}
         seam={0}
-        gates={[
-            { t: 0, kind: "box", w: 0, label: "Z" },
-            { t: 0, kind: "box", w: 1, label: "I" },
-        ]}
+        gates={[box(0, 0, "Z"), box(0, 1, "I")]}
     />
     <span>+½</span>
     <Circuit
         wires={["", ""]}
         seam={0}
-        gates={[
-            { t: 0, kind: "box", w: 0, label: "I" },
-            { t: 0, kind: "box", w: 1, label: "X" },
-        ]}
+        gates={[box(0, 0, "I"), box(0, 1, "X")]}
     />
     <span>−½</span>
     <Circuit
         wires={["", ""]}
         seam={0}
-        gates={[
-            { t: 0, kind: "box", w: 0, label: "Z" },
-            { t: 0, kind: "box", w: 1, label: "X" },
-        ]}
+        gates={[box(0, 0, "Z"), box(0, 1, "X")]}
     />
 </div>
 

@@ -131,7 +131,6 @@
         k = 0;
     }
 
-    // ---- geometry ----
     const lo = -1.7;
     const hi = 1.7;
     const W = 400;

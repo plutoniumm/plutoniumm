@@ -180,9 +180,9 @@
                 on:input={stopSweep}
             />
         </label>
-        <button type="button" class="ptr rx5" on:click={sweep}
-            >{sweeping ? "stop" : "sweep θ"}</button
-        >
+        <button type="button" class="ptr rx5" on:click={sweep}>
+            {sweeping ? "stop" : "sweep θ"}
+        </button>
     </div>
 
     <div class="f al-ct j-ct fw g10">

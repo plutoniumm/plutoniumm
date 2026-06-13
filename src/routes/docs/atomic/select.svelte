@@ -35,7 +35,11 @@
     }, 100);
   }
 
-  $: if (cont && value && !isScrolling) {
+  $: if (
+    cont && // force newline
+    value &&
+    !isScrolling
+  ) {
     const index = items.indexOf(value);
 
     if (index !== -1) {

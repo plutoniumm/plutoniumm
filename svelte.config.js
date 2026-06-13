@@ -7,9 +7,7 @@ export default {
     preprocess: [ sveltePreprocess( {} ) ],
     kit: {
         adapter: statix(),
-        prerender: {
-            concurrency: 8,
-        },
+        prerender: { concurrency: 8 },
         alias: {
             $data: "/src/data",
             $cpt: "/src/components",

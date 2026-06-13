@@ -19,7 +19,7 @@ export default function Tex () {
 
       return {
         code: result,
-        map: null
+        map: null,
       };
     },
   };

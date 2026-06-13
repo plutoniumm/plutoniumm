@@ -1,11 +1,11 @@
 export const cvec = () => ( {
     re: new Float64Array( 8 ),
-    im: new Float64Array( 8 )
+    im: new Float64Array( 8 ),
 } );
 
 export const copy = ( c ) => ( {
     re: c.re.slice(),
-    im: c.im.slice()
+    im: c.im.slice(),
 } );
 
 const ops = ( m ) => [ ( m >> 4 ) & 3, ( m >> 2 ) & 3, m & 3 ];
@@ -79,7 +79,7 @@ export function channel ( p ) {
 
     return {
         w,
-        R
+        R,
     };
 }
 

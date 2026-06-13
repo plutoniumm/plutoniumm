@@ -45,7 +45,7 @@ class Mermaid extends LitElement {
     const API = mermaid.mermaidAPI;
     API.initialize({
       securityLevel: "loose",
-      theme
+      theme,
     });
     // unique id per instance: multiple <lt-mmd> on one page must not share
     // a render id, or mermaid's d3 a11y pass selects the wrong/removed node.

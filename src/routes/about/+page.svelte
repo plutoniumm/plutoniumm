@@ -110,25 +110,31 @@
       os = "unknown";
     let m: RegExpMatchArray | null;
 
-    if ((m = ua.match(/Firefox\/([\d.]+)/)))
+    if ((m = ua.match(/Firefox\/([\d.]+)/))) {
       [b, e] = [`Firefox ${m[1]}`, "Gecko"];
-    else if ((m = ua.match(/Edg\/([\d.]+)/)))
+    } else if ((m = ua.match(/Edg\/([\d.]+)/))) {
       [b, e] = [`Edge ${m[1]}`, "Blink"];
-    else if ((m = ua.match(/OPR\/([\d.]+)/)))
+    } else if ((m = ua.match(/OPR\/([\d.]+)/))) {
       [b, e] = [`Opera ${m[1]}`, "Blink"];
-    else if ((m = ua.match(/Chrome\/([\d.]+)/)))
+    } else if ((m = ua.match(/Chrome\/([\d.]+)/))) {
       [b, e] = [`Chrome ${m[1]}`, "Blink"];
-    else if ((m = ua.match(/Version\/([\d.]+).*Safari/)))
+    } else if ((m = ua.match(/Version\/([\d.]+).*Safari/))) {
       [b, e] = [`Safari ${m[1]}`, "WebKit"];
-    else if (/Safari/.test(ua)) [b, e] = ["Safari", "WebKit"];
+    } else if (/Safari/.test(ua)) {
+      [b, e] = ["Safari", "WebKit"];
+    }
 
-    if ((m = ua.match(/iPhone OS ([\d_]+)/)))
+    if ((m = ua.match(/iPhone OS ([\d_]+)/))) {
       os = `iOS ${m[1].replace(/_/g, ".")}`;
-    else if ((m = ua.match(/Mac OS X ([\d_]+)/)))
+    } else if ((m = ua.match(/Mac OS X ([\d_]+)/))) {
       os = `macOS ${m[1].replace(/_/g, ".")}`;
-    else if ((m = ua.match(/Android ([\d.]+)/))) os = `Android ${m[1]}`;
-    else if ((m = ua.match(/Windows NT ([\d.]+)/))) os = `Windows NT ${m[1]}`;
-    else if (/Linux/.test(ua)) os = "Linux";
+    } else if ((m = ua.match(/Android ([\d.]+)/))) {
+      os = `Android ${m[1]}`;
+    } else if ((m = ua.match(/Windows NT ([\d.]+)/))) {
+      os = `Windows NT ${m[1]}`;
+    } else if (/Linux/.test(ua)) {
+      os = "Linux";
+    }
 
     return {
       browser: b,
@@ -168,8 +174,10 @@
     if (uad) rows.push(["mobile", String(!!uad.mobile)]);
     rows.push(["user agent", n.userAgent]);
     if (n.deviceMemory) rows.push(["device memory", `≥ ${n.deviceMemory} GB`]);
+
     if (n.hardwareConcurrency)
       rows.push(["cpu threads", String(n.hardwareConcurrency)]);
+
     rows.push([
       "screen",
       `${screen.width}×${screen.height} @ ${devicePixelRatio}x, ${screen.colorDepth}-bit`,
@@ -245,7 +253,9 @@
     for (const u of urls) {
       try {
         const r = await fetch(u);
+
         if (!r.ok) continue;
+
         const kv: Record<string, string> = {};
 
         for (const line of (await r.text()).trim().split("\n")) {

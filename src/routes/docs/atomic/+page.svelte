@@ -152,7 +152,7 @@
 
   <Card
     description="Sets horizontal margins to auto, centering the element within its parent."
-    code={`<div class="mx-a">...</div>`}
+    code={'<div class="mx-a">...</div>'}
   >
     <div slot="header" class="f w-100 j-bw">
       <code>.mx-a</code>
@@ -186,7 +186,7 @@
 
   <Card
     description="<code>f</code> initiates flexbox. <code>f-col</code> changes direction to column. <code>fw</code> allows wrapping."
-    code={`<div class="f fw">...</div>`}
+    code={'<div class="f fw">...</div>'}
   >
     <div slot="header" class="f w-100 j-bw">
       <code>.f .f-col .fw</code>
@@ -336,7 +336,7 @@
 
   <Card
     description="atomic.css sets <code>interpolate-size: allow-keywords</code> on <code>:root</code>, which lets transitions animate to and from intrinsic size keywords like <code>auto</code>, <code>min-content</code>, and <code>fit-content</code> — something CSS normally can't do. Hover the box to see its height animate to <code>auto</code>."
-    code={`:root { interpolate-size: allow-keywords; }`}
+    code={":root { interpolate-size: allow-keywords; }"}
   >
     <div slot="header" class="f w-100 j-bw">
       <code>interpolate-size</code>

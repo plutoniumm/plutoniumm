@@ -80,12 +80,12 @@
             error size η = <b>{eta}</b>
             <input type="range" min="0" max="6" bind:value={eta} />
         </label>
-        <button type="button" class="ptr rx5" on:click={() => (kseed += 1)}
-            >new keys</button
-        >
-        <button type="button" class="ptr rx5" on:click={() => (eseed += 1)}
-            >re-encrypt</button
-        >
+        <button type="button" class="ptr rx5" on:click={() => (kseed += 1)}>
+            new keys
+        </button>
+        <button type="button" class="ptr rx5" on:click={() => (eseed += 1)}>
+            re-encrypt
+        </button>
     </div>
 
     <div class="tc my5">
@@ -150,10 +150,10 @@
                 >+q/4</text
             >
             <text x="40" y={Y(0) + 3} text-anchor="end">0</text>
-            <text x="40" y={Y(-limit) + 3} text-anchor="end" fill="#e67"
-                >−q/4</text
-            >
-            <text x="40" y={Y(-half) + 3} text-anchor="end">−48</text>
+            <text x="40" y={Y(-limit) + 3} text-anchor="end" fill="#e67">
+                −q/4
+            </text>
+            <text x="40" y={Y(-half) + 3} text-anchor="end"> −48 </text>
 
             {#each d as dv, i (i)}
                 <rect
@@ -169,8 +169,9 @@
                     text-anchor="middle"
                     fill={got[i] === bits[i] ? "#555" : "#e44"}
                     font-weight={got[i] === bits[i] ? "normal" : "bold"}
-                    >{got[i]}</text
                 >
+                    {got[i]}
+                </text>
             {/each}
         </svg>
         <div class="cap">

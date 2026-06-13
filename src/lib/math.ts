@@ -56,7 +56,7 @@ export default {
   sin: Math.sin,
   Rng: {
     circ: (prec) => lin(0, Math.PI * 2, prec),
-    ones: (prec) => lin(0, 1, prec)
+    ones: (prec) => lin(0, 1, prec),
   },
   Cplx: {
     cos: MJS.cos,
@@ -84,14 +84,14 @@ export default {
       );
 
       return [pow.re, pow.im];
-    }
+    },
   },
   Map: {
     ucirc,
     rcirc,
     usq,
     rsq,
-    sq_prefix
+    sq_prefix,
   },
-  "2Pi": Math.PI * 2
+  "2Pi": Math.PI * 2,
 }

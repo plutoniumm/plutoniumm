@@ -31,10 +31,13 @@
             const m = text.match(/kex=([A-Za-z0-9_-]+)/);
             kex = m ? m[1] : "";
 
-            if (!kex) state = "unknown";
-            else if (kex.includes("MLKEM") || kex.includes("Kyber"))
+            if (!kex) {
+                state = "unknown";
+            } else if (kex.includes("MLKEM") || kex.includes("Kyber")) {
                 state = "pq";
-            else state = "classical";
+            } else {
+                state = "classical";
+            }
         } catch (e) {
             state = "unknown";
         }

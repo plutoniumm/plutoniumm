@@ -23,8 +23,11 @@
         for (let i = 0; i < S; i++) {
             let bit = Math.random() < 0.5 ? 1 : 0;
 
-            if (bit === 0 && Math.random() < a) bit = 1;
-            else if (bit === 1 && Math.random() < b) bit = 0;
+            if (bit === 0 && Math.random() < a) {
+                bit = 1;
+            } else if (bit === 1 && Math.random() < b) {
+                bit = 0;
+            }
 
             sum += bit;
             out[i] = sum / (i + 1);

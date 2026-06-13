@@ -62,9 +62,14 @@
                     bind:value={A[i]}
                     on:change={() => (A[i] = num(A[i]))}
                 />
-                {#if i > 0}<span class="pow ml2"
-                        >x{#if i > 1}<sup>{i}</sup>{/if}</span
-                    >{/if}
+                {#if i > 0}
+                    <span class="pow ml2">
+                        x
+                        {#if i > 1}
+                            <sup>{i}</sup>
+                        {/if}
+                    </span>
+                {/if}
             </span>
         {/each}
     </div>

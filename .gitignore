@@ -6,8 +6,8 @@ logs
 env.js
 claude.md
 .claude/
+eastwood.toml
 
-sim/
 drafts/
 
 # NODE

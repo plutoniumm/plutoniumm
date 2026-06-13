@@ -54,7 +54,12 @@
                     nx = Math.round(zMapped.re / scale + cx),
                     ny = Math.round(zMapped.im / scale + cy);
 
-                if (nx >= 0 && nx < w && ny >= 0 && ny < h) {
+                if (
+                    nx >= 0 && // force newline
+                    nx < w &&
+                    ny >= 0 &&
+                    ny < h
+                ) {
                     const //
                         i = 4 * (y * w + x),
                         ni = 4 * (ny * w + nx);
