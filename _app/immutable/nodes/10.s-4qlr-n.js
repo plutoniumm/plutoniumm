@@ -1,0 +1,1 @@
+import{gt as e}from"../chunks/BvhN-6Rm.js";import"../chunks/DwdwGuwu.js";import"../chunks/DDwXJn8G.js";var n=e({load:()=>o,prerender:()=>!0});var o=async({data:r})=>({posts:r.posts});function s(r){}export{s as component,n as universal};

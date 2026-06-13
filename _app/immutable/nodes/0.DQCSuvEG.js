@@ -1,1 +1,0 @@
-import{n as s}from"../chunks/b3L32Ng1.js";import{C as n,D as o,J as p,O as i}from"../chunks/Rl5PQ8XL.js";var d=s({prerender:()=>!0,ssr:()=>!0});function l(e,a){var r=i(),t=p(r);n(t,()=>a.children),o(e,r)}export{l as component,d as universal};

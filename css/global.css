@@ -1,10 +1,41 @@
+/* ── Global palette ───────────────────────────────────────────────
+   The ONLY colors used site-wide (every .svelte file references these
+   and nothing else). The sole exception is /about, whose code-size bars
+   use each language's canonical color. Canvas / JS-driven color reads
+   these same values via $lib/palette so this stays the single source. */
+:root {
+    /* theme (5) — Apple HIG system colors, Default (Light) */
+    --c1: #ff9500; /* systemOrange — primary   */
+    --c2: #30b0c7; /* systemTeal               */
+    --c3: #007aff; /* systemBlue               */
+    --c4: #ff2d55; /* systemPink               */
+    --c5: #af52de; /* systemPurple             */
+
+    /* semantic (2) — plain pass/fail, warnings, right/wrong */
+    --ok: #34c759; /* systemGreen — pass / correct */
+    --no: #ff3b30; /* systemRed   — fail / warning */
+
+    /* white (1) */
+    --w: #ffffff;
+
+    /* greys (4) — light → dark */
+    --g4: #eeeeee; /* near-white — subtle surfaces, header rows  */
+    --g1: #dddddd; /* light      — backgrounds, borders          */
+    --g2: #888888; /* mid        — muted text                    */
+    --g3: #555555; /* dark       — secondary text                */
+
+    /* blacks (2) */
+    --k1: #222222; /* headings */
+    --k2: #111111; /* body ink */
+}
+
 html {
     overflow-x: hidden;
 }
 
 body {
-    background: #dddddf;
-    color: #111;
+    background: var(--g1);
+    color: var(--k2);
 
     min-height: 100vh;
     overflow-y: scroll !important;
@@ -58,9 +89,9 @@ article {
 blockquote {
     margin: 20px 0;
     padding: 10px 20px;
-    border-left: 3px solid #555;
+    border-left: 3px solid var(--g3);
     border-radius: 0 8px 8px 0;
-    background: #ffffff66;
+    background: color-mix(in srgb, var(--w) 40%, transparent);
 }
 
 blockquote p {
@@ -71,7 +102,7 @@ block {
     display: block !important;
     position: relative;
     border-radius: 16px;
-    background: #a2f4;
+    background: color-mix(in srgb, var(--c5) 27%, transparent);
     height: 200px;
     width: 100%;
 }
@@ -93,7 +124,7 @@ block::before {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #000;
+    color: var(--k2);
     font-weight: 300;
     font-size: 1.2em;
 }
@@ -101,11 +132,11 @@ block::before {
 span[id*="dfn-"] {
     cursor: pointer;
     border-radius: 2px;
-    border: 1px solid #0000;
+    border: 1px solid transparent;
     transition: border 0.2s ease-in-out;
 }
 
 span[id*="dfn-"]:hover {
     cursor: pointer;
-    border: 1px solid #000;
+    border: 1px solid var(--k2);
 }
